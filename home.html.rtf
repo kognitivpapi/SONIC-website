@@ -1,0 +1,956 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2865
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red70\green137\blue204;\red23\green24\blue24;\red140\green211\blue254;
+\red202\green202\blue202;\red109\green109\blue109;\red194\green126\blue101;\red183\green111\blue247;\red212\green212\blue212;
+\red167\green197\blue152;\red109\green115\blue120;\red54\green192\blue160;\red113\green192\blue131;\red246\green124\blue48;
+}
+{\*\expandedcolortbl;;\cssrgb\c33725\c61176\c83922;\cssrgb\c11765\c12157\c12549;\cssrgb\c61176\c86275\c99608;
+\cssrgb\c83137\c83137\c83137;\cssrgb\c50196\c50196\c50196;\cssrgb\c80784\c56863\c47059;\cssrgb\c77255\c54118\c97647;\cssrgb\c86275\c86275\c86275;
+\cssrgb\c70980\c80784\c65882;\cssrgb\c50196\c52549\c54510;\cssrgb\c23922\c78824\c69020;\cssrgb\c50588\c78824\c58431;\cssrgb\c98039\c56471\c24314;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww20940\viewh16240\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 <!DOCTYPE\cf4 \strokec4  html\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3 \strokec6 <\cf2 \strokec2 html\cf5 \strokec5  \cf4 \strokec4 lang\cf6 \strokec6 =\cf7 \strokec7 "en"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cf6 \cb3 \strokec6 <\cf2 \strokec2 head\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3   \cf6 \strokec6 <\cf2 \strokec2 meta\cf5 \strokec5  \cf4 \strokec4 charset\cf6 \strokec6 =\cf7 \strokec7 "UTF-8"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf2 \strokec2 meta\cf5 \strokec5  \cf4 \strokec4 name\cf6 \strokec6 =\cf7 \strokec7 "viewport"\cf5 \strokec5  \cf4 \strokec4 content\cf6 \strokec6 =\cf7 \strokec7 "width=device-width, initial-scale=1.0"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf2 \strokec2 title\cf6 \strokec6 >\cf5 \strokec5 Sonic Music Experience\cf6 \strokec6 </\cf2 \strokec2 title\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf2 \strokec2 script\cf5 \strokec5  \cf4 \strokec4 src\cf6 \strokec6 =\cf7 \strokec7 "https://cdn.tailwindcss.com"\cf6 \strokec6 ></\cf2 \strokec2 script\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf2 \strokec2 style\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf8 \strokec8 @keyframes\cf5 \strokec5  \cf7 \strokec7 terminal-blink\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \strokec5  \cf10 \strokec10 0%\cf9 \strokec9 ,\cf5 \strokec5  \cf10 \strokec10 100%\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \strokec5  \cf4 \strokec4 opacity:\cf5 \strokec5  \cf10 \strokec10 1\cf9 \strokec9 ;\cf5 \strokec5  \cf9 \strokec9 \}\cf5 \strokec5  \cf10 \strokec10 50%\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \strokec5  \cf4 \strokec4 opacity:\cf5 \strokec5  \cf10 \strokec10 0\cf9 \strokec9 ;\cf5 \strokec5  \cf9 \strokec9 \}\cf5 \strokec5  \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3     \cf2 \strokec2 .animate-terminal-blink\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \strokec5  \cf4 \strokec4 animation:\cf5 \strokec5  \cf7 \strokec7 terminal-blink\cf5 \strokec5  \cf10 \strokec10 2.2s\cf5 \strokec5  \cf7 \strokec7 step-end\cf5 \strokec5  \cf7 \strokec7 infinite\cf9 \strokec9 ;\cf5 \strokec5  \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3     \cf8 \strokec8 @keyframes\cf5 \strokec5  \cf7 \strokec7 record-spin\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \strokec5  \cf7 \strokec7 from\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \strokec5  \cf4 \strokec4 transform:\cf5 \strokec5  \cf7 \strokec7 rotate(\cf10 \strokec10 0deg\cf7 \strokec7 )\cf9 \strokec9 ;\cf5 \strokec5  \cf9 \strokec9 \}\cf5 \strokec5  \cf7 \strokec7 to\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \strokec5  \cf4 \strokec4 transform:\cf5 \strokec5  \cf7 \strokec7 rotate(\cf10 \strokec10 360deg\cf7 \strokec7 )\cf9 \strokec9 ;\cf5 \strokec5  \cf9 \strokec9 \}\cf5 \strokec5  \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3     \cf2 \strokec2 .animate-record-spin\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \strokec5  \cf4 \strokec4 animation:\cf5 \strokec5  \cf7 \strokec7 record-spin\cf5 \strokec5  \cf10 \strokec10 4s\cf5 \strokec5  \cf7 \strokec7 linear\cf5 \strokec5  \cf7 \strokec7 infinite\cf9 \strokec9 ;\cf5 \strokec5  \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3     \cf2 \strokec2 ::-webkit-scrollbar\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \strokec5  \cf4 \strokec4 width:\cf5 \strokec5  \cf10 \strokec10 4px\cf9 \strokec9 ;\cf5 \strokec5  \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3     \cf2 \strokec2 ::-webkit-scrollbar-track\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \strokec5  \cf4 \strokec4 background:\cf5 \strokec5  \cf7 \strokec7 transparent\cf9 \strokec9 ;\cf5 \strokec5  \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3     \cf2 \strokec2 ::-webkit-scrollbar-thumb\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \strokec5  \cf4 \strokec4 background:\cf5 \strokec5  #18181b\cf9 \strokec9 ;\cf5 \strokec5  \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3     \cb1 \
+\cb3     \cf11 \strokec11 /* Reveal text base styles */\cf5 \cb1 \strokec5 \
+\cb3     \cf2 \strokec2 .reveal-char\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \strokec5  \cf4 \strokec4 transition:\cf5 \strokec5  \cf7 \strokec7 opacity\cf5 \strokec5  \cf10 \strokec10 0.1s\cf5 \strokec5  \cf7 \strokec7 ease-out\cf9 \strokec9 ;\cf5 \strokec5  \cf4 \strokec4 opacity:\cf5 \strokec5  \cf10 \strokec10 0.15\cf9 \strokec9 ;\cf5 \strokec5  \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3     \cf2 \strokec2 .typewriter-char\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \strokec5  \cf4 \strokec4 padding-right:\cf5 \strokec5  \cf10 \strokec10 0.01em\cf9 \strokec9 ;\cf5 \strokec5  \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3     \cf2 \strokec2 .typewriter-space\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \strokec5  \cf4 \strokec4 padding-right:\cf5 \strokec5  \cf10 \strokec10 0\cf9 \strokec9 ;\cf5 \strokec5  \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3     \cb1 \
+\cb3     \cf2 \strokec2 body.lock-sonic\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \strokec5  \cf4 \strokec4 overflow:\cf5 \strokec5  \cf7 \strokec7 hidden\cf5 \strokec5  \cf8 \strokec8 !important\cf9 \strokec9 ;\cf5 \strokec5  \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 </\cf2 \strokec2 style\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3 \strokec6 </\cf2 \strokec2 head\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cf6 \cb3 \strokec6 <\cf2 \strokec2 body\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "min-h-screen font-sans bg-white text-zinc-900 selection:bg-zinc-900 selection:text-white antialiased overflow-x-hidden"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3   \cf11 \strokec11 <!-- Navigation -->\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf2 \strokec2 nav\cf5 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf7 \strokec7 "main-nav"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "fixed top-0 left-0 right-0 z-[110] transition-all duration-[750ms] cubic-bezier(0.16, 1, 0.3, 1) -translate-y-full opacity-0"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf7 \strokec7 "desktop-nav"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "hidden md:flex w-full h-4 bg-white border-b border-zinc-100"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf11 \strokec11 <!-- Injected via JS -->\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "flex md:hidden w-full h-10 items-center justify-between px-6 bg-white/95 backdrop-blur-md border-b border-zinc-100"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "font-black uppercase tracking-tighter text-sm"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "brand.short"\cf6 \strokec6 >\cf5 \strokec5 S.\cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf2 \strokec2 button\cf5 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf7 \strokec7 "mobile-menu-btn"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "w-7 h-7 flex items-center justify-center rounded-full overflow-hidden transition-transform active:scale-95 group relative"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 img\cf5 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf7 \strokec7 "mobile-menu-img"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "nav.mobileMenuImage"\cf5 \strokec5  \cf4 \strokec4 src\cf6 \strokec6 =\cf7 \strokec7 ""\cf5 \strokec5  \cf4 \strokec4 alt\cf6 \strokec6 =\cf7 \strokec7 "Menu"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "w-full h-full object-cover rounded-full group-hover:animate-record-spin transition-all"\cf5 \strokec5  \cf6 \strokec6 />\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf7 \strokec7 "mobile-menu-close"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "absolute inset-0 flex items-center justify-center text-zinc-950 hidden"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf2 \strokec2 svg\cf5 \strokec5  \cf4 \strokec4 xmlns\cf6 \strokec6 =\cf7 \strokec7 "http://www.w3.org/2000/svg"\cf5 \strokec5  \cf4 \strokec4 width\cf6 \strokec6 =\cf7 \strokec7 "12"\cf5 \strokec5  \cf4 \strokec4 height\cf6 \strokec6 =\cf7 \strokec7 "12"\cf5 \strokec5  \cf4 \strokec4 viewBox\cf6 \strokec6 =\cf7 \strokec7 "0 0 24 24"\cf5 \strokec5  \cf4 \strokec4 fill\cf6 \strokec6 =\cf7 \strokec7 "none"\cf5 \strokec5  \cf4 \strokec4 stroke\cf6 \strokec6 =\cf7 \strokec7 "currentColor"\cf5 \strokec5  \cf4 \strokec4 stroke-width\cf6 \strokec6 =\cf7 \strokec7 "3"\cf5 \strokec5  \cf4 \strokec4 stroke-linecap\cf6 \strokec6 =\cf7 \strokec7 "round"\cf5 \strokec5  \cf4 \strokec4 stroke-linejoin\cf6 \strokec6 =\cf7 \strokec7 "round"\cf6 \strokec6 ><\cf2 \strokec2 path\cf5 \strokec5  \cf4 \strokec4 d\cf6 \strokec6 =\cf7 \strokec7 "M18 6 6 18"\cf6 \strokec6 /><\cf2 \strokec2 path\cf5 \strokec5  \cf4 \strokec4 d\cf6 \strokec6 =\cf7 \strokec7 "m6 6 12 12"\cf6 \strokec6 /></\cf2 \strokec2 svg\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 </\cf2 \strokec2 button\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 </\cf2 \strokec2 nav\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\
+\cb3   \cf11 \strokec11 <!-- Mobile Menu -->\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf7 \strokec7 "mobile-menu-overlay"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "fixed inset-0 z-[120] bg-zinc-950 flex flex-col items-center justify-center space-y-8 text-white transition-opacity duration-500 opacity-0 pointer-events-none hidden"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 <\cf2 \strokec2 button\cf5 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf7 \strokec7 "mobile-menu-close-btn"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "absolute top-6 right-6 p-4"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf2 \strokec2 svg\cf5 \strokec5  \cf4 \strokec4 xmlns\cf6 \strokec6 =\cf7 \strokec7 "http://www.w3.org/2000/svg"\cf5 \strokec5  \cf4 \strokec4 width\cf6 \strokec6 =\cf7 \strokec7 "32"\cf5 \strokec5  \cf4 \strokec4 height\cf6 \strokec6 =\cf7 \strokec7 "32"\cf5 \strokec5  \cf4 \strokec4 viewBox\cf6 \strokec6 =\cf7 \strokec7 "0 0 24 24"\cf5 \strokec5  \cf4 \strokec4 fill\cf6 \strokec6 =\cf7 \strokec7 "none"\cf5 \strokec5  \cf4 \strokec4 stroke\cf6 \strokec6 =\cf7 \strokec7 "currentColor"\cf5 \strokec5  \cf4 \strokec4 stroke-width\cf6 \strokec6 =\cf7 \strokec7 "2"\cf5 \strokec5  \cf4 \strokec4 stroke-linecap\cf6 \strokec6 =\cf7 \strokec7 "round"\cf5 \strokec5  \cf4 \strokec4 stroke-linejoin\cf6 \strokec6 =\cf7 \strokec7 "round"\cf6 \strokec6 ><\cf2 \strokec2 path\cf5 \strokec5  \cf4 \strokec4 d\cf6 \strokec6 =\cf7 \strokec7 "M18 6 6 18"\cf6 \strokec6 /><\cf2 \strokec2 path\cf5 \strokec5  \cf4 \strokec4 d\cf6 \strokec6 =\cf7 \strokec7 "m6 6 12 12"\cf6 \strokec6 /></\cf2 \strokec2 svg\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 </\cf2 \strokec2 button\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf7 \strokec7 "mobile-nav-links"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "flex flex-col items-center space-y-8"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf11 \strokec11 <!-- Injected via JS -->\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\
+\cb3   \cf11 \strokec11 <!-- Typewriter Sections -->\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf2 \strokec2 section\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "typewriter-section h-[600vh] relative"\cf5 \strokec5  \cf4 \strokec4 data-isfirst\cf6 \strokec6 =\cf7 \strokec7 "true"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "sticky top-0 h-screen w-full flex items-center bg-[#000000] text-white z-10 overflow-hidden"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "typewriter-content w-full max-w-7xl mx-auto px-6 md:px-12 overflow-x-hidden flex flex-col items-start text-left uppercase select-none py-16"\cf6 \strokec6 ></\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 </\cf2 \strokec2 section\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\
+\cb3   \cf6 \strokec6 <\cf2 \strokec2 section\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "typewriter-section h-[600vh] relative"\cf5 \strokec5  \cf4 \strokec4 data-isfirst\cf6 \strokec6 =\cf7 \strokec7 "false"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "sticky top-0 h-screen w-full flex items-center bg-[#000000] text-white z-10 overflow-hidden"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "typewriter-content w-full max-w-7xl mx-auto px-6 md:px-12 overflow-x-hidden flex flex-col items-start text-left uppercase select-none py-16"\cf6 \strokec6 ></\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 </\cf2 \strokec2 section\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\
+\cb3   \cf6 \strokec6 <\cf2 \strokec2 section\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "typewriter-section h-[600vh] relative"\cf5 \strokec5  \cf4 \strokec4 data-isfirst\cf6 \strokec6 =\cf7 \strokec7 "false"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "sticky top-0 h-screen w-full flex items-center bg-[#000000] text-white z-10 overflow-hidden"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "typewriter-content w-full max-w-7xl mx-auto px-6 md:px-12 overflow-x-hidden flex flex-col items-start text-left uppercase select-none py-16"\cf6 \strokec6 ></\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 </\cf2 \strokec2 section\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\
+\cb3   \cf11 \strokec11 <!-- Sonic Reveal Section (Auto-animated with Scroll Lock) -->\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf2 \strokec2 section\cf5 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf7 \strokec7 "sonic-reveal"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "h-[150vh] bg-[#000000] relative"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "absolute inset-0 z-0"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf7 \strokec7 "sonic-bg"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "relative w-full h-full grayscale transition-all duration-300 opacity-0"\cf5 \strokec5  \cf4 \strokec4 style\cf6 \strokec6 =\cf7 \strokec7 "filter: blur(15px); transform: scale(1.2);"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf2 \strokec2 img\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "sonicReveal.bgImage"\cf5 \strokec5  \cf4 \strokec4 src\cf6 \strokec6 =\cf7 \strokec7 ""\cf5 \strokec5  \cf4 \strokec4 alt\cf6 \strokec6 =\cf7 \strokec7 "Sonic Background Texture"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "w-full h-full object-cover contrast-125"\cf5 \strokec5  \cf6 \strokec6 />\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "relative z-10 w-full flex flex-col items-center justify-center"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 h2\cf5 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf7 \strokec7 "sonic-title"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-[25vw] font-bold tracking-tighter flex items-center select-none uppercase transition-all duration-300"\cf5 \strokec5  \cf4 \strokec4 style\cf6 \strokec6 =\cf7 \strokec7 "letter-spacing: -0.15em; filter: blur(15px); opacity: 0; transform: scale(1.2);"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3           \cf11 \strokec11 <!-- Injected via JS -->\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf2 \strokec2 h2\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf7 \strokec7 "sonic-season"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "absolute top-[calc(50%+10vw)] md:top-[calc(50%+12vw)] transition-all duration-300 opacity-0"\cf5 \strokec5  \cf4 \strokec4 style\cf6 \strokec6 =\cf7 \strokec7 "transform: scale(1.2) translateY(30px); filter: blur(15px);"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf2 \strokec2 span\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-white font-sans font-bold text-lg md:text-xl uppercase tracking-[0.6em] whitespace-nowrap"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "sonicReveal.season"\cf6 \strokec6 ></\cf2 \strokec2 span\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 </\cf2 \strokec2 section\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\
+\cb3   \cf11 \strokec11 <!-- Mission Statement -->\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf2 \strokec2 section\cf5 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf7 \strokec7 "mission-section"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "bg-white py-24 md:py-48 px-6 md:px-12 border-b border-zinc-100 flex items-center justify-center min-h-[60vh]"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "max-w-4xl w-full mx-auto"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-center text-[10px] font-bold uppercase tracking-[0.5em] text-zinc-300 mb-12 md:mb-20"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "mission.label"\cf6 \strokec6 ></\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "space-y-10 text-left"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 p\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-xl md:text-3xl font-normal leading-tight tracking-tight text-zinc-950"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "mission.p1"\cf6 \strokec6 ></\cf2 \strokec2 p\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 p\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-lg md:text-xl font-normal leading-relaxed tracking-tight text-zinc-600"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "mission.p2"\cf6 \strokec6 ></\cf2 \strokec2 p\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 p\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-base md:text-lg font-normal leading-relaxed text-zinc-400"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "mission.p3"\cf6 \strokec6 ></\cf2 \strokec2 p\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 </\cf2 \strokec2 section\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\
+\cb3   \cf6 \strokec6 <\cf2 \strokec2 main\cf5 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf7 \strokec7 "main-content"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "relative z-20 bg-white"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf11 \strokec11 <!-- Visual Archive -->\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 <\cf2 \strokec2 section\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "bg-[#F5F3EF] relative flex flex-col items-center overflow-hidden py-16 md:py-20"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "w-full px-6 md:px-12 lg:px-24"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 h2\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-center text-[10px] font-bold tracking-[0.8em] uppercase mb-12 text-zinc-300"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "archive.label"\cf6 \strokec6 ></\cf2 \strokec2 h2\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf7 \strokec7 "visual-archive-grid"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-14 lg:gap-16"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3           \cf11 \strokec11 <!-- Injected via JS -->\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 </\cf2 \strokec2 section\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\
+\cb3     \cf11 \strokec11 <!-- Reviews Section -->\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 <\cf2 \strokec2 section\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "bg-[#FAF9F6] relative overflow-visible"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "max-w-[110rem] mx-auto px-6 md:px-12 pt-16 md:pt-24 pb-12"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 h2\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-center text-[10px] font-bold tracking-[0.8em] uppercase mb-12 text-zinc-300"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "reviews.label"\cf6 \strokec6 ></\cf2 \strokec2 h2\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf7 \strokec7 "reviews-container"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3           \cf11 \strokec11 <!-- Complex Review Grid Injected via JS -->\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 </\cf2 \strokec2 section\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\
+\cb3     \cf11 \strokec11 <!-- Lyric Scroll Reveal -->\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 <\cf2 \strokec2 section\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "scroll-reveal-container h-[300vh] relative border-y border-zinc-100"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 h2\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-center text-[10px] font-bold tracking-[0.8em] uppercase mb-8 md:mb-12 text-zinc-300 w-full block"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "lyric.label"\cf6 \strokec6 ></\cf2 \strokec2 h2\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "w-full max-w-7xl px-6 md:px-12 relative"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "flex flex-col md:flex-row items-center w-full gap-8 md:gap-0"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "md:w-1/3 flex flex-col items-center md:items-start md:pr-12 w-full"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3               \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "mb-8 text-center md:text-left w-full overflow-hidden"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                 \cf6 \strokec6 <\cf2 \strokec2 span\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "bg-black text-white font-bold italic px-3 py-2 text-[10px] sm:text-xs md:text-sm inline-block leading-tight whitespace-pre-line max-w-full"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "lyric.quote"\cf6 \strokec6 ></\cf2 \strokec2 span\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3               \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3               \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "flex items-center gap-4"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                 \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "w-12 h-12 md:w-16 md:h-16 overflow-hidden bg-zinc-100 shadow-sm border border-zinc-200 shrink-0"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                   \cf6 \strokec6 <\cf2 \strokec2 img\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "lyric.image"\cf5 \strokec5  \cf4 \strokec4 src\cf6 \strokec6 =\cf7 \strokec7 ""\cf5 \strokec5  \cf4 \strokec4 alt\cf6 \strokec6 =\cf7 \strokec7 "Track Art"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "w-full h-full object-cover"\cf5 \strokec5  \cf6 \strokec6 />\cf5 \cb1 \strokec5 \
+\cb3                 \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                 \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-left"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                   \cf6 \strokec6 <\cf2 \strokec2 h4\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-sm md:text-base font-bold text-zinc-900 leading-tight"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "lyric.track"\cf6 \strokec6 ></\cf2 \strokec2 h4\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                   \cf6 \strokec6 <\cf2 \strokec2 p\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-xs md:text-sm text-zinc-900 underline font-medium mt-0.5"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "lyric.artist"\cf6 \strokec6 ></\cf2 \strokec2 p\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                 \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3               \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "md:w-2/3 md:pl-16 py-8 flex flex-col items-start md:border-l border-zinc-200 relative w-full"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3               \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "space-y-8 max-w-2xl"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                 \cf6 \strokec6 <\cf2 \strokec2 p\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-base md:text-xl font-normal leading-tight tracking-tight text-zinc-950 w-full block"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                   \cf6 \strokec6 <\cf2 \strokec2 span\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "scroll-text-wrapper inline-flex flex-wrap gap-x-[0.25em] gap-y-[0.1em]"\cf5 \strokec5  \cf4 \strokec4 data-start\cf6 \strokec6 =\cf7 \strokec7 "0"\cf5 \strokec5  \cf4 \strokec4 data-end\cf6 \strokec6 =\cf7 \strokec7 "0.4"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "lyric.p1"\cf6 \strokec6 ></\cf2 \strokec2 span\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                 \cf6 \strokec6 </\cf2 \strokec2 p\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                 \cf6 \strokec6 <\cf2 \strokec2 p\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-sm md:text-base font-normal leading-relaxed tracking-tight text-zinc-600 w-full block"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                   \cf6 \strokec6 <\cf2 \strokec2 span\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "scroll-text-wrapper inline-flex flex-wrap gap-x-[0.25em] gap-y-[0.1em]"\cf5 \strokec5  \cf4 \strokec4 data-start\cf6 \strokec6 =\cf7 \strokec7 "0.4"\cf5 \strokec5  \cf4 \strokec4 data-end\cf6 \strokec6 =\cf7 \strokec7 "0.8"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "lyric.p2"\cf6 \strokec6 ></\cf2 \strokec2 span\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                 \cf6 \strokec6 </\cf2 \strokec2 p\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                 \cf6 \strokec6 <\cf2 \strokec2 p\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-xs md:text-sm font-normal leading-relaxed text-zinc-400 italic w-full block"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                   \cf6 \strokec6 <\cf2 \strokec2 span\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "scroll-text-wrapper inline-flex flex-wrap gap-x-[0.25em] gap-y-[0.1em]"\cf5 \strokec5  \cf4 \strokec4 data-start\cf6 \strokec6 =\cf7 \strokec7 "0.8"\cf5 \strokec5  \cf4 \strokec4 data-end\cf6 \strokec6 =\cf7 \strokec7 "1.0"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "lyric.p3"\cf6 \strokec6 ></\cf2 \strokec2 span\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                 \cf6 \strokec6 </\cf2 \strokec2 p\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3               \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 </\cf2 \strokec2 section\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\
+\cb3     \cf11 \strokec11 <!-- Beat Scroll Reveal -->\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 <\cf2 \strokec2 section\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "scroll-reveal-container h-[300vh] bg-white text-zinc-950 relative border-b border-zinc-100"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 h2\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-center text-[10px] font-bold tracking-[0.8em] uppercase mb-8 md:mb-12 text-zinc-300 w-full block"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "beat.label"\cf6 \strokec6 ></\cf2 \strokec2 h2\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "flex flex-col md:flex-row gap-6 md:gap-24 items-center"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "md:w-1/2 order-2 md:order-1 w-full overflow-visible"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3               \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "space-y-4 md:space-y-8 w-full"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                 \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "space-y-3 md:space-y-6 max-w-lg w-full"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                   \cf6 \strokec6 <\cf2 \strokec2 p\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-lg md:text-xl font-normal leading-tight tracking-tight text-zinc-950 block w-full"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                     \cf6 \strokec6 <\cf2 \strokec2 span\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "scroll-text-wrapper inline-flex flex-wrap gap-x-[0.25em] gap-y-[0.1em]"\cf5 \strokec5  \cf4 \strokec4 data-start\cf6 \strokec6 =\cf7 \strokec7 "0"\cf5 \strokec5  \cf4 \strokec4 data-end\cf6 \strokec6 =\cf7 \strokec7 "0.35"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "beat.p1"\cf6 \strokec6 ></\cf2 \strokec2 span\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                   \cf6 \strokec6 </\cf2 \strokec2 p\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                   \cf6 \strokec6 <\cf2 \strokec2 p\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-sm md:text-lg font-normal leading-relaxed tracking-tight text-zinc-600 block w-full"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                     \cf6 \strokec6 <\cf2 \strokec2 span\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "scroll-text-wrapper inline-flex flex-wrap gap-x-[0.25em] gap-y-[0.1em]"\cf5 \strokec5  \cf4 \strokec4 data-start\cf6 \strokec6 =\cf7 \strokec7 "0.35"\cf5 \strokec5  \cf4 \strokec4 data-end\cf6 \strokec6 =\cf7 \strokec7 "0.7"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "beat.p2"\cf6 \strokec6 ></\cf2 \strokec2 span\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                   \cf6 \strokec6 </\cf2 \strokec2 p\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                   \cf6 \strokec6 <\cf2 \strokec2 p\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-xs md:text-base font-normal leading-relaxed text-zinc-400 block w-full"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                     \cf6 \strokec6 <\cf2 \strokec2 span\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "scroll-text-wrapper inline-flex flex-wrap gap-x-[0.25em] gap-y-[0.1em]"\cf5 \strokec5  \cf4 \strokec4 data-start\cf6 \strokec6 =\cf7 \strokec7 "0.7"\cf5 \strokec5  \cf4 \strokec4 data-end\cf6 \strokec6 =\cf7 \strokec7 "1.0"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "beat.p3"\cf6 \strokec6 ></\cf2 \strokec2 span\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                   \cf6 \strokec6 </\cf2 \strokec2 p\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                 \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                 \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "pt-4 md:pt-6 border-t border-zinc-100 flex items-center gap-6 md:gap-10 mt-4 md:mt-6"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                   \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "flex flex-col"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                     \cf6 \strokec6 <\cf2 \strokec2 span\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-[8px] font-bold uppercase tracking-widest text-zinc-300 mb-1"\cf6 \strokec6 >\cf5 \strokec5 Artist\cf6 \strokec6 </\cf2 \strokec2 span\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                     \cf6 \strokec6 <\cf2 \strokec2 span\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-xs font-bold uppercase text-zinc-950"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "beat.artist"\cf6 \strokec6 ></\cf2 \strokec2 span\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                   \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                   \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "flex flex-col"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                     \cf6 \strokec6 <\cf2 \strokec2 span\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-[8px] font-bold uppercase tracking-widest text-zinc-300 mb-1"\cf6 \strokec6 >\cf5 \strokec5 Track\cf6 \strokec6 </\cf2 \strokec2 span\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                     \cf6 \strokec6 <\cf2 \strokec2 span\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-xs font-bold uppercase text-zinc-950"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "beat.track"\cf6 \strokec6 ></\cf2 \strokec2 span\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                   \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                   \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "hidden sm:flex flex-col"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                     \cf6 \strokec6 <\cf2 \strokec2 span\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-[8px] font-bold uppercase text-zinc-950"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "beat.year"\cf6 \strokec6 ></\cf2 \strokec2 span\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                   \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                 \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3               \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "md:w-1/2 order-1 md:order-2 flex justify-center w-full"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3               \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "relative"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                 \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "w-48 h-60 sm:w-56 sm:h-72 md:w-80 md:h-[28rem] bg-white overflow-hidden relative border border-zinc-200 shadow-sm shrink-0"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                   \cf6 \strokec6 <\cf2 \strokec2 img\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "beat.image"\cf5 \strokec5  \cf4 \strokec4 src\cf6 \strokec6 =\cf7 \strokec7 ""\cf5 \strokec5  \cf4 \strokec4 alt\cf6 \strokec6 =\cf7 \strokec7 "Beat Artist"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "w-full h-full object-cover transition-all duration-1000"\cf5 \strokec5  \cf6 \strokec6 />\cf5 \cb1 \strokec5 \
+\cb3                 \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3               \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 </\cf2 \strokec2 section\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\
+\cb3     \cf11 \strokec11 <!-- Interviews Horizontal Scroll -->\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 <\cf2 \strokec2 section\cf5 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf7 \strokec7 "interviews-section"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "bg-white h-[400vh] relative overflow-visible border-t border-zinc-100"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "sticky top-0 h-screen w-full flex flex-col overflow-hidden"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 h2\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-center text-[10px] font-bold tracking-[0.8em] uppercase mb-8 md:mb-12 text-zinc-300 pt-8"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "interviews.label"\cf6 \strokec6 ></\cf2 \strokec2 h2\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf7 \strokec7 "interviews-track"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "flex-1 flex items-start mt-4 md:mt-8 px-12 md:px-24 transition-transform duration-150 ease-out"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf7 \strokec7 "interviews-container"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "flex gap-16 md:gap-40 pr-[150vw] md:pr-[50vw] items-start"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3             \cf11 \strokec11 <!-- Injected via JS -->\cf5 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 </\cf2 \strokec2 section\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\
+\cb3     \cf11 \strokec11 <!-- Opinion Section -->\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 <\cf2 \strokec2 section\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "bg-white py-24 md:py-32 border-t border-zinc-100"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "max-w-7xl mx-auto px-6 md:px-12"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 h2\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-center text-[10px] font-bold tracking-[0.8em] uppercase mb-12 md:mb-16 text-zinc-300"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "opinion.label"\cf6 \strokec6 ></\cf2 \strokec2 h2\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf7 \strokec7 "opinion-container"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3           \cf11 \strokec11 <!-- Injected via JS -->\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 </\cf2 \strokec2 section\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\
+\cb3     \cf11 \strokec11 <!-- Soundboard Section -->\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 <\cf2 \strokec2 section\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "bg-zinc-950 min-h-screen py-24 md:py-32 flex flex-col items-center overflow-hidden border-t border-white/5 relative z-0"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "absolute inset-0 pointer-events-none z-0 overflow-hidden"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 img\cf5 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf7 \strokec7 "soundboard-bg"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "soundboard.bgImage"\cf5 \strokec5  \cf4 \strokec4 src\cf6 \strokec6 =\cf7 \strokec7 ""\cf5 \strokec5  \cf4 \strokec4 alt\cf6 \strokec6 =\cf7 \strokec7 "Soundboard Background"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "w-full h-full object-cover grayscale opacity-30 scale-100 blur-0 transition-all duration-700 ease-in-out"\cf5 \strokec5  \cf6 \strokec6 />\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cb1 \
+\cb3       \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "absolute inset-0 pointer-events-none z-10 flex items-center justify-center"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf7 \strokec7 "soundboard-covers"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "w-full md:w-[28%] h-full relative flex items-center justify-center"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3           \cf11 \strokec11 <!-- Injected via JS -->\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\
+\cb3       \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "w-full max-w-[100rem] px-6 md:px-12"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 h2\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "relative z-20 text-center text-[10px] font-bold tracking-[0.8em] uppercase mb-12 text-white/30"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "soundboard.label"\cf6 \strokec6 ></\cf2 \strokec2 h2\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "relative z-20 grid grid-cols-12 md:grid-cols-12 gap-2 md:gap-4 pb-4 mb-6 text-white/40 border-b border-white/10"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "col-span-5 md:col-span-2 text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase"\cf6 \strokec6 >\cf5 \strokec5 Record\cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "col-span-4 md:col-span-2 text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase"\cf6 \strokec6 >\cf5 \strokec5 Artist\cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "hidden md:block md:col-span-4"\cf6 \strokec6 ></\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "hidden md:block md:col-span-2 text-center text-[10px] font-bold tracking-[0.2em] uppercase"\cf6 \strokec6 >\cf5 \strokec5 Rel. Year\cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "col-span-3 md:col-span-2 text-right md:text-center text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase"\cf6 \strokec6 >\cf5 \strokec5 Review Nr.\cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cb1 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "relative min-h-[65vh] flex flex-col"\cf5 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf7 \strokec7 "soundboard-rows"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3           \cf11 \strokec11 <!-- Injected via JS -->\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 </\cf2 \strokec2 section\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\
+\cb3     \cf11 \strokec11 <!-- Footer -->\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 <\cf2 \strokec2 footer\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "py-24 md:py-32 bg-white px-6 md:px-12 border-t border-zinc-100"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "max-w-7xl mx-auto"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "flex flex-col md:flex-row justify-between items-start gap-12 md:gap-16 mb-16 md:mb-20"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "space-y-6 md:space-y-8 max-sm"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 <\cf2 \strokec2 h1\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-4xl font-black tracking-tighter uppercase"\cf6 \strokec6 ><\cf2 \strokec2 a\cf5 \strokec5  \cf4 \strokec4 href\cf6 \strokec6 =\cf7 \strokec7 "home.html"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "brand.full"\cf6 \strokec6 ></\cf2 \strokec2 a\cf6 \strokec6 ></\cf2 \strokec2 h1\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 <\cf2 \strokec2 p\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-[10px] leading-relaxed font-bold tracking-[0.3em] uppercase text-zinc-400"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "footer.tagline"\cf6 \strokec6 ></\cf2 \strokec2 p\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "flex gap-4"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3               \cf6 \strokec6 <\cf2 \strokec2 a\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "footer.contactLink"\cf5 \strokec5  \cf4 \strokec4 href\cf6 \strokec6 =\cf7 \strokec7 "contact.html"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "px-8 py-3 bg-zinc-950 text-white text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-colors inline-block text-center"\cf6 \strokec6 >\cf5 \strokec5 Contact\cf6 \strokec6 </\cf2 \strokec2 a\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\
+\cb3           \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "grid grid-cols-2 gap-20 md:gap-32"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "space-y-6"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3               \cf6 \strokec6 <\cf2 \strokec2 h4\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-950"\cf6 \strokec6 >\cf5 \strokec5 Library\cf6 \strokec6 </\cf2 \strokec2 h4\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3               \cf6 \strokec6 <\cf2 \strokec2 ul\cf5 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf7 \strokec7 "footer-nav"\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "space-y-4 text-[10px] uppercase tracking-widest font-bold text-zinc-400"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3                 \cf11 \strokec11 <!-- Injected via JS -->\cf5 \cb1 \strokec5 \
+\cb3               \cf6 \strokec6 </\cf2 \strokec2 ul\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\
+\cb3         \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "pt-12 border-t border-zinc-100 flex justify-center items-center w-full"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "flex flex-wrap md:flex-nowrap items-center justify-center gap-x-2 gap-y-1 sm:gap-4 md:gap-8 max-w-full text-center"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 <\cf2 \strokec2 span\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-[7px] sm:text-[9px] md:text-[10px] font-bold uppercase tracking-widest sm:tracking-[0.3em] md:tracking-[0.5em] text-zinc-300 italic shrink-0"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "footer.locations"\cf6 \strokec6 ></\cf2 \strokec2 span\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 <\cf2 \strokec2 span\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-[7px] sm:text-[9px] md:text-[10px] font-bold uppercase tracking-widest sm:tracking-[0.3em] md:tracking-[0.5em] text-zinc-300 shrink-0 hidden sm:inline-block"\cf6 \strokec6 >\cf5 \strokec5 \'95\cf6 \strokec6 </\cf2 \strokec2 span\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 <\cf2 \strokec2 span\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-[7px] sm:text-[9px] md:text-[10px] font-bold uppercase tracking-widest sm:tracking-[0.3em] md:tracking-[0.5em] text-zinc-300 shrink-0"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "footer.year"\cf6 \strokec6 ></\cf2 \strokec2 span\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 <\cf2 \strokec2 span\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-[7px] sm:text-[9px] md:text-[10px] font-bold uppercase tracking-widest sm:tracking-[0.3em] md:tracking-[0.5em] text-zinc-300 shrink-0 hidden sm:inline-block"\cf6 \strokec6 >\cf5 \strokec5 \'95\cf6 \strokec6 </\cf2 \strokec2 span\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 <\cf2 \strokec2 span\cf5 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf7 \strokec7 "text-[7px] sm:text-[9px] md:text-[10px] font-bold uppercase tracking-widest sm:tracking-[0.3em] md:tracking-[0.5em] text-zinc-300 shrink-0"\cf5 \strokec5  \cf4 \strokec4 data-content\cf6 \strokec6 =\cf7 \strokec7 "footer.rights"\cf6 \strokec6 ></\cf2 \strokec2 span\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 </\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 </\cf2 \strokec2 footer\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 </\cf2 \strokec2 main\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\
+\cb3   \cf11 \strokec11 <!-- ========================================== -->\cf5 \cb1 \strokec5 \
+\cb3   \cf11 \strokec11 <!-- 1. SITE CONTENT & CONFIGURATION             -->\cf5 \cb1 \strokec5 \
+\cb3   \cf11 \strokec11 <!-- ========================================== -->\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf2 \strokec2 script\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf8 \strokec8 const\cf5 \strokec5  \cf12 \strokec12 SITE_CONTENT\cf5 \strokec5  \cf9 \strokec9 =\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3       brand\cf9 \strokec9 :\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         short\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "S."\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         full\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "SONIC."\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3       nav\cf9 \strokec9 :\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         links\cf9 \strokec9 :\cf5 \strokec5  \cf9 \strokec9 [\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \{\cf5 \strokec5  text\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Home"\cf9 \strokec9 ,\cf5 \strokec5  url\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "home.html"\cf5 \strokec5  \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \{\cf5 \strokec5  text\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Reviews"\cf9 \strokec9 ,\cf5 \strokec5  url\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "reviews.html"\cf5 \strokec5  \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \{\cf5 \strokec5  text\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Interviews"\cf9 \strokec9 ,\cf5 \strokec5  url\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "interviews.html"\cf5 \strokec5  \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \{\cf5 \strokec5  text\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Opinion"\cf9 \strokec9 ,\cf5 \strokec5  url\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "opinion.html"\cf5 \strokec5  \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \{\cf5 \strokec5  text\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "About"\cf9 \strokec9 ,\cf5 \strokec5  url\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "about.html"\cf5 \strokec5  \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3         \cf9 \strokec9 ],\cf5 \cb1 \strokec5 \
+\cb3         mobileMenuImage\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "https://p7.hiclipart.com/preview/805/164/961/phonograph-record-lp-record-music-clip-art-others.jpg"\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3       typewriters\cf9 \strokec9 :\cf5 \strokec5  \cf9 \strokec9 [\cf5 \cb1 \strokec5 \
+\cb3         \cf13 \strokec13 "Why do you listen?"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         \cf13 \strokec13 "Where do you listen?"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         \cf13 \strokec13 "How do you listen?"\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 ],\cf5 \cb1 \strokec5 \
+\cb3       sonicReveal\cf9 \strokec9 :\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         bgImage\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "https://i.pinimg.com/1200x/74/2f/d7/742fd7ff01286fc75d71f60fde596531.jpg"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         title\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "SONIC"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         season\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Season I"\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3       mission\cf9 \strokec9 :\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         label\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Mission"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         p1\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "SONIC wants to embrace music again as a work of art turning away from commercialisation. By focusing on the listening experience and interpretation, it pushes for a more conscious way of listening."\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         p2\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "We believe music should be regarded as an intense short form compression of the experiences of an artist. Delivered in detail, it conveys the artists message throughout different layers: lyrics, sound design or structure."\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         p3\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "The reviews on this page aim to unveil these layers and explore how they work together on evoking emotions and excitement in the listener."\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3       archive\cf9 \strokec9 :\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         label\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "2026"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         images\cf9 \strokec9 :\cf5 \strokec5  \cf9 \strokec9 [\cf5 \cb1 \strokec5 \
+\cb3           \cf13 \strokec13 "https://upload.wikimedia.org/wikipedia/en/5/51/Kendrick_Lamar_-_Damn.png"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3           \cf13 \strokec13 "https://f4.bcbits.com/img/a1236533191_10.jpg"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3           \cf13 \strokec13 "https://media1.jpc.de/image/w2400/front/0/5099747595912.jpg"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3           \cf13 \strokec13 "https://upload.wikimedia.org/wikipedia/en/2/2c/The_Blueprint.png"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3           \cf13 \strokec13 "https://f4.bcbits.com/img/a0883615686_10.jpg"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3           \cf13 \strokec13 "https://media.pitchfork.com/photos/5929bcb55e6ef95969322eda/master/w_1280,c_limit/5f06f7f6.jpg"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3           \cf13 \strokec13 "https://media1.jpc.de/image/w2400/rear/0/0196588867613.jpg"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3           \cf13 \strokec13 "https://m.media-amazon.com/images/I/71tT2xuLmZL._SX522_.jpg"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3           \cf13 \strokec13 "https://m.media-amazon.com/images/I/81allxc10aL._SX522_.jpg"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3           \cf13 \strokec13 "https://m.media-amazon.com/images/I/51PwmDQtG0L._AC_.jpg"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3           \cf13 \strokec13 "https://media1.jpc.de/image/w2400/front/0/0731451274329.jpg"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3           \cf13 \strokec13 "https://m.media-amazon.com/images/I/51lsZBhvHRL._SX522_.jpg"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3           \cf13 \strokec13 "https://m.media-amazon.com/images/I/91dHRGIV65L._SL1500_.jpg"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3           \cf13 \strokec13 "https://www.deejay.de/images/xl/7/0/1056070.jpg"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3           \cf13 \strokec13 "https://miccheque.com/wp-content/uploads/2022/04/vince-staples-ramona-park-broke-my-heart-cover-art.jpeg?w=1440&h=720&crop=1"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3           \cf13 \strokec13 "https://m.media-amazon.com/images/I/71RSQNcvbHL._SX466_.jpg"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3           \cf13 \strokec13 "https://media.pitchfork.com/photos/645ce904575213cbefca6fba/1:1/w_320,c_limit/Killer-Mike-Michael.jpg"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3           \cf13 \strokec13 "https://media.pitchfork.com/photos/6786c7c339a9f717a82a7ef8/1:1/w_320,c_limit/Mac-Miller-Swimming.jpeg"\cf5 \cb1 \strokec5 \
+\cb3         \cf9 \strokec9 ]\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3       reviews\cf9 \strokec9 :\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         label\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Reviews"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         items\cf9 \strokec9 :\cf5 \strokec5  \cf9 \strokec9 [\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3             id\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "01"\cf9 \strokec9 ,\cf5 \strokec5  cat\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Archive // Selection"\cf9 \strokec9 ,\cf5 \strokec5  subCat\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Signal Analysis"\cf9 \strokec9 ,\cf5 \strokec5  link\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "damn.html"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3             image\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "https://upload.wikimedia.org/wikipedia/en/5/51/Kendrick_Lamar_-_Damn.png"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3             text\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "A visceral confrontation with legacy and internal noise. Kendrick Lamar navigates the tension between public persona and private fear."\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3             accentColor\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "#7f1d1d"\cf9 \strokec9 ,\cf5 \strokec5  textColor\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "#ffffff"\cf9 \strokec9 ,\cf5 \strokec5  themeBg\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "#fdf2f2"\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3             id\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "02"\cf9 \strokec9 ,\cf5 \strokec5  cat\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Archive // Selection"\cf9 \strokec9 ,\cf5 \strokec5  subCat\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Signal Analysis"\cf9 \strokec9 ,\cf5 \strokec5  link\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "fluid meditations.html"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3             image\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "https://f4.bcbits.com/img/a1236533191_10.jpg"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3             text\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Hypnotic rhythmic pulses from DJ Gigola. A masterclass in techno."\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3             accentColor\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "#60a5fa"\cf9 \strokec9 ,\cf5 \strokec5  textColor\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "#0f172a"\cf9 \strokec9 ,\cf5 \strokec5  themeBg\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "#f0f5ff"\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3             id\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "03"\cf9 \strokec9 ,\cf5 \strokec5  cat\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Archive // Selection"\cf9 \strokec9 ,\cf5 \strokec5  subCat\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Signal Analysis"\cf9 \strokec9 ,\cf5 \strokec5  link\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "illmatic.html"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3             image\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "https://media1.jpc.de/image/w3200/front/0/5099747595912.jpg"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3             text\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "The definitive landmark of lyrical precision. Nas documents the urban landscape of Queensbridge."\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3             accentColor\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "#b45309"\cf9 \strokec9 ,\cf5 \strokec5  textColor\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "#fef3c7"\cf9 \strokec9 ,\cf5 \strokec5  themeBg\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "#fffaf0"\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3             id\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "04"\cf9 \strokec9 ,\cf5 \strokec5  cat\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Archive // Selection"\cf9 \strokec9 ,\cf5 \strokec5  subCat\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Signal Analysis"\cf9 \strokec9 ,\cf5 \strokec5  link\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "blueprint.html"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3             image\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "https://upload.wikimedia.org/wikipedia/en/2/2c/The_Blueprint.png"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3             text\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "The Blueprint redefined the sonic landscape of New York hip-hop, blending soulful samples with a commercial polish that remains a benchmark for the genre."\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3             accentColor\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "#1d4ed8"\cf9 \strokec9 ,\cf5 \strokec5  textColor\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "#ffffff"\cf9 \strokec9 ,\cf5 \strokec5  themeBg\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "#eff6ff"\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3             id\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "05"\cf9 \strokec9 ,\cf5 \strokec5  cat\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Archive // Selection"\cf9 \strokec9 ,\cf5 \strokec5  subCat\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Signal Analysis"\cf9 \strokec9 ,\cf5 \strokec5  link\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "blonde.html"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3             image\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "https://media.pitchfork.com/photos/5929bcb55e6ef95969322eda/master/w_1280,c_limit/5f06f7f6.jpg"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3             text\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Blonde is a masterwork of modern minimalism, capturing a fractured emotional landscape through unconventional structures and intimate vocal layering."\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3             accentColor\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "#dcfce7"\cf9 \strokec9 ,\cf5 \strokec5  textColor\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "#166534"\cf9 \strokec9 ,\cf5 \strokec5  themeBg\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "#f2fcf5"\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3             id\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "06"\cf9 \strokec9 ,\cf5 \strokec5  cat\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Archive // Selection"\cf9 \strokec9 ,\cf5 \strokec5  subCat\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Signal Analysis"\cf9 \strokec9 ,\cf5 \strokec5  link\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "greatescape.html"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3             image\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "https://m.media-amazon.com/images/I/81allxc10aL._SX522_.jpg"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3             text\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "The Great Escape showcases Larry June's effortless flow over lush, panoramic instrumentation that defines the modern West Coast sound."\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3             accentColor\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "#f97316"\cf9 \strokec9 ,\cf5 \strokec5  textColor\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "#ffffff"\cf9 \strokec9 ,\cf5 \strokec5  themeBg\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "#fff5ed"\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3         \cf9 \strokec9 ]\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3       lyric\cf9 \strokec9 :\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         label\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Favourite lyric"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         quote\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "I'm from the murder capital,\\nwhere we murder\\nfor capital"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         image\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "https://m.media-amazon.com/images/I/51RD1Jyiz3L._SX522_.jpg"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         track\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Lucifer"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         artist\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Ja\'9f-Z"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         p1\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "The lyric was orignally written by Kanye West, who is from Chicago. Chicago is often reffered to as the murder capital since it has the highest murder rate per 100.000 people."\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         p2\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Ja\'9f-Z actually capitalizes on the crack epidemic happening throught the 80's and 90's in New York. During these times New York had one of the highest murder rates."\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         p3\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "The lyric itself is a wordplay since money or capital was often the motivation for these murders. Kanye West later on used that line again in Murder to Excellence"\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3       beat\cf9 \strokec9 :\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         label\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Favourite beat"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         image\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "https://media.pitchfork.com/photos/65cc0e0600392f4625b1f9b3/1:1/w_600/Mk.gee-Two-Star-and-the-Dream-Police.jpg"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         artist\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Mk.gee"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         track\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Are You Looking Up"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         year\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "2024"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         p1\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 `Mk.gee's "Are You Looking Up" represents a paradigm shift in modern guitar-based production. The beat functions as a living, breathing organism.`\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         p2\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Built on a foundation of saturated, compressed drum breaks, the brilliance lies in the contrast: a muddy, lo-fi low end against crystalline, jagged guitar transients."\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         p3\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "A masterclass in using digital imperfections\'97clipping, hiss, and unstable pitch\'97to create a sense of profound intimacy and urgency in the listener."\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3       interviews\cf9 \strokec9 :\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         label\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Interviews"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         items\cf9 \strokec9 :\cf5 \strokec5  \cf9 \strokec9 [\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \{\cf5 \strokec5  name\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Maya Ellis"\cf9 \strokec9 ,\cf5 \strokec5  quote\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "\'93The void is where the sound begins, everything else is just architecture.\'94"\cf9 \strokec9 ,\cf5 \strokec5  image\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800"\cf5 \strokec5  \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \{\cf5 \strokec5  name\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Adrianne Lenker"\cf9 \strokec9 ,\cf5 \strokec5  quote\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "\'93My songs are like small houses I build to keep my memories warm.\'94"\cf9 \strokec9 ,\cf5 \strokec5  image\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "https://media.pitchfork.com/photos/65a6a4a159e13d7e5d263920/1:1/w_600/Adrianne-Lenker-Bright-Future.jpg"\cf5 \strokec5  \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \{\cf5 \strokec5  name\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Mk.gee"\cf9 \strokec9 ,\cf5 \strokec5  quote\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "\'93The guitar is just a controller for the soul's spectral frequency.\'94"\cf9 \strokec9 ,\cf5 \strokec5  image\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "https://media.pitchfork.com/photos/65cc0e0600392f4625b1f9b3/1:1/w_600/Mk.gee-Two-Star-and-the-Dream-Police.jpg"\cf5 \strokec5  \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \{\cf5 \strokec5  name\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Helena Hauff"\cf9 \strokec9 ,\cf5 \strokec5  quote\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "\'93I like machines that have a mind of their own.\'94"\cf9 \strokec9 ,\cf5 \strokec5  image\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "https://media.pitchfork.com/photos/5b1ed37c7676644f51952281/1:1/w_600/Helena-Hauff-Qualm.jpg"\cf5 \strokec5  \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \{\cf5 \strokec5  name\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "James Blake"\cf9 \strokec9 ,\cf5 \strokec5  quote\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "\'93Silence is just as much a part of the composition as the notes themselves.\'94"\cf9 \strokec9 ,\cf5 \strokec5  image\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "https://media.pitchfork.com/photos/613a0604084323e7f45778a4/1:1/w_600/James-Blake-Friends-That-Break-Your-Heart.jpg"\cf5 \strokec5  \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3         \cf9 \strokec9 ]\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3       opinion\cf9 \strokec9 :\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         label\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Opinion"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         items\cf9 \strokec9 :\cf5 \strokec5  \cf9 \strokec9 [\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \{\cf5 \strokec5  title\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "The Death of the Album?"\cf9 \strokec9 ,\cf5 \strokec5  excerpt\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "In an era of hyper-curated playlists, the cohesive long-form project faces its greatest challenge yet. We explore if narrative structure still holds value."\cf9 \strokec9 ,\cf5 \strokec5  image\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=800&auto=format&fit=crop"\cf5 \strokec5  \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \{\cf5 \strokec5  title\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Analog vs Digital"\cf9 \strokec9 ,\cf5 \strokec5  excerpt\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "The warmth of imperfections continues to outshine the clinical precision of modern software. The resurgence of tape is more than nostalgia."\cf9 \strokec9 ,\cf5 \strokec5  image\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=800&auto=format&fit=crop"\cf5 \strokec5  \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \{\cf5 \strokec5  title\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Global Rhythms"\cf9 \strokec9 ,\cf5 \strokec5  excerpt\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Geography no longer dictates sound. Cross-continental collaborations are blurring genre boundaries into something entirely new and undefinable."\cf9 \strokec9 ,\cf5 \strokec5  image\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "https://images.unsplash.com/photo-1444212477490-ca407925329e?q=80&w=800&auto=format&fit=crop"\cf5 \strokec5  \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \{\cf5 \strokec5  title\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "The Human Element"\cf9 \strokec9 ,\cf5 \strokec5  excerpt\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "As AI enters the creative suite, the value of the 'happy accident' becomes the ultimate luxury in modern production. Soul cannot be algorithmic."\cf9 \strokec9 ,\cf5 \strokec5  image\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=800&auto=format&fit=crop"\cf5 \strokec5  \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3         \cf9 \strokec9 ]\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3       soundboard\cf9 \strokec9 :\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         label\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Catalogue Overview"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         bgImage\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "https://i.pinimg.com/736x/cb/47/7b/cb477b4ddac03767c5fd2716037fe2b6.jpg"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         records\cf9 \strokec9 :\cf5 \strokec5  \cf9 \strokec9 [\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \{\cf5 \strokec5  name\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "DAMN."\cf9 \strokec9 ,\cf5 \strokec5  artist\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "KENDRICK LAMAR"\cf9 \strokec9 ,\cf5 \strokec5  no\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "S1-001"\cf9 \strokec9 ,\cf5 \strokec5  year\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "2017"\cf9 \strokec9 ,\cf5 \strokec5  image\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "https://media1.jpc.de/image/w3200/front/0/0602557618280.jpg"\cf5 \strokec5  \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3         \cf9 \strokec9 ]\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \},\cf5 \cb1 \strokec5 \
+\cb3       footer\cf9 \strokec9 :\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         tagline\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Dedicated to the high-fidelity critique and intentional listening experiences."\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         contactLink\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "contact.html"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         locations\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "Based in Berlin and Mannheim"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         year\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "\'a9 2025"\cf9 \strokec9 ,\cf5 \cb1 \strokec5 \
+\cb3         rights\cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "All Rights Reserved"\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3     \cf9 \strokec9 \};\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 </\cf2 \strokec2 script\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\
+\cb3   \cf11 \strokec11 <!-- ========================================== -->\cf5 \cb1 \strokec5 \
+\cb3   \cf11 \strokec11 <!-- 2. INJECTION & RENDERING LOGIC              -->\cf5 \cb1 \strokec5 \
+\cb3   \cf11 \strokec11 <!-- ========================================== -->\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf2 \strokec2 script\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     document\cf9 \strokec9 .\cf5 \strokec5 addEventListener\cf9 \strokec9 (\cf13 \strokec13 "DOMContentLoaded"\cf9 \strokec9 ,\cf5 \strokec5  \cf9 \strokec9 ()\cf5 \strokec5  \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3       \cf11 \strokec11 // Bind single data fields (texts & images)\cf5 \cb1 \strokec5 \
+\cb3       document\cf9 \strokec9 .\cf5 \strokec5 querySelectorAll\cf9 \strokec9 (\cf13 \strokec13 '[data-content]'\cf9 \strokec9 ).\cf5 \strokec5 forEach\cf9 \strokec9 (\cf5 \strokec5 el \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 const\cf5 \strokec5  keys \cf9 \strokec9 =\cf5 \strokec5  el\cf9 \strokec9 .\cf5 \strokec5 dataset\cf9 \strokec9 .\cf5 \strokec5 content\cf9 \strokec9 .\cf5 \strokec5 split\cf9 \strokec9 (\cf13 \strokec13 '.'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 let\cf5 \strokec5  val \cf9 \strokec9 =\cf5 \strokec5  \cf12 \strokec12 SITE_CONTENT\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         keys\cf9 \strokec9 .\cf5 \strokec5 forEach\cf9 \strokec9 (\cf5 \strokec5 k \cf9 \strokec9 =>\cf5 \strokec5  val \cf9 \strokec9 =\cf5 \strokec5  val\cf9 \strokec9 [\cf5 \strokec5 k\cf9 \strokec9 ]\cf5 \strokec5  \cf9 \strokec9 ||\cf5 \strokec5  val\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3         \cb1 \
+\cb3         \cf8 \strokec8 if\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 el\cf9 \strokec9 .\cf5 \strokec5 tagName \cf9 \strokec9 ===\cf5 \strokec5  \cf13 \strokec13 'IMG'\cf9 \strokec9 )\cf5 \strokec5  el\cf9 \strokec9 .\cf5 \strokec5 src \cf9 \strokec9 =\cf5 \strokec5  val\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 else\cf5 \strokec5  \cf8 \strokec8 if\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 el\cf9 \strokec9 .\cf5 \strokec5 tagName \cf9 \strokec9 ===\cf5 \strokec5  \cf13 \strokec13 'A'\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \strokec5  el\cf9 \strokec9 .\cf5 \strokec5 textContent \cf9 \strokec9 =\cf5 \strokec5  val\cf9 \strokec9 ;\cf5 \strokec5  el\cf9 \strokec9 .\cf5 \strokec5 href \cf9 \strokec9 =\cf5 \strokec5  val\cf9 \strokec9 ;\cf5 \strokec5  \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 else\cf5 \strokec5  \cf8 \strokec8 if\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 el\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 contains\cf9 \strokec9 (\cf13 \strokec13 'scroll-text-wrapper'\cf9 \strokec9 ))\cf5 \strokec5  el\cf9 \strokec9 .\cf5 \strokec5 dataset\cf9 \strokec9 .\cf5 \strokec5 text \cf9 \strokec9 =\cf5 \strokec5  val\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 else\cf5 \strokec5  el\cf9 \strokec9 .\cf5 \strokec5 textContent \cf9 \strokec9 =\cf5 \strokec5  val\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \});\cf5 \cb1 \strokec5 \
+\
+\cb3       \cf11 \strokec11 // Render Navigation\cf5 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  navLinksHTML \cf9 \strokec9 =\cf5 \strokec5  \cf12 \strokec12 SITE_CONTENT\cf9 \strokec9 .\cf5 \strokec5 nav\cf9 \strokec9 .\cf5 \strokec5 links\cf9 \strokec9 .\cf5 \strokec5 map\cf9 \strokec9 (\cf5 \strokec5 link \cf9 \strokec9 =>\cf5 \strokec5  \cb1 \
+\cb3         \cf13 \strokec13 `<a href="\cf9 \strokec9 $\{\cf5 \strokec5 link\cf9 \strokec9 .\cf5 \strokec5 url\cf9 \strokec9 \}\cf13 \strokec13 " class="flex-1 flex items-center justify-center border-r border-zinc-100 last:border-r-0 text-[7px] font-bold uppercase tracking-[0.5em] transition-all duration-300 hover:bg-zinc-950 hover:text-white group"><span>\cf9 \strokec9 $\{\cf5 \strokec5 link\cf9 \strokec9 .\cf5 \strokec5 text\cf9 \strokec9 \}\cf13 \strokec13 </span></a>`\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 ).\cf5 \strokec5 join\cf9 \strokec9 (\cf13 \strokec13 ''\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3       document\cf9 \strokec9 .\cf5 \strokec5 getElementById\cf9 \strokec9 (\cf13 \strokec13 'desktop-nav'\cf9 \strokec9 ).\cf5 \strokec5 innerHTML \cf9 \strokec9 =\cf5 \strokec5  navLinksHTML\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3       \cb1 \
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  mobileNavLinksHTML \cf9 \strokec9 =\cf5 \strokec5  \cf12 \strokec12 SITE_CONTENT\cf9 \strokec9 .\cf5 \strokec5 nav\cf9 \strokec9 .\cf5 \strokec5 links\cf9 \strokec9 .\cf5 \strokec5 map\cf9 \strokec9 (\cf5 \strokec5 link \cf9 \strokec9 =>\cf5 \strokec5  \cb1 \
+\cb3         \cf13 \strokec13 `<a href="\cf9 \strokec9 $\{\cf5 \strokec5 link\cf9 \strokec9 .\cf5 \strokec5 url\cf9 \strokec9 \}\cf13 \strokec13 " class="text-4xl font-bold tracking-tighter uppercase transition-all">\cf9 \strokec9 $\{\cf5 \strokec5 link\cf9 \strokec9 .\cf5 \strokec5 text\cf9 \strokec9 \}\cf13 \strokec13 </a>`\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 ).\cf5 \strokec5 join\cf9 \strokec9 (\cf13 \strokec13 ''\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3       document\cf9 \strokec9 .\cf5 \strokec5 getElementById\cf9 \strokec9 (\cf13 \strokec13 'mobile-nav-links'\cf9 \strokec9 ).\cf5 \strokec5 innerHTML \cf9 \strokec9 =\cf5 \strokec5  mobileNavLinksHTML\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  footerNavLinksHTML \cf9 \strokec9 =\cf5 \strokec5  \cf12 \strokec12 SITE_CONTENT\cf9 \strokec9 .\cf5 \strokec5 nav\cf9 \strokec9 .\cf5 \strokec5 links\cf9 \strokec9 .\cf5 \strokec5 map\cf9 \strokec9 (\cf5 \strokec5 link \cf9 \strokec9 =>\cf5 \strokec5  \cb1 \
+\cb3         \cf13 \strokec13 `<li><a href="\cf9 \strokec9 $\{\cf5 \strokec5 link\cf9 \strokec9 .\cf5 \strokec5 url\cf9 \strokec9 \}\cf13 \strokec13 " class="hover:text-zinc-950 transition-colors">\cf9 \strokec9 $\{\cf5 \strokec5 link\cf9 \strokec9 .\cf5 \strokec5 text\cf9 \strokec9 \}\cf13 \strokec13 </a></li>`\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 ).\cf5 \strokec5 join\cf9 \strokec9 (\cf13 \strokec13 ''\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3       document\cf9 \strokec9 .\cf5 \strokec5 getElementById\cf9 \strokec9 (\cf13 \strokec13 'footer-nav'\cf9 \strokec9 ).\cf5 \strokec5 innerHTML \cf9 \strokec9 =\cf5 \strokec5  footerNavLinksHTML\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\
+\cb3       \cf11 \strokec11 // Typewriter Texts Binding\cf5 \cb1 \strokec5 \
+\cb3       document\cf9 \strokec9 .\cf5 \strokec5 querySelectorAll\cf9 \strokec9 (\cf13 \strokec13 '.typewriter-section'\cf9 \strokec9 ).\cf5 \strokec5 forEach\cf9 \strokec9 ((\cf5 \strokec5 sec\cf9 \strokec9 ,\cf5 \strokec5  idx\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         sec\cf9 \strokec9 .\cf5 \strokec5 dataset\cf9 \strokec9 .\cf5 \strokec5 text \cf9 \strokec9 =\cf5 \strokec5  \cf12 \strokec12 SITE_CONTENT\cf9 \strokec9 .\cf5 \strokec5 typewriters\cf9 \strokec9 [\cf5 \strokec5 idx\cf9 \strokec9 ]\cf5 \strokec5  \cf9 \strokec9 ||\cf5 \strokec5  \cf13 \strokec13 ""\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \});\cf5 \cb1 \strokec5 \
+\
+\cb3       \cf11 \strokec11 // Sonic Reveal Title Binding\cf5 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  sonicTitleHtml \cf9 \strokec9 =\cf5 \strokec5  \cf12 \strokec12 SITE_CONTENT\cf9 \strokec9 .\cf5 \strokec5 sonicReveal\cf9 \strokec9 .\cf5 \strokec5 title\cf9 \strokec9 .\cf5 \strokec5 split\cf9 \strokec9 (\cf13 \strokec13 ''\cf9 \strokec9 ).\cf5 \strokec5 map\cf9 \strokec9 (\cf5 \strokec5 char \cf9 \strokec9 =>\cf5 \strokec5  \cb1 \
+\cb3         \cf13 \strokec13 `<span class="inline-block text-white transition-transform duration-500 sonic-char" style="transform: translateY(20px);">\cf9 \strokec9 $\{\cf5 \strokec5 char\cf9 \strokec9 \}\cf13 \strokec13 </span>`\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 ).\cf5 \strokec5 join\cf9 \strokec9 (\cf13 \strokec13 ''\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3       document\cf9 \strokec9 .\cf5 \strokec5 getElementById\cf9 \strokec9 (\cf13 \strokec13 'sonic-title'\cf9 \strokec9 ).\cf5 \strokec5 innerHTML \cf9 \strokec9 =\cf5 \strokec5  sonicTitleHtml\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\
+\cb3       \cf11 \strokec11 // Render Visual Archive\cf5 \cb1 \strokec5 \
+\cb3       document\cf9 \strokec9 .\cf5 \strokec5 getElementById\cf9 \strokec9 (\cf13 \strokec13 'visual-archive-grid'\cf9 \strokec9 ).\cf5 \strokec5 innerHTML \cf9 \strokec9 =\cf5 \strokec5  \cf12 \strokec12 SITE_CONTENT\cf9 \strokec9 .\cf5 \strokec5 archive\cf9 \strokec9 .\cf5 \strokec5 images\cf9 \strokec9 .\cf5 \strokec5 map\cf9 \strokec9 (\cf5 \strokec5 src \cf9 \strokec9 =>\cf5 \strokec5  \cb1 \
+\cb3         \cf13 \strokec13 `<div class="group relative aspect-square overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 ease-out cursor-crosshair bg-white"><img src="\cf9 \strokec9 $\{\cf5 \strokec5 src\cf9 \strokec9 \}\cf13 \strokec13 " alt="Archive" class="w-full h-full object-cover"/></div>`\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 ).\cf5 \strokec5 join\cf9 \strokec9 (\cf13 \strokec13 ''\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\
+\cb3       \cf11 \strokec11 // Render Review Cards\cf5 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  r \cf9 \strokec9 =\cf5 \strokec5  \cf12 \strokec12 SITE_CONTENT\cf9 \strokec9 .\cf5 \strokec5 reviews\cf9 \strokec9 .\cf5 \strokec5 items\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  buildReviewCard \cf9 \strokec9 =\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 data\cf9 \strokec9 ,\cf5 \strokec5  extraImageClasses \cf9 \strokec9 =\cf5 \strokec5  \cf13 \strokec13 ''\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 =>\cf5 \strokec5  \cf13 \strokec13 `\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf13 \cb3 \strokec13         <div class="preview-card relative flex flex-col justify-between group shadow-sm hover:shadow-2xl p-6 border border-zinc-200/50 z-10 transition-all duration-700 ease-out w-full" \cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13              style="background-color: #FFFFFF" data-accent="\cf9 \strokec9 $\{\cf5 \strokec5 data\cf9 \strokec9 .\cf5 \strokec5 accentColor\cf9 \strokec9 \}\cf13 \strokec13 " data-textcolor="\cf9 \strokec9 $\{\cf5 \strokec5 data\cf9 \strokec9 .\cf5 \strokec5 textColor\cf9 \strokec9 \}\cf13 \strokec13 " \cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13              onmouseenter="handleCardHover(this, true)" onmouseleave="handleCardHover(this, false)">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           <div class="flex justify-between items-baseline mb-4">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             <div class="flex flex-col">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13               <span class="dynamic-text text-[10px] font-bold tracking-[0.3em] uppercase transition-colors duration-500 text-zinc-300">\cf9 \strokec9 $\{\cf5 \strokec5 data\cf9 \strokec9 .\cf5 \strokec5 cat\cf9 \strokec9 \}\cf13 \strokec13 </span>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13               <span class="dynamic-text text-[9px] font-sans font-bold mt-1 uppercase tracking-widest transition-colors duration-500 text-zinc-400">\cf9 \strokec9 $\{\cf5 \strokec5 data\cf9 \strokec9 .\cf5 \strokec5 subCat\cf9 \strokec9 \}\cf13 \strokec13 </span>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             <span class="dynamic-text text-3xl font-black tracking-tighter leading-none transition-colors duration-500 text-zinc-950">\cf9 \strokec9 $\{\cf5 \strokec5 data\cf9 \strokec9 .\cf5 \strokec5 id\cf9 \strokec9 \}\cf13 \strokec13 </span>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           <div class="w-full overflow-hidden relative flex flex-col items-center justify-center \cf9 \strokec9 $\{\cf5 \strokec5 extraImageClasses\cf9 \strokec9 \}\cf13 \strokec13 ">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             <div class="aspect-[4/5] w-full relative flex items-center justify-center overflow-hidden">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13               <a href="\cf9 \strokec9 $\{\cf5 \strokec5 data\cf9 \strokec9 .\cf5 \strokec5 link\cf9 \strokec9 \}\cf13 \strokec13 " class="h-full max-w-full aspect-square relative flex items-center justify-center overflow-hidden block">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13                 <img src="\cf9 \strokec9 $\{\cf5 \strokec5 data\cf9 \strokec9 .\cf5 \strokec5 image\cf9 \strokec9 \}\cf13 \strokec13 " alt="Choice \cf9 \strokec9 $\{\cf5 \strokec5 data\cf9 \strokec9 .\cf5 \strokec5 id\cf9 \strokec9 \}\cf13 \strokec13 " class="w-full h-full object-contain transition-all duration-700 ease-in-out transform scale-100 group-hover:scale-[0.95]" />\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13               </a>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           <div class="mt-4">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             <p class="dynamic-border dynamic-p text-xs md:text-sm font-bold leading-snug border-l-2 pl-4 pr-2 transition-all duration-500 text-zinc-600 border-zinc-100">\cf9 \strokec9 $\{\cf5 \strokec5 data\cf9 \strokec9 .\cf5 \strokec5 text\cf9 \strokec9 \}\cf13 \strokec13 </p>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13         </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13       `\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3       \cf8 \strokec8 const\cf5 \strokec5  buildPanoramaCard \cf9 \strokec9 =\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 data\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 =>\cf5 \strokec5  \cf13 \strokec13 `\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf13 \cb3 \strokec13         <div class="preview-card relative flex flex-col group shadow-sm hover:shadow-2xl p-6 md:p-12 border border-zinc-200/50 z-10 transition-all duration-700 ease-out w-full"\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13              style="background-color: #FFFFFF" data-accent="\cf9 \strokec9 $\{\cf5 \strokec5 data\cf9 \strokec9 .\cf5 \strokec5 accentColor\cf9 \strokec9 \}\cf13 \strokec13 " data-textcolor="\cf9 \strokec9 $\{\cf5 \strokec5 data\cf9 \strokec9 .\cf5 \strokec5 textColor\cf9 \strokec9 \}\cf13 \strokec13 "\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13              onmouseenter="handleCardHover(this, true)" onmouseleave="handleCardHover(this, false)">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           <div class="flex justify-between items-baseline mb-8">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             <div class="flex flex-col">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13               <span class="dynamic-text text-[10px] font-bold tracking-[0.3em] uppercase transition-colors duration-500 text-zinc-300">\cf9 \strokec9 $\{\cf5 \strokec5 data\cf9 \strokec9 .\cf5 \strokec5 cat\cf9 \strokec9 \}\cf13 \strokec13 </span>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13               <span class="dynamic-text text-[9px] font-sans font-bold mt-1 uppercase tracking-widest transition-colors duration-500 text-zinc-400">\cf9 \strokec9 $\{\cf5 \strokec5 data\cf9 \strokec9 .\cf5 \strokec5 subCat\cf9 \strokec9 \}\cf13 \strokec13 </span>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             <span class="dynamic-text text-3xl font-black tracking-tighter leading-none transition-colors duration-500 text-zinc-950">\cf9 \strokec9 $\{\cf5 \strokec5 data\cf9 \strokec9 .\cf5 \strokec5 id\cf9 \strokec9 \}\cf13 \strokec13 </span>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12 w-full h-full">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             <div class="w-full md:w-1/2 flex items-center justify-center overflow-hidden">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13               <a href="\cf9 \strokec9 $\{\cf5 \strokec5 data\cf9 \strokec9 .\cf5 \strokec5 link\cf9 \strokec9 \}\cf13 \strokec13 " class="aspect-square w-full max-w-sm md:max-w-md relative flex items-center justify-center overflow-hidden block">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13                 <img src="\cf9 \strokec9 $\{\cf5 \strokec5 data\cf9 \strokec9 .\cf5 \strokec5 image\cf9 \strokec9 \}\cf13 \strokec13 " alt="Choice \cf9 \strokec9 $\{\cf5 \strokec5 data\cf9 \strokec9 .\cf5 \strokec5 id\cf9 \strokec9 \}\cf13 \strokec13 " class="w-full h-full object-contain transition-all duration-700 ease-in-out transform scale-100 group-hover:scale-[0.95]" />\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13               </a>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             <div class="w-full md:w-1/2 flex flex-col justify-center">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13               <p class="dynamic-border dynamic-p text-sm md:text-lg font-bold leading-relaxed border-l-2 pl-6 pr-4 transition-all duration-500 text-zinc-600 border-zinc-100">\cf9 \strokec9 $\{\cf5 \strokec5 data\cf9 \strokec9 .\cf5 \strokec5 text\cf9 \strokec9 \}\cf13 \strokec13 </p>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13         </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13       `\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3       document\cf9 \strokec9 .\cf5 \strokec5 getElementById\cf9 \strokec9 (\cf13 \strokec13 'reviews-container'\cf9 \strokec9 ).\cf5 \strokec5 innerHTML \cf9 \strokec9 =\cf5 \strokec5  \cf13 \strokec13 `\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf13 \cb3 \strokec13         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 items-start overflow-visible">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           <!-- Left Column -->\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           <div class="flex flex-col items-start w-full">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             \cf9 \strokec9 $\{\cf5 \strokec5 buildReviewCard\cf9 \strokec9 (\cf5 \strokec5 r\cf9 \strokec9 [\cf14 \strokec14 0\cf9 \strokec9 ])\}\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             <div class="relative w-full mt-12 md:mt-[8vh]">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13               <div class="w-full relative z-10">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13                 \cf9 \strokec9 $\{\cf5 \strokec5 buildReviewCard\cf9 \strokec9 (\cf5 \strokec5 r\cf9 \strokec9 [\cf14 \strokec14 2\cf9 \strokec9 ])\}\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13               </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           <!-- Right Column -->\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           <div class="flex flex-col md:pt-24 overflow-visible items-end w-full mt-12 md:mt-0">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             <div class="w-full sm:w-full md:w-full max-w-none self-end md:self-start aspect-square flex relative z-20 mt-0">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13               \cf9 \strokec9 $\{\cf5 \strokec5 buildReviewCard\cf9 \strokec9 (\cf5 \strokec5 r\cf9 \strokec9 [\cf14 \strokec14 1\cf9 \strokec9 ],\cf5 \strokec5  \cf13 \strokec13 'flex-1 mb-2'\cf9 \strokec9 )\}\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13         </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13         <div class="w-full mt-16 md:mt-[10vh]">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           \cf9 \strokec9 $\{\cf5 \strokec5 buildPanoramaCard\cf9 \strokec9 (\cf5 \strokec5 r\cf9 \strokec9 [\cf14 \strokec14 3\cf9 \strokec9 ])\}\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13         </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 mt-16 md:mt-[10vh] pb-24 md:pb-32">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           <div class="w-full">\cf9 \strokec9 $\{\cf5 \strokec5 buildReviewCard\cf9 \strokec9 (\cf5 \strokec5 r\cf9 \strokec9 [\cf14 \strokec14 4\cf9 \strokec9 ])\}\cf13 \strokec13 </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           <div class="w-full">\cf9 \strokec9 $\{\cf5 \strokec5 buildReviewCard\cf9 \strokec9 (\cf5 \strokec5 r\cf9 \strokec9 [\cf14 \strokec14 5\cf9 \strokec9 ])\}\cf13 \strokec13 </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13         </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13       `\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3       \cf11 \strokec11 // Render Interviews\cf5 \cb1 \strokec5 \
+\cb3       document\cf9 \strokec9 .\cf5 \strokec5 getElementById\cf9 \strokec9 (\cf13 \strokec13 'interviews-container'\cf9 \strokec9 ).\cf5 \strokec5 innerHTML \cf9 \strokec9 =\cf5 \strokec5  \cf12 \strokec12 SITE_CONTENT\cf9 \strokec9 .\cf5 \strokec5 interviews\cf9 \strokec9 .\cf5 \strokec5 items\cf9 \strokec9 .\cf5 \strokec5 map\cf9 \strokec9 (\cf5 \strokec5 item \cf9 \strokec9 =>\cf5 \strokec5  \cf13 \strokec13 `\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf13 \cb3 \strokec13         <div class="flex flex-col items-start shrink-0 group w-[75vw] md:w-[32vw]">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           <div class="w-full overflow-hidden transition-all duration-1000 bg-zinc-50 border border-zinc-100 shadow-sm aspect-[3/4]">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             <img src="\cf9 \strokec9 $\{\cf5 \strokec5 item\cf9 \strokec9 .\cf5 \strokec5 image\cf9 \strokec9 \}\cf13 \strokec13 " alt="\cf9 \strokec9 $\{\cf5 \strokec5 item\cf9 \strokec9 .\cf5 \strokec5 name\cf9 \strokec9 \}\cf13 \strokec13 " class="w-full h-full object-cover transition-transform duration-1000 scale-100 group-hover:scale-105" />\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           <div class="mt-6 space-y-3 w-full pb-16">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             <h3 class="text-[10px] md:text-[11px] font-black tracking-[0.45em] uppercase text-zinc-950 leading-none">\cf9 \strokec9 $\{\cf5 \strokec5 item\cf9 \strokec9 .\cf5 \strokec5 name\cf9 \strokec9 \}\cf13 \strokec13 </h3>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             <div class="w-5 h-px bg-zinc-200"></div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             <p class="text-sm md:text-base font-medium text-zinc-500 italic leading-relaxed break-words max-w-full">\cf9 \strokec9 $\{\cf5 \strokec5 item\cf9 \strokec9 .\cf5 \strokec5 quote\cf9 \strokec9 \}\cf13 \strokec13 </p>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13         </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13       `\cf9 \strokec9 ).\cf5 \strokec5 join\cf9 \strokec9 (\cf13 \strokec13 ''\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3       \cf11 \strokec11 // Render Opinions\cf5 \cb1 \strokec5 \
+\cb3       document\cf9 \strokec9 .\cf5 \strokec5 getElementById\cf9 \strokec9 (\cf13 \strokec13 'opinion-container'\cf9 \strokec9 ).\cf5 \strokec5 innerHTML \cf9 \strokec9 =\cf5 \strokec5  \cf12 \strokec12 SITE_CONTENT\cf9 \strokec9 .\cf5 \strokec5 opinion\cf9 \strokec9 .\cf5 \strokec5 items\cf9 \strokec9 .\cf5 \strokec5 map\cf9 \strokec9 (\cf5 \strokec5 item \cf9 \strokec9 =>\cf5 \strokec5  \cf13 \strokec13 `\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf13 \cb3 \strokec13         <div class="flex flex-col group">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           <h3 class="text-sm font-bold uppercase tracking-tight text-zinc-950 mb-4 md:mb-5 pb-3 md:pb-4 border-b border-zinc-100 group-hover:text-zinc-500 transition-colors">\cf9 \strokec9 $\{\cf5 \strokec5 item\cf9 \strokec9 .\cf5 \strokec5 title\cf9 \strokec9 \}\cf13 \strokec13 </h3>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           <div class="w-full aspect-[4/3] overflow-hidden bg-zinc-50 mb-6 shadow-sm border border-zinc-100">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             <img src="\cf9 \strokec9 $\{\cf5 \strokec5 item\cf9 \strokec9 .\cf5 \strokec5 image\cf9 \strokec9 \}\cf13 \strokec13 " alt="\cf9 \strokec9 $\{\cf5 \strokec5 item\cf9 \strokec9 .\cf5 \strokec5 title\cf9 \strokec9 \}\cf13 \strokec13 " class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700" />\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           <p class="text-[11px] leading-relaxed text-zinc-500 font-medium tracking-tight">\cf9 \strokec9 $\{\cf5 \strokec5 item\cf9 \strokec9 .\cf5 \strokec5 excerpt\cf9 \strokec9 \}\cf13 \strokec13 </p>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13         </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13       `\cf9 \strokec9 ).\cf5 \strokec5 join\cf9 \strokec9 (\cf13 \strokec13 ''\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3       \cf11 \strokec11 // Render Soundboard Covers\cf5 \cb1 \strokec5 \
+\cb3       document\cf9 \strokec9 .\cf5 \strokec5 getElementById\cf9 \strokec9 (\cf13 \strokec13 'soundboard-covers'\cf9 \strokec9 ).\cf5 \strokec5 innerHTML \cf9 \strokec9 =\cf5 \strokec5  \cf12 \strokec12 SITE_CONTENT\cf9 \strokec9 .\cf5 \strokec5 soundboard\cf9 \strokec9 .\cf5 \strokec5 records\cf9 \strokec9 .\cf5 \strokec5 map\cf9 \strokec9 (\cf5 \strokec5 rec \cf9 \strokec9 =>\cf5 \strokec5  \cf13 \strokec13 `\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf13 \cb3 \strokec13         <img src="\cf9 \strokec9 $\{\cf5 \strokec5 rec\cf9 \strokec9 .\cf5 \strokec5 image\cf9 \strokec9 \}\cf13 \strokec13 " data-album="\cf9 \strokec9 $\{\cf5 \strokec5 rec\cf9 \strokec9 .\cf5 \strokec5 name\cf9 \strokec9 \}\cf13 \strokec13 " alt="\cf9 \strokec9 $\{\cf5 \strokec5 rec\cf9 \strokec9 .\cf5 \strokec5 name\cf9 \strokec9 \}\cf13 \strokec13 " class="absolute inset-0 m-auto max-w-full max-h-[70%] object-contain shadow-2xl transition-all duration-700 cubic-bezier(0.23, 1, 0.32, 1) opacity-0 scale-110 translate-y-10 pointer-events-none" />\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13       `\cf9 \strokec9 ).\cf5 \strokec5 join\cf9 \strokec9 (\cf13 \strokec13 ''\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3       \cf11 \strokec11 // Render Soundboard Rows\cf5 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  rowsInner \cf9 \strokec9 =\cf5 \strokec5  document\cf9 \strokec9 .\cf5 \strokec5 createElement\cf9 \strokec9 (\cf13 \strokec13 'div'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3       rowsInner\cf9 \strokec9 .\cf5 \strokec5 className \cf9 \strokec9 =\cf5 \strokec5  \cf13 \strokec13 "relative flex-1"\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3       rowsInner\cf9 \strokec9 .\cf5 \strokec5 innerHTML \cf9 \strokec9 =\cf5 \strokec5  \cf12 \strokec12 SITE_CONTENT\cf9 \strokec9 .\cf5 \strokec5 soundboard\cf9 \strokec9 .\cf5 \strokec5 records\cf9 \strokec9 .\cf5 \strokec5 map\cf9 \strokec9 (\cf5 \strokec5 rec \cf9 \strokec9 =>\cf5 \strokec5  \cf13 \strokec13 `\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf13 \cb3 \strokec13         <a href="\cf9 \strokec9 $\{\cf5 \strokec5 rec\cf9 \strokec9 .\cf5 \strokec5 name\cf9 \strokec9 .\cf5 \strokec5 toLowerCase\cf9 \strokec9 ()\}\cf13 \strokec13 .html" class="relative group cursor-pointer block" onmouseenter="handleSoundboardHover('\cf9 \strokec9 $\{\cf5 \strokec5 rec\cf9 \strokec9 .\cf5 \strokec5 name\cf9 \strokec9 \}\cf13 \strokec13 ')" onmouseleave="handleSoundboardHover(null)">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-[5]"></div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           <div class="relative z-20 grid grid-cols-12 gap-2 md:gap-4 py-2.5 items-baseline">\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             <div class="col-span-5 md:col-span-2"><h3 class="text-[10px] md:text-[11px] font-bold tracking-[0.1em] text-white uppercase truncate">\cf9 \strokec9 $\{\cf5 \strokec5 rec\cf9 \strokec9 .\cf5 \strokec5 name\cf9 \strokec9 \}\cf13 \strokec13 </h3></div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             <div class="col-span-4 md:col-span-2"><p class="text-[9px] md:text-[10px] font-bold tracking-[0.1em] text-white opacity-60 group-hover:opacity-100 transition-opacity uppercase truncate">\cf9 \strokec9 $\{\cf5 \strokec5 rec\cf9 \strokec9 .\cf5 \strokec5 artist\cf9 \strokec9 \}\cf13 \strokec13 </p></div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             <div class="hidden md:block md:col-span-4"></div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             <div class="hidden md:block md:col-span-2 text-center"><span class="text-[11px] font-bold tracking-[0.1em] text-white uppercase">\cf9 \strokec9 $\{\cf5 \strokec5 rec\cf9 \strokec9 .\cf5 \strokec5 year\cf9 \strokec9 \}\cf13 \strokec13 </span></div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13             <div class="col-span-3 md:col-span-2 text-right md:text-center"><span class="text-[10px] md:text-[11px] font-bold tracking-[0.1em] text-white uppercase">\cf9 \strokec9 $\{\cf5 \strokec5 rec\cf9 \strokec9 .\cf5 \strokec5 no\cf9 \strokec9 \}\cf13 \strokec13 </span></div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13           </div>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13         </a>\cf5 \cb1 \strokec5 \
+\cf13 \cb3 \strokec13       `\cf9 \strokec9 ).\cf5 \strokec5 join\cf9 \strokec9 (\cf13 \strokec13 ''\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3       document\cf9 \strokec9 .\cf5 \strokec5 getElementById\cf9 \strokec9 (\cf13 \strokec13 'soundboard-rows'\cf9 \strokec9 ).\cf5 \strokec5 appendChild\cf9 \strokec9 (\cf5 \strokec5 rowsInner\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3       \cb1 \
+\cb3       initializeAnimations\cf9 \strokec9 ();\cf5 \cb1 \strokec5 \
+\cb3     \cf9 \strokec9 \});\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 </\cf2 \strokec2 script\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\
+\cb3   \cf11 \strokec11 <!-- ========================================== -->\cf5 \cb1 \strokec5 \
+\cb3   \cf11 \strokec11 <!-- 3. INTERACTION & ANIMATION LOGIC            -->\cf5 \cb1 \strokec5 \
+\cb3   \cf11 \strokec11 <!-- ========================================== -->\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf2 \strokec2 script\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     \cf8 \strokec8 function\cf5 \strokec5  initializeAnimations\cf9 \strokec9 ()\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3       \cf11 \strokec11 // --- Mobile Menu Toggle ---\cf5 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  menuBtn \cf9 \strokec9 =\cf5 \strokec5  document\cf9 \strokec9 .\cf5 \strokec5 getElementById\cf9 \strokec9 (\cf13 \strokec13 'mobile-menu-btn'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  menuOverlay \cf9 \strokec9 =\cf5 \strokec5  document\cf9 \strokec9 .\cf5 \strokec5 getElementById\cf9 \strokec9 (\cf13 \strokec13 'mobile-menu-overlay'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  menuCloseBtn \cf9 \strokec9 =\cf5 \strokec5  document\cf9 \strokec9 .\cf5 \strokec5 getElementById\cf9 \strokec9 (\cf13 \strokec13 'mobile-menu-close-btn'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  menuImg \cf9 \strokec9 =\cf5 \strokec5  document\cf9 \strokec9 .\cf5 \strokec5 getElementById\cf9 \strokec9 (\cf13 \strokec13 'mobile-menu-img'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  menuCloseIcon \cf9 \strokec9 =\cf5 \strokec5  document\cf9 \strokec9 .\cf5 \strokec5 getElementById\cf9 \strokec9 (\cf13 \strokec13 'mobile-menu-close'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3       \cb1 \
+\cb3       \cf8 \strokec8 let\cf5 \strokec5  isMenuOpen \cf9 \strokec9 =\cf5 \strokec5  \cf8 \strokec8 false\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  toggleMenu \cf9 \strokec9 =\cf5 \strokec5  \cf9 \strokec9 ()\cf5 \strokec5  \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         isMenuOpen \cf9 \strokec9 =\cf5 \strokec5  \cf9 \strokec9 !\cf5 \strokec5 isMenuOpen\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 if\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 isMenuOpen\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3           menuOverlay\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 remove\cf9 \strokec9 (\cf13 \strokec13 'hidden'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3           setTimeout\cf9 \strokec9 (()\cf5 \strokec5  \cf9 \strokec9 =>\cf5 \strokec5  menuOverlay\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 remove\cf9 \strokec9 (\cf13 \strokec13 'opacity-0'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'pointer-events-none'\cf9 \strokec9 ),\cf5 \strokec5  \cf14 \strokec14 10\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3           menuImg\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 add\cf9 \strokec9 (\cf13 \strokec13 'brightness-0'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'invert'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3           menuCloseIcon\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 remove\cf9 \strokec9 (\cf13 \strokec13 'hidden'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3         \cf9 \strokec9 \}\cf5 \strokec5  \cf8 \strokec8 else\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3           menuOverlay\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 add\cf9 \strokec9 (\cf13 \strokec13 'opacity-0'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'pointer-events-none'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3           setTimeout\cf9 \strokec9 (()\cf5 \strokec5  \cf9 \strokec9 =>\cf5 \strokec5  menuOverlay\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 add\cf9 \strokec9 (\cf13 \strokec13 'hidden'\cf9 \strokec9 ),\cf5 \strokec5  \cf14 \strokec14 500\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3           menuImg\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 remove\cf9 \strokec9 (\cf13 \strokec13 'brightness-0'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'invert'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3           menuCloseIcon\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 add\cf9 \strokec9 (\cf13 \strokec13 'hidden'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3         \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \};\cf5 \cb1 \strokec5 \
+\
+\cb3       menuBtn\cf9 \strokec9 .\cf5 \strokec5 addEventListener\cf9 \strokec9 (\cf13 \strokec13 'click'\cf9 \strokec9 ,\cf5 \strokec5  toggleMenu\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3       menuCloseBtn\cf9 \strokec9 .\cf5 \strokec5 addEventListener\cf9 \strokec9 (\cf13 \strokec13 'click'\cf9 \strokec9 ,\cf5 \strokec5  toggleMenu\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3       menuOverlay\cf9 \strokec9 .\cf5 \strokec5 querySelectorAll\cf9 \strokec9 (\cf13 \strokec13 'a'\cf9 \strokec9 ).\cf5 \strokec5 forEach\cf9 \strokec9 (\cf5 \strokec5 a \cf9 \strokec9 =>\cf5 \strokec5  a\cf9 \strokec9 .\cf5 \strokec5 addEventListener\cf9 \strokec9 (\cf13 \strokec13 'click'\cf9 \strokec9 ,\cf5 \strokec5  \cf9 \strokec9 ()\cf5 \strokec5  \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \strokec5  \cf8 \strokec8 if\cf9 \strokec9 (\cf5 \strokec5 isMenuOpen\cf9 \strokec9 )\cf5 \strokec5  toggleMenu\cf9 \strokec9 ();\cf5 \strokec5  \cf9 \strokec9 \}));\cf5 \cb1 \strokec5 \
+\
+\cb3       \cf11 \strokec11 // --- Navigation Visibility Logic (Hide on Scroll, regardless of direction) ---\cf5 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  nav \cf9 \strokec9 =\cf5 \strokec5  document\cf9 \strokec9 .\cf5 \strokec5 getElementById\cf9 \strokec9 (\cf13 \strokec13 'main-nav'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  missionSection \cf9 \strokec9 =\cf5 \strokec5  document\cf9 \strokec9 .\cf5 \strokec5 getElementById\cf9 \strokec9 (\cf13 \strokec13 'mission-section'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 let\cf5 \strokec5  scrollTimeout\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  handleNavScroll \cf9 \strokec9 =\cf5 \strokec5  \cf9 \strokec9 ()\cf5 \strokec5  \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         nav\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 add\cf9 \strokec9 (\cf13 \strokec13 '-translate-y-full'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'opacity-0'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3         nav\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 remove\cf9 \strokec9 (\cf13 \strokec13 'translate-y-0'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'opacity-100'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\
+\cb3         clearTimeout\cf9 \strokec9 (\cf5 \strokec5 scrollTimeout\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3         scrollTimeout \cf9 \strokec9 =\cf5 \strokec5  setTimeout\cf9 \strokec9 (()\cf5 \strokec5  \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3           \cf8 \strokec8 const\cf5 \strokec5  missionTop \cf9 \strokec9 =\cf5 \strokec5  missionSection\cf9 \strokec9 .\cf5 \strokec5 getBoundingClientRect\cf9 \strokec9 ().\cf5 \strokec5 top\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3           \cf8 \strokec8 if\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 missionTop \cf9 \strokec9 <=\cf5 \strokec5  \cf14 \strokec14 10\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3             nav\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 remove\cf9 \strokec9 (\cf13 \strokec13 '-translate-y-full'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'opacity-0'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3             nav\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 add\cf9 \strokec9 (\cf13 \strokec13 'translate-y-0'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'opacity-100'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3         \cf9 \strokec9 \},\cf5 \strokec5  \cf14 \strokec14 800\cf9 \strokec9 );\cf5 \strokec5  \cb1 \
+\cb3       \cf9 \strokec9 \};\cf5 \cb1 \strokec5 \
+\
+\cb3       window\cf9 \strokec9 .\cf5 \strokec5 addEventListener\cf9 \strokec9 (\cf13 \strokec13 'scroll'\cf9 \strokec9 ,\cf5 \strokec5  handleNavScroll\cf9 \strokec9 ,\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \strokec5  passive\cf9 \strokec9 :\cf5 \strokec5  \cf8 \strokec8 true\cf5 \strokec5  \cf9 \strokec9 \});\cf5 \cb1 \strokec5 \
+\
+\cb3       \cf11 \strokec11 // --- Sonic Reveal Logic ---\cf5 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  sonicRevealSection \cf9 \strokec9 =\cf5 \strokec5  document\cf9 \strokec9 .\cf5 \strokec5 getElementById\cf9 \strokec9 (\cf13 \strokec13 'sonic-reveal'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  sonicBg \cf9 \strokec9 =\cf5 \strokec5  document\cf9 \strokec9 .\cf5 \strokec5 getElementById\cf9 \strokec9 (\cf13 \strokec13 'sonic-bg'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  sonicTitle \cf9 \strokec9 =\cf5 \strokec5  document\cf9 \strokec9 .\cf5 \strokec5 getElementById\cf9 \strokec9 (\cf13 \strokec13 'sonic-title'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  sonicChars \cf9 \strokec9 =\cf5 \strokec5  document\cf9 \strokec9 .\cf5 \strokec5 querySelectorAll\cf9 \strokec9 (\cf13 \strokec13 '.sonic-char'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  sonicSeason \cf9 \strokec9 =\cf5 \strokec5  document\cf9 \strokec9 .\cf5 \strokec5 getElementById\cf9 \strokec9 (\cf13 \strokec13 'sonic-season'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\
+\cb3       \cf8 \strokec8 let\cf5 \strokec5  sonicTriggered \cf9 \strokec9 =\cf5 \strokec5  \cf8 \strokec8 false\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  easeInOutQuart \cf9 \strokec9 =\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 x\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 return\cf5 \strokec5  x \cf9 \strokec9 <\cf5 \strokec5  \cf14 \strokec14 0.5\cf5 \strokec5  \cf9 \strokec9 ?\cf5 \strokec5  \cf14 \strokec14 8\cf5 \strokec5  \cf9 \strokec9 *\cf5 \strokec5  x \cf9 \strokec9 *\cf5 \strokec5  x \cf9 \strokec9 *\cf5 \strokec5  x \cf9 \strokec9 *\cf5 \strokec5  x \cf9 \strokec9 :\cf5 \strokec5  \cf14 \strokec14 1\cf5 \strokec5  \cf9 \strokec9 -\cf5 \strokec5  \cf12 \strokec12 Math\cf9 \strokec9 .\cf5 \strokec5 pow\cf9 \strokec9 (-\cf14 \strokec14 2\cf5 \strokec5  \cf9 \strokec9 *\cf5 \strokec5  x \cf9 \strokec9 +\cf5 \strokec5  \cf14 \strokec14 2\cf9 \strokec9 ,\cf5 \strokec5  \cf14 \strokec14 4\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 /\cf5 \strokec5  \cf14 \strokec14 2\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \};\cf5 \cb1 \strokec5 \
+\
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  updateSonicUI \cf9 \strokec9 =\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 linearProgress\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 const\cf5 \strokec5  revealProgress \cf9 \strokec9 =\cf5 \strokec5  easeInOutQuart\cf9 \strokec9 (\cf5 \strokec5 linearProgress\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 const\cf5 \strokec5  visibilityFactor \cf9 \strokec9 =\cf5 \strokec5  \cf12 \strokec12 Math\cf9 \strokec9 .\cf5 \strokec5 min\cf9 \strokec9 (\cf14 \strokec14 1\cf9 \strokec9 ,\cf5 \strokec5  revealProgress \cf9 \strokec9 *\cf5 \strokec5  \cf14 \strokec14 1.5\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3         sonicBg\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 opacity \cf9 \strokec9 =\cf5 \strokec5  visibilityFactor \cf9 \strokec9 *\cf5 \strokec5  \cf14 \strokec14 0.35\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         sonicBg\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 filter \cf9 \strokec9 =\cf5 \strokec5  \cf13 \strokec13 `blur(\cf9 \strokec9 $\{(\cf14 \strokec14 1\cf5 \strokec5  \cf9 \strokec9 -\cf5 \strokec5  revealProgress\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 *\cf5 \strokec5  \cf14 \strokec14 15\cf9 \strokec9 \}\cf13 \strokec13 px)`\cf9 \strokec9 ;\cf5 \strokec5  \cb1 \
+\cb3         sonicBg\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 transform \cf9 \strokec9 =\cf5 \strokec5  \cf13 \strokec13 `scale(\cf9 \strokec9 $\{\cf14 \strokec14 1.2\cf5 \strokec5  \cf9 \strokec9 -\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 revealProgress \cf9 \strokec9 *\cf5 \strokec5  \cf14 \strokec14 0.2\cf9 \strokec9 )\}\cf13 \strokec13 )`\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         sonicTitle\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 opacity \cf9 \strokec9 =\cf5 \strokec5  revealProgress\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         sonicTitle\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 filter \cf9 \strokec9 =\cf5 \strokec5  \cf13 \strokec13 `blur(\cf9 \strokec9 $\{(\cf14 \strokec14 1\cf5 \strokec5  \cf9 \strokec9 -\cf5 \strokec5  revealProgress\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 *\cf5 \strokec5  \cf14 \strokec14 15\cf9 \strokec9 \}\cf13 \strokec13 px)`\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         sonicTitle\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 letterSpacing \cf9 \strokec9 =\cf5 \strokec5  \cf13 \strokec13 `\cf9 \strokec9 $\{-\cf14 \strokec14 0.15\cf5 \strokec5  \cf9 \strokec9 +\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 revealProgress \cf9 \strokec9 *\cf5 \strokec5  \cf14 \strokec14 0.17\cf9 \strokec9 )\}\cf13 \strokec13 em`\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         sonicTitle\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 transform \cf9 \strokec9 =\cf5 \strokec5  \cf13 \strokec13 `scale(\cf9 \strokec9 $\{\cf14 \strokec14 1.2\cf5 \strokec5  \cf9 \strokec9 -\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 revealProgress \cf9 \strokec9 *\cf5 \strokec5  \cf14 \strokec14 0.2\cf9 \strokec9 )\}\cf13 \strokec13 )`\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         sonicChars\cf9 \strokec9 .\cf5 \strokec5 forEach\cf9 \strokec9 ((\cf5 \strokec5 char\cf9 \strokec9 ,\cf5 \strokec5  i\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3           \cf8 \strokec8 const\cf5 \strokec5  charStart \cf9 \strokec9 =\cf5 \strokec5  i \cf9 \strokec9 *\cf5 \strokec5  \cf14 \strokec14 0.08\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3           \cf8 \strokec8 const\cf5 \strokec5  charProgress \cf9 \strokec9 =\cf5 \strokec5  \cf12 \strokec12 Math\cf9 \strokec9 .\cf5 \strokec5 max\cf9 \strokec9 (\cf14 \strokec14 0\cf9 \strokec9 ,\cf5 \strokec5  \cf12 \strokec12 Math\cf9 \strokec9 .\cf5 \strokec5 min\cf9 \strokec9 (\cf14 \strokec14 1\cf9 \strokec9 ,\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 revealProgress \cf9 \strokec9 -\cf5 \strokec5  charStart\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 /\cf5 \strokec5  \cf14 \strokec14 0.6\cf9 \strokec9 ));\cf5 \cb1 \strokec5 \
+\cb3           char\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 transform \cf9 \strokec9 =\cf5 \strokec5  \cf13 \strokec13 `translateY(\cf9 \strokec9 $\{(\cf14 \strokec14 1\cf5 \strokec5  \cf9 \strokec9 -\cf5 \strokec5  charProgress\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 *\cf5 \strokec5  \cf14 \strokec14 20\cf9 \strokec9 \}\cf13 \strokec13 px)`\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         \cf9 \strokec9 \});\cf5 \cb1 \strokec5 \
+\cb3         sonicSeason\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 opacity \cf9 \strokec9 =\cf5 \strokec5  revealProgress\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         sonicSeason\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 filter \cf9 \strokec9 =\cf5 \strokec5  \cf13 \strokec13 `blur(\cf9 \strokec9 $\{(\cf14 \strokec14 1\cf5 \strokec5  \cf9 \strokec9 -\cf5 \strokec5  revealProgress\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 *\cf5 \strokec5  \cf14 \strokec14 15\cf9 \strokec9 \}\cf13 \strokec13 px)`\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         sonicSeason\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 transform \cf9 \strokec9 =\cf5 \strokec5  \cf13 \strokec13 `scale(\cf9 \strokec9 $\{\cf14 \strokec14 1.2\cf5 \strokec5  \cf9 \strokec9 -\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 revealProgress \cf9 \strokec9 *\cf5 \strokec5  \cf14 \strokec14 0.2\cf9 \strokec9 )\}\cf13 \strokec13 ) translateY(\cf9 \strokec9 $\{(\cf14 \strokec14 1\cf5 \strokec5  \cf9 \strokec9 -\cf5 \strokec5  revealProgress\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 *\cf5 \strokec5  \cf14 \strokec14 30\cf9 \strokec9 \}\cf13 \strokec13 px)`\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \};\cf5 \cb1 \strokec5 \
+\
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  startSonicSequence \cf9 \strokec9 =\cf5 \strokec5  \cf9 \strokec9 ()\cf5 \strokec5  \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 if\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 sonicTriggered\cf9 \strokec9 )\cf5 \strokec5  \cf8 \strokec8 return\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         sonicTriggered \cf9 \strokec9 =\cf5 \strokec5  \cf8 \strokec8 true\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         document\cf9 \strokec9 .\cf5 \strokec5 body\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 add\cf9 \strokec9 (\cf13 \strokec13 'lock-sonic'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 const\cf5 \strokec5  duration \cf9 \strokec9 =\cf5 \strokec5  \cf14 \strokec14 2000\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 const\cf5 \strokec5  startTime \cf9 \strokec9 =\cf5 \strokec5  performance\cf9 \strokec9 .\cf5 \strokec5 now\cf9 \strokec9 ();\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 const\cf5 \strokec5  animate \cf9 \strokec9 =\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 currentTime\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3           \cf8 \strokec8 const\cf5 \strokec5  elapsed \cf9 \strokec9 =\cf5 \strokec5  currentTime \cf9 \strokec9 -\cf5 \strokec5  startTime\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3           \cf8 \strokec8 const\cf5 \strokec5  linearProgress \cf9 \strokec9 =\cf5 \strokec5  \cf12 \strokec12 Math\cf9 \strokec9 .\cf5 \strokec5 min\cf9 \strokec9 (\cf14 \strokec14 1\cf9 \strokec9 ,\cf5 \strokec5  elapsed \cf9 \strokec9 /\cf5 \strokec5  duration\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3           updateSonicUI\cf9 \strokec9 (\cf5 \strokec5 linearProgress\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3           \cf8 \strokec8 if\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 linearProgress \cf9 \strokec9 <\cf5 \strokec5  \cf14 \strokec14 1\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3             requestAnimationFrame\cf9 \strokec9 (\cf5 \strokec5 animate\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \}\cf5 \strokec5  \cf8 \strokec8 else\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3             document\cf9 \strokec9 .\cf5 \strokec5 body\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 remove\cf9 \strokec9 (\cf13 \strokec13 'lock-sonic'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3         \cf9 \strokec9 \};\cf5 \cb1 \strokec5 \
+\cb3         requestAnimationFrame\cf9 \strokec9 (\cf5 \strokec5 animate\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \};\cf5 \cb1 \strokec5 \
+\
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  sonicObserver \cf9 \strokec9 =\cf5 \strokec5  \cf8 \strokec8 new\cf5 \strokec5  \cf12 \strokec12 IntersectionObserver\cf9 \strokec9 ((\cf5 \strokec5 entries\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         entries\cf9 \strokec9 .\cf5 \strokec5 forEach\cf9 \strokec9 (\cf5 \strokec5 entry \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3           \cf8 \strokec8 if\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 entry\cf9 \strokec9 .\cf5 \strokec5 isIntersecting \cf9 \strokec9 &&\cf5 \strokec5  \cf9 \strokec9 !\cf5 \strokec5 sonicTriggered\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3              \cf8 \strokec8 const\cf5 \strokec5  rect \cf9 \strokec9 =\cf5 \strokec5  entry\cf9 \strokec9 .\cf5 \strokec5 target\cf9 \strokec9 .\cf5 \strokec5 getBoundingClientRect\cf9 \strokec9 ();\cf5 \cb1 \strokec5 \
+\cb3              \cf8 \strokec8 if\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 rect\cf9 \strokec9 .\cf5 \strokec5 top \cf9 \strokec9 <=\cf5 \strokec5  \cf14 \strokec14 20\cf9 \strokec9 )\cf5 \strokec5  startSonicSequence\cf9 \strokec9 ();\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3         \cf9 \strokec9 \});\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \},\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \strokec5  threshold\cf9 \strokec9 :\cf5 \strokec5  \cf9 \strokec9 [\cf14 \strokec14 0\cf9 \strokec9 ,\cf5 \strokec5  \cf14 \strokec14 0.1\cf9 \strokec9 ,\cf5 \strokec5  \cf14 \strokec14 0.5\cf9 \strokec9 ,\cf5 \strokec5  \cf14 \strokec14 0.9\cf9 \strokec9 ,\cf5 \strokec5  \cf14 \strokec14 1\cf9 \strokec9 ]\cf5 \strokec5  \cf9 \strokec9 \});\cf5 \cb1 \strokec5 \
+\cb3       sonicObserver\cf9 \strokec9 .\cf5 \strokec5 observe\cf9 \strokec9 (\cf5 \strokec5 sonicRevealSection\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\
+\cb3       \cf11 \strokec11 // --- Typewriter Logic ---\cf5 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  buildTypewriterDOM \cf9 \strokec9 =\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 container\cf9 \strokec9 ,\cf5 \strokec5  text\cf9 \strokec9 ,\cf5 \strokec5  isFirst\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 const\cf5 \strokec5  words \cf9 \strokec9 =\cf5 \strokec5  text\cf9 \strokec9 .\cf5 \strokec5 split\cf9 \strokec9 (\cf13 \strokec13 " "\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 let\cf5 \strokec5  lines \cf9 \strokec9 =\cf5 \strokec5  \cf9 \strokec9 [];\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 for\cf5 \strokec5  \cf9 \strokec9 (\cf8 \strokec8 let\cf5 \strokec5  i \cf9 \strokec9 =\cf5 \strokec5  \cf14 \strokec14 0\cf9 \strokec9 ;\cf5 \strokec5  i \cf9 \strokec9 <\cf5 \strokec5  words\cf9 \strokec9 .\cf5 \strokec5 length\cf9 \strokec9 ;\cf5 \strokec5  i\cf9 \strokec9 ++)\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3           \cf8 \strokec8 let\cf5 \strokec5  current \cf9 \strokec9 =\cf5 \strokec5  words\cf9 \strokec9 [\cf5 \strokec5 i\cf9 \strokec9 ];\cf5 \cb1 \strokec5 \
+\cb3           \cf8 \strokec8 if\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 current\cf9 \strokec9 .\cf5 \strokec5 length \cf9 \strokec9 <\cf5 \strokec5  \cf14 \strokec14 2\cf5 \strokec5  \cf9 \strokec9 &&\cf5 \strokec5  i \cf9 \strokec9 <\cf5 \strokec5  words\cf9 \strokec9 .\cf5 \strokec5 length \cf9 \strokec9 -\cf5 \strokec5  \cf14 \strokec14 1\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3             lines\cf9 \strokec9 .\cf5 \strokec5 push\cf9 \strokec9 (\cf5 \strokec5 current \cf9 \strokec9 +\cf5 \strokec5  \cf13 \strokec13 " "\cf5 \strokec5  \cf9 \strokec9 +\cf5 \strokec5  words\cf9 \strokec9 [\cf5 \strokec5 i\cf9 \strokec9 +\cf14 \strokec14 1\cf9 \strokec9 ]);\cf5 \cb1 \strokec5 \
+\cb3             i\cf9 \strokec9 ++;\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \}\cf5 \strokec5  \cf8 \strokec8 else\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3             lines\cf9 \strokec9 .\cf5 \strokec5 push\cf9 \strokec9 (\cf5 \strokec5 current\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3         \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 if\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 lines\cf9 \strokec9 .\cf5 \strokec5 length \cf9 \strokec9 >\cf5 \strokec5  \cf14 \strokec14 1\cf5 \strokec5  \cf9 \strokec9 &&\cf5 \strokec5  lines\cf9 \strokec9 [\cf5 \strokec5 lines\cf9 \strokec9 .\cf5 \strokec5 length \cf9 \strokec9 -\cf5 \strokec5  \cf14 \strokec14 1\cf9 \strokec9 ].\cf5 \strokec5 length \cf9 \strokec9 <\cf5 \strokec5  \cf14 \strokec14 2\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3           \cf8 \strokec8 const\cf5 \strokec5  last \cf9 \strokec9 =\cf5 \strokec5  lines\cf9 \strokec9 .\cf5 \strokec5 pop\cf9 \strokec9 ();\cf5 \cb1 \strokec5 \
+\cb3           lines\cf9 \strokec9 [\cf5 \strokec5 lines\cf9 \strokec9 .\cf5 \strokec5 length \cf9 \strokec9 -\cf5 \strokec5  \cf14 \strokec14 1\cf9 \strokec9 ]\cf5 \strokec5  \cf9 \strokec9 +=\cf5 \strokec5  \cf13 \strokec13 " "\cf5 \strokec5  \cf9 \strokec9 +\cf5 \strokec5  last\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 const\cf5 \strokec5  totalChars \cf9 \strokec9 =\cf5 \strokec5  text\cf9 \strokec9 .\cf5 \strokec5 length\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 let\cf5 \strokec5  charElements \cf9 \strokec9 =\cf5 \strokec5  \cf9 \strokec9 [];\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 let\cf5 \strokec5  charCounter \cf9 \strokec9 =\cf5 \strokec5  \cf14 \strokec14 0\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\
+\cb3         lines\cf9 \strokec9 .\cf5 \strokec5 forEach\cf9 \strokec9 ((\cf5 \strokec5 lineText\cf9 \strokec9 ,\cf5 \strokec5  lineIdx\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3           \cf8 \strokec8 const\cf5 \strokec5  isAnchoredFirst \cf9 \strokec9 =\cf5 \strokec5  isFirst \cf9 \strokec9 &&\cf5 \strokec5  lineIdx \cf9 \strokec9 ===\cf5 \strokec5  \cf14 \strokec14 0\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3           \cf8 \strokec8 const\cf5 \strokec5  offset \cf9 \strokec9 =\cf5 \strokec5  isAnchoredFirst \cf9 \strokec9 ?\cf5 \strokec5  \cf13 \strokec13 '0'\cf5 \strokec5  \cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 `\cf9 \strokec9 $\{\cf12 \strokec12 Math\cf9 \strokec9 .\cf5 \strokec5 random\cf9 \strokec9 ()\cf5 \strokec5  \cf9 \strokec9 *\cf5 \strokec5  \cf14 \strokec14 35\cf9 \strokec9 \}\cf13 \strokec13 vw`\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3           \cf8 \strokec8 const\cf5 \strokec5  h2 \cf9 \strokec9 =\cf5 \strokec5  document\cf9 \strokec9 .\cf5 \strokec5 createElement\cf9 \strokec9 (\cf13 \strokec13 'h2'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3           h2\cf9 \strokec9 .\cf5 \strokec5 className \cf9 \strokec9 =\cf5 \strokec5  \cf13 \strokec13 "text-[14vw] md:text-[16vw] font-bold tracking-tight leading-[0.95] md:leading-[0.9] w-full flex flex-wrap items-baseline mb-[0.15em] pt-4 transition-none"\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3           h2\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 paddingLeft \cf9 \strokec9 =\cf5 \strokec5  offset\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\
+\cb3           lineText\cf9 \strokec9 .\cf5 \strokec5 split\cf9 \strokec9 (\cf13 \strokec13 ""\cf9 \strokec9 ).\cf5 \strokec5 forEach\cf9 \strokec9 ((\cf5 \strokec5 char\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3             \cf8 \strokec8 const\cf5 \strokec5  span \cf9 \strokec9 =\cf5 \strokec5  document\cf9 \strokec9 .\cf5 \strokec5 createElement\cf9 \strokec9 (\cf13 \strokec13 'span'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3             span\cf9 \strokec9 .\cf5 \strokec5 className \cf9 \strokec9 =\cf5 \strokec5  \cf13 \strokec13 `inline-block \cf9 \strokec9 $\{\cf5 \strokec5 char \cf9 \strokec9 ===\cf5 \strokec5  \cf13 \strokec13 " "\cf5 \strokec5  \cf9 \strokec9 ?\cf5 \strokec5  \cf13 \strokec13 "typewriter-space"\cf5 \strokec5  \cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "typewriter-char"\cf9 \strokec9 \}\cf13 \strokec13 `\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3             span\cf9 \strokec9 .\cf5 \strokec5 textContent \cf9 \strokec9 =\cf5 \strokec5  char \cf9 \strokec9 ===\cf5 \strokec5  \cf13 \strokec13 " "\cf5 \strokec5  \cf9 \strokec9 ?\cf5 \strokec5  \cf13 \strokec13 "\\u00A0"\cf5 \strokec5  \cf9 \strokec9 :\cf5 \strokec5  char\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3             \cb1 \
+\cb3             \cf8 \strokec8 const\cf5 \strokec5  shouldShowInitially \cf9 \strokec9 =\cf5 \strokec5  isFirst \cf9 \strokec9 &&\cf5 \strokec5  charCounter \cf9 \strokec9 <\cf5 \strokec5  \cf14 \strokec14 3\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3             span\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 opacity \cf9 \strokec9 =\cf5 \strokec5  shouldShowInitially \cf9 \strokec9 ?\cf5 \strokec5  \cf14 \strokec14 1\cf5 \strokec5  \cf9 \strokec9 :\cf5 \strokec5  \cf14 \strokec14 0\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3             span\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 visibility \cf9 \strokec9 =\cf5 \strokec5  shouldShowInitially \cf9 \strokec9 ?\cf5 \strokec5  \cf13 \strokec13 "visible"\cf5 \strokec5  \cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 "hidden"\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3             \cb1 \
+\cb3             h2\cf9 \strokec9 .\cf5 \strokec5 appendChild\cf9 \strokec9 (\cf5 \strokec5 span\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3             charElements\cf9 \strokec9 .\cf5 \strokec5 push\cf9 \strokec9 (\cf5 \strokec5 span\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3             charCounter\cf9 \strokec9 ++;\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \});\cf5 \cb1 \strokec5 \
+\cb3           container\cf9 \strokec9 .\cf5 \strokec5 appendChild\cf9 \strokec9 (\cf5 \strokec5 h2\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3         \cf9 \strokec9 \});\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 const\cf5 \strokec5  blinker \cf9 \strokec9 =\cf5 \strokec5  document\cf9 \strokec9 .\cf5 \strokec5 createElement\cf9 \strokec9 (\cf13 \strokec13 'span'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3         blinker\cf9 \strokec9 .\cf5 \strokec5 className \cf9 \strokec9 =\cf5 \strokec5  \cf13 \strokec13 "inline-block ml-1 animate-terminal-blink"\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         blinker\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 verticalAlign \cf9 \strokec9 =\cf5 \strokec5  \cf13 \strokec13 "baseline"\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         blinker\cf9 \strokec9 .\cf5 \strokec5 textContent \cf9 \strokec9 =\cf5 \strokec5  \cf13 \strokec13 "."\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         blinker\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 display \cf9 \strokec9 =\cf5 \strokec5  \cf13 \strokec13 "none"\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         container\cf9 \strokec9 .\cf5 \strokec5 appendChild\cf9 \strokec9 (\cf5 \strokec5 blinker\cf9 \strokec9 );\cf5 \strokec5  \cb1 \
+\cb3         \cf8 \strokec8 return\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \strokec5  charElements\cf9 \strokec9 ,\cf5 \strokec5  totalChars\cf9 \strokec9 ,\cf5 \strokec5  blinker\cf9 \strokec9 ,\cf5 \strokec5  isFirst \cf9 \strokec9 \};\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \};\cf5 \cb1 \strokec5 \
+\
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  typewriters \cf9 \strokec9 =\cf5 \strokec5  \cf9 \strokec9 [];\cf5 \cb1 \strokec5 \
+\cb3       document\cf9 \strokec9 .\cf5 \strokec5 querySelectorAll\cf9 \strokec9 (\cf13 \strokec13 '.typewriter-section'\cf9 \strokec9 ).\cf5 \strokec5 forEach\cf9 \strokec9 (\cf5 \strokec5 section \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 const\cf5 \strokec5  twData \cf9 \strokec9 =\cf5 \strokec5  buildTypewriterDOM\cf9 \strokec9 (\cf5 \strokec5 section\cf9 \strokec9 .\cf5 \strokec5 querySelector\cf9 \strokec9 (\cf13 \strokec13 '.typewriter-content'\cf9 \strokec9 ),\cf5 \strokec5  section\cf9 \strokec9 .\cf5 \strokec5 dataset\cf9 \strokec9 .\cf5 \strokec5 text\cf9 \strokec9 ,\cf5 \strokec5  section\cf9 \strokec9 .\cf5 \strokec5 dataset\cf9 \strokec9 .\cf5 \strokec5 isfirst \cf9 \strokec9 ===\cf5 \strokec5  \cf13 \strokec13 'true'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3         typewriters\cf9 \strokec9 .\cf5 \strokec5 push\cf9 \strokec9 (\{\cf5 \strokec5  section\cf9 \strokec9 ,\cf5 \strokec5  \cf9 \strokec9 ...\cf5 \strokec5 twData\cf9 \strokec9 ,\cf5 \strokec5  isIdle\cf9 \strokec9 :\cf5 \strokec5  \cf8 \strokec8 true\cf9 \strokec9 ,\cf5 \strokec5  timeout\cf9 \strokec9 :\cf5 \strokec5  \cf8 \strokec8 null\cf5 \strokec5  \cf9 \strokec9 \});\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \});\cf5 \cb1 \strokec5 \
+\
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  renderTypewriter \cf9 \strokec9 =\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 tw\cf9 \strokec9 ,\cf5 \strokec5  progress\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 const\cf5 \strokec5  effectiveProgress \cf9 \strokec9 =\cf5 \strokec5  \cf12 \strokec12 Math\cf9 \strokec9 .\cf5 \strokec5 min\cf9 \strokec9 (\cf14 \strokec14 1\cf9 \strokec9 ,\cf5 \strokec5  progress \cf9 \strokec9 *\cf5 \strokec5  \cf14 \strokec14 1.15\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 const\cf5 \strokec5  typingHeadIdx \cf9 \strokec9 =\cf5 \strokec5  tw\cf9 \strokec9 .\cf5 \strokec5 isFirst \cf9 \strokec9 ?\cf5 \strokec5  \cf14 \strokec14 2\cf5 \strokec5  \cf9 \strokec9 +\cf5 \strokec5  \cf12 \strokec12 Math\cf9 \strokec9 .\cf5 \strokec5 floor\cf9 \strokec9 (\cf5 \strokec5 effectiveProgress \cf9 \strokec9 *\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 tw\cf9 \strokec9 .\cf5 \strokec5 totalChars \cf9 \strokec9 -\cf5 \strokec5  \cf14 \strokec14 3\cf9 \strokec9 ))\cf5 \strokec5  \cf9 \strokec9 :\cf5 \strokec5  \cf9 \strokec9 -\cf14 \strokec14 1\cf5 \strokec5  \cf9 \strokec9 +\cf5 \strokec5  \cf12 \strokec12 Math\cf9 \strokec9 .\cf5 \strokec5 floor\cf9 \strokec9 (\cf5 \strokec5 effectiveProgress \cf9 \strokec9 *\cf5 \strokec5  tw\cf9 \strokec9 .\cf5 \strokec5 totalChars\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3         tw\cf9 \strokec9 .\cf5 \strokec5 charElements\cf9 \strokec9 .\cf5 \strokec5 forEach\cf9 \strokec9 ((\cf5 \strokec5 el\cf9 \strokec9 ,\cf5 \strokec5  idx\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3           \cf8 \strokec8 const\cf5 \strokec5  isVisible \cf9 \strokec9 =\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 tw\cf9 \strokec9 .\cf5 \strokec5 isFirst \cf9 \strokec9 &&\cf5 \strokec5  idx \cf9 \strokec9 <\cf5 \strokec5  \cf14 \strokec14 3\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 ||\cf5 \strokec5  idx \cf9 \strokec9 <=\cf5 \strokec5  typingHeadIdx\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3           el\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 opacity \cf9 \strokec9 =\cf5 \strokec5  isVisible \cf9 \strokec9 ?\cf5 \strokec5  \cf14 \strokec14 1\cf5 \strokec5  \cf9 \strokec9 :\cf5 \strokec5  \cf14 \strokec14 0\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3           el\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 visibility \cf9 \strokec9 =\cf5 \strokec5  isVisible \cf9 \strokec9 ?\cf5 \strokec5  \cf13 \strokec13 'visible'\cf5 \strokec5  \cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 'hidden'\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         \cf9 \strokec9 \});\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 const\cf5 \strokec5  isLastCharTyped \cf9 \strokec9 =\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 tw\cf9 \strokec9 .\cf5 \strokec5 isFirst \cf9 \strokec9 &&\cf5 \strokec5  effectiveProgress \cf9 \strokec9 ===\cf5 \strokec5  \cf14 \strokec14 0\cf5 \strokec5  \cf9 \strokec9 &&\cf5 \strokec5  typingHeadIdx \cf9 \strokec9 ===\cf5 \strokec5  \cf14 \strokec14 2\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 ||\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 typingHeadIdx \cf9 \strokec9 >=\cf5 \strokec5  \cf14 \strokec14 0\cf5 \strokec5  \cf9 \strokec9 &&\cf5 \strokec5  effectiveProgress \cf9 \strokec9 <\cf5 \strokec5  \cf14 \strokec14 1\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 if\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 isLastCharTyped \cf9 \strokec9 &&\cf5 \strokec5  tw\cf9 \strokec9 .\cf5 \strokec5 isIdle\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3             tw\cf9 \strokec9 .\cf5 \strokec5 blinker\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 display \cf9 \strokec9 =\cf5 \strokec5  \cf13 \strokec13 'inline-block'\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3             \cf8 \strokec8 const\cf5 \strokec5  lastVisibleChar \cf9 \strokec9 =\cf5 \strokec5  tw\cf9 \strokec9 .\cf5 \strokec5 charElements\cf9 \strokec9 [\cf12 \strokec12 Math\cf9 \strokec9 .\cf5 \strokec5 max\cf9 \strokec9 (\cf14 \strokec14 0\cf9 \strokec9 ,\cf5 \strokec5  typingHeadIdx\cf9 \strokec9 )];\cf5 \cb1 \strokec5 \
+\cb3             \cf8 \strokec8 if\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 lastVisibleChar \cf9 \strokec9 &&\cf5 \strokec5  tw\cf9 \strokec9 .\cf5 \strokec5 blinker\cf9 \strokec9 .\cf5 \strokec5 previousElementSibling \cf9 \strokec9 !==\cf5 \strokec5  lastVisibleChar\cf9 \strokec9 )\cf5 \strokec5  lastVisibleChar\cf9 \strokec9 .\cf5 \strokec5 after\cf9 \strokec9 (\cf5 \strokec5 tw\cf9 \strokec9 .\cf5 \strokec5 blinker\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3         \cf9 \strokec9 \}\cf5 \strokec5  \cf8 \strokec8 else\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3             tw\cf9 \strokec9 .\cf5 \strokec5 blinker\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 display \cf9 \strokec9 =\cf5 \strokec5  \cf13 \strokec13 'none'\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \};\cf5 \cb1 \strokec5 \
+\
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  revealContainers \cf9 \strokec9 =\cf5 \strokec5  \cf9 \strokec9 [];\cf5 \cb1 \strokec5 \
+\cb3       document\cf9 \strokec9 .\cf5 \strokec5 querySelectorAll\cf9 \strokec9 (\cf13 \strokec13 '.scroll-text-wrapper'\cf9 \strokec9 ).\cf5 \strokec5 forEach\cf9 \strokec9 (\cf5 \strokec5 wrapper \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 const\cf5 \strokec5  text \cf9 \strokec9 =\cf5 \strokec5  wrapper\cf9 \strokec9 .\cf5 \strokec5 dataset\cf9 \strokec9 .\cf5 \strokec5 text\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 const\cf5 \strokec5  words \cf9 \strokec9 =\cf5 \strokec5  text\cf9 \strokec9 .\cf5 \strokec5 split\cf9 \strokec9 (\cf13 \strokec13 ' '\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 let\cf5 \strokec5  charElements \cf9 \strokec9 =\cf5 \strokec5  \cf9 \strokec9 [];\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 let\cf5 \strokec5  charIndex \cf9 \strokec9 =\cf5 \strokec5  \cf14 \strokec14 0\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 const\cf5 \strokec5  totalChars \cf9 \strokec9 =\cf5 \strokec5  text\cf9 \strokec9 .\cf5 \strokec5 length\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         words\cf9 \strokec9 .\cf5 \strokec5 forEach\cf9 \strokec9 ((\cf5 \strokec5 word\cf9 \strokec9 ,\cf5 \strokec5  wIdx\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3           \cf8 \strokec8 const\cf5 \strokec5  wordSpan \cf9 \strokec9 =\cf5 \strokec5  document\cf9 \strokec9 .\cf5 \strokec5 createElement\cf9 \strokec9 (\cf13 \strokec13 'span'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3           wordSpan\cf9 \strokec9 .\cf5 \strokec5 className \cf9 \strokec9 =\cf5 \strokec5  \cf13 \strokec13 "inline-flex"\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3           word\cf9 \strokec9 .\cf5 \strokec5 split\cf9 \strokec9 (\cf13 \strokec13 ''\cf9 \strokec9 ).\cf5 \strokec5 forEach\cf9 \strokec9 (\cf5 \strokec5 char \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3             \cf8 \strokec8 const\cf5 \strokec5  charSpan \cf9 \strokec9 =\cf5 \strokec5  document\cf9 \strokec9 .\cf5 \strokec5 createElement\cf9 \strokec9 (\cf13 \strokec13 'span'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3             charSpan\cf9 \strokec9 .\cf5 \strokec5 className \cf9 \strokec9 =\cf5 \strokec5  \cf13 \strokec13 "reveal-char"\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3             charSpan\cf9 \strokec9 .\cf5 \strokec5 textContent \cf9 \strokec9 =\cf5 \strokec5  char\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3             wordSpan\cf9 \strokec9 .\cf5 \strokec5 appendChild\cf9 \strokec9 (\cf5 \strokec5 charSpan\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3             charElements\cf9 \strokec9 .\cf5 \strokec5 push\cf9 \strokec9 (\{\cf5 \strokec5  element\cf9 \strokec9 :\cf5 \strokec5  charSpan\cf9 \strokec9 ,\cf5 \strokec5  threshold\cf9 \strokec9 :\cf5 \strokec5  charIndex \cf9 \strokec9 /\cf5 \strokec5  totalChars \cf9 \strokec9 \});\cf5 \cb1 \strokec5 \
+\cb3             charIndex\cf9 \strokec9 ++;\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \});\cf5 \cb1 \strokec5 \
+\cb3           wrapper\cf9 \strokec9 .\cf5 \strokec5 appendChild\cf9 \strokec9 (\cf5 \strokec5 wordSpan\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3           \cf8 \strokec8 if\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 wIdx \cf9 \strokec9 <\cf5 \strokec5  words\cf9 \strokec9 .\cf5 \strokec5 length \cf9 \strokec9 -\cf5 \strokec5  \cf14 \strokec14 1\cf9 \strokec9 )\cf5 \strokec5  charIndex\cf9 \strokec9 ++;\cf5 \cb1 \strokec5 \
+\cb3         \cf9 \strokec9 \});\cf5 \cb1 \strokec5 \
+\cb3         revealContainers\cf9 \strokec9 .\cf5 \strokec5 push\cf9 \strokec9 (\{\cf5 \strokec5  section\cf9 \strokec9 :\cf5 \strokec5  wrapper\cf9 \strokec9 .\cf5 \strokec5 closest\cf9 \strokec9 (\cf13 \strokec13 '.scroll-reveal-container'\cf9 \strokec9 ),\cf5 \strokec5  charElements\cf9 \strokec9 ,\cf5 \strokec5  start\cf9 \strokec9 :\cf5 \strokec5  parseFloat\cf9 \strokec9 (\cf5 \strokec5 wrapper\cf9 \strokec9 .\cf5 \strokec5 dataset\cf9 \strokec9 .\cf5 \strokec5 start\cf9 \strokec9 ),\cf5 \strokec5  end\cf9 \strokec9 :\cf5 \strokec5  parseFloat\cf9 \strokec9 (\cf5 \strokec5 wrapper\cf9 \strokec9 .\cf5 \strokec5 dataset\cf9 \strokec9 .\cf5 \strokec5 end\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 \});\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \});\cf5 \cb1 \strokec5 \
+\
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  interviewsTrack \cf9 \strokec9 =\cf5 \strokec5  document\cf9 \strokec9 .\cf5 \strokec5 getElementById\cf9 \strokec9 (\cf13 \strokec13 'interviews-track'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  interviewsSection \cf9 \strokec9 =\cf5 \strokec5  document\cf9 \strokec9 .\cf5 \strokec5 getElementById\cf9 \strokec9 (\cf13 \strokec13 'interviews-section'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3       \cb1 \
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  onScroll \cf9 \strokec9 =\cf5 \strokec5  \cf9 \strokec9 ()\cf5 \strokec5  \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 const\cf5 \strokec5  windowHeight \cf9 \strokec9 =\cf5 \strokec5  window\cf9 \strokec9 .\cf5 \strokec5 innerHeight\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         typewriters\cf9 \strokec9 .\cf5 \strokec5 forEach\cf9 \strokec9 (\cf5 \strokec5 tw \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3           \cf8 \strokec8 const\cf5 \strokec5  rect \cf9 \strokec9 =\cf5 \strokec5  tw\cf9 \strokec9 .\cf5 \strokec5 section\cf9 \strokec9 .\cf5 \strokec5 getBoundingClientRect\cf9 \strokec9 ();\cf5 \cb1 \strokec5 \
+\cb3           \cf8 \strokec8 const\cf5 \strokec5  height \cf9 \strokec9 =\cf5 \strokec5  tw\cf9 \strokec9 .\cf5 \strokec5 section\cf9 \strokec9 .\cf5 \strokec5 offsetHeight \cf9 \strokec9 -\cf5 \strokec5  windowHeight\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3           \cf8 \strokec8 const\cf5 \strokec5  progress \cf9 \strokec9 =\cf5 \strokec5  \cf12 \strokec12 Math\cf9 \strokec9 .\cf5 \strokec5 max\cf9 \strokec9 (\cf14 \strokec14 0\cf9 \strokec9 ,\cf5 \strokec5  \cf12 \strokec12 Math\cf9 \strokec9 .\cf5 \strokec5 min\cf9 \strokec9 (\cf14 \strokec14 1\cf9 \strokec9 ,\cf5 \strokec5  \cf9 \strokec9 -\cf5 \strokec5 rect\cf9 \strokec9 .\cf5 \strokec5 top \cf9 \strokec9 /\cf5 \strokec5  height\cf9 \strokec9 ));\cf5 \cb1 \strokec5 \
+\cb3           tw\cf9 \strokec9 .\cf5 \strokec5 isIdle \cf9 \strokec9 =\cf5 \strokec5  \cf8 \strokec8 false\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3           \cf8 \strokec8 if\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 tw\cf9 \strokec9 .\cf5 \strokec5 timeout\cf9 \strokec9 )\cf5 \strokec5  clearTimeout\cf9 \strokec9 (\cf5 \strokec5 tw\cf9 \strokec9 .\cf5 \strokec5 timeout\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3           tw\cf9 \strokec9 .\cf5 \strokec5 timeout \cf9 \strokec9 =\cf5 \strokec5  setTimeout\cf9 \strokec9 (()\cf5 \strokec5  \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \strokec5  tw\cf9 \strokec9 .\cf5 \strokec5 isIdle \cf9 \strokec9 =\cf5 \strokec5  \cf8 \strokec8 true\cf9 \strokec9 ;\cf5 \strokec5  renderTypewriter\cf9 \strokec9 (\cf5 \strokec5 tw\cf9 \strokec9 ,\cf5 \strokec5  progress\cf9 \strokec9 );\cf5 \strokec5  \cf9 \strokec9 \},\cf5 \strokec5  \cf14 \strokec14 800\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3           renderTypewriter\cf9 \strokec9 (\cf5 \strokec5 tw\cf9 \strokec9 ,\cf5 \strokec5  progress\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3         \cf9 \strokec9 \});\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 const\cf5 \strokec5  sonicRect \cf9 \strokec9 =\cf5 \strokec5  sonicRevealSection\cf9 \strokec9 .\cf5 \strokec5 getBoundingClientRect\cf9 \strokec9 ();\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 if\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 sonicRect\cf9 \strokec9 .\cf5 \strokec5 top \cf9 \strokec9 <=\cf5 \strokec5  \cf14 \strokec14 20\cf5 \strokec5  \cf9 \strokec9 &&\cf5 \strokec5  \cf9 \strokec9 !\cf5 \strokec5 sonicTriggered\cf9 \strokec9 )\cf5 \strokec5  startSonicSequence\cf9 \strokec9 ();\cf5 \cb1 \strokec5 \
+\cb3         revealContainers\cf9 \strokec9 .\cf5 \strokec5 forEach\cf9 \strokec9 (\cf5 \strokec5 rv \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3            \cf8 \strokec8 const\cf5 \strokec5  rect \cf9 \strokec9 =\cf5 \strokec5  rv\cf9 \strokec9 .\cf5 \strokec5 section\cf9 \strokec9 .\cf5 \strokec5 getBoundingClientRect\cf9 \strokec9 ();\cf5 \cb1 \strokec5 \
+\cb3            \cf8 \strokec8 const\cf5 \strokec5  progress \cf9 \strokec9 =\cf5 \strokec5  \cf12 \strokec12 Math\cf9 \strokec9 .\cf5 \strokec5 max\cf9 \strokec9 (\cf14 \strokec14 0\cf9 \strokec9 ,\cf5 \strokec5  \cf12 \strokec12 Math\cf9 \strokec9 .\cf5 \strokec5 min\cf9 \strokec9 (\cf14 \strokec14 1\cf9 \strokec9 ,\cf5 \strokec5  \cf9 \strokec9 -\cf5 \strokec5 rect\cf9 \strokec9 .\cf5 \strokec5 top \cf9 \strokec9 /\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 rv\cf9 \strokec9 .\cf5 \strokec5 section\cf9 \strokec9 .\cf5 \strokec5 offsetHeight \cf9 \strokec9 -\cf5 \strokec5  windowHeight\cf9 \strokec9 )));\cf5 \cb1 \strokec5 \
+\cb3            \cf8 \strokec8 const\cf5 \strokec5  localProgress \cf9 \strokec9 =\cf5 \strokec5  \cf12 \strokec12 Math\cf9 \strokec9 .\cf5 \strokec5 max\cf9 \strokec9 (\cf14 \strokec14 0\cf9 \strokec9 ,\cf5 \strokec5  \cf12 \strokec12 Math\cf9 \strokec9 .\cf5 \strokec5 min\cf9 \strokec9 (\cf14 \strokec14 1\cf9 \strokec9 ,\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 progress \cf9 \strokec9 -\cf5 \strokec5  rv\cf9 \strokec9 .\cf5 \strokec5 start\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 /\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 rv\cf9 \strokec9 .\cf5 \strokec5 end \cf9 \strokec9 -\cf5 \strokec5  rv\cf9 \strokec9 .\cf5 \strokec5 start\cf9 \strokec9 )));\cf5 \cb1 \strokec5 \
+\cb3            rv\cf9 \strokec9 .\cf5 \strokec5 charElements\cf9 \strokec9 .\cf5 \strokec5 forEach\cf9 \strokec9 (\cf5 \strokec5 item \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \strokec5  item\cf9 \strokec9 .\cf5 \strokec5 element\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 opacity \cf9 \strokec9 =\cf5 \strokec5  localProgress \cf9 \strokec9 >\cf5 \strokec5  item\cf9 \strokec9 .\cf5 \strokec5 threshold \cf9 \strokec9 ?\cf5 \strokec5  \cf14 \strokec14 1\cf5 \strokec5  \cf9 \strokec9 :\cf5 \strokec5  \cf14 \strokec14 0.15\cf9 \strokec9 ;\cf5 \strokec5  \cf9 \strokec9 \});\cf5 \cb1 \strokec5 \
+\cb3         \cf9 \strokec9 \});\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 if\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 interviewsSection \cf9 \strokec9 &&\cf5 \strokec5  interviewsTrack\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3           \cf8 \strokec8 const\cf5 \strokec5  rect \cf9 \strokec9 =\cf5 \strokec5  interviewsSection\cf9 \strokec9 .\cf5 \strokec5 getBoundingClientRect\cf9 \strokec9 ();\cf5 \cb1 \strokec5 \
+\cb3           \cf8 \strokec8 const\cf5 \strokec5  progress \cf9 \strokec9 =\cf5 \strokec5  \cf12 \strokec12 Math\cf9 \strokec9 .\cf5 \strokec5 max\cf9 \strokec9 (\cf14 \strokec14 0\cf9 \strokec9 ,\cf5 \strokec5  \cf12 \strokec12 Math\cf9 \strokec9 .\cf5 \strokec5 min\cf9 \strokec9 (\cf14 \strokec14 1\cf9 \strokec9 ,\cf5 \strokec5  \cf9 \strokec9 -\cf5 \strokec5 rect\cf9 \strokec9 .\cf5 \strokec5 top \cf9 \strokec9 /\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 interviewsSection\cf9 \strokec9 .\cf5 \strokec5 offsetHeight \cf9 \strokec9 -\cf5 \strokec5  windowHeight\cf9 \strokec9 )));\cf5 \cb1 \strokec5 \
+\cb3           interviewsTrack\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 transform \cf9 \strokec9 =\cf5 \strokec5  \cf13 \strokec13 `translateX(\cf9 \strokec9 $\{-\cf5 \strokec5 progress \cf9 \strokec9 *\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 window\cf9 \strokec9 .\cf5 \strokec5 innerWidth \cf9 \strokec9 <\cf5 \strokec5  \cf14 \strokec14 768\cf5 \strokec5  \cf9 \strokec9 ?\cf5 \strokec5  \cf14 \strokec14 320\cf5 \strokec5  \cf9 \strokec9 :\cf5 \strokec5  \cf14 \strokec14 160\cf9 \strokec9 )\}\cf13 \strokec13 vw)`\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3         \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \};\cf5 \cb1 \strokec5 \
+\
+\cb3       window\cf9 \strokec9 .\cf5 \strokec5 addEventListener\cf9 \strokec9 (\cf13 \strokec13 'scroll'\cf9 \strokec9 ,\cf5 \strokec5  onScroll\cf9 \strokec9 ,\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \strokec5  passive\cf9 \strokec9 :\cf5 \strokec5  \cf8 \strokec8 true\cf5 \strokec5  \cf9 \strokec9 \});\cf5 \cb1 \strokec5 \
+\cb3       onScroll\cf9 \strokec9 ();\cf5 \cb1 \strokec5 \
+\cb3     \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3     \cb1 \
+\cb3     \cf11 \strokec11 // --- Global Functions ---\cf5 \cb1 \strokec5 \
+\cb3     window\cf9 \strokec9 .\cf5 \strokec5 handleCardHover \cf9 \strokec9 =\cf5 \strokec5  \cf8 \strokec8 function\cf9 \strokec9 (\cf5 \strokec5 el\cf9 \strokec9 ,\cf5 \strokec5  isHovered\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  accent \cf9 \strokec9 =\cf5 \strokec5  el\cf9 \strokec9 .\cf5 \strokec5 dataset\cf9 \strokec9 .\cf5 \strokec5 accent\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  textColor \cf9 \strokec9 =\cf5 \strokec5  el\cf9 \strokec9 .\cf5 \strokec5 dataset\cf9 \strokec9 .\cf5 \strokec5 textcolor\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3       \cb1 \
+\cb3       \cf11 \strokec11 // Changed to default to bright white when animation/hover didn't start/ended\cf5 \cb1 \strokec5 \
+\cb3       el\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 backgroundColor \cf9 \strokec9 =\cf5 \strokec5  isHovered \cf9 \strokec9 ?\cf5 \strokec5  accent \cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 '#FFFFFF'\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3       \cb1 \
+\cb3       el\cf9 \strokec9 .\cf5 \strokec5 querySelectorAll\cf9 \strokec9 (\cf13 \strokec13 '.dynamic-text'\cf9 \strokec9 ).\cf5 \strokec5 forEach\cf9 \strokec9 (\cf5 \strokec5 child \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3           \cf8 \strokec8 if\cf9 \strokec9 (\cf5 \strokec5 child\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 contains\cf9 \strokec9 (\cf13 \strokec13 'text-zinc-300'\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 ||\cf5 \strokec5  child\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 contains\cf9 \strokec9 (\cf13 \strokec13 'opacity-30'\cf9 \strokec9 ))\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3             child\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 toggle\cf9 \strokec9 (\cf13 \strokec13 'opacity-30'\cf9 \strokec9 ,\cf5 \strokec5  isHovered\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3             child\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 toggle\cf9 \strokec9 (\cf13 \strokec13 'text-zinc-300'\cf9 \strokec9 ,\cf5 \strokec5  \cf9 \strokec9 !\cf5 \strokec5 isHovered\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3             child\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 color \cf9 \strokec9 =\cf5 \strokec5  isHovered \cf9 \strokec9 ?\cf5 \strokec5  textColor \cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 ''\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \}\cf5 \strokec5  \cf8 \strokec8 else\cf5 \strokec5  \cf8 \strokec8 if\cf9 \strokec9 (\cf5 \strokec5 child\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 contains\cf9 \strokec9 (\cf13 \strokec13 'text-zinc-400'\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 ||\cf5 \strokec5  child\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 contains\cf9 \strokec9 (\cf13 \strokec13 'opacity-40'\cf9 \strokec9 ))\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3             child\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 toggle\cf9 \strokec9 (\cf13 \strokec13 'opacity-40'\cf9 \strokec9 ,\cf5 \strokec5  isHovered\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3             child\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 toggle\cf9 \strokec9 (\cf13 \strokec13 'text-zinc-400'\cf9 \strokec9 ,\cf5 \strokec5  \cf9 \strokec9 !\cf5 \strokec5 isHovered\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3             child\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 color \cf9 \strokec9 =\cf5 \strokec5  isHovered \cf9 \strokec9 ?\cf5 \strokec5  textColor \cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 ''\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \}\cf5 \strokec5  \cf8 \strokec8 else\cf5 \strokec5  \cf8 \strokec8 if\cf9 \strokec9 (\cf5 \strokec5 child\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 contains\cf9 \strokec9 (\cf13 \strokec13 'text-zinc-950'\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 ||\cf5 \strokec5  child\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 contains\cf9 \strokec9 (\cf13 \strokec13 'text-white'\cf9 \strokec9 ))\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3             child\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 color \cf9 \strokec9 =\cf5 \strokec5  isHovered \cf9 \strokec9 ?\cf5 \strokec5  textColor \cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 ''\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \});\cf5 \cb1 \strokec5 \
+\cb3       el\cf9 \strokec9 .\cf5 \strokec5 querySelectorAll\cf9 \strokec9 (\cf13 \strokec13 '.dynamic-p'\cf9 \strokec9 ).\cf5 \strokec5 forEach\cf9 \strokec9 (\cf5 \strokec5 child \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3           child\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 color \cf9 \strokec9 =\cf5 \strokec5  isHovered \cf9 \strokec9 ?\cf5 \strokec5  textColor \cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 '#52525b'\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3           child\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 borderColor \cf9 \strokec9 =\cf5 \strokec5  isHovered \cf9 \strokec9 ?\cf5 \strokec5  textColor \cf9 \strokec9 :\cf5 \strokec5  \cf13 \strokec13 '#f4f4f5'\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3           child\cf9 \strokec9 .\cf5 \strokec5 style\cf9 \strokec9 .\cf5 \strokec5 opacity \cf9 \strokec9 =\cf5 \strokec5  isHovered \cf9 \strokec9 ?\cf5 \strokec5  \cf14 \strokec14 1\cf5 \strokec5  \cf9 \strokec9 :\cf5 \strokec5  \cf14 \strokec14 0.8\cf9 \strokec9 ;\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \});\cf5 \cb1 \strokec5 \
+\cb3     \cf9 \strokec9 \};\cf5 \cb1 \strokec5 \
+\
+\cb3     window\cf9 \strokec9 .\cf5 \strokec5 handleSoundboardHover \cf9 \strokec9 =\cf5 \strokec5  \cf8 \strokec8 function\cf9 \strokec9 (\cf5 \strokec5 album\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 const\cf5 \strokec5  bg \cf9 \strokec9 =\cf5 \strokec5  document\cf9 \strokec9 .\cf5 \strokec5 getElementById\cf9 \strokec9 (\cf13 \strokec13 'soundboard-bg'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 if\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 album\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         bg\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 add\cf9 \strokec9 (\cf13 \strokec13 'opacity-0'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'scale-95'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'blur-sm'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3         bg\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 remove\cf9 \strokec9 (\cf13 \strokec13 'opacity-30'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'scale-100'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'blur-0'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \}\cf5 \strokec5  \cf8 \strokec8 else\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         bg\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 remove\cf9 \strokec9 (\cf13 \strokec13 'opacity-0'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'scale-95'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'blur-sm'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3         bg\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 add\cf9 \strokec9 (\cf13 \strokec13 'opacity-30'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'scale-100'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'blur-0'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3       \cf12 \strokec12 Array\cf9 \strokec9 .\cf8 \strokec8 from\cf9 \strokec9 (\cf5 \strokec5 document\cf9 \strokec9 .\cf5 \strokec5 getElementById\cf9 \strokec9 (\cf13 \strokec13 'soundboard-covers'\cf9 \strokec9 ).\cf5 \strokec5 children\cf9 \strokec9 ).\cf5 \strokec5 forEach\cf9 \strokec9 (\cf5 \strokec5 cover \cf9 \strokec9 =>\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 if\cf5 \strokec5  \cf9 \strokec9 (\cf5 \strokec5 cover\cf9 \strokec9 .\cf5 \strokec5 dataset\cf9 \strokec9 .\cf5 \strokec5 album \cf9 \strokec9 ===\cf5 \strokec5  album\cf9 \strokec9 )\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3             cover\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 add\cf9 \strokec9 (\cf13 \strokec13 'opacity-100'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'scale-100'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'translate-y-0'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3             cover\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 remove\cf9 \strokec9 (\cf13 \strokec13 'opacity-0'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'scale-110'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'translate-y-10'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'pointer-events-none'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3         \cf9 \strokec9 \}\cf5 \strokec5  \cf8 \strokec8 else\cf5 \strokec5  \cf9 \strokec9 \{\cf5 \cb1 \strokec5 \
+\cb3             cover\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 remove\cf9 \strokec9 (\cf13 \strokec13 'opacity-100'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'scale-100'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'translate-y-0'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3             cover\cf9 \strokec9 .\cf5 \strokec5 classList\cf9 \strokec9 .\cf5 \strokec5 add\cf9 \strokec9 (\cf13 \strokec13 'opacity-0'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'scale-110'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'translate-y-10'\cf9 \strokec9 ,\cf5 \strokec5  \cf13 \strokec13 'pointer-events-none'\cf9 \strokec9 );\cf5 \cb1 \strokec5 \
+\cb3         \cf9 \strokec9 \}\cf5 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 \});\cf5 \cb1 \strokec5 \
+\cb3     \cf9 \strokec9 \};\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 </\cf2 \strokec2 script\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3 \strokec6 </\cf2 \strokec2 body\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cf6 \cb3 \strokec6 </\cf2 \strokec2 html\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+}
