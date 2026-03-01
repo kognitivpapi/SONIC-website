@@ -48,12 +48,12 @@
       .question-text { font-size: clamp(4rem, 16vw, 6rem); }
       .adaptive-indent { padding-left: calc(var(--random-indent) * 10%); }
 
-      /* Adaptive Layout for Interviews Section - Consistent smaller images */
-      .interview-card { width: 60vw; max-width: 260px; }
-      .interview-gap { gap: 2rem; }
+      /* Adaptive Layout for Interviews Section */
+      .interview-card { width: 55vw; max-width: 240px; }
+      .interview-gap { gap: 1.5rem; }
       .interview-name { font-size: clamp(0.6rem, 2.5vw, 0.75rem); }
       .interview-desc { font-size: clamp(0.5rem, 1.8vw, 0.6rem); }
-      .interview-quote { font-size: clamp(0.9rem, 3.5vw, 1rem); }
+      .interview-quote { font-size: clamp(0.85rem, 3vw, 0.95rem); }
     }
 
     /* Tablet Breakpoint (810px - 1199px) */
@@ -61,25 +61,25 @@
       .question-text { font-size: clamp(6rem, 14vw, 9rem); }
       .adaptive-indent { padding-left: calc(var(--random-indent) * 15%); }
 
-      /* Adaptive Layout for Interviews Section - Consistent images */
-      .interview-card { width: 30vw; }
-      .interview-gap { gap: 3.5rem; }
+      /* Adaptive Layout for Interviews Section */
+      .interview-card { width: 28vw; }
+      .interview-gap { gap: 3rem; }
       .interview-name { font-size: clamp(0.7rem, 1.5vw, 0.85rem); }
       .interview-desc { font-size: clamp(0.6rem, 1.2vw, 0.7rem); }
-      .interview-quote { font-size: clamp(1rem, 2vw, 1.15rem); }
+      .interview-quote { font-size: clamp(0.95rem, 2vw, 1.1rem); }
     }
 
-    /* Desktop Breakpoint (>= 1200px) - Layout freezes for text but allows full motion for interviews */
+    /* Desktop Breakpoint (>= 1200px) */
     @media (min-width: 1200px) {
       .question-text { font-size: 10.5rem; } 
       .adaptive-indent { padding-left: calc(var(--random-indent) * 20%); }
 
-      /* Adjusted size so exactly 3 containers are visible in the 1200px core width area */
-      .interview-card { width: 375px; } 
-      .interview-gap { gap: 30px; }
-      .interview-name { font-size: 0.95rem; }
-      .interview-desc { font-size: 0.8rem; }
-      .interview-quote { font-size: 1.4rem; }
+      /* Container sized to ensure vertical spacing and horizontal visibility */
+      .interview-card { width: 350px; } 
+      .interview-gap { gap: 40px; }
+      .interview-name { font-size: 0.9rem; }
+      .interview-desc { font-size: 0.75rem; }
+      .interview-quote { font-size: 1.25rem; }
     }
   </style>
 </head>
@@ -112,26 +112,26 @@
   </div>
 
   <!-- Typewriter Sections -->
-  <section class="typewriter-section h-[600vh] relative" data-isfirst="true">
+  <section class="typewriter-section h-[900vh] relative" data-isfirst="true">
     <div class="sticky top-0 h-screen w-full flex items-center bg-[#000000] text-white z-10 overflow-hidden">
       <div class="typewriter-content w-full max-w-[1200px] mx-auto px-6 md:px-12 overflow-x-hidden flex flex-col items-start text-left uppercase select-none py-16"></div>
     </div>
   </section>
 
-  <section class="typewriter-section h-[600vh] relative" data-isfirst="false">
+  <section class="typewriter-section h-[900vh] relative" data-isfirst="false">
     <div class="sticky top-0 h-screen w-full flex items-center bg-[#000000] text-white z-10 overflow-hidden">
       <div class="typewriter-content w-full max-w-[1200px] mx-auto px-6 md:px-12 overflow-x-hidden flex flex-col items-start text-left uppercase select-none py-16"></div>
     </div>
   </section>
 
-  <section class="typewriter-section h-[600vh] relative" data-isfirst="false">
+  <section class="typewriter-section h-[900vh] relative" data-isfirst="false">
     <div class="sticky top-0 h-screen w-full flex items-center bg-[#000000] text-white z-10 overflow-hidden">
       <div class="typewriter-content w-full max-w-[1200px] mx-auto px-6 md:px-12 overflow-x-hidden flex flex-col items-start text-left uppercase select-none py-16"></div>
     </div>
   </section>
 
-  <!-- Sonic Reveal Section (Auto-animated with Scroll Lock) -->
-  <section id="sonic-reveal" class="h-[400vh] bg-[#000000] relative">
+  <!-- Sonic Reveal Section -->
+  <section id="sonic-reveal" class="h-[700vh] bg-[#000000] relative">
     <div class="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
       <div class="absolute inset-0 z-0">
         <div id="sonic-bg" class="relative w-full h-full grayscale transition-all duration-300 opacity-0" style="filter: blur(15px); transform: scale(1.2);">
@@ -172,7 +172,7 @@
       </div>
     </section>
 
-    <!-- Reviews Section Part 1 (01, 02, 03) -->
+    <!-- Reviews Section Part 1 -->
     <section class="bg-[#FAF9F6] relative overflow-visible">
       <div class="max-w-[110rem] mx-auto px-6 md:px-12 pt-16 md:pt-24 pb-0 md:pb-0">
         <h2 class="text-center text-[10px] font-bold tracking-[0.8em] uppercase mb-12 text-zinc-300" data-content="reviews.label"></h2>
@@ -182,8 +182,8 @@
       </div>
     </section>
 
-    <!-- Lyric Scroll Reveal (MOVED BETWEEN 03 AND 04) -->
-    <section class="scroll-reveal-container h-[300vh] relative border-y border-zinc-100">
+    <!-- Lyric Scroll Reveal -->
+    <section class="scroll-reveal-container h-[500vh] relative border-y border-zinc-100">
       <div class="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
         <h2 class="text-center text-[10px] font-bold tracking-[0.8em] uppercase mb-8 md:mb-12 text-zinc-300 w-full block" data-content="lyric.label"></h2>
         <div class="w-full max-w-7xl px-6 md:px-12 relative">
@@ -220,7 +220,7 @@
       </div>
     </section>
 
-    <!-- Reviews Section Part 2 (04, 05, 06) -->
+    <!-- Reviews Section Part 2 -->
     <section class="bg-[#FAF9F6] relative overflow-visible">
       <div class="max-w-[110rem] mx-auto px-6 md:px-12 pt-16 md:pt-24 pb-12">
         <div id="reviews-container-bottom">
@@ -230,7 +230,7 @@
     </section>
 
     <!-- Beat Scroll Reveal -->
-    <section class="scroll-reveal-container h-[300vh] bg-white text-zinc-950 relative border-b border-zinc-100">
+    <section class="scroll-reveal-container h-[500vh] bg-white text-zinc-950 relative border-b border-zinc-100">
       <div class="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
         <h2 class="text-center text-[10px] font-bold tracking-[0.8em] uppercase mb-8 md:mb-12 text-zinc-300 w-full block" data-content="beat.label"></h2>
         <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full">
@@ -276,12 +276,12 @@
     </section>
 
     <!-- Interviews Horizontal Scroll -->
-    <section id="interviews-section" class="bg-white h-[600vh] relative overflow-visible border-t border-zinc-100">
+    <section id="interviews-section" class="bg-white h-[900vh] relative overflow-visible border-t border-zinc-100">
       <div class="sticky top-0 h-screen w-full flex flex-col items-center overflow-hidden">
-        <!-- Header is now part of the flex flow to ensure no overlap across all screens -->
-        <h2 class="text-center text-[10px] font-bold tracking-[0.8em] uppercase text-zinc-300 pt-12 md:pt-24 shrink-0" data-content="interviews.label"></h2>
+        <!-- Header now uses standard section margin for consistent spacing -->
+        <h2 class="text-center text-[10px] font-bold tracking-[0.8em] uppercase text-zinc-300 pt-12 md:pt-24 mb-16 md:mb-28 shrink-0" data-content="interviews.label"></h2>
         
-        <!-- flex-1 ensures this area takes up the remaining height, flex items-center centers containers vertically -->
+        <!-- flex-1 ensures track area takes remaining space; items-center ensures containers are vertically in the middle -->
         <div id="interviews-track-wrapper" class="flex-1 w-full relative flex items-center overflow-hidden">
           <div id="interviews-track" class="relative left-0 transition-transform duration-150 ease-out flex items-center will-change-transform">
             <div id="interviews-container" class="flex items-center interview-gap w-max px-[10vw]">
@@ -365,9 +365,6 @@
     </footer>
   </main>
 
-  <!-- ========================================== -->
-  <!-- 1. SITE CONTENT & CONFIGURATION             -->
-  <!-- ========================================== -->
   <script>
     const SITE_CONTENT = {
       brand: {
@@ -440,7 +437,7 @@
           },
           {
             id: "03", cat: "Archive // Selection", subCat: "Signal Analysis", link: "illmatic.html",
-            image: "https://media1.jpc.de/image/w3200/front/0/5099747595912.jpg",
+            image: "https://media1.jpc.de/image/w2400/front/0/5099747595912.jpg",
             text: "The definitive landmark of lyrical precision. Nas documents the urban landscape of Queensbridge.",
             accentColor: "#b45309", textColor: "#fef3c7", themeBg: "#fffaf0"
           },
@@ -979,10 +976,10 @@
         </div>
       `;
 
-      // Render Interviews (Eliminated scale-105 zoom animation)
+      // Render Interviews (Layout follows Name -> Desc -> Line -> Quote)
       document.getElementById('interviews-container').innerHTML = SITE_CONTENT.interviews.items.map(item => `
         <div class="flex flex-col items-start shrink-0 group interview-card">
-          <div class="w-full overflow-hidden bg-zinc-50 border border-zinc-100 shadow-sm aspect-[3/4]">
+          <div class="w-full overflow-hidden transition-all duration-1000 bg-zinc-50 border border-zinc-100 shadow-sm aspect-[3/4]">
             <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover transition-transform duration-1000 scale-100" />
           </div>
           <div class="mt-6 w-full pb-16">
