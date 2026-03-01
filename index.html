@@ -39,26 +39,29 @@
     /* --- Adaptive Typography for Questions Section --- */
     .question-text {
       font-weight: 700;
-      line-height: 0.95;
-      letter-spacing: -0.02em;
+      line-height: 0.9;
+      letter-spacing: -0.04em;
     }
 
     /* Mobile Breakpoint (<= 809px) */
     @media (max-width: 809px) {
-      .question-text { font-size: clamp(4rem, 16vw, 6rem); }
-      .adaptive-indent { padding-left: calc(var(--random-indent) * 10%); }
+      /* Massive increase for mobile */
+      .question-text { font-size: clamp(6rem, 25vw, 12rem); }
+      .adaptive-indent { padding-left: calc(var(--random-indent) * 5%); }
     }
 
     /* Tablet Breakpoint (810px - 1199px) */
     @media (min-width: 810px) and (max-width: 1199px) {
-      .question-text { font-size: clamp(6rem, 14vw, 9rem); }
-      .adaptive-indent { padding-left: calc(var(--random-indent) * 15%); }
+      /* Massive increase for tablet */
+      .question-text { font-size: clamp(12rem, 22vw, 18rem); }
+      .adaptive-indent { padding-left: calc(var(--random-indent) * 10%); }
     }
 
-    /* Desktop Breakpoint (>= 1200px) - Layout freezes to prevent scaling issues on ultra-wide screens */
+    /* Desktop Breakpoint (>= 1200px) */
     @media (min-width: 1200px) {
-      .question-text { font-size: 10.5rem; } 
-      .adaptive-indent { padding-left: calc(var(--random-indent) * 20%); }
+      /* Massive fixed size for large screens within the 1200px cap */
+      .question-text { font-size: 20rem; } 
+      .adaptive-indent { padding-left: calc(var(--random-indent) * 15%); }
     }
   </style>
 </head>
