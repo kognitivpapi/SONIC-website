@@ -48,7 +48,7 @@
       .question-text { font-size: clamp(4rem, 16vw, 6rem); }
       .adaptive-indent { padding-left: calc(var(--random-indent) * 10%); }
 
-      /* Adaptive Layout for Interviews Section - Reduced width for smaller images */
+      /* Adaptive Layout for Interviews Section - Consistent smaller images */
       .interview-card { width: 60vw; max-width: 260px; }
       .interview-gap { gap: 2rem; }
       .interview-name { font-size: clamp(0.6rem, 2.5vw, 0.75rem); }
@@ -61,7 +61,7 @@
       .question-text { font-size: clamp(6rem, 14vw, 9rem); }
       .adaptive-indent { padding-left: calc(var(--random-indent) * 15%); }
 
-      /* Adaptive Layout for Interviews Section - Reduced width for smaller images */
+      /* Adaptive Layout for Interviews Section - Consistent images */
       .interview-card { width: 30vw; }
       .interview-gap { gap: 3.5rem; }
       .interview-name { font-size: clamp(0.7rem, 1.5vw, 0.85rem); }
@@ -74,7 +74,7 @@
       .question-text { font-size: 10.5rem; } 
       .adaptive-indent { padding-left: calc(var(--random-indent) * 20%); }
 
-      /* Adaptive Layout for Interviews Section - Reduced width for smaller images */
+      /* Adaptive Layout for Interviews Section - Removed max-w 1200 cap for movement area */
       .interview-card { width: 300px; } 
       .interview-gap { gap: 5rem; }
       .interview-name { font-size: 0.85rem; }
@@ -275,16 +275,16 @@
       </div>
     </section>
 
-    <!-- Interviews Horizontal Scroll -->
-    <section id="interviews-section" class="bg-white h-[400vh] relative overflow-visible border-t border-zinc-100">
+    <!-- Interviews Horizontal Scroll (Sticky Rule Update) -->
+    <section id="interviews-section" class="bg-white h-[600vh] relative overflow-visible border-t border-zinc-100">
       <div class="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
-        <!-- Title is positioned absolutely to not interfere with vertical centering of the track -->
-        <h2 class="absolute top-12 md:top-24 text-center text-[10px] font-bold tracking-[0.8em] uppercase text-zinc-300 z-10" data-content="interviews.label"></h2>
+        <!-- Centered Title absolute to not affect flex centering of track -->
+        <h2 class="absolute top-12 md:top-24 text-center text-[10px] font-bold tracking-[0.8em] uppercase text-zinc-300 z-10 w-full" data-content="interviews.label"></h2>
         
-        <!-- Parent div for horizontal track - Removed max-w limit to allow continuous movement -->
-        <div class="w-full h-full relative overflow-hidden flex items-center">
+        <!-- Parent track area is full width to continue movement rule -->
+        <div class="flex-1 w-full relative flex items-center">
           <div id="interviews-track" class="absolute left-0 transition-transform duration-150 ease-out flex items-center h-full will-change-transform">
-            <div id="interviews-container" class="flex items-center interview-gap w-max px-12 md:px-24">
+            <div id="interviews-container" class="flex items-center interview-gap w-max px-[10vw]">
               <!-- Injected via JS -->
             </div>
           </div>
@@ -365,6 +365,9 @@
     </footer>
   </main>
 
+  <!-- ========================================== -->
+  <!-- 1. SITE CONTENT & CONFIGURATION             -->
+  <!-- ========================================== -->
   <script>
     const SITE_CONTENT = {
       brand: {
@@ -900,7 +903,7 @@
       const r = SITE_CONTENT.reviews.items;
       const buildReviewCard = (data, extraImageClasses = '') => `
         <div class="preview-card relative flex flex-col justify-between group shadow-sm hover:shadow-2xl p-6 border border-zinc-200/50 z-10 transition-all duration-700 ease-out w-full" 
-             style="background-color: #FFFFFF" data-accent="${data.accentColor}" data-textcolor="${data.textColor}" 
+             style="background-color: #FFFFFF" data-accent="${data.accentColor}" data-textcolor="${data.textcolor || data.textColor}" 
              onmouseenter="handleCardHover(this, true)" onmouseleave="handleCardHover(this, false)">
           <div class="flex justify-between items-baseline mb-4">
             <div class="flex flex-col">
@@ -923,7 +926,7 @@
       `;
       const buildPanoramaCard = (data) => `
         <div class="preview-card relative flex flex-col group shadow-sm hover:shadow-2xl p-6 md:p-12 border border-zinc-200/50 z-10 transition-all duration-700 ease-out w-full"
-             style="background-color: #FFFFFF" data-accent="${data.accentColor}" data-textcolor="${data.textColor}"
+             style="background-color: #FFFFFF" data-accent="${data.accentColor}" data-textcolor="${data.textcolor || data.textColor}"
              onmouseenter="handleCardHover(this, true)" onmouseleave="handleCardHover(this, false)">
           <div class="flex justify-between items-baseline mb-8">
             <div class="flex flex-col">
@@ -976,7 +979,7 @@
         </div>
       `;
 
-      // Render Interviews (Now injected with adaptive CSS classes instead of hardcoded VW)
+      // Render Interviews (Layout follows Name -> Desc -> Line -> Quote)
       document.getElementById('interviews-container').innerHTML = SITE_CONTENT.interviews.items.map(item => `
         <div class="flex flex-col items-start shrink-0 group interview-card">
           <div class="w-full overflow-hidden transition-all duration-1000 bg-zinc-50 border border-zinc-100 shadow-sm aspect-[3/4]">
@@ -984,9 +987,9 @@
           </div>
           <div class="mt-6 w-full pb-16">
             <h3 class="interview-name font-black tracking-[0.45em] uppercase text-zinc-950 leading-none">${item.name}</h3>
-            <div class="w-5 h-px bg-zinc-200 mt-2"></div>
-            <p class="interview-desc font-bold uppercase tracking-[0.2em] text-zinc-400 mt-4">${item.desc}</p>
-            <p class="interview-quote font-medium text-zinc-500 italic leading-relaxed break-words max-w-full mt-4">${item.quote}</p>
+            <p class="interview-desc font-bold uppercase tracking-[0.2em] text-zinc-400 mt-3">${item.desc}</p>
+            <div class="w-5 h-px bg-zinc-200 mt-4 mb-4"></div>
+            <p class="interview-quote font-medium text-zinc-500 italic leading-relaxed break-words max-w-full">${item.quote}</p>
           </div>
         </div>
       `).join('');
