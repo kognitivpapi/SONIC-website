@@ -80,6 +80,9 @@
       .interview-name { font-size: 0.95rem; }
       .interview-desc { font-size: 0.8rem; }
       .interview-quote { font-size: 1.4rem; }
+      
+      /* Shift the entire track down slightly to clear header top-24 MD */
+      #interviews-track-wrapper { padding-top: 80px; }
     }
   </style>
 </head>
@@ -280,8 +283,8 @@
       <div class="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
         <h2 class="absolute top-12 md:top-24 text-center text-[10px] font-bold tracking-[0.8em] uppercase text-zinc-300 z-10 w-full" data-content="interviews.label"></h2>
         
-        <!-- Track area uses full width for continue movement rule -->
-        <div class="flex-1 w-full relative flex items-center">
+        <!-- Wrapper facilitates pushing down in desktop while remaining centered logic -->
+        <div id="interviews-track-wrapper" class="flex-1 w-full relative flex items-center">
           <div id="interviews-track" class="absolute left-0 transition-transform duration-150 ease-out flex items-center h-full will-change-transform">
             <div id="interviews-container" class="flex items-center interview-gap w-max px-[10vw]">
               <!-- Injected via JS -->
@@ -439,7 +442,7 @@
           },
           {
             id: "03", cat: "Archive // Selection", subCat: "Signal Analysis", link: "illmatic.html",
-            image: "https://media1.jpc.de/image/w2400/front/0/5099747595912.jpg",
+            image: "https://media1.jpc.de/image/w3200/front/0/5099747595912.jpg",
             text: "The definitive landmark of lyrical precision. Nas documents the urban landscape of Queensbridge.",
             accentColor: "#b45309", textColor: "#fef3c7", themeBg: "#fffaf0"
           },
