@@ -18,11 +18,11 @@
             },
             nav: {
                 links: [
-                    { text: "Home", url: "#" },
-                    { text: "Reviews", url: "#" },
-                    { text: "Interviews", url: "#" },
-                    { text: "Opinion", url: "#" },
-                    { text: "About", url: "#" }
+                    { text: "Home", url: "home.html" },
+                    { text: "Reviews", url: "reviews.html" },
+                    { text: "Interviews", url: "interviews.html" },
+                    { text: "Opinion", url: "opinion.html" },
+                    { text: "About", url: "about.html" }
                 ],
                 mobileMenuImage: "https://p7.hiclipart.com/preview/805/164/961/phonograph-record-lp-record-music-clip-art-others.jpg"
             },
@@ -56,7 +56,6 @@
             ],
 
             // 6. REVIEW BODY (Array of paragraphs)
-            // Placement logic: Gallery at 40%, About Section at 75% of this content.
             reviewParagraphs: [
                 `In the spring of 2017, the global musical landscape was still vibrating from the aftershocks of Kendrick Lamar’s <span class="italic">To Pimp a Butterfly</span>. That record, a sprawling, jazz-inflected sociopolitical manifesto, had solidified Lamar not just as a rapper, but as a generational prophet—a man carrying the heavy mantle of Black American struggle. When <span class="serif-italic">DAMN.</span> arrived on Good Friday, it initially felt like a sharp, kinetic pivot.`,
                 `The album cover itself serves as a warning. There is no elaborate mural, no sprawling cityscape of Compton. Instead, we see Kendrick standing before a plain red brick wall, his head bowed, eyes fixed on the viewer with a look of profound exhaustion. Above him, the word "DAMN." looms in a harsh, oversized serif font, a period punctuating the finality of his frustration. This is the visual shorthand for an artist who has been canonized and elevated to a point of near-deification.`,
@@ -144,7 +143,7 @@
                 libraryLabel: "Library",
                 tagline: "Dedicated to the high-fidelity critique and intentional listening experiences.",
                 contactLabel: "Contact",
-                contactUrl: "#",
+                contactUrl: "contact.html",
                 locations: "Based in Berlin and Mannheim",
                 year: "© 2025",
                 rights: "All Rights Reserved"
@@ -269,24 +268,29 @@
             text-align: justify;
         }
         
+        /* New Nav Specific Styles from snippet */
         @keyframes record-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         .animate-record-spin { animation: record-spin 4s linear infinite; }
         
-        /* Nav Transition */
-        #main-nav.nav-hidden { transform: translateY(-100%); opacity: 0; }
-        #main-nav.nav-visible { transform: translateY(0); opacity: 1; }
+        ::-webkit-scrollbar { display: none; }
+        html { -ms-overflow-style: none; scrollbar-width: none; }
+
+        #main-nav {
+            will-change: transform, opacity;
+            transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+        }
     </style>
 </head>
 <body class="p-0 m-0 antialiased">
 
-    <!-- Navigation -->
-    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-[110] transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] nav-hidden">
-        <div id="desktop-nav" class="hidden tablet:flex w-full h-6 bg-white border-b border-zinc-100">
-            <!-- Injected via JS -->
+    <!-- Integrated Navigation from snippet -->
+    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-[110] -translate-y-full opacity-0">
+        <div id="desktop-nav" class="hidden md:flex w-full h-6 bg-white border-b border-zinc-100">
         </div>
-        <div class="flex tablet:hidden w-full h-12 items-center justify-end px-6 bg-white/95 backdrop-blur-md border-b border-zinc-100">
+      
+        <div class="flex md:hidden w-full h-12 items-center justify-end px-6 bg-white/95 backdrop-blur-md border-b border-zinc-100">
             <button id="mobile-menu-btn" class="w-7 h-7 flex items-center justify-center rounded-full overflow-hidden transition-transform active:scale-95 group relative">
-                <img id="mobile-menu-img" src="" alt="Menu" class="w-full h-full object-cover rounded-full group-hover:animate-record-spin transition-all" />
+                <img id="mobile-menu-img" src="https://p7.hiclipart.com/preview/805/164/961/phonograph-record-lp-record-music-clip-art-others.jpg" alt="Menu" class="w-full h-full object-cover rounded-full group-hover:animate-record-spin transition-all" />
                 <div id="mobile-menu-close" class="absolute inset-0 flex items-center justify-center text-zinc-950 hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                 </div>
@@ -294,13 +298,12 @@
         </div>
     </nav>
 
-    <!-- Mobile Menu Overlay -->
+    <!-- Integrated Mobile Menu Overlay -->
     <div id="mobile-menu-overlay" class="fixed inset-0 z-[120] bg-zinc-950 flex flex-col items-center justify-center space-y-8 text-white transition-opacity duration-500 opacity-0 pointer-events-none hidden">
         <button id="mobile-menu-close-btn" class="absolute top-6 right-6 p-4">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
         </button>
         <div id="mobile-nav-links" class="flex flex-col items-center space-y-8">
-            <!-- Injected via JS -->
         </div>
     </div>
 
@@ -332,13 +335,11 @@
         </div>
     </section>
 
-    <!-- CONTENT FLOW (Automatically Populated) -->
-    <div id="dom-main-flow-container">
-        <!-- Text, Gallery, and About sections will be injected here relative to paragraph length -->
-    </div>
+    <!-- CONTENT FLOW -->
+    <div id="dom-main-flow-container"></div>
 
     <!-- RATING SECTION -->
-    <section class="max-w-4xl mx-auto px-[clamp(1.5rem,5vw,4rem)] pb-[clamp(3rem,8vw,6rem)]">
+    <section class="max-w-4xl mx-auto px-[clamp(1.5rem,5vw,4rem)] pb-[clamp(3rem,8vw,6rem)] bg-[var(--primary-color)]">
         <div class="pt-[clamp(3rem,8vw,6rem)] border-t border-white/20 text-center">
             <div class="flex flex-col items-center gap-[clamp(1.5rem,4vw,3rem)]">
                 <p id="dom-rating-label" class="text-[clamp(0.5rem,1.5vw,0.6rem)] tracking-[0.6em] font-bold uppercase opacity-40"></p>
@@ -367,7 +368,6 @@
                     <div class="space-y-6">
                         <h4 id="dom-footer-library-label" class="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-950"></h4>
                         <ul id="footer-nav" class="space-y-4 text-[10px] uppercase tracking-widest font-bold text-zinc-400">
-                            <!-- Injected via JS -->
                         </ul>
                     </div>
                 </div>
@@ -387,13 +387,13 @@
 
     <script>
         const hydrate = () => {
-            // Theme setup
+            // Setup
             document.documentElement.style.setProperty('--primary-color', ALBUM_CONFIG.theme.primary);
             document.documentElement.style.setProperty('--secondary-color', ALBUM_CONFIG.theme.secondary);
             document.documentElement.style.setProperty('--serif-font', ALBUM_CONFIG.fonts.serif);
             document.documentElement.style.setProperty('--sans-font', ALBUM_CONFIG.fonts.sans);
             
-            // Header elements
+            // Header
             document.getElementById('page-title').textContent = ALBUM_CONFIG.metadata.pageTitle;
             document.getElementById('dom-archive-number').textContent = ALBUM_CONFIG.metadata.archiveNumber;
             document.getElementById('dom-album-cover').src = ALBUM_CONFIG.metadata.coverArtUrl;
@@ -405,7 +405,7 @@
                 <div class="track-item"><span class="track-number">${(i + 1).toString().padStart(2, '0')}</span><span class="serif-italic text-[clamp(0.6rem,1.2vw,0.75rem)]">${track}</span></div>
             `).join('');
 
-            // DYNAMIC CONTENT FLOW CONSTRUCTION (Relative positioning)
+            // Dynamic Review Flow
             const mainFlow = document.getElementById('dom-main-flow-container');
             const totalParas = ALBUM_CONFIG.reviewParagraphs.length;
             const split40 = Math.floor(totalParas * 0.4);
@@ -415,9 +415,8 @@
             const segment2 = ALBUM_CONFIG.reviewParagraphs.slice(split40, split75).map(p => `<p>${p}</p>`).join('');
             const segment3 = ALBUM_CONFIG.reviewParagraphs.slice(split75).map(p => `<p>${p}</p>`).join('');
 
-            // Gallery HTML Template
             const galleryHTML = `
-                <section class="relative z-0" id="gallery-container">
+                <section class="relative z-0 bg-[var(--primary-color)]" id="gallery-container">
                     <div class="sticky top-0 w-full h-screen flex flex-col items-center justify-center transition-colors duration-500" id="sticky-element">
                         <div class="w-full overflow-hidden">
                             <div class="photo-strip text-white" id="dom-photo-strip">
@@ -433,10 +432,9 @@
                 </section>
             `;
 
-            // About Section HTML Template
             const about = ALBUM_CONFIG.aboutSection;
             const aboutHTML = `
-                <section class="segment-container pt-0 pb-[clamp(2rem,8vw,6rem)]">
+                <section class="segment-container pt-0 pb-[clamp(2rem,8vw,6rem)] bg-[var(--primary-color)]">
                     <div class="p-[clamp(1.5rem,5vw,3rem)] bg-white text-[var(--primary-color)] border border-white relative shadow-2xl">
                         <h2 class="font-bold uppercase tracking-[0.3em] text-[clamp(1.2rem,4vw,2.25rem)] mb-[clamp(1.5rem,4vw,3rem)] italic">${about.mainTitle}</h2>
                         <div class="grid grid-cols-1 tablet:grid-cols-2 gap-[clamp(2rem,6vw,4rem)]">
@@ -457,36 +455,36 @@
                 </section>
             `;
 
-            // Inject the flow
             mainFlow.innerHTML = `
-                <div class="segment-container"><div class="paragraph-stack">${segment1}</div></div>
+                <div class="segment-container bg-[var(--primary-color)]"><div class="paragraph-stack text-white">${segment1}</div></div>
                 ${galleryHTML}
-                <div class="segment-container"><div class="paragraph-stack">${segment2}</div></div>
+                <div class="segment-container bg-[var(--primary-color)]"><div class="paragraph-stack text-white">${segment2}</div></div>
                 ${aboutHTML}
-                <div class="segment-container pt-0"><div class="paragraph-stack">${segment3}</div></div>
+                <div class="segment-container pt-0 bg-[var(--primary-color)]"><div class="paragraph-stack text-white">${segment3}</div></div>
             `;
 
-            // Rating elements
+            // Rating
             document.getElementById('dom-rating-label').textContent = ALBUM_CONFIG.ratingSection.label;
             document.getElementById('dom-rating-value').textContent = ALBUM_CONFIG.ratingSection.value;
 
-            // Nav & Footer elements
-            document.getElementById('mobile-menu-img').src = ALBUM_CONFIG.nav.mobileMenuImage;
+            // Nav Injection
             document.getElementById('desktop-nav').innerHTML = ALBUM_CONFIG.nav.links.map(link => 
-                `<a href="${link.url}" class="flex-1 flex items-center justify-center border-r border-zinc-100 last:border-r-0 text-[clamp(6px,0.8vw,8px)] font-bold uppercase tracking-[0.5em] text-black hover:bg-zinc-950 hover:text-white transition-all"><span>${link.text}</span></a>`
+                `<a href="${link.url}" class="flex-1 flex items-center justify-center border-r border-zinc-100 last:border-r-0 text-[7px] font-bold uppercase tracking-[0.5em] transition-all duration-300 hover:bg-zinc-950 hover:text-white group text-black"><span>${link.text}</span></a>`
             ).join('');
+            
             document.getElementById('mobile-nav-links').innerHTML = ALBUM_CONFIG.nav.links.map(link => 
                 `<a href="${link.url}" class="text-4xl font-bold tracking-tighter uppercase transition-all">${link.text}</a>`
             ).join('');
-            document.getElementById('footer-nav').innerHTML = ALBUM_CONFIG.nav.links.map(link => 
-                `<li><a href="${link.url}" class="hover:text-zinc-950 transition-colors">${link.text}</a></li>`
-            ).join('');
 
+            // Footer
             document.getElementById('dom-footer-brand').textContent = ALBUM_CONFIG.brand.full;
             document.getElementById('dom-footer-tagline').textContent = ALBUM_CONFIG.footer.tagline;
             document.getElementById('dom-footer-contact-btn').textContent = ALBUM_CONFIG.footer.contactLabel;
             document.getElementById('dom-footer-contact-btn').href = ALBUM_CONFIG.footer.contactUrl;
             document.getElementById('dom-footer-library-label').textContent = ALBUM_CONFIG.footer.libraryLabel;
+            document.getElementById('footer-nav').innerHTML = ALBUM_CONFIG.nav.links.map(link => 
+                `<li><a href="${link.url}" class="hover:text-zinc-950 transition-colors">${link.text}</a></li>`
+            ).join('');
             document.getElementById('dom-footer-locations').textContent = ALBUM_CONFIG.footer.locations;
             document.getElementById('dom-footer-year').textContent = ALBUM_CONFIG.footer.year;
             document.getElementById('dom-footer-rights').textContent = ALBUM_CONFIG.footer.rights;
@@ -494,13 +492,13 @@
 
         hydrate();
 
-        // --- Interaction & Scroll Logic ---
-        const nav = document.getElementById('main-nav');
+        // --- Interaction Logic from snippet ---
         const menuBtn = document.getElementById('mobile-menu-btn');
         const menuOverlay = document.getElementById('mobile-menu-overlay');
         const menuCloseBtn = document.getElementById('mobile-menu-close-btn');
         const menuImg = document.getElementById('mobile-menu-img');
         const menuCloseIcon = document.getElementById('mobile-menu-close');
+        const nav = document.getElementById('main-nav');
         
         let isMenuOpen = false;
         const toggleMenu = () => {
@@ -526,10 +524,10 @@
             const strip = document.getElementById('dom-photo-strip');
             const container = document.getElementById('gallery-container');
             const stickyElement = document.getElementById('sticky-element');
-            const headerAnchor = document.getElementById('header-anchor');
             let scrollTimeout;
 
             const updateLayout = () => {
+                if(!strip || !container) return;
                 const maxMove = strip.scrollWidth - window.innerWidth;
                 container.style.height = maxMove > 0 ? `${maxMove + window.innerHeight}px` : `100vh`;
             };
@@ -540,14 +538,18 @@
             window.addEventListener('scroll', () => {
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
                 
-                // Nav hiding logic
-                nav.classList.replace('nav-visible', 'nav-hidden');
+                // Hide nav while scrolling
+                nav.classList.add('-translate-y-full', 'opacity-0');
+                nav.classList.remove('translate-y-0', 'opacity-100');
+
                 clearTimeout(scrollTimeout);
                 scrollTimeout = setTimeout(() => {
-                    if (scrollTop > headerAnchor.offsetHeight) {
-                        nav.classList.replace('nav-hidden', 'nav-visible');
+                    // Show nav if we have scrolled down at least 100px
+                    if (scrollTop > 100) {
+                        nav.classList.remove('-translate-y-full', 'opacity-0');
+                        nav.classList.add('translate-y-0', 'opacity-100');
                     }
-                }, 400);
+                }, 400); 
 
                 // Gallery Horizontal Move
                 const containerRect = container.getBoundingClientRect();
