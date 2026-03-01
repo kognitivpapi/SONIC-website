@@ -74,12 +74,12 @@
       .question-text { font-size: 10.5rem; } 
       .adaptive-indent { padding-left: calc(var(--random-indent) * 20%); }
 
-      /* Adaptive Layout for Interviews Section - Removed max-w 1200 cap for movement area */
-      .interview-card { width: 300px; } 
-      .interview-gap { gap: 5rem; }
-      .interview-name { font-size: 0.85rem; }
-      .interview-desc { font-size: 0.7rem; }
-      .interview-quote { font-size: 1.2rem; }
+      /* Adaptive Layout for Interviews Section - Increased size for desktop */
+      .interview-card { width: 450px; } 
+      .interview-gap { gap: 6rem; }
+      .interview-name { font-size: 0.95rem; }
+      .interview-desc { font-size: 0.8rem; }
+      .interview-quote { font-size: 1.4rem; }
     }
   </style>
 </head>
@@ -275,13 +275,13 @@
       </div>
     </section>
 
-    <!-- Interviews Horizontal Scroll (Sticky Rule Update) -->
+    <!-- Interviews Horizontal Scroll (Vertical Centering & Movement rule) -->
     <section id="interviews-section" class="bg-white h-[600vh] relative overflow-visible border-t border-zinc-100">
       <div class="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
-        <!-- Centered Title absolute to not affect flex centering of track -->
+        <!-- Title is positioned absolutely to not interfere with vertical centering -->
         <h2 class="absolute top-12 md:top-24 text-center text-[10px] font-bold tracking-[0.8em] uppercase text-zinc-300 z-10 w-full" data-content="interviews.label"></h2>
         
-        <!-- Parent track area is full width to continue movement rule -->
+        <!-- Track container remains full width for continue movement rule -->
         <div class="flex-1 w-full relative flex items-center">
           <div id="interviews-track" class="absolute left-0 transition-transform duration-150 ease-out flex items-center h-full will-change-transform">
             <div id="interviews-container" class="flex items-center interview-gap w-max px-[10vw]">
@@ -937,7 +937,7 @@
           </div>
           <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12 w-full h-full">
             <div class="w-full md:w-1/2 flex items-center justify-center overflow-hidden">
-              <a href="${data.link}" class="aspect-square w-full max-w-sm md:max-w-md relative flex items-center justify-center overflow-hidden block">
+              <a href="${data.link}" class="aspect-square w-full max-sm relative flex items-center justify-center overflow-hidden block">
                 <img src="${data.image}" alt="Choice ${data.id}" class="w-full h-full object-contain transition-all duration-700 ease-in-out transform scale-100 group-hover:scale-[0.95]" />
               </a>
             </div>
