@@ -10,9 +10,17 @@
     .animate-terminal-blink { animation: terminal-blink 2.2s step-end infinite; }
     @keyframes record-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     .animate-record-spin { animation: record-spin 4s linear infinite; }
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: #18181b; }
+    
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    html {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
     
     /* Reveal text base styles */
     .reveal-char { transition: opacity 0.1s ease-out; opacity: 0.15; }
@@ -20,6 +28,13 @@
     .typewriter-space { padding-right: 0; }
     
     body.lock-sonic { overflow: hidden !important; }
+
+    /* Safari performance and clipping fixes */
+    .typewriter-content {
+      -webkit-font-smoothing: antialiased;
+      perspective: 1000px;
+      backface-visibility: hidden;
+    }
   </style>
 </head>
 <body class="min-h-screen font-sans bg-white text-zinc-900 selection:bg-zinc-900 selection:text-white antialiased overflow-x-hidden">
@@ -70,7 +85,7 @@
   </section>
 
   <!-- Sonic Reveal Section (Auto-animated with Scroll Lock) -->
-  <section id="sonic-reveal" class="h-[150vh] bg-[#000000] relative">
+  <section id="sonic-reveal" class="h-[400vh] bg-[#000000] relative">
     <div class="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
       <div class="absolute inset-0 z-0">
         <div id="sonic-bg" class="relative w-full h-full grayscale transition-all duration-300 opacity-0" style="filter: blur(15px); transform: scale(1.2);">
@@ -111,17 +126,17 @@
       </div>
     </section>
 
-    <!-- Reviews Section -->
+    <!-- Reviews Section Part 1 (01, 02, 03) -->
     <section class="bg-[#FAF9F6] relative overflow-visible">
-      <div class="max-w-[110rem] mx-auto px-6 md:px-12 pt-16 md:pt-24 pb-12">
+      <div class="max-w-[110rem] mx-auto px-6 md:px-12 pt-16 md:pt-24 pb-0 md:pb-0">
         <h2 class="text-center text-[10px] font-bold tracking-[0.8em] uppercase mb-12 text-zinc-300" data-content="reviews.label"></h2>
-        <div id="reviews-container">
-          <!-- Complex Review Grid Injected via JS -->
+        <div id="reviews-container-top">
+          <!-- Grid 01, 02, 03 Injected via JS -->
         </div>
       </div>
     </section>
 
-    <!-- Lyric Scroll Reveal -->
+    <!-- Lyric Scroll Reveal (MOVED BETWEEN 03 AND 04) -->
     <section class="scroll-reveal-container h-[300vh] relative border-y border-zinc-100">
       <div class="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
         <h2 class="text-center text-[10px] font-bold tracking-[0.8em] uppercase mb-8 md:mb-12 text-zinc-300 w-full block" data-content="lyric.label"></h2>
@@ -155,6 +170,15 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section Part 2 (04, 05, 06) -->
+    <section class="bg-[#FAF9F6] relative overflow-visible">
+      <div class="max-w-[110rem] mx-auto px-6 md:px-12 pt-16 md:pt-24 pb-12">
+        <div id="reviews-container-bottom">
+          <!-- Grid 04, 05, 06 Injected via JS -->
         </div>
       </div>
     </section>
@@ -217,11 +241,11 @@
       </div>
     </section>
 
-    <!-- Opinion Section -->
-    <section class="bg-white py-24 md:py-32 border-t border-zinc-100">
-      <div class="max-w-7xl mx-auto px-6 md:px-12">
-        <h2 class="text-center text-[10px] font-bold tracking-[0.8em] uppercase mb-12 md:mb-16 text-zinc-300" data-content="opinion.label"></h2>
-        <div id="opinion-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+    <!-- Opinion Section (Decreased size) -->
+    <section class="bg-white py-16 md:py-24 border-t border-zinc-100">
+      <div class="max-w-4xl mx-auto px-6 md:px-12">
+        <h2 class="text-center text-[10px] font-bold tracking-[0.8em] uppercase mb-10 md:mb-12 text-zinc-300" data-content="opinion.label"></h2>
+        <div id="opinion-container" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-14">
           <!-- Injected via JS -->
         </div>
       </div>
@@ -260,7 +284,7 @@
       <div class="max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-16 mb-16 md:mb-20">
           <div class="space-y-6 md:space-y-8 max-sm">
-            <h1 class="text-4xl font-black tracking-tighter uppercase"><a href="index.html" data-content="brand.full"></a></h1>
+            <h1 class="text-4xl font-black tracking-tighter uppercase"><a href="home.html" data-content="brand.full"></a></h1>
             <p class="text-[10px] leading-relaxed font-bold tracking-[0.3em] uppercase text-zinc-400" data-content="footer.tagline"></p>
             <div class="flex gap-4">
               <a data-content="footer.contactLink" href="contact.html" class="px-8 py-3 bg-zinc-950 text-white text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-colors inline-block text-center">Contact</a>
@@ -301,7 +325,7 @@
       },
       nav: {
         links: [
-          { text: "Home", url: "index.html" },
+          { text: "Home", url: "home.html" },
           { text: "Reviews", url: "reviews.html" },
           { text: "Interviews", url: "interviews.html" },
           { text: "Opinion", url: "opinion.html" },
@@ -422,10 +446,10 @@
       opinion: {
         label: "Opinion",
         items: [
-          { title: "The Death of the Album?", excerpt: "In an era of hyper-curated playlists, the cohesive long-form project faces its greatest challenge yet. We explore if narrative structure still holds value.", image: "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=800&auto=format&fit=crop" },
-          { title: "Analog vs Digital", excerpt: "The warmth of imperfections continues to outshine the clinical precision of modern software. The resurgence of tape is more than nostalgia.", image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=800&auto=format&fit=crop" },
-          { title: "Global Rhythms", excerpt: "Geography no longer dictates sound. Cross-continental collaborations are blurring genre boundaries into something entirely new and undefinable.", image: "https://images.unsplash.com/photo-1444212477490-ca407925329e?q=80&w=800&auto=format&fit=crop" },
-          { title: "The Human Element", excerpt: "As AI enters the creative suite, the value of the 'happy accident' becomes the ultimate luxury in modern production. Soul cannot be algorithmic.", image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=800&auto=format&fit=crop" }
+          { title: "The Death of the Album?", excerpt: "In an era of hyper-curated playlists, the cohesive long-form project faces its greatest challenge yet.", image: "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=800&auto=format&fit=crop" },
+          { title: "Analog vs Digital", excerpt: "The warmth of imperfections continues to outshine the clinical precision of modern software.", image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=800&auto=format&fit=crop" },
+          { title: "Global Rhythms", excerpt: "Geography no longer dictates sound. Boundaries are blurring into something entirely new.", image: "https://images.unsplash.com/photo-1444212477490-ca407925329e?q=80&w=800&auto=format&fit=crop" },
+          { title: "The Human Element", excerpt: "As AI enters the creative suite, the value of the 'happy accident' becomes the ultimate luxury.", image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=800&auto=format&fit=crop" }
         ]
       },
       soundboard: {
@@ -543,7 +567,8 @@
         </div>
       `;
 
-      document.getElementById('reviews-container').innerHTML = `
+      // Split reviews injection into Top (01, 02, 03) and Bottom (04, 05, 06)
+      document.getElementById('reviews-container-top').innerHTML = `
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 items-start overflow-visible">
           <!-- Left Column -->
           <div class="flex flex-col items-start w-full">
@@ -561,7 +586,10 @@
             </div>
           </div>
         </div>
-        <div class="w-full mt-16 md:mt-[10vh]">
+      `;
+
+      document.getElementById('reviews-container-bottom').innerHTML = `
+        <div class="w-full mt-0">
           ${buildPanoramaCard(r[3])}
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 mt-16 md:mt-[10vh] pb-24 md:pb-32">
@@ -584,14 +612,14 @@
         </div>
       `).join('');
 
-      // Render Opinions
+      // Render Opinions (Small layout)
       document.getElementById('opinion-container').innerHTML = SITE_CONTENT.opinion.items.map(item => `
         <div class="flex flex-col group">
-          <h3 class="text-sm font-bold uppercase tracking-tight text-zinc-950 mb-4 md:mb-5 pb-3 md:pb-4 border-b border-zinc-100 group-hover:text-zinc-500 transition-colors">${item.title}</h3>
-          <div class="w-full aspect-[4/3] overflow-hidden bg-zinc-50 mb-6 shadow-sm border border-zinc-100">
+          <h3 class="text-xs font-bold uppercase tracking-tight text-zinc-950 mb-3 pb-2 border-b border-zinc-100 group-hover:text-zinc-500 transition-colors">${item.title}</h3>
+          <div class="w-full aspect-video overflow-hidden bg-zinc-50 mb-4 shadow-sm border border-zinc-100">
             <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700" />
           </div>
-          <p class="text-[11px] leading-relaxed text-zinc-500 font-medium tracking-tight">${item.excerpt}</p>
+          <p class="text-[10px] leading-relaxed text-zinc-500 font-medium tracking-tight">${item.excerpt}</p>
         </div>
       `).join('');
 
@@ -653,7 +681,7 @@
       menuCloseBtn.addEventListener('click', toggleMenu);
       menuOverlay.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { if(isMenuOpen) toggleMenu(); }));
 
-      // --- Navigation Visibility Logic (Hide on Scroll, regardless of direction) ---
+      // --- Navigation Visibility Logic ---
       const nav = document.getElementById('main-nav');
       const missionSection = document.getElementById('mission-section');
       let scrollTimeout;
@@ -749,30 +777,25 @@
             lines.push(current);
           }
         }
-        if (lines.length > 1 && lines[lines.length - 1].length < 2) {
-          const last = lines.pop();
-          lines[lines.length - 1] += " " + last;
-        }
         const totalChars = text.length;
         let charElements = [];
         let charCounter = 0;
 
         lines.forEach((lineText, lineIdx) => {
           const isAnchoredFirst = isFirst && lineIdx === 0;
-          const offset = isAnchoredFirst ? '0' : `${Math.random() * 35}vw`;
+          const maxOffset = window.innerWidth < 768 ? 15 : 30;
+          const offset = isAnchoredFirst ? '0' : `${Math.random() * maxOffset}vw`;
           const h2 = document.createElement('h2');
-          h2.className = "text-[14vw] md:text-[16vw] font-bold tracking-tight leading-[0.95] md:leading-[0.9] w-full flex flex-wrap items-baseline mb-[0.15em] pt-4 transition-none";
+          h2.className = "text-[12vw] md:text-[16vw] font-bold tracking-tight leading-[0.95] md:leading-[0.9] flex flex-wrap items-baseline mb-[0.15em] pt-4 transition-none";
           h2.style.paddingLeft = offset;
 
           lineText.split("").forEach((char) => {
             const span = document.createElement('span');
             span.className = `inline-block ${char === " " ? "typewriter-space" : "typewriter-char"}`;
             span.textContent = char === " " ? "\u00A0" : char;
-            
             const shouldShowInitially = isFirst && charCounter < 3;
             span.style.opacity = shouldShowInitially ? 1 : 0;
             span.style.visibility = shouldShowInitially ? "visible" : "hidden";
-            
             h2.appendChild(span);
             charElements.push(span);
             charCounter++;
@@ -873,10 +896,7 @@
     window.handleCardHover = function(el, isHovered) {
       const accent = el.dataset.accent;
       const textColor = el.dataset.textcolor;
-      
-      // Changed to default to bright white when animation/hover didn't start/ended
       el.style.backgroundColor = isHovered ? accent : '#FFFFFF';
-      
       el.querySelectorAll('.dynamic-text').forEach(child => {
           if(child.classList.contains('text-zinc-300') || child.classList.contains('opacity-30')) {
             child.classList.toggle('opacity-30', isHovered);
