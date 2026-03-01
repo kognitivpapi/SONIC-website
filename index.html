@@ -45,20 +45,20 @@
 
     /* Mobile Breakpoint (<= 809px) */
     @media (max-width: 809px) {
-      .question-text { font-size: clamp(2.5rem, 12vw, 4.5rem); }
+      .question-text { font-size: clamp(4rem, 16vw, 6rem); }
       .adaptive-indent { padding-left: calc(var(--random-indent) * 10%); }
     }
 
     /* Tablet Breakpoint (810px - 1199px) */
     @media (min-width: 810px) and (max-width: 1199px) {
-      .question-text { font-size: clamp(4rem, 10vw, 6.5rem); }
-      .adaptive-indent { padding-left: calc(var(--random-indent) * 20%); }
+      .question-text { font-size: clamp(6rem, 14vw, 9rem); }
+      .adaptive-indent { padding-left: calc(var(--random-indent) * 15%); }
     }
 
     /* Desktop Breakpoint (>= 1200px) - Layout freezes to prevent scaling issues on ultra-wide screens */
     @media (min-width: 1200px) {
-      .question-text { font-size: 6rem; } 
-      .adaptive-indent { padding-left: calc(var(--random-indent) * 30%); }
+      .question-text { font-size: 10.5rem; } 
+      .adaptive-indent { padding-left: calc(var(--random-indent) * 20%); }
     }
   </style>
 </head>
@@ -266,12 +266,11 @@
       </div>
     </section>
 
-    <!-- Opinion Section -->
-    <section class="bg-white py-24 md:py-32 border-t border-zinc-100">
-      <div class="max-w-7xl mx-auto px-6 md:px-12">
-        <h2 class="text-center text-[10px] font-bold tracking-[0.8em] uppercase mb-12 md:mb-16 text-zinc-300" data-content="opinion.label"></h2>
-        <!-- Readjusted to a 2x2 layout on desktop with better spacing -->
-        <div id="opinion-container" class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 lg:gap-24 max-w-6xl mx-auto">
+    <!-- Opinion Section (Compact) -->
+    <section class="bg-white py-16 md:py-24 border-t border-zinc-100">
+      <div class="max-w-4xl mx-auto px-6 md:px-12">
+        <h2 class="text-center text-[10px] font-bold tracking-[0.8em] uppercase mb-10 md:mb-12 text-zinc-300" data-content="opinion.label"></h2>
+        <div id="opinion-container" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-14">
           <!-- Injected via JS -->
         </div>
       </div>
@@ -382,7 +381,7 @@
           "https://f4.bcbits.com/img/a1236533191_10.jpg",
           "https://media1.jpc.de/image/w2400/front/0/5099747595912.jpg",
           "https://upload.wikimedia.org/wikipedia/en/2/2c/The_Blueprint.png",
-          "https://f4.bcbits.com/img/a0883615686_10.jpg",
+          "https://f4.bcbits.com/img/a1236533191_10.jpg",
           "https://media.pitchfork.com/photos/5929bcb55e6ef95969322eda/master/w_1280,c_limit/5f06f7f6.jpg",
           "https://media1.jpc.de/image/w2400/rear/0/0196588867613.jpg",
           "https://m.media-amazon.com/images/I/71tT2xuLmZL._SX522_.jpg",
@@ -910,7 +909,8 @@
         const h = window.innerHeight;
         typewriters.forEach(tw => {
           const rect = tw.section.getBoundingClientRect();
-          const progress = Math.max(0, Math.min(1, -rect.top / (tw.section.offsetHeight - h)));
+          const height = tw.section.offsetHeight - h;
+          const progress = Math.max(0, Math.min(1, -rect.top / height));
           
           // Adaptive animation multiplier
           const effectiveProgress = Math.min(1, progress * 1.15);
