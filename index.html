@@ -85,13 +85,13 @@
 </head>
 <body class="min-h-screen font-sans bg-white text-zinc-900 selection:bg-zinc-900 selection:text-white antialiased overflow-x-hidden">
 
-  <!-- Navigation -->
-  <nav id="main-nav" class="fixed top-0 left-0 right-0 z-[110] transition-all duration-[750ms] cubic-bezier(0.16, 1, 0.3, 1) -translate-y-full opacity-0">
-    <div id="desktop-nav" class="hidden md:flex w-full h-4 bg-white border-b border-zinc-100">
+  <!-- Navigation (duration reduced for faster appearance) -->
+  <nav id="main-nav" class="fixed top-0 left-0 right-0 z-[110] transition-all duration-[400ms] cubic-bezier(0.16, 1, 0.3, 1) -translate-y-full opacity-0">
+    <div id="desktop-nav" class="hidden md:flex w-full h-6 bg-white border-b border-zinc-100">
       <!-- Injected via JS -->
     </div>
-    <div class="flex md:hidden w-full h-10 items-center justify-between px-6 bg-white/95 backdrop-blur-md border-b border-zinc-100">
-      <div class="font-black uppercase tracking-tighter text-sm" data-content="brand.short">S.</div>
+    <!-- Mobile Nav: Logo removed and alignment adjusted to end, height slightly increased -->
+    <div class="flex md:hidden w-full h-12 items-center justify-end px-6 bg-white/95 backdrop-blur-md border-b border-zinc-100">
       <button id="mobile-menu-btn" class="w-7 h-7 flex items-center justify-center rounded-full overflow-hidden transition-transform active:scale-95 group relative">
         <img id="mobile-menu-img" data-content="nav.mobileMenuImage" src="" alt="Menu" class="w-full h-full object-cover rounded-full group-hover:animate-record-spin transition-all" />
         <div id="mobile-menu-close" class="absolute inset-0 flex items-center justify-center text-zinc-950 hidden">
@@ -437,7 +437,7 @@
           },
           {
             id: "03", cat: "Archive // Selection", subCat: "Signal Analysis", link: "illmatic.html",
-            image: "https://media1.jpc.de/image/w2400/front/0/5099747595912.jpg",
+            image: "https://media1.jpc.de/image/w3200/front/0/5099747595912.jpg",
             text: "The definitive landmark of lyrical precision. Nas documents the urban landscape of Queensbridge.",
             accentColor: "#b45309", textColor: "#fef3c7", themeBg: "#fffaf0"
           },
@@ -565,7 +565,7 @@
             nav.classList.remove('-translate-y-full', 'opacity-0');
             nav.classList.add('translate-y-0', 'opacity-100');
           }
-        }, 800); 
+        }, 400); // Fast appearance
       };
 
       window.addEventListener('scroll', handleNavScroll, { passive: true });
@@ -647,11 +647,8 @@
         let charElements = [];
         let charCounter = 0;
         
-        // Adaptive approach: split into words to prevent unnatural mid-word breaks on smaller screens
         const words = text.split(" ");
         let lines = [];
-        
-        // Chunk lines logically for typewriter staggering
         for (let i = 0; i < words.length; i++) {
           let current = words[i];
           if (current.length < 2 && i < words.length - 1) {
@@ -669,41 +666,30 @@
         lines.forEach((lineText, lineIdx) => {
           const isAnchoredFirst = isFirst && lineIdx === 0;
           const h2 = document.createElement('h2');
-          
-          // CSS variables feed into our adaptive breakpoints automatically
           h2.style.setProperty('--random-indent', isAnchoredFirst ? 0 : Math.random());
           h2.className = "question-text flex flex-wrap items-baseline mb-[0.15em] pt-4 transition-none w-full adaptive-indent";
-
-          // Group by words to keep responsiveness pristine without overflowing text mid-word
           lineText.split(" ").forEach((word, wordIdx, wordArr) => {
             const wordSpan = document.createElement('span');
             wordSpan.className = "inline-flex whitespace-nowrap";
-            
             word.split("").forEach((char) => {
               const span = document.createElement('span');
               span.className = "typewriter-char inline-block";
               span.textContent = char;
-              
               const shouldShowInitially = isFirst && charCounter < 3;
               span.style.opacity = shouldShowInitially ? 1 : 0;
               span.style.visibility = shouldShowInitially ? "visible" : "hidden";
-              
               wordSpan.appendChild(span);
               charElements.push(span);
               charCounter++;
             });
-            
             h2.appendChild(wordSpan);
-            
             if (wordIdx < wordArr.length - 1) {
                const spaceSpan = document.createElement('span');
                spaceSpan.className = "typewriter-space inline-block";
                spaceSpan.textContent = "\u00A0";
-               
                const shouldShowInitially = isFirst && charCounter < 3;
                spaceSpan.style.opacity = shouldShowInitially ? 1 : 0;
                spaceSpan.style.visibility = shouldShowInitially ? "visible" : "hidden";
-               
                h2.appendChild(spaceSpan);
                charElements.push(spaceSpan);
                charCounter++;
@@ -712,13 +698,11 @@
           container.appendChild(h2);
         });
 
-        // Add adaptive blinker
         const blinker = document.createElement('span');
         blinker.className = "inline-block ml-1 animate-terminal-blink question-text";
         blinker.textContent = ".";
         blinker.style.display = "none";
         container.appendChild(blinker);
-
         typewriters.push({ section, charElements, totalChars: text.length, blinker, isFirst });
       });
 
@@ -755,18 +739,13 @@
           const rect = tw.section.getBoundingClientRect();
           const height = tw.section.offsetHeight - h;
           const progress = Math.max(0, Math.min(1, -rect.top / height));
-          
-          // Adaptive animation multiplier
           const effectiveProgress = Math.min(1, progress * 1.15);
           const typingHeadIdx = tw.isFirst ? 2 + Math.floor(effectiveProgress * (tw.totalChars - 3)) : -1 + Math.floor(effectiveProgress * tw.totalChars);
-          
           tw.charElements.forEach((el, idx) => {
             const isVisible = (tw.isFirst && idx < 3) || idx <= typingHeadIdx;
             el.style.opacity = isVisible ? 1 : 0; 
             el.style.visibility = isVisible ? 'visible' : 'hidden';
           });
-
-          // Blinker toggling logically follows the typing head
           const isLastCharTyped = (tw.isFirst && effectiveProgress === 0 && typingHeadIdx === 2) || (typingHeadIdx >= 0 && effectiveProgress < 1);
           if (isLastCharTyped) {
               tw.blinker.style.display = 'inline-block';
@@ -789,12 +768,9 @@
         
         if (interviewsSection && interviewsTrack) {
           const progress = Math.max(0, Math.min(1, -interviewsSection.getBoundingClientRect().top / (interviewsSection.offsetHeight - h)));
-          
-          // Adaptive calculation instead of hardcoded VW translation
           const trackContainerWidth = interviewsTrack.parentElement.clientWidth;
           const scrollableWidth = document.getElementById('interviews-container').scrollWidth;
           const maxTranslate = Math.max(0, scrollableWidth - trackContainerWidth);
-          
           interviewsTrack.style.transform = `translateX(${-progress * maxTranslate}px)`;
         }
       };
@@ -807,10 +783,7 @@
     window.handleCardHover = function(el, isHovered) {
       const accent = el.dataset.accent;
       const textColor = el.dataset.textcolor;
-      
-      // Changed to default to bright white when animation/hover didn't start/ended
       el.style.backgroundColor = isHovered ? accent : '#FFFFFF';
-      
       el.querySelectorAll('.dynamic-text').forEach(child => {
           if(child.classList.contains('text-zinc-300') || child.classList.contains('opacity-30')) {
             child.classList.toggle('opacity-30', isHovered);
@@ -852,51 +825,43 @@
     };
 
     document.addEventListener("DOMContentLoaded", () => {
-      // Bind single data fields (texts & images)
+      // Bind data fields
       document.querySelectorAll('[data-content]').forEach(el => {
         const keys = el.dataset.content.split('.');
         let val = SITE_CONTENT;
         keys.forEach(k => val = val[k] || val);
-        
         if (el.tagName === 'IMG') el.src = val;
         else if (el.tagName === 'A') { el.textContent = val; el.href = val; }
         else if (el.classList.contains('scroll-text-wrapper')) el.dataset.text = val;
         else el.textContent = val;
       });
 
-      // Render Navigation
-      const navLinksHTML = SITE_CONTENT.nav.links.map(link => 
+      // Desktop Nav Links
+      document.getElementById('desktop-nav').innerHTML = SITE_CONTENT.nav.links.map(link => 
         `<a href="${link.url}" class="flex-1 flex items-center justify-center border-r border-zinc-100 last:border-r-0 text-[7px] font-bold uppercase tracking-[0.5em] transition-all duration-300 hover:bg-zinc-950 hover:text-white group"><span>${link.text}</span></a>`
       ).join('');
-      document.getElementById('desktop-nav').innerHTML = navLinksHTML;
       
-      const mobileNavLinksHTML = SITE_CONTENT.nav.links.map(link => 
+      // Mobile Nav Links
+      document.getElementById('mobile-nav-links').innerHTML = SITE_CONTENT.nav.links.map(link => 
         `<a href="${link.url}" class="text-4xl font-bold tracking-tighter uppercase transition-all">${link.text}</a>`
       ).join('');
-      document.getElementById('mobile-nav-links').innerHTML = mobileNavLinksHTML;
 
-      const footerNavLinksHTML = SITE_CONTENT.nav.links.map(link => 
+      // Footer Nav Links
+      document.getElementById('footer-nav').innerHTML = SITE_CONTENT.nav.links.map(link => 
         `<li><a href="${link.url}" class="hover:text-zinc-950 transition-colors">${link.text}</a></li>`
       ).join('');
-      document.getElementById('footer-nav').innerHTML = footerNavLinksHTML;
 
-      // Typewriter Texts Binding
-      document.querySelectorAll('.typewriter-section').forEach((sec, idx) => {
-        sec.dataset.text = SITE_CONTENT.typewriters[idx] || "";
-      });
-
-      // Sonic Reveal Title Binding
+      // Build Typewriters
       const sonicTitleHtml = SITE_CONTENT.sonicReveal.title.split('').map(char => 
         `<span class="inline-block text-white transition-transform duration-500 sonic-char" style="transform: translateY(20px);">${char}</span>`
       ).join('');
       document.getElementById('sonic-title').innerHTML = sonicTitleHtml;
 
-      // Render Visual Archive
       document.getElementById('visual-archive-grid').innerHTML = SITE_CONTENT.archive.images.map(src => 
         `<div class="group relative aspect-square overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 ease-out cursor-crosshair bg-white"><img src="${src}" alt="Archive" class="w-full h-full object-cover"/></div>`
       ).join('');
 
-      // Render Review Cards
+      // Review cards build helper
       const r = SITE_CONTENT.reviews.items;
       const buildReviewCard = (data, extraImageClasses = '') => `
         <div class="preview-card relative flex flex-col justify-between group shadow-sm hover:shadow-2xl p-6 border border-zinc-200/50 z-10 transition-all duration-700 ease-out w-full" 
@@ -945,10 +910,8 @@
         </div>
       `;
 
-      // Split reviews injection into Top (01, 02, 03) and Bottom (04, 05, 06)
       document.getElementById('reviews-container-top').innerHTML = `
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 items-start overflow-visible">
-          <!-- Left Column -->
           <div class="flex flex-col items-start w-full">
             ${buildReviewCard(r[0])}
             <div class="relative w-full mt-12 md:mt-[8vh]">
@@ -957,9 +920,8 @@
               </div>
             </div>
           </div>
-          <!-- Right Column -->
           <div class="flex flex-col md:pt-24 overflow-visible items-end w-full mt-12 md:mt-0">
-            <div class="w-full sm:w-full md:w-full max-w-none self-end md:self-start aspect-square flex relative z-20 mt-0">
+            <div class="w-full flex relative z-20 mt-0">
               ${buildReviewCard(r[1], 'flex-1 mb-2')}
             </div>
           </div>
@@ -976,7 +938,6 @@
         </div>
       `;
 
-      // Render Interviews (Layout follows Name -> Desc -> Line -> Quote)
       document.getElementById('interviews-container').innerHTML = SITE_CONTENT.interviews.items.map(item => `
         <div class="flex flex-col items-start shrink-0 group interview-card">
           <div class="w-full overflow-hidden transition-all duration-1000 bg-zinc-50 border border-zinc-100 shadow-sm aspect-[3/4]">
@@ -991,7 +952,6 @@
         </div>
       `).join('');
 
-      // Render Opinions
       document.getElementById('opinion-container').innerHTML = SITE_CONTENT.opinion.items.map(item => `
         <div class="flex flex-col group">
           <h3 class="text-sm font-bold uppercase tracking-tight text-zinc-950 mb-4 md:mb-5 pb-3 md:pb-4 border-b border-zinc-100 group-hover:text-zinc-500 transition-colors">${item.title}</h3>
@@ -1002,12 +962,10 @@
         </div>
       `).join('');
 
-      // Render Soundboard Covers
       document.getElementById('soundboard-covers').innerHTML = SITE_CONTENT.soundboard.records.map(rec => `
         <img src="${rec.image}" data-album="${rec.name}" alt="${rec.name}" class="absolute inset-0 m-auto max-w-full max-h-[70%] object-contain shadow-2xl transition-all duration-700 cubic-bezier(0.23, 1, 0.32, 1) opacity-0 scale-110 translate-y-10 pointer-events-none" />
       `).join('');
 
-      // Render Soundboard Rows
       const rowsInner = document.createElement('div');
       rowsInner.className = "relative flex-1";
       rowsInner.innerHTML = SITE_CONTENT.soundboard.records.map(rec => `
