@@ -69,14 +69,14 @@
       .interview-quote { font-size: clamp(1rem, 2vw, 1.15rem); }
     }
 
-    /* Desktop Breakpoint (>= 1200px) - Layout freezes to prevent scaling issues on ultra-wide screens */
+    /* Desktop Breakpoint (>= 1200px) - Layout freezes for text but allows full motion for interviews */
     @media (min-width: 1200px) {
       .question-text { font-size: 10.5rem; } 
       .adaptive-indent { padding-left: calc(var(--random-indent) * 20%); }
 
-      /* Adaptive Layout for Interviews Section - Increased size for desktop */
-      .interview-card { width: 450px; } 
-      .interview-gap { gap: 6rem; }
+      /* Adjusted size so exactly 3 containers are visible in the 1200px core width area */
+      .interview-card { width: 375px; } 
+      .interview-gap { gap: 30px; }
       .interview-name { font-size: 0.95rem; }
       .interview-desc { font-size: 0.8rem; }
       .interview-quote { font-size: 1.4rem; }
@@ -275,13 +275,12 @@
       </div>
     </section>
 
-    <!-- Interviews Horizontal Scroll (Vertical Centering & Movement rule) -->
+    <!-- Interviews Horizontal Scroll (Vertical Centering & Continuous rule) -->
     <section id="interviews-section" class="bg-white h-[600vh] relative overflow-visible border-t border-zinc-100">
       <div class="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
-        <!-- Title is positioned absolutely to not interfere with vertical centering -->
         <h2 class="absolute top-12 md:top-24 text-center text-[10px] font-bold tracking-[0.8em] uppercase text-zinc-300 z-10 w-full" data-content="interviews.label"></h2>
         
-        <!-- Track container remains full width for continue movement rule -->
+        <!-- Track area uses full width for continue movement rule -->
         <div class="flex-1 w-full relative flex items-center">
           <div id="interviews-track" class="absolute left-0 transition-transform duration-150 ease-out flex items-center h-full will-change-transform">
             <div id="interviews-container" class="flex items-center interview-gap w-max px-[10vw]">
@@ -440,7 +439,7 @@
           },
           {
             id: "03", cat: "Archive // Selection", subCat: "Signal Analysis", link: "illmatic.html",
-            image: "https://media1.jpc.de/image/w3200/front/0/5099747595912.jpg",
+            image: "https://media1.jpc.de/image/w2400/front/0/5099747595912.jpg",
             text: "The definitive landmark of lyrical precision. Nas documents the urban landscape of Queensbridge.",
             accentColor: "#b45309", textColor: "#fef3c7", themeBg: "#fffaf0"
           },
