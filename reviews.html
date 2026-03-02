@@ -1,1 +1,609 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RE|VIEW - Catalogue</title>
+    <!-- Tailwind CSS für schnelles Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Konfiguration der Breakpoints nach Vorgabe -->
+    <script>
+        tailwind.config = {
+            theme: {
+                screens: {
+                    'md': '810px',   /* Tablet: 810px - 1199px */
+                    'lg': '1200px',  /* Desktop: 1200px+ */
+                },
+                extend: {}
+            }
+        }
+    </script>
 
+    <!-- Google Fonts Import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
+    
+    <!-- ========================================================================================= -->
+    <!-- =============================== EASY CONFIGURATION SECTION ============================== -->
+    <!-- ========================================================================================= -->
+    <script>
+        window.PAGE_CONFIG = {
+          design: {
+            colors: { 
+                primaryRed: "#ff0000",
+                accentRed: "#cc0000",
+                background: "#ffffff",
+                text: "#000000"
+            },
+            fonts: { 
+                primary: "'Playfair Display', serif",
+                secondary: "'Times New Roman', Times, serif",
+                nav: "'Montserrat', sans-serif",
+                note: "'Inter', sans-serif"
+            }
+          },
+          brand: { 
+              short: "S.", 
+              full: "SONIC." 
+          },
+          nav: {
+            links: [
+              { text: "Home", url: "#" },
+              { text: "Reviews", url: "#" },
+              { text: "Catalogue", url: "#" },
+              { text: "Interviews", url: "#" },
+              { text: "About", url: "#" }
+            ],
+            mobileMenuImage: "https://p7.hiclipart.com/preview/805/164/961/phonograph-record-lp-record-music-clip-art-others.jpg"
+          },
+          preview1: {
+            label: "preview 01",
+            title: "DAMN.",
+            subtitle: "BY KENDRICK LAMAR - 2017",
+            awards: "5x Grammy, Pulitzer Prize Winner",
+            cover1: "https://images.unsplash.com/photo-1544273677-c433136021d4?auto=format&fit=crop&q=80&w=800",
+            cover1Caption: "front album cover",
+            cover2: "https://images.unsplash.com/photo-1601643141690-21742a9481ba?auto=format&fit=crop&q=80&w=800",
+            quote: "„I got loyalty, got royalty inside my DNA.“",
+            p1: "Das Album erzählt die Geschichte zweier Charaktere: Wicked Kendrick und Weak Kendrick. - „Es war schon immer ich gegen mich selbst.“",
+            p2: "Die Geschichte von Wicked Kenny wird durch Tracks wie DNA, ELEMENT, LOYALTY, HUMBLE, LOVE und FEAR getragen.",
+            btnText: "read review",
+            btnLink: "#",
+            cover3: "https://images.unsplash.com/photo-1493225255756-d9584f8606e9?auto=format&fit=crop&q=80&w=800",
+            tracklistTitle: "TRACKLIST:",
+            tracks: [
+                "1. BLOOD.", "2. DNA.", "3. YAH.", "4. ELEMENT.", "5. FEEL.", "6. LOYALTY.", "7. PRIDE.", 
+                "8. HUMBLE.", "9. LUST.", "10. LOVE.", "11. XXX.", "12. FEAR.", "13. GOD.", "14. DUCKWORTH."
+            ]
+          },
+          preview2: {
+            label: "preview 02",
+            title: "The Dark Side of the Moon",
+            subtitle: "BY PINK FLOYD - 1973",
+            awards: "900+ weeks on Billboard, 14x Platinum",
+            cover1: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&q=80&w=800",
+            quote: "„Everything under the sun is in tune, but the sun is eclipsed by the moon.“",
+            p1: "„Es gibt eigentlich keine dunkle Seite des Mondes. Tatsächlich ist alles dunkel.“ Die Erkundung des modernen Lebens bleibt heute so relevant wie 1973.",
+            btnText: "read review",
+            btnLink: "#",
+            cover2: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=800",
+            tracklistTitle: "TRACKLIST:",
+            tracks: [
+                "1. SPEAK TO ME", "2. BREATHE", "3. ON THE RUN", "4. TIME", "5. THE GREAT GIG IN THE SKY", 
+                "6. MONEY", "7. US AND THEM", "8. ANY COLOUR YOU LIKE", "9. BRAIN DAMAGE", "10. ECLIPSE"
+            ]
+          },
+          preview3: {
+            label: "preview 03",
+            title: "Blonde.",
+            subtitle: "Frank Ocean — 2016",
+            awards: "Atmospheric, Avant-Garde R&B - Global Critical Acclaim",
+            quote: "„I'll be your boyfriend in your wet dreams tonight.“",
+            p1: "Blonde ist eine Übung in Zurückhaltung. Frank Ocean verzichtet auf traditionelle Schlagzeug-Beats und konzentriert sich stattdessen auf schwebende Gitarren und modulierte Stimmen.",
+            btnText: "read review",
+            btnLink: "#",
+            cover1: "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&q=80&w=1200",
+            tracklistTitle: "TRACKLIST:",
+            tracks: [
+                "1. NIKES", "2. IVY", "3. PINK + WHITE", "4. BE YOURSELF", "5. SOLO", "6. SKYLINE TO", 
+                "7. SELF CONTROL", "8. GOOD GUY", "9. NIGHTS", "10. SOLO (REPRISE)","11. PRETTY SWEET", 
+                "12. FACEBOOK STORY", "13. CLOSE TO YOU", "14. WHITE FERRARI", "15. SEIGFRIED", "16. GODSPEED", "17. FUTURA FREE"
+            ]
+          },
+          catalogue: {
+            label: "catalogue",
+            searchLabel: "Explore",
+            searchPlaceholder: "SEARCH...",
+            sortAscText: "Year Ascending",
+            sortDescText: "Year Descending",
+            sortTitleText: "Sort by Title",
+            viewText: "View —>",
+            noResultsText: "No results",
+            goText: "Go —>",
+            records: [
+                { year: 1997, title: "Radiohead — OK Computer", italic: false },
+                { year: 1972, title: "David Bowie — Ziggy Stardust", italic: true },
+                { year: 1977, title: "Fleetwood Mac — Rumours", italic: false },
+                { year: 1991, title: "Nirvana — Nevermind", italic: true },
+                { year: 2016, title: "Frank Ocean — Blonde", italic: false },
+                { year: 2020, title: "The Weeknd — After Hours", italic: true },
+                { year: 2022, title: "Kendrick Lamar — Mr. Morale", italic: false },
+                { year: 2017, title: "Kendrick Lamar — DAMN.", italic: false },
+                { year: 1973, title: "Pink Floyd — The Dark Side of the Moon", italic: true }
+            ]
+          },
+          footer: { 
+            tagline: "Dedicated to the high-fidelity critique and intentional listening experiences.", 
+            contactLinkText: "contact", 
+            contactEmail: "mailto:hello@sonic.com",
+            libraryLabel: "Library",
+            locations: "Based in Berlin and Mannheim", 
+            year: "© 2025", 
+            rights: "All Rights Reserved" 
+          }
+        };
+
+        document.documentElement.style.setProperty('--primary-red', window.PAGE_CONFIG.design.colors.primaryRed);
+        document.documentElement.style.setProperty('--color-accent', window.PAGE_CONFIG.design.colors.accentRed);
+        document.documentElement.style.setProperty('--bg-color', window.PAGE_CONFIG.design.colors.background);
+        document.documentElement.style.setProperty('--text-color', window.PAGE_CONFIG.design.colors.text);
+        document.documentElement.style.setProperty('--font-primary', window.PAGE_CONFIG.design.fonts.primary);
+        document.documentElement.style.setProperty('--font-secondary', window.PAGE_CONFIG.design.fonts.secondary);
+        document.documentElement.style.setProperty('--font-nav', window.PAGE_CONFIG.design.fonts.nav);
+        document.documentElement.style.setProperty('--font-note', window.PAGE_CONFIG.design.fonts.note);
+    </script>
+
+    <style>
+        :root {
+            --primary-red: #ff0000;
+            --color-accent: #cc0000;
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --font-primary: 'Playfair Display', serif;
+            --font-secondary: 'Times New Roman', serif;
+            --font-nav: 'Montserrat', sans-serif;
+            --font-note: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        /* Nav Bar Font Override (Desktop) */
+        #main-nav {
+            font-family: var(--font-nav) !important;
+        }
+        /* Mobile Menu Override (Playfair) */
+        #mobile-menu-overlay {
+            font-family: var(--font-primary) !important;
+        }
+
+        /* Custom Header Styling */
+        .times-light-red {
+          font-family: var(--font-secondary) !important;
+          font-weight: 300 !important;
+          color: var(--color-accent) !important;
+          text-align: center;
+          text-transform: uppercase;
+        }
+
+        .text-accent { color: var(--color-accent) !important; }
+        .bg-accent { background-color: var(--color-accent) !important; }
+        .hover-bg-accent:hover { background-color: var(--color-accent) !important; }
+
+        .f-header { font-family: var(--font-primary); text-transform: uppercase; letter-spacing: -0.02em; }
+        .f-subheader { font-family: var(--font-primary); font-weight: 700; text-transform: uppercase; }
+        .f-body { font-family: var(--font-primary); font-size: 0.875rem; line-height: 1.625; }
+        .f-note { font-family: var(--font-note); font-size: clamp(0.5rem, 1vw, 0.625rem); font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; }
+
+        @keyframes record-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .animate-record-spin { animation: record-spin clamp(4s, 8vw, 8s) linear infinite; }
+        
+        .nav-visible { transform: translateY(0) !important; opacity: 1 !important; }
+
+        .search-input-field {
+            border: none;
+            border-bottom: 1px solid #e5e5e5;
+            outline: none;
+            padding: 4px 0;
+            width: 100%;
+            background: transparent;
+            transition: border-color 0.3s ease;
+            color: var(--text-color);
+        }
+        .search-input-field:focus { border-bottom-color: var(--primary-red); }
+
+        .btn-review {
+            display: inline-block;
+            padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
+            background-color: var(--text-color);
+            color: var(--bg-color);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-review:hover {
+            background-color: var(--primary-red);
+            transform: translateY(-2px);
+        }
+
+        #main-content {
+            transition: filter 0.4s ease, opacity 0.4s ease;
+        }
+        .is-searching {
+            filter: blur(12px);
+            opacity: 0.2;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .search-preview-box {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            min-width: clamp(200px, 40vw, 300px);
+            background: var(--bg-color);
+            z-index: 150;
+            padding: 1rem 0;
+        }
+        
+        .playfair-light {
+          font-family: var(--font-primary) !important;
+          font-weight: 300 !important;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-[110] transition-all duration-[400ms] cubic-bezier(0.16, 1, 0.3, 1) -translate-y-full opacity-0">
+        <div id="desktop-nav" class="hidden md:flex w-full h-4 bg-white border-b border-zinc-100">
+          <!-- Injected via JS -->
+        </div>
+        <div class="flex md:hidden w-full h-10 items-center justify-end px-6 bg-white/95 backdrop-blur-md border-b border-zinc-100">
+          <button id="mobile-menu-btn" class="w-7 h-7 flex items-center justify-center rounded-full overflow-hidden transition-transform active:scale-95 group relative shrink-0">
+            <img id="mobile-menu-img" data-content="nav.mobileMenuImage" src="" alt="Menu" class="w-full h-full object-cover rounded-full group-hover:animate-record-spin transition-all" />
+            <div id="mobile-menu-close" class="absolute inset-0 flex items-center justify-center text-zinc-950 hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </div>
+          </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 z-[120] bg-accent flex flex-col items-center justify-center space-y-8 text-white transition-opacity duration-500 opacity-0 pointer-events-none hidden playfair-light">
+        <button id="mobile-menu-close-btn" class="absolute top-6 right-6 p-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+        <div id="mobile-nav-links" class="flex flex-col items-center space-y-8 w-full px-6 text-center overflow-y-auto">
+          <!-- Injected via JS -->
+        </div>
+    </div>
+
+    <!-- TOP SEARCH AREA -->
+    <div class="relative z-[100] bg-white pt-[clamp(2rem,6vw,4rem)] pb-[clamp(1rem,3vw,2rem)]">
+        <div class="w-full max-w-[1200px] mx-auto px-[clamp(1.5rem,5vw,4rem)]">
+            <div class="w-full max-w-[clamp(180px,30vw,240px)] relative">
+                <label class="text-[clamp(0.5rem,1.2vw,0.625rem)] font-bold uppercase tracking-[clamp(0.1em,0.3vw,0.2em)] text-gray-400 block mb-1" data-content="catalogue.searchLabel"></label>
+                <input type="text" autocomplete="off" class="search-input-field f-header text-[clamp(0.6rem,1.5vw,0.875rem)] tracking-[clamp(0.1em,0.3vw,0.2em)] placeholder:text-gray-200" placeholder="SEARCH..." oninput="handleSearch(this.value, 'top')">
+                <div id="search-preview-box-top" class="search-preview-box border-t border-zinc-100">
+                    <div id="preview-results-list-top"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content">
+        <div class="p-[clamp(1.5rem,5vw,4rem)]">
+            <!-- SECTIONS START -->
+            <section class="w-full max-w-[1200px] mx-auto mb-[clamp(4rem,12vw,8rem)]">
+                <h2 class="text-center text-[clamp(0.5rem,1.2vw,0.625rem)] tracking-[clamp(0.4em,1vw,0.8em)] uppercase mb-[clamp(2rem,6vw,3rem)] times-light-red" data-content="preview1.label"></h2>
+                <header class="mb-[clamp(2rem,6vw,3rem)]">
+                    <h1 class="f-header text-[clamp(3.5rem,8vw,6rem)] font-normal tracking-tight mb-[clamp(1rem,3vw,1.5rem)]" data-content="preview1.title"></h1>
+                    <div class="space-y-[clamp(0.2rem,0.5vw,0.5rem)] text-left">
+                        <p class="f-subheader font-light text-[clamp(1rem,2vw,1.25rem)] tracking-[clamp(0.1em,0.3vw,0.2em)] text-red-600" data-content="preview1.subtitle"></p>
+                        <p class="f-body italic text-[clamp(0.875rem,1.5vw,1rem)]" data-content="preview1.awards"></p>
+                    </div>
+                </header>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-[clamp(2rem,5vw,3rem)] items-start">
+                    <div class="md:col-span-4 space-y-[clamp(1.5rem,4vw,2rem)]">
+                        <div class="relative">
+                            <img data-content="preview1.cover1" src="" class="w-full h-auto shadow-sm object-cover">
+                            <p class="f-body text-[clamp(0.5rem,1.2vw,0.625rem)] italic text-gray-400 mt-2 text-center" data-content="preview1.cover1Caption"></p>
+                        </div>
+                        <div class="pt-[clamp(1rem,4vw,2rem)]">
+                            <img data-content="preview1.cover2" src="" class="w-[80%] h-auto grayscale brightness-110 shadow-sm border-r-2 border-zinc-300 object-cover">
+                        </div>
+                    </div>
+                    <div class="md:col-span-4 f-body pr-[clamp(0rem,2vw,1rem)] space-y-[clamp(1.5rem,4vw,2rem)] border-l border-zinc-200 pl-[clamp(1rem,3vw,2rem)]">
+                        <p class="text-[clamp(1.125rem,2vw,1.25rem)] italic font-light leading-relaxed border-l-2 border-zinc-300 pl-[clamp(1rem,2vw,1.5rem)] mb-[clamp(1.5rem,4vw,2rem)]" data-content="preview1.quote"></p>
+                        <p class="text-[clamp(0.875rem,1.5vw,1rem)]" data-content="preview1.p1"></p>
+                        <p class="text-[clamp(0.875rem,1.5vw,1rem)]" data-content="preview1.p2"></p>
+                        <div class="pt-[clamp(1rem,3vw,1.5rem)]">
+                            <a data-content="preview1.btnText" data-href="preview1.btnLink" href="#" class="btn-review f-note"></a>
+                        </div>
+                    </div>
+                    <div class="md:col-span-4 space-y-[clamp(2rem,6vw,3rem)]">
+                        <div><img data-content="preview1.cover3" src="" class="w-full h-auto shadow-sm object-cover"></div>
+                        <div class="pl-[clamp(0.5rem,2vw,1rem)]">
+                            <h2 class="f-subheader text-[clamp(0.75rem,1.5vw,0.875rem)] tracking-[clamp(0.1em,0.3vw,0.2em)] mb-[clamp(0.5rem,2vw,1rem)] text-red-600" data-content="preview1.tracklistTitle"></h2>
+                            <ol id="tracklist-1" class="f-body space-y-[clamp(0.1rem,0.5vw,0.25rem)] list-none text-[clamp(0.8rem,1.2vw,0.875rem)]"></ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: PREVIEW 02 -->
+            <section class="w-full max-w-[1200px] mx-auto mb-[clamp(4rem,12vw,8rem)]">
+                <h2 class="text-center text-[clamp(0.5rem,1.2vw,0.625rem)] tracking-[clamp(0.4em,1vw,0.8em)] uppercase mb-[clamp(2rem,6vw,3rem)] times-light-red" data-content="preview2.label"></h2>
+                <header class="mb-[clamp(2rem,6vw,3rem)]">
+                    <h1 class="f-header text-[clamp(3.5rem,8vw,6rem)] font-normal tracking-tight mb-[clamp(1rem,3vw,1.5rem)]" data-content="preview2.title"></h1>
+                    <div class="space-y-[clamp(0.2rem,0.5vw,0.5rem)] text-left">
+                        <p class="f-subheader font-light text-[clamp(1rem,2vw,1.25rem)] tracking-[clamp(0.1em,0.3vw,0.2em)] text-red-600" data-content="preview2.subtitle"></p>
+                        <p class="f-body italic text-[clamp(0.875rem,1.5vw,1rem)]" data-content="preview2.awards"></p>
+                    </div>
+                </header>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-[clamp(2rem,5vw,3rem)] items-start">
+                    <div class="md:col-span-4 space-y-[clamp(2rem,6vw,3rem)]">
+                        <img data-content="preview2.cover1" src="" class="w-full h-auto border-l-[clamp(2px,0.5vw,4px)] border-zinc-300 object-cover">
+                        <div class="pl-[clamp(0.5rem,2vw,1rem)]">
+                            <h2 class="f-subheader text-[clamp(0.75rem,1.5vw,0.875rem)] tracking-[clamp(0.1em,0.3vw,0.2em)] mb-[clamp(0.5rem,2vw,1rem)] text-red-600" data-content="preview2.tracklistTitle"></h2>
+                            <ol id="tracklist-2" class="f-body space-y-[clamp(0.1rem,0.5vw,0.25rem)] list-none text-[clamp(0.8rem,1.2vw,0.875rem)]"></ol>
+                        </div>
+                    </div>
+                    <div class="md:col-span-4 f-body pr-[clamp(0rem,2vw,1rem)] space-y-[clamp(1.5rem,4vw,2rem)] text-black">
+                        <p class="text-[clamp(1.125rem,2vw,1.25rem)] italic font-light leading-relaxed border-l-2 border-zinc-300 pl-[clamp(1rem,2vw,1.5rem)] mb-[clamp(1.5rem,4vw,2rem)]" data-content="preview2.quote"></p>
+                        <p class="text-black text-[clamp(0.875rem,1.5vw,1rem)]" data-content="preview2.p1"></p>
+                        <div class="pt-[clamp(1rem,3vw,1.5rem)]">
+                            <a data-content="preview2.btnText" data-href="preview2.btnLink" href="#" class="btn-review f-note"></a>
+                        </div>
+                    </div>
+                    <div class="md:col-span-4"><img data-content="preview2.cover2" src="" class="w-full h-auto shadow-sm object-cover"></div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: PREVIEW 03 -->
+            <section class="w-full max-w-[1200px] mx-auto mb-[clamp(4rem,12vw,8rem)]">
+                <h2 class="text-center text-[clamp(0.5rem,1.2vw,0.625rem)] tracking-[clamp(0.4em,1vw,0.8em)] uppercase mb-[clamp(2rem,6vw,3rem)] times-light-red" data-content="preview3.label"></h2>
+                <header class="mb-[clamp(2rem,6vw,3rem)]">
+                    <h1 class="f-header text-[clamp(3.5rem,8vw,6rem)] font-normal tracking-tight mb-[clamp(1rem,3vw,1.5rem)]" data-content="preview3.title"></h1>
+                    <div class="space-y-[clamp(0.2rem,0.5vw,0.5rem)] text-left">
+                        <p class="f-subheader font-light text-[clamp(1rem,2vw,1.25rem)] tracking-[clamp(0.1em,0.3vw,0.2em)] text-red-600" data-content="preview3.subtitle"></p>
+                        <p class="f-body italic text-[clamp(0.875rem,1.5vw,1rem)]" data-content="preview3.awards"></p>
+                    </div>
+                </header>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-[clamp(2rem,5vw,3rem)] items-start">
+                    <div class="md:col-span-4 f-body space-y-[clamp(1.5rem,4vw,2rem)] text-black">
+                        <p class="text-[clamp(1.125rem,2vw,1.25rem)] italic font-light leading-relaxed border-l border-zinc-300 pl-[clamp(1rem,2vw,1.5rem)]" data-content="preview3.quote"></p>
+                        <p class="text-black text-[clamp(0.875rem,1.5vw,1rem)]" data-content="preview3.p1"></p>
+                        <div class="pt-[clamp(1rem,3vw,1.5rem)]">
+                            <a data-content="preview3.btnText" data-href="preview3.btnLink" href="#" class="btn-review f-note"></a>
+                        </div>
+                    </div>
+                    <div class="md:col-span-3 pl-[clamp(0.5rem,2vw,1rem)]">
+                        <h2 class="f-subheader text-[clamp(0.75rem,1.5vw,0.875rem)] tracking-[clamp(0.1em,0.3vw,0.2em)] mb-[clamp(0.5rem,2vw,1rem)] text-red-600" data-content="preview3.tracklistTitle"></h2>
+                        <ol id="tracklist-3" class="f-body space-y-[clamp(0.1rem,0.5vw,0.25rem)] list-none text-[clamp(0.8rem,1.2vw,0.875rem)]"></ol>
+                    </div>
+                    <div class="md:col-span-5">
+                        <div class="relative overflow-hidden group">
+                            <img data-content="preview3.cover1" src="" class="w-full h-[clamp(300px,50vw,500px)] object-cover transition-all duration-700">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CATALOGUE -->
+            <section id="catalogue-section" class="w-full max-w-[1200px] mx-auto mb-[clamp(5rem,15vw,10rem)] pt-[clamp(1.5rem,5vw,2rem)] text-left border-t border-zinc-100">
+                <h2 class="text-center text-[clamp(0.5rem,1.2vw,0.625rem)] tracking-[clamp(0.4em,1vw,0.8em)] uppercase mb-[clamp(2rem,6vw,3rem)] times-light-red" data-content="catalogue.label"></h2>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-[clamp(1.5rem,4vw,2rem)] gap-[clamp(1.5rem,4vw,2rem)] w-full">
+                    <div class="w-full md:max-w-[clamp(180px,30vw,240px)] relative">
+                        <label class="text-[clamp(0.5rem,1.2vw,0.625rem)] font-bold uppercase tracking-[clamp(0.1em,0.3vw,0.2em)] text-gray-400 block mb-1" data-content="catalogue.searchLabel"></label>
+                        <input id="cat-search-input" type="text" autocomplete="off" class="search-input-field f-header text-[clamp(0.6rem,1.5vw,0.875rem)] tracking-[clamp(0.1em,0.3vw,0.2em)] placeholder:text-gray-200 w-full" placeholder="SEARCH..." oninput="handleSearch(this.value, 'catalogue')">
+                        <div id="search-preview-box-catalogue" class="search-preview-box border-t border-zinc-100">
+                            <div id="preview-results-list-catalogue"></div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-[clamp(1rem,3vw,2rem)] mt-4 md:mt-0 w-full md:w-auto md:justify-end">
+                        <button onclick="sortCatalogueDir('year', 'asc')" class="f-note text-gray-400 hover:text-[var(--text-color)] transition-colors uppercase" data-content="catalogue.sortAscText"></button>
+                        <button onclick="sortCatalogueDir('year', 'desc')" class="f-note text-gray-400 hover:text-[var(--text-color)] transition-colors uppercase" data-content="catalogue.sortDescText"></button>
+                        <button onclick="sortCatalogue('title')" class="f-note text-gray-400 hover:text-[var(--text-color)] transition-colors uppercase" data-content="catalogue.sortTitleText"></button>
+                    </div>
+                </div>
+                <div id="catalogue-container"></div>
+            </section>
+        </div>
+
+        <footer class="py-[clamp(4rem,10vw,8rem)] bg-white px-[clamp(1.5rem,5vw,4rem)] border-t border-zinc-100 times-light">
+            <div class="w-full max-w-[1200px] mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-start gap-[clamp(2rem,6vw,4rem)] mb-[clamp(3rem,8vw,5rem)]">
+                    <div class="space-y-[clamp(1.5rem,4vw,2rem)] max-w-sm">
+                        <h1 class="text-[clamp(2rem,5vw,2.25rem)] font-normal tracking-tighter uppercase text-accent"><a href="#" data-content="brand.full"></a></h1>
+                        <p class="text-[clamp(0.5rem,1.2vw,0.625rem)] leading-relaxed font-bold tracking-[clamp(0.1em,0.3vw,0.3em)] uppercase text-zinc-400" data-content="footer.tagline"></p>
+                        <div class="flex gap-4">
+                            <a data-content="footer.contactLinkText" data-href="footer.contactEmail" href="#" class="px-[clamp(1.5rem,4vw,2rem)] py-[clamp(0.5rem,2vw,0.75rem)] bg-accent text-[var(--bg-color)] text-[clamp(0.5rem,1.2vw,0.625rem)] font-bold uppercase tracking-[clamp(0.1em,0.3vw,0.2em)] hover-bg-accent transition-colors inline-block text-center"></a>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-[clamp(2rem,10vw,8rem)]">
+                        <div class="space-y-[clamp(1rem,3vw,1.5rem)]">
+                            <h4 class="text-[clamp(0.5rem,1.2vw,0.625rem)] font-bold uppercase tracking-[clamp(0.1em,0.3vw,0.3em)] text-zinc-950" data-content="footer.libraryLabel"></h4>
+                            <ul id="footer-nav" class="space-y-[clamp(0.5rem,2vw,1rem)] text-[clamp(0.5rem,1.2vw,0.625rem)] uppercase tracking-[clamp(0.1em,0.3vw,0.2em)] font-bold text-zinc-400"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-[clamp(2rem,6vw,3rem)] border-t border-zinc-100 flex justify-center items-center w-full">
+                    <div class="flex flex-wrap md:flex-nowrap items-center justify-center gap-x-2 gap-y-1 sm:gap-4 md:gap-8 max-w-full text-center text-zinc-300">
+                        <span class="text-[clamp(0.45rem,1vw,0.625rem)] font-bold uppercase tracking-[clamp(0.1em,0.2vw,0.2em)] italic shrink-0" data-content="footer.locations"></span>
+                        <span class="hidden sm:inline-block">•</span>
+                        <span class="text-[clamp(0.45rem,1vw,0.625rem)] font-bold uppercase tracking-[clamp(0.1em,0.2vw,0.2em)] shrink-0" data-content="footer.year"></span>
+                        <span class="hidden sm:inline-block">•</span>
+                        <span class="text-[clamp(0.45rem,1vw,0.625rem)] font-bold uppercase tracking-[clamp(0.1em,0.2vw,0.2em)] shrink-0" data-content="footer.rights"></span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        let filteredData = [];
+        let currentSort = 'year';
+        let ascending = true;
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const config = window.PAGE_CONFIG;
+            filteredData = [...config.catalogue.records];
+            const searchInputs = document.querySelectorAll('.search-input-field');
+            searchInputs.forEach(input => input.placeholder = config.catalogue.searchPlaceholder);
+
+            document.querySelectorAll('[data-content]').forEach(el => {
+                const keys = el.dataset.content.split('.');
+                const val = keys.reduce((acc, k) => acc && acc[k] !== undefined ? acc[k] : acc, config);
+                if (val !== undefined && val !== config) {
+                    if (el.tagName === 'IMG') el.src = val;
+                    else el.textContent = val;
+                }
+            });
+
+            document.querySelectorAll('[data-href]').forEach(el => {
+                const keys = el.dataset.href.split('.');
+                const val = keys.reduce((acc, k) => acc && acc[k] !== undefined ? acc[k] : acc, config);
+                if (val !== undefined && val !== config) el.href = val;
+            });
+
+            const renderTracklist = (id, tracks) => {
+                const container = document.getElementById(id);
+                if (container && tracks) container.innerHTML = tracks.map(t => `<li>${t}</li>`).join('');
+            };
+            renderTracklist('tracklist-1', config.preview1.tracks);
+            renderTracklist('tracklist-2', config.preview2.tracks);
+            renderTracklist('tracklist-3', config.preview3.tracks);
+
+            const navContainer = document.getElementById('desktop-nav');
+            if (navContainer) {
+                navContainer.innerHTML = config.nav.links.map(l => {
+                    const isHome = l.text.toLowerCase() === 'home';
+                    const defaultColor = isHome ? 'text-accent' : 'text-[var(--text-color)]';
+                    const bottomLine = isHome ? '<div class="absolute bottom-0 left-0 right-0 h-[1.5px] bg-accent"></div>' : '';
+                    return `<a href="${l.url}" class="relative flex-1 flex items-center justify-center border-r border-zinc-100 last:border-r-0 text-[clamp(0.45rem,1vw,0.5rem)] font-bold uppercase tracking-[clamp(0.3em,0.5vw,0.5em)] transition-all duration-300 hover-bg-accent group ${defaultColor}">
+                        <span class="group-hover:text-[var(--bg-color)] transition-colors duration-300 text-[8px]">${l.text}</span>
+                        ${bottomLine}
+                    </a>`;
+                }).join('');
+            }
+            
+            const mobileNavLinks = document.getElementById('mobile-nav-links');
+            if (mobileNavLinks) mobileNavLinks.innerHTML = config.nav.links.map(l => `<a href="${l.url}" class="text-4xl uppercase">${l.text}</a>`).join('');
+
+            const footerNav = document.getElementById('footer-nav');
+            if (footerNav) footerNav.innerHTML = config.nav.links.map(l => `<li><a href="${l.url}">${l.text}</a></li>`).join('');
+
+            const nav = document.getElementById('main-nav');
+            if (nav) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 100) {
+                        nav.classList.add('nav-visible');
+                        nav.classList.remove('-translate-y-full', 'opacity-0');
+                    } else {
+                        nav.classList.remove('nav-visible');
+                        nav.classList.add('-translate-y-full', 'opacity-0');
+                    }
+                });
+            }
+
+            let isMenuOpen = false;
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const menuOverlay = document.getElementById('mobile-menu-overlay');
+            const menuCloseBtn = document.getElementById('mobile-menu-close-btn');
+            const menuImg = document.getElementById('mobile-menu-img');
+            const menuCloseIcon = document.getElementById('mobile-menu-close');
+
+            const toggleMenu = () => {
+                isMenuOpen = !isMenuOpen;
+                if (isMenuOpen) {
+                    menuOverlay.classList.remove('hidden');
+                    setTimeout(() => menuOverlay.classList.remove('opacity-0', 'pointer-events-none'), 10);
+                    if(menuImg) menuImg.classList.add('brightness-0', 'invert');
+                    if(menuCloseIcon) menuCloseIcon.classList.remove('hidden');
+                } else {
+                    menuOverlay.classList.add('opacity-0', 'pointer-events-none');
+                    setTimeout(() => menuOverlay.classList.add('hidden'), 500);
+                    if(menuImg) menuImg.classList.remove('brightness-0', 'invert');
+                    if(menuCloseIcon) menuCloseIcon.classList.add('hidden');
+                }
+            };
+            if(menuBtn) menuBtn.addEventListener('click', toggleMenu);
+            if(menuCloseBtn) menuCloseBtn.addEventListener('click', toggleMenu);
+
+            renderCatalogue();
+        });
+
+        function handleSearch(query, context) {
+            const mainContent = document.getElementById('main-content');
+            const previewBox = document.getElementById(`search-preview-box-${context}`);
+            const previewList = document.getElementById(`preview-results-list-${context}`);
+            const searchTerm = query.toLowerCase().trim();
+            const config = window.PAGE_CONFIG.catalogue;
+
+            if (searchTerm.length > 0) {
+                mainContent.classList.add('is-searching');
+                previewBox.style.display = 'block';
+                const matches = config.records.filter(i => i.title.toLowerCase().includes(searchTerm) || i.year.toString().includes(searchTerm));
+                if (matches.length > 0) {
+                    previewList.innerHTML = matches.map(item => `
+                        <div class="flex items-center py-3 border-b border-zinc-50 group cursor-pointer hover:bg-zinc-50 px-2" onclick="window.location.href='${item.link || '#'}'">
+                            <span class="f-note text-red-600 w-16 shrink-0">${item.year}</span>
+                            <h4 class="f-header text-[clamp(0.7rem,1.5vw,0.875rem)] flex-grow ${item.italic ? 'italic' : ''} text-[var(--text-color)] font-bold uppercase">${item.title}</h4>
+                            <span class="f-note text-zinc-300 group-hover:text-[var(--text-color)] italic">${config.goText}</span>
+                        </div>
+                    `).join('');
+                } else {
+                    previewList.innerHTML = `<p class="py-4 f-note text-zinc-300 text-center uppercase tracking-[clamp(0.1em,0.3vw,0.2em)]">${config.noResultsText}</p>`;
+                }
+            } else {
+                mainContent.classList.remove('is-searching');
+                previewBox.style.display = 'none';
+            }
+        }
+
+        function renderCatalogue() {
+            const container = document.getElementById('catalogue-container');
+            const viewText = window.PAGE_CONFIG.catalogue.viewText;
+            if (container) {
+                container.innerHTML = filteredData.map(item => `
+                    <div class="catalogue-item flex items-center py-[clamp(1rem,3vw,1.5rem)] border-b border-gray-100 group cursor-pointer hover:bg-zinc-50 transition-colors px-[clamp(0.5rem,1vw,1rem)]" onclick="window.location.href='${item.link || '#'}'">
+                        <span class="f-note text-red-600 w-[clamp(3rem,6vw,5rem)] shrink-0">${item.year}</span>
+                        <h3 class="f-header text-[clamp(1.125rem,2.5vw,1.875rem)] flex-grow ${item.italic ? 'italic' : ''} text-[var(--text-color)] font-light uppercase">${item.title}</h3>
+                        <span class="f-note text-gray-400 group-hover:text-red-600 italic shrink-0">${viewText}</span>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function sortCatalogueByYear(direction) {
+            filteredData.sort((a, b) => direction === 'asc' ? a.year - b.year : b.year - a.year);
+            renderCatalogue();
+        }
+
+        function sortCatalogueDir(criteria, direction) {
+            if (criteria === 'year') sortCatalogueByYear(direction);
+            else sortCatalogue(criteria);
+        }
+
+        function sortCatalogue(criteria) {
+            if (currentSort === criteria) ascending = !ascending;
+            else { currentSort = criteria; ascending = true; }
+            filteredData.sort((a, b) => {
+                const valA = a[criteria]; const valB = b[criteria];
+                if (valA < valB) return ascending ? -1 : 1;
+                if (valA > valB) return ascending ? 1 : -1;
+                return 0;
+            });
+            renderCatalogue();
+        }
+    </script>
+</body>
+</html>
