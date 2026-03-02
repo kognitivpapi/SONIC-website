@@ -4,13 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sonic Music Experience</title>
+  <!-- Google Fonts Import for Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom Tailwind Breakpoints strictly enforcing requested ranges -->
+  <script>
+    tailwind.config = {
+      theme: {
+        screens: {
+          'md': '810px',   // Tablet (810px - 1199px)
+          'lg': '1200px',  // Desktop (>= 1200px)
+        }
+      }
+    }
+  </script>
+
   <style>
     @keyframes terminal-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
     .animate-terminal-blink { animation: terminal-blink 2.2s step-end infinite; }
     @keyframes record-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     .animate-record-spin { animation: record-spin 4s linear infinite; }
     
+    /* Scroll Snapping Logic */
+    html {
+      scroll-snap-type: y proximity;
+      scroll-behavior: smooth;
+    }
+    .snap-section {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+
     /* Hide scrollbar for Chrome, Safari and Opera */
     ::-webkit-scrollbar {
       display: none;
@@ -38,61 +65,68 @@
 
     /* --- Adaptive Typography for Questions Section --- */
     .question-text {
-      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+      font-weight: 300; 
       line-height: 0.9;
       letter-spacing: -0.04em;
+      color: #ff0000; /* Red text */
+    }
+
+    /* --- Custom Font Styles --- */
+    .times-light-red {
+      font-family: 'Times New Roman', Times, serif !important;
+      font-weight: 300 !important;
+      color: #ff0000 !important;
+    }
+    .times-light {
+      font-family: 'Times New Roman', Times, serif !important;
+      font-weight: 300 !important;
+    }
+    .playfair-light {
+      font-family: 'Playfair Display', serif !important;
+      font-weight: 300 !important;
     }
 
     /* Mobile Breakpoint (<= 809px) */
     @media (max-width: 809px) {
       .question-text { font-size: clamp(4rem, 16vw, 6rem); }
-      .adaptive-indent { padding-left: calc(var(--random-indent) * 10%); }
+      .adaptive-indent { padding-left: calc(var(--random-indent) * 35%); }
 
       /* Adaptive Layout for Interviews Section */
-      .interview-card { width: 55vw; max-width: 240px; }
+      .interview-card { width: 85vw; max-width: 500px; }
       .interview-gap { gap: 1.5rem; }
-      .interview-name { font-size: clamp(0.6rem, 2.5vw, 0.75rem); }
-      .interview-desc { font-size: clamp(0.5rem, 1.8vw, 0.6rem); }
-      .interview-quote { font-size: clamp(0.85rem, 3vw, 0.95rem); }
     }
 
     /* Tablet Breakpoint (810px - 1199px) */
     @media (min-width: 810px) and (max-width: 1199px) {
       .question-text { font-size: clamp(6rem, 14vw, 9rem); }
-      .adaptive-indent { padding-left: calc(var(--random-indent) * 15%); }
+      .adaptive-indent { padding-left: calc(var(--random-indent) * 55%); }
 
       /* Adaptive Layout for Interviews Section */
-      .interview-card { width: 28vw; }
+      .interview-card { width: 70vw; }
       .interview-gap { gap: 3rem; }
-      .interview-name { font-size: clamp(0.7rem, 1.5vw, 0.85rem); }
-      .interview-desc { font-size: clamp(0.6rem, 1.2vw, 0.7rem); }
-      .interview-quote { font-size: clamp(0.95rem, 2vw, 1.1rem); }
     }
 
     /* Desktop Breakpoint (>= 1200px) */
     @media (min-width: 1200px) {
       .question-text { font-size: 10.5rem; } 
-      .adaptive-indent { padding-left: calc(var(--random-indent) * 20%); }
+      .adaptive-indent { padding-left: calc(var(--random-indent) * 75%); }
 
       /* Container sized to ensure vertical spacing and horizontal visibility */
-      .interview-card { width: 350px; } 
-      .interview-gap { gap: 40px; }
-      .interview-name { font-size: 0.9rem; }
-      .interview-desc { font-size: 0.75rem; }
-      .interview-quote { font-size: 1.25rem; }
+      .interview-card { width: 900px; } 
+      .interview-gap { gap: 80px; }
     }
   </style>
 </head>
 <body class="min-h-screen font-sans bg-white text-zinc-900 selection:bg-zinc-900 selection:text-white antialiased overflow-x-hidden">
 
-  <!-- Navigation (duration reduced for faster appearance) -->
+  <!-- Navigation -->
   <nav id="main-nav" class="fixed top-0 left-0 right-0 z-[110] transition-all duration-[400ms] cubic-bezier(0.16, 1, 0.3, 1) -translate-y-full opacity-0">
-    <div id="desktop-nav" class="hidden md:flex w-full h-6 bg-white border-b border-zinc-100">
+    <div id="desktop-nav" class="hidden md:flex w-full h-4 bg-white border-b border-zinc-100">
       <!-- Injected via JS -->
     </div>
-    <!-- Mobile Nav: Logo removed and alignment adjusted to end, height slightly increased -->
-    <div class="flex md:hidden w-full h-12 items-center justify-end px-6 bg-white/95 backdrop-blur-md border-b border-zinc-100">
-      <button id="mobile-menu-btn" class="w-7 h-7 flex items-center justify-center rounded-full overflow-hidden transition-transform active:scale-95 group relative">
+    <div class="flex md:hidden w-full h-10 items-center justify-end px-[clamp(1rem,4vw,1.5rem)] bg-white/95 backdrop-blur-md border-b border-zinc-100">
+      <button id="mobile-menu-btn" class="w-[clamp(1.5rem,5vw,2rem)] h-[clamp(1.5rem,5vw,2rem)] flex items-center justify-center rounded-full overflow-hidden transition-transform active:scale-95 group relative">
         <img id="mobile-menu-img" data-content="nav.mobileMenuImage" src="" alt="Menu" class="w-full h-full object-cover rounded-full group-hover:animate-record-spin transition-all" />
         <div id="mobile-menu-close" class="absolute inset-0 flex items-center justify-center text-zinc-950 hidden">
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
@@ -103,7 +137,7 @@
 
   <!-- Mobile Menu -->
   <div id="mobile-menu-overlay" class="fixed inset-0 z-[120] bg-zinc-950 flex flex-col items-center justify-center space-y-8 text-white transition-opacity duration-500 opacity-0 pointer-events-none hidden">
-    <button id="mobile-menu-close-btn" class="absolute top-6 right-6 p-4">
+    <button id="mobile-menu-close-btn" class="absolute top-[clamp(1rem,4vw,1.5rem)] right-[clamp(1rem,4vw,1.5rem)] p-4">
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
     </button>
     <div id="mobile-nav-links" class="flex flex-col items-center space-y-8">
@@ -113,105 +147,98 @@
 
   <!-- Typewriter Sections -->
   <section class="typewriter-section h-[900vh] relative" data-isfirst="true">
-    <div class="sticky top-0 h-screen w-full flex items-center bg-[#000000] text-white z-10 overflow-hidden">
-      <div class="typewriter-content w-full max-w-[1200px] mx-auto px-6 md:px-12 overflow-x-hidden flex flex-col items-start text-left uppercase select-none py-16"></div>
+    <div class="sticky top-0 h-screen w-full flex items-center bg-white z-10 overflow-hidden">
+      <div class="typewriter-content w-full max-w-[1200px] mx-auto px-[clamp(1rem,4vw,3rem)] overflow-x-hidden flex flex-col items-start text-left uppercase select-none py-16"></div>
     </div>
   </section>
 
   <section class="typewriter-section h-[900vh] relative" data-isfirst="false">
-    <div class="sticky top-0 h-screen w-full flex items-center bg-[#000000] text-white z-10 overflow-hidden">
-      <div class="typewriter-content w-full max-w-[1200px] mx-auto px-6 md:px-12 overflow-x-hidden flex flex-col items-start text-left uppercase select-none py-16"></div>
+    <div class="sticky top-0 h-screen w-full flex items-center bg-white z-10 overflow-hidden">
+      <div class="typewriter-content w-full max-w-[1200px] mx-auto px-[clamp(1rem,4vw,3rem)] overflow-x-hidden flex flex-col items-start text-left uppercase select-none py-16"></div>
     </div>
   </section>
 
   <section class="typewriter-section h-[900vh] relative" data-isfirst="false">
-    <div class="sticky top-0 h-screen w-full flex items-center bg-[#000000] text-white z-10 overflow-hidden">
-      <div class="typewriter-content w-full max-w-[1200px] mx-auto px-6 md:px-12 overflow-x-hidden flex flex-col items-start text-left uppercase select-none py-16"></div>
+    <div class="sticky top-0 h-screen w-full flex items-center bg-white z-10 overflow-hidden">
+      <div class="typewriter-content w-full max-w-[1200px] mx-auto px-[clamp(1rem,4vw,3rem)] overflow-x-hidden flex flex-col items-start text-left uppercase select-none py-16"></div>
     </div>
   </section>
 
-  <!-- Sonic Reveal Section -->
-  <section id="sonic-reveal" class="h-[700vh] bg-[#000000] relative">
-    <div class="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
-      <div class="absolute inset-0 z-0">
-        <div id="sonic-bg" class="relative w-full h-full grayscale transition-all duration-300 opacity-0" style="filter: blur(15px); transform: scale(1.2);">
-          <img data-content="sonicReveal.bgImage" src="" alt="Sonic Background Texture" class="w-full h-full object-cover contrast-125" />
-        </div>
-      </div>
-      <div class="relative z-10 w-full flex flex-col items-center justify-center">
-        <h2 id="sonic-title" class="text-[25vw] font-bold tracking-tighter flex items-center select-none uppercase transition-all duration-300" style="letter-spacing: -0.15em; filter: blur(15px); opacity: 0; transform: scale(1.2);">
-          <!-- Injected via JS -->
-        </h2>
-        <div id="sonic-season" class="absolute top-[calc(50%+10vw)] md:top-[calc(50%+12vw)] transition-all duration-300 opacity-0" style="transform: scale(1.2) translateY(30px); filter: blur(15px);">
-          <span class="text-white font-sans font-bold text-lg md:text-xl uppercase tracking-[0.6em] whitespace-nowrap" data-content="sonicReveal.season"></span>
-        </div>
+  <!-- Minimalistic Hero Section -->
+  <section id="hero-section" class="h-screen bg-white relative flex flex-col items-center justify-center overflow-hidden border-b border-zinc-100">
+    <div class="relative z-10 w-full flex flex-col items-center justify-center">
+      <h2 class="text-[25vw] flex items-center select-none uppercase text-[#cc0000] playfair-light" style="letter-spacing: -0.05em; line-height: 0.8;">
+        SONIC
+      </h2>
+      <div class="mt-[clamp(1rem,3vw,2rem)]">
+        <span class="text-zinc-900 font-sans font-bold text-[clamp(1rem,2vw,1.25rem)] uppercase tracking-[0.6em] whitespace-nowrap times-light" data-content="sonicReveal.season"></span>
       </div>
     </div>
   </section>
 
   <!-- Mission Statement -->
-  <section id="mission-section" class="bg-white py-24 md:py-48 px-6 md:px-12 border-b border-zinc-100 flex items-center justify-center min-h-[60vh]">
+  <section id="mission-section" class="bg-white pt-[clamp(4rem,10vw,8rem)] pb-[clamp(3rem,6vw,6rem)] mb-[clamp(20vh,28vh,35vh)] px-[clamp(1rem,4vw,3rem)] flex items-center justify-center min-h-[60vh]">
     <div class="max-w-4xl w-full mx-auto">
-      <div class="text-center text-[10px] font-bold uppercase tracking-[0.5em] text-zinc-300 mb-12 md:mb-20" data-content="mission.label"></div>
-      <div class="space-y-10 text-left">
-        <p class="text-xl md:text-3xl font-normal leading-tight tracking-tight text-zinc-950" data-content="mission.p1"></p>
-        <p class="text-lg md:text-xl font-normal leading-relaxed tracking-tight text-zinc-600" data-content="mission.p2"></p>
-        <p class="text-base md:text-lg font-normal leading-relaxed text-zinc-400" data-content="mission.p3"></p>
+      <div class="text-center text-[clamp(9px,1.2vw,11px)] uppercase tracking-[0.5em] mb-[clamp(2rem,5vw,4rem)] times-light-red" data-content="mission.label"></div>
+      <div class="space-y-[clamp(1.5rem,3vw,2.5rem)] text-center">
+        <p class="text-[clamp(1.25rem,4vw,1.875rem)] leading-tight tracking-tight text-zinc-950 times-light" data-content="mission.p1"></p>
+        <p class="text-[clamp(1.125rem,3vw,1.25rem)] leading-relaxed tracking-tight text-zinc-600 times-light" data-content="mission.p2"></p>
+        <p class="text-[clamp(1rem,2vw,1.125rem)] leading-relaxed text-zinc-400 times-light" data-content="mission.p3"></p>
       </div>
     </div>
   </section>
 
   <main id="main-content" class="relative z-20 bg-white">
     <!-- Visual Archive -->
-    <section class="bg-[#F5F3EF] relative flex flex-col items-center overflow-hidden py-16 md:py-20">
-      <div class="w-full px-6 md:px-12 lg:px-24">
-        <h2 class="text-center text-[10px] font-bold tracking-[0.8em] uppercase mb-12 text-zinc-300" data-content="archive.label"></h2>
-        <div id="visual-archive-grid" class="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-14 lg:gap-16">
+    <section class="bg-white relative flex flex-col items-center overflow-hidden mb-[clamp(20vh,28vh,35vh)]">
+      <div class="w-full px-[clamp(1rem,4vw,6rem)]">
+        <h2 class="text-center text-[clamp(9px,1.2vw,11px)] tracking-[0.8em] uppercase mb-[clamp(2rem,4vw,3rem)] times-light-red" data-content="archive.label"></h2>
+        <div id="visual-archive-grid" class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-[clamp(1rem,2.5vw,3rem)]">
           <!-- Injected via JS -->
         </div>
       </div>
     </section>
 
     <!-- Reviews Section Part 1 -->
-    <section class="bg-[#FAF9F6] relative overflow-visible">
-      <div class="max-w-[110rem] mx-auto px-6 md:px-12 pt-16 md:pt-24 pb-0 md:pb-0">
-        <h2 class="text-center text-[10px] font-bold tracking-[0.8em] uppercase mb-12 text-zinc-300" data-content="reviews.label"></h2>
+    <section class="bg-white relative overflow-visible mb-[clamp(20vh,28vh,35vh)]">
+      <div class="max-w-[110rem] mx-auto px-[clamp(1rem,4vw,3rem)]">
+        <h2 class="text-center text-[clamp(9px,1.2vw,11px)] tracking-[0.8em] uppercase mb-[clamp(2rem,4vw,3rem)] times-light-red" data-content="reviews.label"></h2>
         <div id="reviews-container-top">
-          <!-- Grid 01, 02, 03 Injected via JS -->
+          <!-- Grid Injected via JS -->
         </div>
       </div>
     </section>
 
     <!-- Lyric Scroll Reveal -->
-    <section class="scroll-reveal-container h-[500vh] relative border-y border-zinc-100">
+    <section class="scroll-reveal-container h-[500vh] relative snap-section mb-[clamp(20vh,28vh,35vh)]">
       <div class="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
-        <h2 class="text-center text-[10px] font-bold tracking-[0.8em] uppercase mb-8 md:mb-12 text-zinc-300 w-full block" data-content="lyric.label"></h2>
-        <div class="w-full max-w-7xl px-6 md:px-12 relative">
-          <div class="flex flex-col md:flex-row items-center w-full gap-8 md:gap-0">
-            <div class="md:w-1/3 flex flex-col items-center md:items-start md:pr-12 w-full">
-              <div class="mb-8 text-center md:text-left w-full overflow-hidden">
-                <span class="bg-black text-white font-bold italic px-3 py-2 text-[10px] sm:text-xs md:text-sm inline-block leading-tight whitespace-pre-line max-w-full" data-content="lyric.quote"></span>
+        <h2 class="absolute top-[clamp(3rem,8vw,6rem)] text-center text-[clamp(9px,1.2vw,11px)] tracking-[0.8em] uppercase times-light-red w-full block" data-content="lyric.label"></h2>
+        <div class="w-full max-w-7xl px-[clamp(1rem,4vw,3rem)] relative">
+          <div class="flex flex-col md:flex-row items-center w-full gap-[clamp(2rem,5vw,0)]">
+            <div class="md:w-2/5 lg:w-1/3 flex flex-col items-center md:items-start md:pr-[clamp(1.5rem,4vw,3rem)] w-full">
+              <div class="mb-[clamp(1.5rem,3vw,2rem)] text-center md:text-left w-full overflow-hidden">
+                <span class="bg-[#cc0000] text-white font-bold italic px-[clamp(0.75rem,2vw,1rem)] py-[clamp(0.5rem,1.5vw,0.75rem)] text-[clamp(1rem,3vw,1.5rem)] inline-block leading-tight whitespace-pre-line max-w-full times-light" data-content="lyric.quote"></span>
               </div>
-              <div class="flex items-center gap-4">
-                <div class="w-12 h-12 md:w-16 md:h-16 overflow-hidden bg-zinc-100 shadow-sm border border-zinc-200 shrink-0">
+              <div class="flex items-center gap-[clamp(0.75rem,2vw,1rem)]">
+                <div class="w-[clamp(3rem,8vw,4rem)] h-[clamp(3rem,8vw,4rem)] overflow-hidden bg-zinc-100 shadow-sm border border-zinc-200 shrink-0">
                   <img data-content="lyric.image" src="" alt="Track Art" class="w-full h-full object-cover" />
                 </div>
-                <div class="text-left">
-                  <h4 class="text-sm md:text-base font-bold text-zinc-900 leading-tight" data-content="lyric.track"></h4>
-                  <p class="text-xs md:text-sm text-zinc-900 underline font-medium mt-0.5" data-content="lyric.artist"></p>
+                <div class="text-left times-light">
+                  <h4 class="text-[clamp(0.875rem,2vw,1rem)] font-bold text-zinc-900 leading-tight" data-content="lyric.track"></h4>
+                  <p class="text-[clamp(0.75rem,1.5vw,0.875rem)] text-zinc-900 underline font-medium mt-0.5 tracking-tight" data-content="lyric.artist"></p>
                 </div>
               </div>
             </div>
-            <div class="md:w-2/3 md:pl-16 py-8 flex flex-col items-start md:border-l border-zinc-200 relative w-full">
-              <div class="space-y-8 max-w-2xl">
-                <p class="text-base md:text-xl font-normal leading-tight tracking-tight text-zinc-950 w-full block">
-                  <span class="scroll-text-wrapper inline-flex flex-wrap gap-x-[0.25em] gap-y-[0.1em]" data-start="0" data-end="0.4" data-content="lyric.p1"></span>
+            <div class="md:w-3/5 lg:w-2/3 md:pl-[clamp(2rem,5vw,4rem)] py-[clamp(1rem,3vw,2rem)] flex flex-col items-start md:border-l border-zinc-200 relative w-full">
+              <div class="space-y-[clamp(1.5rem,3vw,2rem)] max-w-2xl times-light">
+                <p class="text-[clamp(1rem,3vw,1.25rem)] font-normal leading-tight tracking-tighter text-zinc-950 w-full block">
+                  <span class="scroll-text-wrapper" data-start="0" data-end="0.4" data-content="lyric.p1"></span>
                 </p>
-                <p class="text-sm md:text-base font-normal leading-relaxed tracking-tight text-zinc-600 w-full block">
-                  <span class="scroll-text-wrapper inline-flex flex-wrap gap-x-[0.25em] gap-y-[0.1em]" data-start="0.4" data-end="0.8" data-content="lyric.p2"></span>
+                <p class="text-[clamp(0.875rem,2vw,1rem)] font-normal leading-relaxed tracking-tighter text-zinc-600 w-full block">
+                  <span class="scroll-text-wrapper" data-start="0.4" data-end="0.8" data-content="lyric.p2"></span>
                 </p>
-                <p class="text-xs md:text-sm font-normal leading-relaxed text-zinc-400 italic w-full block">
-                  <span class="scroll-text-wrapper inline-flex flex-wrap gap-x-[0.25em] gap-y-[0.1em]" data-start="0.8" data-end="1.0" data-content="lyric.p3"></span>
+                <p class="text-[clamp(0.75rem,1.5vw,0.875rem)] font-normal leading-relaxed tracking-tighter text-zinc-400 italic w-full block">
+                  <span class="scroll-text-wrapper" data-start="0.8" data-end="1.0" data-content="lyric.p3"></span>
                 </p>
               </div>
             </div>
@@ -221,52 +248,56 @@
     </section>
 
     <!-- Reviews Section Part 2 -->
-    <section class="bg-[#FAF9F6] relative overflow-visible">
-      <div class="max-w-[110rem] mx-auto px-6 md:px-12 pt-16 md:pt-24 pb-12">
+    <section class="bg-white relative overflow-visible mb-[clamp(20vh,28vh,35vh)]">
+      <div class="max-w-[110rem] mx-auto px-[clamp(1rem,4vw,3rem)]">
+        <h2 class="text-center text-[clamp(9px,1.2vw,11px)] tracking-[0.8em] uppercase mb-[clamp(2rem,4vw,3rem)] times-light-red" data-content="reviews.label"></h2>
         <div id="reviews-container-bottom">
-          <!-- Grid 04, 05, 06 Injected via JS -->
+          <!-- Grid Injected via JS -->
         </div>
       </div>
     </section>
 
     <!-- Beat Scroll Reveal -->
-    <section class="scroll-reveal-container h-[500vh] bg-white text-zinc-950 relative border-b border-zinc-100">
+    <section class="scroll-reveal-container h-[500vh] bg-white text-zinc-950 relative mb-[clamp(20vh,28vh,35vh)]">
       <div class="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
-        <h2 class="text-center text-[10px] font-bold tracking-[0.8em] uppercase mb-8 md:mb-12 text-zinc-300 w-full block" data-content="beat.label"></h2>
-        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full">
-          <div class="flex flex-col md:flex-row gap-6 md:gap-24 items-center">
-            <div class="md:w-1/2 order-2 md:order-1 w-full overflow-visible">
-              <div class="space-y-4 md:space-y-8 w-full">
-                <div class="space-y-3 md:space-y-6 max-lg w-full">
-                  <p class="text-lg md:text-xl font-normal leading-tight tracking-tight text-zinc-950 block w-full">
-                    <span class="scroll-text-wrapper inline-flex flex-wrap gap-x-[0.25em] gap-y-[0.1em]" data-start="0" data-end="0.35" data-content="beat.p1"></span>
+        <h2 class="absolute top-[clamp(3rem,8vw,6rem)] text-center text-[clamp(9px,1.2vw,11px)] tracking-[0.8em] uppercase times-light-red w-full block" data-content="beat.label"></h2>
+        <div class="max-w-7xl mx-auto px-[clamp(1rem,4vw,3rem)] relative z-10 w-full">
+          <div class="flex flex-col md:flex-row gap-[clamp(1.5rem,5vw,6rem)] items-center">
+            <div class="md:w-1/2 order-2 md:order-1 w-full flex flex-col">
+              <div class="space-y-[clamp(1.5rem,3vw,2rem)] w-full times-light">
+                <div class="space-y-[clamp(1rem,2.5vw,1.5rem)] max-lg w-full">
+                  <p class="text-[clamp(1.125rem,3vw,1.25rem)] font-normal leading-tight tracking-tighter text-zinc-950 block w-full">
+                    <span class="scroll-text-wrapper" data-start="0" data-end="0.35" data-content="beat.p1"></span>
                   </p>
-                  <p class="text-sm md:text-lg font-normal leading-relaxed tracking-tight text-zinc-600 block w-full">
-                    <span class="scroll-text-wrapper inline-flex flex-wrap gap-x-[0.25em] gap-y-[0.1em]" data-start="0.35" data-end="0.7" data-content="beat.p2"></span>
+                  <p class="text-[clamp(0.875rem,2vw,1.125rem)] font-normal leading-relaxed tracking-tighter text-zinc-600 block w-full">
+                    <span class="scroll-text-wrapper" data-start="0.35" data-end="0.7" data-content="beat.p2"></span>
                   </p>
-                  <p class="text-xs md:text-base font-normal leading-relaxed text-zinc-400 block w-full">
-                    <span class="scroll-text-wrapper inline-flex flex-wrap gap-x-[0.25em] gap-y-[0.1em]" data-start="0.7" data-end="1.0" data-content="beat.p3"></span>
+                  <p class="text-[clamp(0.75rem,1.5vw,1rem)] font-normal leading-relaxed tracking-tighter text-zinc-400 block w-full">
+                    <span class="scroll-text-wrapper" data-start="0.7" data-end="1.0" data-content="beat.p3"></span>
                   </p>
-                </div>
-                <div class="pt-4 md:pt-6 border-t border-zinc-100 flex items-center gap-6 md:gap-10 mt-4 md:mt-6">
-                  <div class="flex flex-col">
-                    <span class="text-[8px] font-bold uppercase tracking-widest text-zinc-300 mb-1">Artist</span>
-                    <span class="text-xs font-bold uppercase text-zinc-950" data-content="beat.artist"></span>
-                  </div>
-                  <div class="flex flex-col">
-                    <span class="text-[8px] font-bold uppercase tracking-widest text-zinc-300 mb-1">Track</span>
-                    <span class="text-xs font-bold uppercase text-zinc-950" data-content="beat.track"></span>
-                  </div>
-                  <div class="hidden sm:flex flex-col">
-                    <span class="text-[8px] font-bold uppercase text-zinc-950" data-content="beat.year"></span>
-                  </div>
                 </div>
               </div>
             </div>
-            <div class="md:w-1/2 order-1 md:order-2 flex justify-center w-full">
-              <div class="relative">
-                <div class="w-48 h-60 sm:w-56 sm:h-72 md:w-80 md:h-[28rem] bg-white overflow-hidden relative border border-zinc-200 shadow-sm shrink-0">
+            
+            <div class="md:w-1/2 order-1 md:order-2 flex flex-col items-center w-full md:border-l md:border-zinc-100 md:pl-[clamp(2rem,5vw,6rem)]">
+              <div class="relative w-full flex flex-col items-center">
+                <div class="w-[clamp(12rem,30vw,20rem)] h-[clamp(15rem,40vw,28rem)] bg-white overflow-hidden relative border border-zinc-200 shadow-sm shrink-0">
                   <img data-content="beat.image" src="" alt="Beat Artist" class="w-full h-full object-cover transition-all duration-1000" />
+                </div>
+                
+                <div class="grid grid-cols-3 gap-[clamp(0.5rem,2vw,1rem)] pt-[clamp(1rem,3vw,2rem)] mt-[clamp(1rem,3vw,1.5rem)] w-full max-w-md border-t border-zinc-100 times-light tracking-tight">
+                  <div class="flex flex-col text-center">
+                    <span class="text-[clamp(8px,1vw,10px)] font-bold uppercase tracking-widest text-[#cc0000] mb-1">Artist</span>
+                    <span class="text-[clamp(9px,1.2vw,11px)] font-light uppercase text-zinc-950 truncate" data-content="beat.artist"></span>
+                  </div>
+                  <div class="flex flex-col text-center">
+                    <span class="text-[clamp(8px,1vw,10px)] font-bold uppercase tracking-widest text-[#cc0000] mb-1">Track</span>
+                    <p class="text-[clamp(9px,1.2vw,11px)] font-light uppercase text-zinc-950 leading-tight" data-content="beat.track"></p>
+                  </div>
+                  <div class="flex flex-col text-center">
+                    <span class="text-[clamp(8px,1vw,10px)] font-bold uppercase tracking-widest text-[#cc0000] mb-1">Year</span>
+                    <span class="text-[clamp(9px,1.2vw,11px)] font-light uppercase text-zinc-950 truncate" data-content="beat.year"></span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -276,14 +307,11 @@
     </section>
 
     <!-- Interviews Horizontal Scroll -->
-    <section id="interviews-section" class="bg-white h-[900vh] relative overflow-visible border-t border-zinc-100">
+    <section id="interviews-section" class="bg-white h-[clamp(300vh,400vh,450vh)] relative overflow-visible mb-[clamp(20vh,28vh,35vh)]">
       <div class="sticky top-0 h-screen w-full flex flex-col items-center overflow-hidden">
-        <!-- Header now uses standard section margin for consistent spacing -->
-        <h2 class="text-center text-[10px] font-bold tracking-[0.8em] uppercase text-zinc-300 pt-12 md:pt-24 mb-16 md:mb-28 shrink-0" data-content="interviews.label"></h2>
-        
-        <!-- flex-1 ensures track area takes remaining space; items-center ensures containers are vertically in the middle -->
+        <h2 class="text-center text-[clamp(9px,1.2vw,11px)] tracking-[0.8em] uppercase pt-[clamp(3rem,8vw,6rem)] mb-[clamp(1rem,3vw,1.5rem)] shrink-0 times-light-red" data-content="interviews.label"></h2>
         <div id="interviews-track-wrapper" class="flex-1 w-full relative flex items-center overflow-hidden">
-          <div id="interviews-track" class="relative left-0 transition-transform duration-150 ease-out flex items-center will-change-transform">
+          <div id="interviews-track" class="relative left-0 transition-transform duration-150 ease-out flex items-center will-change-transform -mt-[clamp(1rem,4vw,4rem)]">
             <div id="interviews-container" class="flex items-center interview-gap w-max px-[10vw]">
               <!-- Injected via JS -->
             </div>
@@ -292,38 +320,25 @@
       </div>
     </section>
 
-    <!-- Opinion Section -->
-    <section class="bg-white py-24 md:py-32 border-t border-zinc-100">
-      <div class="max-w-7xl mx-auto px-6 md:px-12">
-        <h2 class="text-center text-[10px] font-bold tracking-[0.8em] uppercase mb-12 md:mb-16 text-zinc-300" data-content="opinion.label"></h2>
-        <div id="opinion-container" class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 lg:gap-24 max-w-6xl mx-auto">
-          <!-- Injected via JS -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Soundboard Section -->
-    <section class="bg-zinc-950 min-h-screen py-24 md:py-32 flex flex-col items-center overflow-hidden border-t border-white/5 relative z-0">
+    <!-- Catalogue Overview -->
+    <section class="bg-white min-h-screen py-[clamp(4rem,10vw,8rem)] flex flex-col items-center overflow-hidden relative z-0">
       <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        <img id="soundboard-bg" data-content="soundboard.bgImage" src="" alt="Soundboard Background" class="w-full h-full object-cover grayscale opacity-30 scale-100 blur-0 transition-all duration-700 ease-in-out" />
+        <img id="soundboard-bg" data-content="soundboard.bgImage" src="" alt="Soundboard Background" class="w-full h-full object-cover brightness-[1.1] contrast-[1.05] scale-100 blur-0 transition-all duration-700 ease-in-out" />
       </div>
-      
       <div class="absolute inset-0 pointer-events-none z-10 flex items-center justify-center">
         <div id="soundboard-covers" class="w-full md:w-[28%] h-full relative flex items-center justify-center">
           <!-- Injected via JS -->
         </div>
       </div>
-
-      <div class="w-full max-w-[100rem] px-6 md:px-12">
-        <h2 class="relative z-20 text-center text-[10px] font-bold tracking-[0.8em] uppercase mb-12 text-white/30" data-content="soundboard.label"></h2>
-        <div class="relative z-20 grid grid-cols-12 md:grid-cols-12 gap-2 md:gap-4 pb-4 mb-6 text-white/40 border-b border-white/10">
-          <div class="col-span-5 md:col-span-2 text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase">Record</div>
-          <div class="col-span-4 md:col-span-2 text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase">Artist</div>
+      <div class="w-full max-w-[100rem] px-[clamp(1rem,4vw,3rem)]">
+        <h2 class="relative z-20 text-center text-[clamp(9px,1.2vw,11px)] tracking-[0.8em] uppercase mb-[clamp(2rem,4vw,3rem)] times-light-red opacity-60" data-content="soundboard.label"></h2>
+        <div class="relative z-20 grid grid-cols-12 md:grid-cols-12 gap-2 md:gap-4 pb-4 mb-6 text-zinc-400 border-b border-zinc-100 times-light">
+          <div class="col-span-5 md:col-span-2 text-[clamp(8px,1vw,9px)] md:text-[clamp(9px,1.2vw,10px)] font-bold tracking-[0.2em] uppercase">Record</div>
+          <div class="col-span-4 md:col-span-2 text-[clamp(8px,1vw,9px)] md:text-[clamp(9px,1.2vw,10px)] font-bold tracking-[0.2em] uppercase">Artist</div>
           <div class="hidden md:block md:col-span-4"></div>
-          <div class="hidden md:block md:col-span-2 text-center text-[10px] font-bold tracking-[0.2em] uppercase">Rel. Year</div>
-          <div class="col-span-3 md:col-span-2 text-right md:text-center text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase">Review Nr.</div>
+          <div class="hidden md:block md:col-span-2 text-center text-[clamp(8px,1vw,10px)] font-bold tracking-[0.2em] uppercase">Rel. Year</div>
+          <div class="col-span-3 md:col-span-2 text-right md:text-center text-[clamp(8px,1vw,9px)] md:text-[clamp(9px,1.2vw,10px)] font-bold tracking-[0.2em] uppercase">Review Nr.</div>
         </div>
-        
         <div class="relative min-h-[65vh] flex flex-col" id="soundboard-rows">
           <!-- Injected via JS -->
         </div>
@@ -331,34 +346,32 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-24 md:py-32 bg-white px-6 md:px-12 border-t border-zinc-100">
+    <footer class="py-[clamp(4rem,10vw,8rem)] bg-white px-[clamp(1rem,4vw,3rem)] border-t border-zinc-100 times-light">
       <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-16 mb-16 md:mb-20">
-          <div class="space-y-6 md:space-y-8 max-sm">
-            <h1 class="text-4xl font-black tracking-tighter uppercase"><a href="home.html" data-content="brand.full"></a></h1>
-            <p class="text-[10px] leading-relaxed font-bold tracking-[0.3em] uppercase text-zinc-400" data-content="footer.tagline"></p>
+        <div class="flex flex-col md:flex-row justify-between items-start gap-[clamp(3rem,8vw,4rem)] mb-[clamp(3rem,8vw,5rem)]">
+          <div class="space-y-[clamp(1.5rem,4vw,2rem)] max-sm">
+            <h1 class="text-[clamp(2rem,6vw,2.25rem)] font-normal tracking-tighter uppercase text-[#cc0000]"><a href="home.html" data-content="brand.full"></a></h1>
+            <p class="text-[clamp(9px,1.2vw,10px)] leading-relaxed font-bold tracking-[0.3em] uppercase text-zinc-400" data-content="footer.tagline"></p>
             <div class="flex gap-4">
-              <a data-content="footer.contactLink" href="contact.html" class="px-8 py-3 bg-zinc-950 text-white text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-colors inline-block text-center">Contact</a>
+              <a data-content="footer.contactLink" href="contact.html" class="px-[clamp(1.5rem,4vw,2rem)] py-[clamp(0.5rem,1.5vw,0.75rem)] bg-[#cc0000] text-white text-[clamp(9px,1.2vw,10px)] font-bold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-colors inline-block text-center uppercase">contact</a>
             </div>
           </div>
-
-          <div class="grid grid-cols-2 gap-20 md:gap-32">
-            <div class="space-y-6">
-              <h4 class="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-950">Library</h4>
-              <ul id="footer-nav" class="space-y-4 text-[10px] uppercase tracking-widest font-bold text-zinc-400">
+          <div class="grid grid-cols-2 gap-[clamp(4rem,10vw,8rem)]">
+            <div class="space-y-[clamp(1rem,3vw,1.5rem)]">
+              <h4 class="text-[clamp(9px,1.2vw,10px)] font-bold uppercase tracking-[0.3em] text-zinc-950">Library</h4>
+              <ul id="footer-nav" class="space-y-[clamp(0.75rem,2vw,1rem)] text-[clamp(9px,1.2vw,10px)] uppercase tracking-widest font-bold text-zinc-400">
                 <!-- Injected via JS -->
               </ul>
             </div>
           </div>
         </div>
-
-        <div class="pt-12 border-t border-zinc-100 flex justify-center items-center w-full">
-          <div class="flex flex-wrap md:flex-nowrap items-center justify-center gap-x-2 gap-y-1 sm:gap-4 md:gap-8 max-w-full text-center">
-            <span class="text-[7px] sm:text-[9px] md:text-[10px] font-bold uppercase tracking-widest sm:tracking-[0.3em] md:tracking-[0.5em] text-zinc-300 italic shrink-0" data-content="footer.locations"></span>
-            <span class="text-[7px] sm:text-[9px] md:text-[10px] font-bold uppercase tracking-widest sm:tracking-[0.3em] md:tracking-[0.5em] text-zinc-300 shrink-0 hidden sm:inline-block">•</span>
-            <span class="text-[7px] sm:text-[9px] md:text-[10px] font-bold uppercase tracking-widest sm:tracking-[0.3em] md:tracking-[0.5em] text-zinc-300 shrink-0" data-content="footer.year"></span>
-            <span class="text-[7px] sm:text-[9px] md:text-[10px] font-bold uppercase tracking-widest sm:tracking-[0.3em] md:tracking-[0.5em] text-zinc-300 shrink-0 hidden sm:inline-block">•</span>
-            <span class="text-[7px] sm:text-[9px] md:text-[10px] font-bold uppercase tracking-widest sm:tracking-[0.3em] md:tracking-[0.5em] text-zinc-300 shrink-0" data-content="footer.rights"></span>
+        <div class="pt-[clamp(2rem,5vw,3rem)] border-t border-zinc-100 flex justify-center items-center w-full">
+          <div class="flex flex-wrap md:flex-nowrap items-center justify-center gap-x-[clamp(0.5rem,2vw,2rem)] gap-y-1 w-full max-w-full text-center text-zinc-300">
+            <span class="text-[clamp(7px,0.9vw,10px)] font-bold uppercase tracking-widest italic shrink-0" data-content="footer.locations"></span>
+            <span class="hidden sm:inline-block text-[clamp(7px,0.9vw,10px)]">•</span>
+            <span class="text-[clamp(7px,0.9vw,10px)] font-bold uppercase tracking-widest shrink-0" data-content="footer.year"></span>
+            <span class="hidden sm:inline-block text-[clamp(7px,0.9vw,10px)]">•</span>
+            <span class="text-[clamp(7px,0.9vw,10px)] font-bold uppercase tracking-widest shrink-0" data-content="footer.rights"></span>
           </div>
         </div>
       </div>
@@ -367,25 +380,17 @@
 
   <script>
     const SITE_CONTENT = {
-      brand: {
-        short: "S.",
-        full: "SONIC."
-      },
+      brand: { short: "S.", full: "sonic" },
       nav: {
         links: [
           { text: "Home", url: "home.html" },
           { text: "Reviews", url: "reviews.html" },
           { text: "Interviews", url: "interviews.html" },
-          { text: "Opinion", url: "opinion.html" },
           { text: "About", url: "about.html" }
         ],
         mobileMenuImage: "https://p7.hiclipart.com/preview/805/164/961/phonograph-record-lp-record-music-clip-art-others.jpg"
       },
-      typewriters: [
-        "Why do you listen?",
-        "Where do you listen?",
-        "How do you listen?"
-      ],
+      typewriters: [ "Why do you listen?", "Where do you listen?", "How do you listen?" ],
       sonicReveal: {
         bgImage: "https://i.pinimg.com/1200x/74/2f/d7/742fd7ff01286fc75d71f60fde596531.jpg",
         title: "SONIC",
@@ -423,42 +428,12 @@
       reviews: {
         label: "Reviews",
         items: [
-          {
-            id: "01", cat: "Archive // Selection", subCat: "Signal Analysis", link: "damn.html",
-            image: "https://upload.wikimedia.org/wikipedia/en/5/51/Kendrick_Lamar_-_Damn.png",
-            text: "A visceral confrontation with legacy and internal noise. Kendrick Lamar navigates the tension between public persona and private fear.",
-            accentColor: "#7f1d1d", textColor: "#ffffff", themeBg: "#fdf2f2"
-          },
-          {
-            id: "02", cat: "Archive // Selection", subCat: "Signal Analysis", link: "fluid meditations.html",
-            image: "https://f4.bcbits.com/img/a1236533191_10.jpg",
-            text: "Hypnotic rhythmic pulses from DJ Gigola. A masterclass in techno.",
-            accentColor: "#60a5fa", textColor: "#0f172a", themeBg: "#f0f5ff"
-          },
-          {
-            id: "03", cat: "Archive // Selection", subCat: "Signal Analysis", link: "illmatic.html",
-            image: "https://media1.jpc.de/image/w3200/front/0/5099747595912.jpg",
-            text: "The definitive landmark of lyrical precision. Nas documents the urban landscape of Queensbridge.",
-            accentColor: "#b45309", textColor: "#fef3c7", themeBg: "#fffaf0"
-          },
-          {
-            id: "04", cat: "Archive // Selection", subCat: "Signal Analysis", link: "blueprint.html",
-            image: "https://upload.wikimedia.org/wikipedia/en/2/2c/The_Blueprint.png",
-            text: "The Blueprint redefined the sonic landscape of New York hip-hop, blending soulful samples with a commercial polish that remains a benchmark for the genre.",
-            accentColor: "#1d4ed8", textColor: "#ffffff", themeBg: "#eff6ff"
-          },
-          {
-            id: "05", cat: "Archive // Selection", subCat: "Signal Analysis", link: "blonde.html",
-            image: "https://media.pitchfork.com/photos/5929bcb55e6ef95969322eda/master/w_1280,c_limit/5f06f7f6.jpg",
-            text: "Blonde is a masterwork of modern minimalism, capturing a fractured emotional landscape through unconventional structures and intimate vocal layering.",
-            accentColor: "#dcfce7", textColor: "#166534", themeBg: "#f2fcf5"
-          },
-          {
-            id: "06", cat: "Archive // Selection", subCat: "Signal Analysis", link: "greatescape.html",
-            image: "https://m.media-amazon.com/images/I/81allxc10aL._SX522_.jpg",
-            text: "The Great Escape showcases Larry June's effortless flow over lush, panoramic instrumentation that defines the modern West Coast sound.",
-            accentColor: "#f97316", textColor: "#ffffff", themeBg: "#fff5ed"
-          }
+          { id: "01", cat: "Archive // Selection", subCat: "Signal Analysis", link: "damn.html", image: "https://upload.wikimedia.org/wikipedia/en/5/51/Kendrick_Lamar_-_Damn.png", text: "A visceral confrontation with legacy and internal noise.", accentColor: "#7f1d1d", textColor: "#ffffff" },
+          { id: "02", cat: "Archive // Selection", subCat: "Signal Analysis", link: "fluid meditations.html", image: "https://f4.bcbits.com/img/a1236533191_10.jpg", text: "Hypnotic rhythmic pulses from DJ Gigola.", accentColor: "#60a5fa", textColor: "#0f172a" },
+          { id: "03", cat: "Archive // Selection", subCat: "Signal Analysis", link: "illmatic.html", image: "https://media1.jpc.de/image/w2400/front/0/5099747595912.jpg", text: "The definitive landmark of lyrical precision.", accentColor: "#b45309", textColor: "#fef3c7" },
+          { id: "04", cat: "Archive // Selection", subCat: "Signal Analysis", link: "blueprint.html", image: "https://upload.wikimedia.org/wikipedia/en/2/2c/The_Blueprint.png", text: "The Blueprint redefined the sonic landscape of NY hip-hop.", accentColor: "#1d4ed8", textColor: "#ffffff" },
+          { id: "05", cat: "Archive // Selection", subCat: "Signal Analysis", link: "blonde.html", image: "https://media.pitchfork.com/photos/5929bcb55e6ef95969322eda/master/w_1280,c_limit/5f06f7f6.jpg", text: "Blonde is a masterwork of modern minimalism.", accentColor: "#dcfce7", textColor: "#166534" },
+          { id: "06", cat: "Archive // Selection", subCat: "Signal Analysis", link: "greatescape.html", image: "https://m.media-amazon.com/images/I/81allxc10aL._SX522_.jpg", text: "The Great Escape showcases Larry June's effortless flow.", accentColor: "#f97316", textColor: "#ffffff" }
         ]
       },
       lyric: {
@@ -467,9 +442,9 @@
         image: "https://m.media-amazon.com/images/I/51RD1Jyiz3L._SX522_.jpg",
         track: "Lucifer",
         artist: "JaŸ-Z",
-        p1: "The lyric was orignally written by Kanye West, who is from Chicago. Chicago is often reffered to as the murder capital since it has the highest murder rate per 100.000 people.",
-        p2: "JaŸ-Z actually capitalizes on the crack epidemic happening throught the 80's and 90's in New York. During these times New York had one of the highest murder rates.",
-        p3: "The lyric itself is a wordplay since money or capital was often the motivation for these murders. Kanye West later on used that line again in Murder to Excellence"
+        p1: "The lyric was orignally written by Kanye West, who is from Chicago.",
+        p2: "JaŸ-Z actually capitalizes on the crack epidemic happening throught the 80's and 90's.",
+        p3: "The lyric itself is a wordplay since money or capital was often the motivation."
       },
       beat: {
         label: "Favourite beat",
@@ -477,59 +452,45 @@
         artist: "Mk.gee",
         track: "Are You Looking Up",
         year: "2024",
-        p1: `Mk.gee's "Are You Looking Up" represents a paradigm shift in modern guitar-based production. The beat functions as a living, breathing organism.`,
-        p2: "Built on a foundation of saturated, compressed drum breaks, the brilliance lies in the contrast: a muddy, lo-fi low end against crystalline, jagged guitar transients.",
-        p3: "A masterclass in using digital imperfections—clipping, hiss, and unstable pitch—to create a sense of profound intimacy and urgency in the listener."
+        p1: "Mk.gee's \"Are You Looking Up\" represents a paradigm shift.",
+        p2: "Built on a foundation of saturated, compressed drum breaks.",
+        p3: "A masterclass in using digital imperfections to create intimacy."
       },
       interviews: {
         label: "Interviews",
         items: [
-          { name: "Maya Ellis", desc: "Experimental Sound Architect", quote: "“The void is where the sound begins, everything else is just architecture.”", image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800" },
-          { name: "Adrianne Lenker", desc: "Folk Lyricist & Multi-Instrumentalist", quote: "“My songs are like small houses I build to keep my memories warm.”", image: "https://media.pitchfork.com/photos/65a6a4a159e13d7e5d263920/1:1/w_600/Adrianne-Lenker-Bright-Future.jpg" },
-          { name: "Mk.gee", desc: "Modern Guitar Innovator", quote: "“The guitar is just a controller for the soul's spectral frequency.”", image: "https://media.pitchfork.com/photos/65cc0e0600392f4625b1f9b3/1:1/w_600/Mk.gee-Two-Star-and-the-Dream-Police.jpg" },
-          { name: "Helena Hauff", desc: "Analog Techno Specialist", quote: "“I like machines that have a mind of their own.”", image: "https://media.pitchfork.com/photos/5b1ed37c7676644f51952281/1:1/w_600/Helena-Hauff-Qualm.jpg" },
-          { name: "James Blake", desc: "Electronic Soul Pioneer", quote: "“Silence is just as much a part of the composition as the notes themselves.”", image: "https://media.pitchfork.com/photos/613a0604084323e7f45778a4/1:1/w_600/James-Blake-Friends-That-Break-Your-Heart.jpg" }
-        ]
-      },
-      opinion: {
-        label: "Opinion",
-        items: [
-          { title: "The Death of the Album?", excerpt: "In an era of hyper-curated playlists, the cohesive long-form project faces its greatest challenge yet. We explore if narrative structure still holds value.", image: "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=800&auto=format&fit=crop" },
-          { title: "Analog vs Digital", excerpt: "The warmth of imperfections continues to outshine the clinical precision of modern software. The resurgence of tape is more than nostalgia.", image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=800&auto=format&fit=crop" },
-          { title: "Global Rhythms", excerpt: "Geography no longer dictates sound. Cross-continental collaborations are blurring genre boundaries into something entirely new and undefinable.", image: "https://images.unsplash.com/photo-1444212477490-ca407925329e?q=80&w=800&auto=format&fit=crop" },
-          { title: "The Human Element", excerpt: "As AI enters the creative suite, the value of the 'happy accident' becomes the ultimate luxury in modern production. Soul cannot be algorithmic.", image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=800&auto=format&fit=crop" }
+          { name: "Maya Ellis", desc: "Sound Architect", quote: "“The void is where the sound begins.”", image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800" },
+          { name: "Adrianne Lenker", desc: "Folk Lyricist", quote: "“My songs are like small houses I build.”", image: "https://media.pitchfork.com/photos/65a6a4a159e13d7e5d263920/1:1/w_600/Adrianne-Lenker-Bright-Future.jpg" },
+          { name: "Mk.gee", desc: "Guitar Innovator", quote: "“The guitar is just a controller for the soul.”", image: "https://media.pitchfork.com/photos/65cc0e0600392f4625b1f9b3/1:1/w_600/Mk.gee-Two-Star-and-the-Dream-Police.jpg" },
+          { name: "Helena Hauff", desc: "Techno Specialist", quote: "“I like machines that have a mind of their own.”", image: "https://media.pitchfork.com/photos/5b1ed37c7676644f51952281/1:1/w_320,c_limit/Helena-Hauff-Qualm.jpg" },
+          { name: "Adrianne Lenker", desc: "Folk Lyricist", quote: "“My songs are like small houses I build.”", image: "https://media.pitchfork.com/photos/65a6a4a159e13d7e5d263920/1:1/w_600/Adrianne-Lenker-Bright-Future.jpg" },
+          { name: "James Blake", desc: "Soul Pioneer", quote: "“Silence is just as much a part of the composition as the notes.”", image: "https://media.pitchfork.com/photos/613a0604084323e7f45778a4/1:1/w_320,c_limit/James-Blake-Friends-That-Break-Your-Heart.jpg" }
         ]
       },
       soundboard: {
         label: "Catalogue Overview",
-        bgImage: "https://i.pinimg.com/736x/cb/47/7b/cb477b4ddac03767c5fd2716037fe2b6.jpg",
-        records: [
-          { name: "DAMN.", artist: "KENDRICK LAMAR", no: "S1-001", year: "2017", image: "https://media1.jpc.de/image/w3200/front/0/0602557618280.jpg" },
-        ]
+        bgImage: "https://i.pinimg.com/736x/46/d0/52/46d052c88c5fecf32c38b83297b96a92.jpg",
+        records: [ { name: "DAMN.", artist: "KENDRICK LAMAR", no: "S1-001", year: "2017", image: "https://media1.jpc.de/image/w3200/front/0/0602557618280.jpg" } ]
       },
-      footer: {
-        tagline: "Dedicated to the high-fidelity critique and intentional listening experiences.",
-        contactLink: "contact.html",
-        locations: "Based in Berlin and Mannheim",
-        year: "© 2025",
-        rights: "All Rights Reserved"
-      }
+      footer: { tagline: "Dedicated to intentional listening.", contactLink: "contact", locations: "Based in Berlin and Mannheim", year: "© 2025", rights: "All Rights Reserved" }
     };
-  </script>
 
-  <!-- ========================================== -->
-  <!-- 3. INTERACTION & ANIMATION LOGIC            -->
-  <!-- ========================================== -->
-  <script>
     function initializeAnimations() {
-      // --- Mobile Menu Toggle ---
+      const interviewsSection = document.getElementById('interviews-section');
+      const interviewsTrack = document.getElementById('interviews-track');
+      const nav = document.getElementById('main-nav');
+      
+      const missionSection = document.getElementById('mission-section');
+      
+      let isMenuOpen = false;
+      let scrollTimeout;
+
       const menuBtn = document.getElementById('mobile-menu-btn');
       const menuOverlay = document.getElementById('mobile-menu-overlay');
       const menuCloseBtn = document.getElementById('mobile-menu-close-btn');
       const menuImg = document.getElementById('mobile-menu-img');
       const menuCloseIcon = document.getElementById('mobile-menu-close');
       
-      let isMenuOpen = false;
       const toggleMenu = () => {
         isMenuOpen = !isMenuOpen;
         if (isMenuOpen) {
@@ -544,288 +505,160 @@
           menuCloseIcon.classList.add('hidden');
         }
       };
+      if(menuBtn) menuBtn.addEventListener('click', toggleMenu);
+      if(menuCloseBtn) menuCloseBtn.addEventListener('click', toggleMenu);
 
-      menuBtn.addEventListener('click', toggleMenu);
-      menuCloseBtn.addEventListener('click', toggleMenu);
-      menuOverlay.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { if(isMenuOpen) toggleMenu(); }));
-
-      // --- Navigation Visibility Logic (Hide on Scroll, regardless of direction) ---
-      const nav = document.getElementById('main-nav');
-      const missionSection = document.getElementById('mission-section');
-      let scrollTimeout;
-
-      const handleNavScroll = () => {
+      window.addEventListener('scroll', () => {
         nav.classList.add('-translate-y-full', 'opacity-0');
         nav.classList.remove('translate-y-0', 'opacity-100');
-
         clearTimeout(scrollTimeout);
         scrollTimeout = setTimeout(() => {
-          const missionTop = missionSection.getBoundingClientRect().top;
-          if (missionTop <= 10) {
+          if (missionSection.getBoundingClientRect().top <= 10) {
             nav.classList.remove('-translate-y-full', 'opacity-0');
             nav.classList.add('translate-y-0', 'opacity-100');
           }
-        }, 400); // Fast appearance
-      };
+        }, 400);
+      }, { passive: true });
 
-      window.addEventListener('scroll', handleNavScroll, { passive: true });
-
-      // --- Sonic Reveal Logic ---
-      const sonicRevealSection = document.getElementById('sonic-reveal');
-      const sonicBg = document.getElementById('sonic-bg');
-      const sonicTitle = document.getElementById('sonic-title');
-      const sonicChars = document.querySelectorAll('.sonic-char');
-      const sonicSeason = document.getElementById('sonic-season');
-
-      let sonicTriggered = false;
-
-      const easeInOutQuart = (x) => {
-        return x < 0.5 ? 8 * x * x * x * x : 1 - Math.pow(-2 * x + 2, 4) / 2;
-      };
-
-      const updateSonicUI = (linearProgress) => {
-        const revealProgress = easeInOutQuart(linearProgress);
-        const visibilityFactor = Math.min(1, revealProgress * 1.5);
-        sonicBg.style.opacity = visibilityFactor * 0.35;
-        sonicBg.style.filter = `blur(${(1 - revealProgress) * 15}px)`; 
-        sonicBg.style.transform = `scale(${1.2 - (revealProgress * 0.2)})`;
-        sonicTitle.style.opacity = revealProgress;
-        sonicTitle.style.filter = `blur(${(1 - revealProgress) * 15}px)`;
-        sonicTitle.style.letterSpacing = `${-0.15 + (revealProgress * 0.17)}em`;
-        sonicTitle.style.transform = `scale(${1.2 - (revealProgress * 0.2)})`;
-        sonicChars.forEach((char, i) => {
-          const charStart = i * 0.08;
-          const charProgress = Math.max(0, Math.min(1, (revealProgress - charStart) / 0.6));
-          char.style.transform = `translateY(${(1 - charProgress) * 20}px)`;
-        });
-        sonicSeason.style.opacity = revealProgress;
-        sonicSeason.style.filter = `blur(${(1 - revealProgress) * 15}px)`;
-        sonicSeason.style.transform = `scale(${1.2 - (revealProgress * 0.2)}) translateY(${(1 - revealProgress) * 30}px)`;
-      };
-
-      // Reset immediately to 0 when initializing so it doesn't stay revealed on preview reload
-      updateSonicUI(0);
-      sonicTriggered = false;
-
-      const startSonicSequence = () => {
-        if (sonicTriggered) return;
-        sonicTriggered = true;
-        document.body.classList.add('lock-sonic');
-        const duration = 2000;
-        const startTime = performance.now();
-        const animate = (currentTime) => {
-          const elapsed = currentTime - startTime;
-          const linearProgress = Math.min(1, elapsed / duration);
-          updateSonicUI(linearProgress);
-          if (linearProgress < 1) {
-            requestAnimationFrame(animate);
-          } else {
-            document.body.classList.remove('lock-sonic');
-          }
-        };
-        requestAnimationFrame(animate);
-      };
-
-      // Intersection Observer for Sonic Reveal
-      const sonicObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting && !sonicTriggered) {
-             const rect = entry.target.getBoundingClientRect();
-             if (rect.top <= 20) startSonicSequence();
-          }
-        });
-      }, { threshold: [0, 0.1, 0.5, 0.9, 1] });
-      sonicObserver.observe(sonicRevealSection);
-
-      // Typewriter and Scroll Reveal Logic
-      const typewriters = [];
-      document.querySelectorAll('.typewriter-section').forEach((section, idx) => {
-        const container = section.querySelector('.typewriter-content');
+      const twStates = [];
+      document.querySelectorAll('.typewriter-section').forEach((sec, idx) => {
+        const container = sec.querySelector('.typewriter-content');
         const text = SITE_CONTENT.typewriters[idx] || "";
-        const isFirst = section.dataset.isfirst === 'true';
-        
+        const isFirst = sec.dataset.isfirst === 'true';
         let charElements = [];
-        let charCounter = 0;
-        
         const words = text.split(" ");
         let lines = [];
         for (let i = 0; i < words.length; i++) {
           let current = words[i];
-          if (current.length < 2 && i < words.length - 1) {
+          if (current.replace(/[^a-zA-Z]/g, '').length < 2 && i < words.length - 1) {
             lines.push(current + " " + words[i+1]);
             i++;
           } else {
             lines.push(current);
           }
         }
-        if (lines.length > 1 && lines[lines.length - 1].length < 2) {
-          const last = lines.pop();
-          lines[lines.length - 1] += " " + last;
+        if (lines.length > 1) {
+          const lastLineIdx = lines.length - 1;
+          const letterCount = lines[lastLineIdx].replace(/[^a-zA-Z]/g, '').length;
+          if (letterCount < 2) {
+             const orphan = lines.pop();
+             lines[lines.length - 1] += " " + orphan;
+          }
         }
-
         lines.forEach((lineText, lineIdx) => {
           const isAnchoredFirst = isFirst && lineIdx === 0;
           const h2 = document.createElement('h2');
           h2.style.setProperty('--random-indent', isAnchoredFirst ? 0 : Math.random());
-          h2.className = "question-text flex flex-wrap items-baseline mb-[0.15em] pt-4 transition-none w-full adaptive-indent";
-          lineText.split(" ").forEach((word, wordIdx, wordArr) => {
-            const wordSpan = document.createElement('span');
-            wordSpan.className = "inline-flex whitespace-nowrap";
-            word.split("").forEach((char) => {
-              const span = document.createElement('span');
-              span.className = "typewriter-char inline-block";
-              span.textContent = char;
-              const shouldShowInitially = isFirst && charCounter < 3;
-              span.style.opacity = shouldShowInitially ? 1 : 0;
-              span.style.visibility = shouldShowInitially ? "visible" : "hidden";
-              wordSpan.appendChild(span);
-              charElements.push(span);
-              charCounter++;
-            });
-            h2.appendChild(wordSpan);
-            if (wordIdx < wordArr.length - 1) {
-               const spaceSpan = document.createElement('span');
-               spaceSpan.className = "typewriter-space inline-block";
-               spaceSpan.textContent = "\u00A0";
-               const shouldShowInitially = isFirst && charCounter < 3;
-               spaceSpan.style.opacity = shouldShowInitially ? 1 : 0;
-               spaceSpan.style.visibility = shouldShowInitially ? "visible" : "hidden";
-               h2.appendChild(spaceSpan);
-               charElements.push(spaceSpan);
-               charCounter++;
-            }
+          h2.className = "question-text flex flex-wrap items-baseline transition-none w-full adaptive-indent mb-[0.15em]";
+          lineText.split("").forEach((char) => {
+            const span = document.createElement('span');
+            span.className = "typewriter-char inline-block";
+            span.textContent = char === " " ? "\u00A0" : char;
+            const initial = isFirst && charElements.length < 3;
+            span.style.opacity = initial ? 1 : 0;
+            span.style.visibility = initial ? "visible" : "hidden";
+            h2.appendChild(span);
+            charElements.push(span);
           });
           container.appendChild(h2);
         });
-
         const blinker = document.createElement('span');
         blinker.className = "inline-block ml-1 animate-terminal-blink question-text";
         blinker.textContent = ".";
         blinker.style.display = "none";
-        container.appendChild(blinker);
-        typewriters.push({ section, charElements, totalChars: text.length, blinker, isFirst });
+        const lastH2 = container.querySelector('h2:last-of-type');
+        if (lastH2) lastH2.appendChild(blinker);
+        twStates.push({ section: sec, charElements, total: charElements.length, blinker, isFirst });
       });
 
-      const revealContainers = [];
-      document.querySelectorAll('.scroll-text-wrapper').forEach(wrapper => {
-        const text = wrapper.dataset.text;
-        const words = text.split(' ');
-        let charElements = [];
-        let charIndex = 0;
-        const totalChars = text.length;
-        words.forEach((word, wIdx) => {
-          const wordSpan = document.createElement('span');
-          wordSpan.className = "inline-flex";
-          word.split('').forEach(char => {
-            const charSpan = document.createElement('span');
-            charSpan.className = "reveal-char";
-            charSpan.textContent = char;
-            wordSpan.appendChild(charSpan);
-            charElements.push({ element: charSpan, threshold: charIndex / totalChars });
-            charIndex++;
-          });
-          wrapper.appendChild(wordSpan);
-          if (wIdx < words.length - 1) charIndex++;
+      const revealWrappers = [];
+      document.querySelectorAll('.scroll-text-wrapper').forEach(w => {
+        const txt = w.dataset.text;
+        const chars = [];
+        txt.split('').forEach((c, i) => {
+          const s = document.createElement('span');
+          s.className = "reveal-char";
+          s.textContent = c;
+          w.appendChild(s);
+          chars.push({ el: s, t: i / txt.length });
         });
-        revealContainers.push({ section: wrapper.closest('.scroll-reveal-container'), charElements, start: parseFloat(wrapper.dataset.start), end: parseFloat(wrapper.dataset.end) });
+        revealWrappers.push({ section: w.closest('.scroll-reveal-container'), chars, start: parseFloat(w.dataset.start), end: parseFloat(w.dataset.end) });
       });
 
-      const interviewsTrack = document.getElementById('interviews-track');
-      const interviewsSection = document.getElementById('interviews-section');
-      
-      const onScroll = () => {
+      const handleScroll = () => {
         const h = window.innerHeight;
-        typewriters.forEach(tw => {
+        twStates.forEach(tw => {
           const rect = tw.section.getBoundingClientRect();
-          const height = tw.section.offsetHeight - h;
-          const progress = Math.max(0, Math.min(1, -rect.top / height));
-          const effectiveProgress = Math.min(1, progress * 1.15);
-          const typingHeadIdx = tw.isFirst ? 2 + Math.floor(effectiveProgress * (tw.totalChars - 3)) : -1 + Math.floor(effectiveProgress * tw.totalChars);
-          tw.charElements.forEach((el, idx) => {
-            const isVisible = (tw.isFirst && idx < 3) || idx <= typingHeadIdx;
-            el.style.opacity = isVisible ? 1 : 0; 
-            el.style.visibility = isVisible ? 'visible' : 'hidden';
+          const progress = Math.max(0, Math.min(1, -rect.top / (tw.section.offsetHeight - h)));
+          const typingProgress = Math.min(1, progress * 1.6);
+          const head = tw.isFirst ? 2 + Math.floor(typingProgress * (tw.total - 3)) : -1 + Math.floor(typingProgress * tw.total);
+          tw.charElements.forEach((el, i) => {
+            const vis = (tw.isFirst && i < 3) || i <= head;
+            el.style.opacity = vis ? 1 : 0;
+            el.style.visibility = vis ? 'visible' : 'hidden';
           });
-          const isLastCharTyped = (tw.isFirst && effectiveProgress === 0 && typingHeadIdx === 2) || (typingHeadIdx >= 0 && effectiveProgress < 1);
-          if (isLastCharTyped) {
-              tw.blinker.style.display = 'inline-block';
-              const lastVisibleChar = tw.charElements[Math.max(0, typingHeadIdx)];
-              if (lastVisibleChar && tw.blinker.previousElementSibling !== lastVisibleChar) {
-                  lastVisibleChar.after(tw.blinker);
-              }
+          if (head >= 0 && progress < 1) {
+            tw.blinker.style.display = 'inline-block';
+            const lastActiveChar = tw.charElements[Math.max(0, head)];
+            if (lastActiveChar && tw.blinker.previousElementSibling !== lastActiveChar) {
+              lastActiveChar.after(tw.blinker);
+            }
           } else {
-              tw.blinker.style.display = 'none';
+            tw.blinker.style.display = 'none';
           }
         });
-        
-        if (sonicRevealSection.getBoundingClientRect().top <= 20 && !sonicTriggered) startSonicSequence();
-        
-        revealContainers.forEach(rv => {
-           const progress = Math.max(0, Math.min(1, -rv.section.getBoundingClientRect().top / (rv.section.offsetHeight - h)));
-           const lp = Math.max(0, Math.min(1, (progress - rv.start) / (rv.end - rv.start)));
-           rv.charElements.forEach(item => { item.element.style.opacity = lp > item.threshold ? 1 : 0.15; });
+
+        revealWrappers.forEach(rv => {
+          const rect = rv.section.getBoundingClientRect();
+          const p = Math.max(0, Math.min(1, -rect.top / (rv.section.offsetHeight - h)));
+          const lp = Math.max(0, Math.min(1, (p - rv.start) / (rv.end - rv.start)));
+          rv.chars.forEach(c => c.el.style.opacity = lp > c.t ? 1 : 0.15);
         });
-        
+
         if (interviewsSection && interviewsTrack) {
-          const progress = Math.max(0, Math.min(1, -interviewsSection.getBoundingClientRect().top / (interviewsSection.offsetHeight - h)));
-          const trackContainerWidth = interviewsTrack.parentElement.clientWidth;
-          const scrollableWidth = document.getElementById('interviews-container').scrollWidth;
-          const maxTranslate = Math.max(0, scrollableWidth - trackContainerWidth);
-          interviewsTrack.style.transform = `translateX(${-progress * maxTranslate}px)`;
+          const p = Math.max(0, Math.min(1, -interviewsSection.getBoundingClientRect().top / (interviewsSection.offsetHeight - h)));
+          const max = Math.max(0, document.getElementById('interviews-container').scrollWidth - interviewsTrack.parentElement.clientWidth);
+          interviewsTrack.style.transform = `translateX(${-p * max}px)`;
         }
       };
-
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      handleScroll();
     }
-    
-    // --- Global Functions ---
+
     window.handleCardHover = function(el, isHovered) {
       const accent = el.dataset.accent;
-      const textColor = el.dataset.textcolor;
+      const text = el.dataset.textcolor;
       el.style.backgroundColor = isHovered ? accent : '#FFFFFF';
-      el.querySelectorAll('.dynamic-text').forEach(child => {
-          if(child.classList.contains('text-zinc-300') || child.classList.contains('opacity-30')) {
-            child.classList.toggle('opacity-30', isHovered);
-            child.classList.toggle('text-zinc-300', !isHovered);
-            child.style.color = isHovered ? textColor : '';
-          } else if(child.classList.contains('text-zinc-400') || child.classList.contains('opacity-40')) {
-            child.classList.toggle('opacity-40', isHovered);
-            child.classList.toggle('text-zinc-400', !isHovered);
-            child.style.color = isHovered ? textColor : '';
-          } else if(child.classList.contains('text-zinc-950') || child.classList.contains('text-white')) {
-            child.style.color = isHovered ? textColor : '';
-          }
-      });
-      el.querySelectorAll('.dynamic-p').forEach(child => {
-          child.style.color = isHovered ? textColor : '#52525b';
-          child.style.borderColor = isHovered ? textColor : '#f4f4f5';
-          child.style.opacity = isHovered ? 1 : 0.8;
+      el.querySelectorAll('.dynamic-text, .dynamic-p, .dynamic-btn').forEach(c => {
+        if (c.classList.contains('text-[#cc0000]')) {
+           c.style.color = isHovered ? text : '#cc0000';
+        } else {
+           c.style.color = isHovered ? text : '';
+        }
+        
+        if(c.classList.contains('dynamic-p')) c.style.borderColor = isHovered ? text : '';
+        if(c.classList.contains('dynamic-btn')) {
+           c.style.backgroundColor = isHovered ? text : '#18181b';
+           c.style.color = isHovered ? accent : 'white';
+        }
       });
     };
 
     window.handleSoundboardHover = function(album) {
       const bg = document.getElementById('soundboard-bg');
-      if (album) {
-        bg.classList.add('opacity-0', 'scale-95', 'blur-sm');
-        bg.classList.remove('opacity-30', 'scale-100', 'blur-0');
-      } else {
-        bg.classList.remove('opacity-0', 'scale-95', 'blur-sm');
-        bg.classList.add('opacity-30', 'scale-100', 'blur-0');
+      if(bg) bg.style.opacity = album ? 0.3 : 1;
+      const covers = document.getElementById('soundboard-covers');
+      if(covers) {
+        Array.from(covers.children).forEach(c => {
+          const active = c.dataset.album === album;
+          c.classList.toggle('opacity-100', active);
+          c.classList.toggle('scale-100', active);
+          c.classList.toggle('opacity-0', !active);
+        });
       }
-      Array.from(document.getElementById('soundboard-covers').children).forEach(cover => {
-        if (cover.dataset.album === album) {
-            cover.classList.add('opacity-100', 'scale-100', 'translate-y-0');
-            cover.classList.remove('opacity-0', 'scale-110', 'translate-y-10', 'pointer-events-none');
-        } else {
-            cover.classList.remove('opacity-100', 'scale-100', 'translate-y-0');
-            cover.classList.add('opacity-0', 'scale-110', 'translate-y-10', 'pointer-events-none');
-        }
-      });
     };
 
     document.addEventListener("DOMContentLoaded", () => {
-      // Bind data fields
       document.querySelectorAll('[data-content]').forEach(el => {
         const keys = el.dataset.content.split('.');
         let val = SITE_CONTENT;
@@ -836,152 +669,91 @@
         else el.textContent = val;
       });
 
-      // Desktop Nav Links
-      document.getElementById('desktop-nav').innerHTML = SITE_CONTENT.nav.links.map(link => 
-        `<a href="${link.url}" class="flex-1 flex items-center justify-center border-r border-zinc-100 last:border-r-0 text-[7px] font-bold uppercase tracking-[0.5em] transition-all duration-300 hover:bg-zinc-950 hover:text-white group"><span>${link.text}</span></a>`
-      ).join('');
+      const navLinks = SITE_CONTENT.nav.links.map(l => {
+        const isHome = l.text.toLowerCase() === 'home';
+        const defaultColor = isHome ? 'text-[#cc0000]' : 'text-zinc-900';
+        const bottomLine = isHome ? '<div class="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#cc0000]"></div>' : '';
+        return `<a href="${l.url}" class="relative flex-1 flex items-center justify-center border-r border-zinc-100 last:border-r-0 text-[clamp(6px,1vw,7px)] font-bold uppercase tracking-[0.5em] transition-all duration-300 hover:bg-[#cc0000] group ${defaultColor}">
+          <span class="group-hover:text-white transition-colors duration-300">${l.text}</span>
+          ${bottomLine}
+        </a>`;
+      }).join('');
+      document.getElementById('desktop-nav').innerHTML = navLinks;
       
-      // Mobile Nav Links
-      document.getElementById('mobile-nav-links').innerHTML = SITE_CONTENT.nav.links.map(link => 
-        `<a href="${link.url}" class="text-4xl font-bold tracking-tighter uppercase transition-all">${link.text}</a>`
-      ).join('');
+      document.getElementById('mobile-nav-links').innerHTML = SITE_CONTENT.nav.links.map(l => `<a href="${l.url}" class="text-4xl font-bold uppercase">${l.text}</a>`).join('');
+      document.getElementById('footer-nav').innerHTML = SITE_CONTENT.nav.links.map(l => `<li><a href="${l.url}">${l.text}</a></li>`).join('');
 
-      // Footer Nav Links
-      document.getElementById('footer-nav').innerHTML = SITE_CONTENT.nav.links.map(link => 
-        `<li><a href="${link.url}" class="hover:text-zinc-950 transition-colors">${link.text}</a></li>`
-      ).join('');
+      document.getElementById('visual-archive-grid').innerHTML = SITE_CONTENT.archive.images.map(s => `<div class="aspect-square bg-white"><img src="${s}" class="w-full h-full object-cover"/></div>`).join('');
 
-      // Build Typewriters
-      const sonicTitleHtml = SITE_CONTENT.sonicReveal.title.split('').map(char => 
-        `<span class="inline-block text-white transition-transform duration-500 sonic-char" style="transform: translateY(20px);">${char}</span>`
-      ).join('');
-      document.getElementById('sonic-title').innerHTML = sonicTitleHtml;
-
-      document.getElementById('visual-archive-grid').innerHTML = SITE_CONTENT.archive.images.map(src => 
-        `<div class="group relative aspect-square overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 ease-out cursor-crosshair bg-white"><img src="${src}" alt="Archive" class="w-full h-full object-cover"/></div>`
-      ).join('');
-
-      // Review cards build helper
-      const r = SITE_CONTENT.reviews.items;
-      const buildReviewCard = (data, extraImageClasses = '') => `
-        <div class="preview-card relative flex flex-col justify-between group shadow-sm hover:shadow-2xl p-6 border border-zinc-200/50 z-10 transition-all duration-700 ease-out w-full" 
-             style="background-color: #FFFFFF" data-accent="${data.accentColor}" data-textcolor="${data.textcolor || data.textColor}" 
+      const buildCard = (d, isDrastic = false) => `
+        <div class="preview-card p-[clamp(1rem,3vw,1.5rem)] border border-zinc-200/50 transition-all duration-700 w-full flex flex-col ${isDrastic ? 'h-auto lg:min-h-[clamp(50vh,70vh,85vh)]' : 'min-h-[500px]'}" 
+             style="background-color: #FFFFFF" data-accent="${d.accentColor}" data-textcolor="${d.textColor}" 
              onmouseenter="handleCardHover(this, true)" onmouseleave="handleCardHover(this, false)">
-          <div class="flex justify-between items-baseline mb-4">
+             
+          <div class="flex justify-between shrink-0 mb-[clamp(1rem,3vw,1.5rem)] h-[clamp(1.5rem,4vw,2.5rem)]">
             <div class="flex flex-col">
-              <span class="dynamic-text text-[10px] font-bold tracking-[0.3em] uppercase transition-colors duration-500 text-zinc-300">${data.cat}</span>
-              <span class="dynamic-text text-[9px] font-sans font-bold mt-1 uppercase tracking-widest transition-colors duration-500 text-zinc-400">${data.subCat}</span>
+              <span class="dynamic-text text-[clamp(9px,1vw,10px)] tracking-[0.3em] uppercase text-zinc-700 playfair-light transition-colors duration-500">${d.cat}</span>
+              <span class="dynamic-text text-[clamp(8px,0.8vw,9px)] text-zinc-400 uppercase playfair-light transition-colors duration-500">${d.subCat}</span>
             </div>
-            <span class="dynamic-text text-3xl font-black tracking-tighter leading-none transition-colors duration-500 text-zinc-950">${data.id}</span>
+            <span class="dynamic-text text-[clamp(1.5rem,4vw,1.875rem)] text-[#cc0000] playfair-light transition-colors duration-500">${d.id}</span>
           </div>
-          <div class="w-full overflow-hidden relative flex flex-col items-center justify-center ${extraImageClasses}">
-            <div class="aspect-[4/5] w-full relative flex items-center justify-center overflow-hidden">
-              <a href="${data.link}" class="h-full max-w-full aspect-square relative flex items-center justify-center overflow-hidden block">
-                <img src="${data.image}" alt="Choice ${data.id}" class="w-full h-full object-contain transition-all duration-700 ease-in-out transform scale-100 group-hover:scale-[0.95]" />
-              </a>
-            </div>
+          
+          <div class="flex-1 flex items-center justify-center overflow-hidden min-h-[150px] lg:min-h-[200px] mb-[clamp(1.5rem,4vw,2rem)] -mt-[clamp(1rem,4vw,3rem)]">
+            <img src="${d.image}" class="max-h-full max-w-full object-contain transition-transform duration-700 scale-100 group-hover:scale-105"/>
           </div>
-          <div class="mt-4">
-            <p class="dynamic-border dynamic-p text-xs md:text-sm font-bold leading-snug border-l-2 pl-4 pr-2 transition-all duration-500 text-zinc-600 border-zinc-100">${data.text}</p>
-          </div>
-        </div>
-      `;
-      const buildPanoramaCard = (data) => `
-        <div class="preview-card relative flex flex-col group shadow-sm hover:shadow-2xl p-6 md:p-12 border border-zinc-200/50 z-10 transition-all duration-700 ease-out w-full"
-             style="background-color: #FFFFFF" data-accent="${data.accentColor}" data-textcolor="${data.textcolor || data.textColor}"
-             onmouseenter="handleCardHover(this, true)" onmouseleave="handleCardHover(this, false)">
-          <div class="flex justify-between items-baseline mb-8">
-            <div class="flex flex-col">
-              <span class="dynamic-text text-[10px] font-bold tracking-[0.3em] uppercase transition-colors duration-500 text-zinc-300">${data.cat}</span>
-              <span class="dynamic-text text-[9px] font-sans font-bold mt-1 uppercase tracking-widest transition-colors duration-500 text-zinc-400">${data.subCat}</span>
-            </div>
-            <span class="dynamic-text text-3xl font-black tracking-tighter leading-none transition-colors duration-500 text-zinc-950">${data.id}</span>
-          </div>
-          <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12 w-full h-full">
-            <div class="w-full md:w-1/2 flex items-center justify-center overflow-hidden">
-              <a href="${data.link}" class="aspect-square w-full max-sm relative flex items-center justify-center overflow-hidden block">
-                <img src="${data.image}" alt="Choice ${data.id}" class="w-full h-full object-contain transition-all duration-700 ease-in-out transform scale-100 group-hover:scale-[0.95]" />
-              </a>
-            </div>
-            <div class="w-full md:w-1/2 flex flex-col justify-center">
-              <p class="dynamic-border dynamic-p text-sm md:text-lg font-bold leading-relaxed border-l-2 pl-6 pr-4 transition-all duration-500 text-zinc-600 border-zinc-100">${data.text}</p>
-            </div>
-          </div>
-        </div>
-      `;
 
-      document.getElementById('reviews-container-top').innerHTML = `
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 items-start overflow-visible">
-          <div class="flex flex-col items-start w-full">
-            ${buildReviewCard(r[0])}
-            <div class="relative w-full mt-12 md:mt-[8vh]">
-              <div class="w-full relative z-10">
-                ${buildReviewCard(r[2])}
-              </div>
+          <div class="shrink-0 mb-[clamp(1rem,3vw,1.5rem)] h-auto lg:h-[clamp(2.5rem,5vw,3rem)] flex items-center -mt-[clamp(1.5rem,5vw,5rem)]">
+            <p class="dynamic-p text-[clamp(0.75rem,2vw,0.875rem)] border-l-2 pl-[clamp(0.5rem,2vw,1rem)] text-zinc-950 border-zinc-200 times-light tracking-tight w-full">${d.text}</p>
+          </div>
+
+          <div class="shrink-0 mb-[clamp(1.5rem,4vw,2rem)] h-auto lg:h-[clamp(3rem,6vw,4rem)] flex items-start">
+            <p class="dynamic-text text-[clamp(11px,1.5vw,13px)] text-zinc-600 times-light italic leading-relaxed transition-colors duration-500 tracking-tight w-full">
+              This record marks a definitive shift in contemporary production. We encourage you to engage with this project in its entirety to fully appreciate the artist's nuanced sonic language.
+            </p>
+          </div>
+
+          <div class="shrink-0 mt-auto">
+            <a href="${d.link}" class="dynamic-btn block w-full py-[clamp(0.75rem,2vw,1rem)] bg-zinc-950 text-white text-[clamp(8px,1vw,9px)] font-bold uppercase tracking-[0.3em] text-center transition-all duration-500 hover:tracking-[0.5em]">
+              Read Review
+            </a>
+          </div>
+        </div>`;
+
+      document.getElementById('reviews-container-top').innerHTML = `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[clamp(1rem,3vw,2rem)]">${SITE_CONTENT.reviews.items.slice(0,3).map(item => buildCard(item, true)).join('')}</div>`;
+      document.getElementById('reviews-container-bottom').innerHTML = `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[clamp(1rem,3vw,2rem)]">${SITE_CONTENT.reviews.items.slice(3,6).map(item => buildCard(item, true)).join('')}</div>`;
+
+      document.getElementById('interviews-container').innerHTML = SITE_CONTENT.interviews.items.map(i => `
+        <div class="flex flex-col items-start shrink-0 interview-card">
+          <div class="w-full aspect-[21/9] bg-zinc-50 border border-zinc-100 mb-[clamp(1.5rem,4vw,2rem)] overflow-hidden">
+            <img src="${i.image}" class="w-full h-full object-cover"/>
+          </div>
+          <div class="w-full flex flex-col gap-[clamp(0.75rem,2vw,1rem)] times-light border-t border-zinc-100 pt-[clamp(1rem,3vw,1.5rem)]">
+            <div class="flex flex-col gap-1">
+               <span class="text-[clamp(7px,0.9vw,8px)] uppercase tracking-widest text-zinc-500 font-bold">Artist</span>
+               <h3 class="interview-name text-[#cc0000] text-[clamp(0.8rem,1.5vw,0.9rem)] font-bold uppercase">${i.name}</h3>
+            </div>
+            <div class="flex flex-col gap-1">
+               <span class="text-[clamp(7px,0.9vw,8px)] uppercase tracking-widest text-zinc-500 font-bold">Profile</span>
+               <p class="interview-desc text-zinc-600 text-[clamp(0.65rem,1.2vw,0.75rem)] font-bold uppercase">${i.desc}</p>
+            </div>
+            <div class="flex flex-col gap-1">
+               <span class="text-[clamp(7px,0.9vw,8px)] uppercase tracking-widest text-zinc-500 font-bold">Insight</span>
+               <p class="interview-quote text-zinc-500 text-[clamp(0.9rem,2vw,1.1rem)] font-medium italic leading-relaxed">${i.quote}</p>
             </div>
           </div>
-          <div class="flex flex-col md:pt-24 overflow-visible items-end w-full mt-12 md:mt-0">
-            <div class="w-full flex relative z-20 mt-0">
-              ${buildReviewCard(r[1], 'flex-1 mb-2')}
-            </div>
-          </div>
-        </div>
-      `;
+        </div>`).join('');
 
-      document.getElementById('reviews-container-bottom').innerHTML = `
-        <div class="w-full mt-0">
-          ${buildPanoramaCard(r[3])}
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 mt-16 md:mt-[10vh] pb-24 md:pb-32">
-          <div class="w-full">${buildReviewCard(r[4])}</div>
-          <div class="w-full">${buildReviewCard(r[5])}</div>
-        </div>
-      `;
-
-      document.getElementById('interviews-container').innerHTML = SITE_CONTENT.interviews.items.map(item => `
-        <div class="flex flex-col items-start shrink-0 group interview-card">
-          <div class="w-full overflow-hidden transition-all duration-1000 bg-zinc-50 border border-zinc-100 shadow-sm aspect-[3/4]">
-            <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover transition-transform duration-1000 scale-100" />
-          </div>
-          <div class="mt-6 w-full pb-16">
-            <h3 class="interview-name font-black tracking-[0.45em] uppercase text-zinc-950 leading-none">${item.name}</h3>
-            <p class="interview-desc font-bold uppercase tracking-[0.2em] text-zinc-400 mt-3">${item.desc}</p>
-            <div class="w-5 h-px bg-zinc-200 mt-4 mb-4"></div>
-            <p class="interview-quote font-medium text-zinc-500 italic leading-relaxed break-words max-w-full">${item.quote}</p>
-          </div>
-        </div>
-      `).join('');
-
-      document.getElementById('opinion-container').innerHTML = SITE_CONTENT.opinion.items.map(item => `
-        <div class="flex flex-col group">
-          <h3 class="text-sm font-bold uppercase tracking-tight text-zinc-950 mb-4 md:mb-5 pb-3 md:pb-4 border-b border-zinc-100 group-hover:text-zinc-500 transition-colors">${item.title}</h3>
-          <div class="w-full aspect-[4/3] overflow-hidden bg-zinc-50 mb-6 shadow-sm border border-zinc-100">
-            <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700" />
-          </div>
-          <p class="text-[11px] leading-relaxed text-zinc-500 font-medium tracking-tight">${item.excerpt}</p>
-        </div>
-      `).join('');
-
-      document.getElementById('soundboard-covers').innerHTML = SITE_CONTENT.soundboard.records.map(rec => `
-        <img src="${rec.image}" data-album="${rec.name}" alt="${rec.name}" class="absolute inset-0 m-auto max-w-full max-h-[70%] object-contain shadow-2xl transition-all duration-700 cubic-bezier(0.23, 1, 0.32, 1) opacity-0 scale-110 translate-y-10 pointer-events-none" />
-      `).join('');
-
-      const rowsInner = document.createElement('div');
-      rowsInner.className = "relative flex-1";
-      rowsInner.innerHTML = SITE_CONTENT.soundboard.records.map(rec => `
-        <a href="${rec.name.toLowerCase()}.html" class="relative group cursor-pointer block" onmouseenter="handleSoundboardHover('${rec.name}')" onmouseleave="handleSoundboardHover(null)">
-          <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-[5]"></div>
-          <div class="relative z-20 grid grid-cols-12 gap-2 md:gap-4 py-2.5 items-baseline">
-            <div class="col-span-5 md:col-span-2"><h3 class="text-[10px] md:text-[11px] font-bold tracking-[0.1em] text-white uppercase truncate">${rec.name}</h3></div>
-            <div class="col-span-4 md:col-span-2"><p class="text-[9px] md:text-[10px] font-bold tracking-[0.1em] text-white opacity-60 group-hover:opacity-100 transition-opacity uppercase truncate">${rec.artist}</p></div>
-            <div class="hidden md:block md:col-span-4"></div>
-            <div class="hidden md:block md:col-span-2 text-center"><span class="text-[11px] font-bold tracking-[0.1em] text-white uppercase">${rec.year}</span></div>
-            <div class="col-span-3 md:col-span-2 text-right md:text-center"><span class="text-[10px] md:text-[11px] font-bold tracking-[0.1em] text-white uppercase">${rec.no}</span></div>
-          </div>
-        </a>
-      `).join('');
-      document.getElementById('soundboard-rows').appendChild(rowsInner);
+      document.getElementById('soundboard-covers').innerHTML = SITE_CONTENT.soundboard.records.map(r => `<img src="${r.image}" data-album="${r.name}" class="absolute inset-0 m-auto max-h-[70%] object-contain opacity-0 transition-all duration-700"/>`).join('');
       
+      document.getElementById('soundboard-rows').innerHTML = SITE_CONTENT.soundboard.records.map(r => `
+        <a href="#" class="grid grid-cols-12 py-[clamp(0.5rem,1.5vw,0.75rem)] border-b border-zinc-100 items-baseline" onmouseenter="handleSoundboardHover('${r.name}')" onmouseleave="handleSoundboardHover(null)">
+          <div class="col-span-5 md:col-span-2 text-zinc-900 text-[clamp(9px,1.2vw,11px)] font-bold uppercase times-light truncate">${r.name}</div>
+          <div class="col-span-4 md:col-span-2 text-zinc-500 text-[clamp(8px,1vw,10px)] font-bold uppercase times-light truncate">${r.artist}</div>
+          <div class="hidden md:block md:col-span-4"></div>
+          <div class="hidden md:block md:col-span-2 text-center text-zinc-900 text-[clamp(9px,1.2vw,11px)] font-bold uppercase times-light">${r.year}</div>
+          <div class="col-span-3 md:col-span-2 text-right md:text-center text-zinc-900 text-[clamp(9px,1.2vw,11px)] font-bold uppercase times-light">${r.no}</div>
+        </a>`).join('');
+
       initializeAnimations();
     });
   </script>
