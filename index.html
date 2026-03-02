@@ -4,12 +4,219 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sonic Music Experience</title>
-  <!-- Google Fonts Import for Playfair Display -->
+  
+  <!-- Google Fonts Import (Change these links if you use completely different Google Fonts) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ========================================================================================= -->
+  <!-- =============================== EASY CONFIGURATION SECTION ============================== -->
+  <!-- ========================================================================================= -->
+  <!-- Welcome! You can change all the text, images, colors, and fonts on the website right here.-->
+  <!-- You do NOT need to know how to code. Just change the text inside the quotes ("...").      -->
+  <!-- RULES:                                                                                    -->
+  <!-- 1. Always keep your text inside the quotation marks: "Your text here"                     -->
+  <!-- 2. For images, paste the full URL link (e.g., "https://example.com/image.jpg").           -->
+  <!-- 3. If you need a line break in a text, type \n                                            -->
+  <!-- ========================================================================================= -->
+  <script>
+    window.PAGE_CONFIG = {
+
+      // ==========================================
+      // 1. DESIGN SETTINGS (COLORS & FONTS)
+      // ==========================================
+      design: {
+        colors: {
+          accent: "#cc0000",       // Main accent color (used for buttons, text highlights, logos)
+          accentBright: "#ff0000", // Bright accent color (used for the big scrolling questions)
+        },
+        fonts: {
+          primary: "'Playfair Display', serif",         // Font for big headings and logos
+          secondary: "'Times New Roman', Times, serif"  // Font for paragraphs and normal text
+        }
+      },
+
+      // ==========================================
+      // 2. BRAND & NAVIGATION
+      // ==========================================
+      brand: { 
+        short: "S.", 
+        full: "sonic" 
+      },
+      nav: {
+        links: [
+          { text: "Home", url: "#" },
+          { text: "Reviews", url: "#" },
+          { text: "Interviews", url: "#" },
+          { text: "About", url: "#" }
+        ],
+        // The image that spins when hovering over the mobile menu button
+        mobileMenuImage: "https://p7.hiclipart.com/preview/805/164/961/phonograph-record-lp-record-music-clip-art-others.jpg"
+      },
+
+      // ==========================================
+      // 3. TYPEWRITER QUESTIONS (Top Scroll Area)
+      // ==========================================
+      typewriters: [ 
+        "Why do you listen?", 
+        "Where do you listen?", 
+        "How do you listen?" 
+      ],
+
+      // ==========================================
+      // 4. HERO SECTION (Main Entrance)
+      // ==========================================
+      sonicReveal: {
+        season: "Season I"
+      },
+
+      // ==========================================
+      // 5. MISSION STATEMENT
+      // ==========================================
+      mission: {
+        label: "Mission",
+        p1: "SONIC wants to embrace music again as a work of art turning away from commercialisation. By focusing on the listening experience and interpretation, it pushes for a more conscious way of listening.",
+        p2: "We believe music should be regarded as an intense short form compression of the experiences of an artist. Delivered in detail, it conveys the artists message throughout different layers: lyrics, sound design or structure.",
+        p3: "The reviews on this page aim to unveil these layers and explore how they work together on evoking emotions and excitement in the listener."
+      },
+
+      // ==========================================
+      // 6. VISUAL ARCHIVE (Image Grid)
+      // ==========================================
+      archive: {
+        label: "2026",
+        images: [
+          "https://upload.wikimedia.org/wikipedia/en/5/51/Kendrick_Lamar_-_Damn.png",
+          "https://f4.bcbits.com/img/a1236533191_10.jpg",
+          "https://media1.jpc.de/image/w2400/front/0/5099747595912.jpg",
+          "https://upload.wikimedia.org/wikipedia/en/2/2c/The_Blueprint.png",
+          "https://f4.bcbits.com/img/a1236533191_10.jpg",
+          "https://media.pitchfork.com/photos/5929bcb55e6ef95969322eda/master/w_1280,c_limit/5f06f7f6.jpg",
+          "https://media1.jpc.de/image/w2400/rear/0/0196588867613.jpg",
+          "https://m.media-amazon.com/images/I/71tT2xuLmZL._SX522_.jpg",
+          "https://m.media-amazon.com/images/I/81allxc10aL._SX522_.jpg",
+          "https://m.media-amazon.com/images/I/51PwmDQtG0L._AC_.jpg",
+          "https://media1.jpc.de/image/w2400/front/0/0731451274329.jpg",
+          "https://m.media-amazon.com/images/I/51lsZBhvHRL._SX522_.jpg",
+          "https://m.media-amazon.com/images/I/91dHRGIV65L._SL1500_.jpg",
+          "https://www.deejay.de/images/xl/7/0/1056070.jpg",
+          "https://miccheque.com/wp-content/uploads/2022/04/vince-staples-ramona-park-broke-my-heart-cover-art.jpeg?w=1440&h=720&crop=1",
+          "https://m.media-amazon.com/images/I/71RSQNcvbHL._SX466_.jpg",
+          "https://media.pitchfork.com/photos/645ce904575213cbefca6fba/1:1/w_320,c_limit/Killer-Mike-Michael.jpg",
+          "https://media.pitchfork.com/photos/6786c7c339a9f717a82a7ef8/1:1/w_320,c_limit/Mac-Miller-Swimming.jpeg"
+        ]
+      },
+
+      // ==========================================
+      // 7. REVIEWS CARDS
+      // ==========================================
+      reviews: {
+        label: "Reviews",
+        items: [
+          { id: "01", cat: "Archive // Selection", subCat: "Signal Analysis", link: "#", image: "https://upload.wikimedia.org/wikipedia/en/5/51/Kendrick_Lamar_-_Damn.png", text: "A visceral confrontation with legacy and internal noise.", accentColor: "#7f1d1d", textColor: "#ffffff" },
+          { id: "02", cat: "Archive // Selection", subCat: "Signal Analysis", link: "#", image: "https://f4.bcbits.com/img/a1236533191_10.jpg", text: "Hypnotic rhythmic pulses from DJ Gigola.", accentColor: "#60a5fa", textColor: "#0f172a" },
+          { id: "03", cat: "Archive // Selection", subCat: "Signal Analysis", link: "#", image: "https://media1.jpc.de/image/w2400/front/0/5099747595912.jpg", text: "The definitive landmark of lyrical precision.", accentColor: "#b45309", textColor: "#fef3c7" },
+          { id: "04", cat: "Archive // Selection", subCat: "Signal Analysis", link: "#", image: "https://upload.wikimedia.org/wikipedia/en/2/2c/The_Blueprint.png", text: "The Blueprint redefined the sonic landscape of NY hip-hop.", accentColor: "#1d4ed8", textColor: "#ffffff" },
+          { id: "05", cat: "Archive // Selection", subCat: "Signal Analysis", link: "#", image: "https://media.pitchfork.com/photos/5929bcb55e6ef95969322eda/master/w_1280,c_limit/5f06f7f6.jpg", text: "Blonde is a masterwork of modern minimalism.", accentColor: "#dcfce7", textColor: "#166534" },
+          { id: "06", cat: "Archive // Selection", subCat: "Signal Analysis", link: "#", image: "https://m.media-amazon.com/images/I/81allxc10aL._SX522_.jpg", text: "The Great Escape showcases Larry June's effortless flow.", accentColor: "#f97316", textColor: "#ffffff" }
+        ]
+      },
+
+      // ==========================================
+      // 8. FAVOURITE LYRIC SECTION
+      // ==========================================
+      lyric: {
+        label: "Favourite lyric",
+        quote: "I'm from the murder capital,\nwhere we murder\nfor capital",
+        image: "https://m.media-amazon.com/images/I/51RD1Jyiz3L._SX522_.jpg",
+        track: "Lucifer",
+        artist: "JaŸ-Z",
+        p1: "The lyric was orignally written by Kanye West, who is from Chicago.",
+        p2: "JaŸ-Z actually capitalizes on the crack epidemic happening throught the 80's and 90's.",
+        p3: "The lyric itself is a wordplay since money or capital was often the motivation."
+      },
+
+      // ==========================================
+      // 9. FAVOURITE BEAT SECTION
+      // ==========================================
+      beat: {
+        label: "Favourite beat",
+        image: "https://media.pitchfork.com/photos/65cc0e0600392f4625b1f9b3/1:1/w_600/Mk.gee-Two-Star-and-the-Dream-Police.jpg",
+        artist: "Mk.gee",
+        track: "Are You Looking Up",
+        year: "2024",
+        p1: "Mk.gee's \"Are You Looking Up\" represents a paradigm shift.",
+        p2: "Built on a foundation of saturated, compressed drum breaks.",
+        p3: "A masterclass in using digital imperfections to create intimacy."
+      },
+
+      // ==========================================
+      // 10. INTERVIEWS SECTION (Horizontal Scroll)
+      // ==========================================
+      interviews: {
+        label: "Interviews",
+        items: [
+          { name: "Maya Ellis", desc: "Sound Architect", quote: "“The void is where the sound begins.”", image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800" },
+          { name: "Adrianne Lenker", desc: "Folk Lyricist", quote: "“My songs are like small houses I build.”", image: "https://media.pitchfork.com/photos/65a6a4a159e13d7e5d263920/1:1/w_600/Adrianne-Lenker-Bright-Future.jpg" },
+          { name: "Mk.gee", desc: "Guitar Innovator", quote: "“The guitar is just a controller for the soul.”", image: "https://media.pitchfork.com/photos/65cc0e0600392f4625b1f9b3/1:1/w_600/Mk.gee-Two-Star-and-the-Dream-Police.jpg" },
+          { name: "Helena Hauff", desc: "Techno Specialist", quote: "“I like machines that have a mind of their own.”", image: "https://media.pitchfork.com/photos/5b1ed37c7676644f51952281/1:1/w_320,c_limit/Helena-Hauff-Qualm.jpg" },
+          { name: "Adrianne Lenker", desc: "Folk Lyricist", quote: "“My songs are like small houses I build.”", image: "https://media.pitchfork.com/photos/65a6a4a159e13d7e5d263920/1:1/w_600/Adrianne-Lenker-Bright-Future.jpg" },
+          { name: "James Blake", desc: "Soul Pioneer", quote: "“Silence is just as much a part of the composition as the notes.”", image: "https://media.pitchfork.com/photos/613a0604084323e7f45778a4/1:1/w_320,c_limit/James-Blake-Friends-That-Break-Your-Heart.jpg" }
+        ]
+      },
+
+      // ==========================================
+      // 11. SOUNDBOARD / CATALOGUE OVERVIEW
+      // ==========================================
+      soundboard: {
+        label: "Catalogue Overview",
+        bgImage: "https://i.pinimg.com/736x/46/d0/52/46d052c88c5fecf32c38b83297b96a92.jpg",
+        records: [ 
+          { name: "DAMN.", artist: "KENDRICK LAMAR", no: "S1-001", year: "2017", image: "https://media1.jpc.de/image/w3200/front/0/0602557618280.jpg" } 
+        ]
+      },
+
+      // ==========================================
+      // 12. FOOTER
+      // ==========================================
+      footer: { 
+        tagline: "Dedicated to intentional listening.", 
+        contactLink: "contact", 
+        locations: "Based in Berlin and Mannheim", 
+        year: "© 2025", 
+        rights: "All Rights Reserved" 
+      }
+    };
+
+    // Apply the design settings immediately so the page doesn't flicker
+    document.documentElement.style.setProperty('--color-accent', window.PAGE_CONFIG.design.colors.accent);
+    document.documentElement.style.setProperty('--color-accent-bright', window.PAGE_CONFIG.design.colors.accentBright);
+    document.documentElement.style.setProperty('--font-primary', window.PAGE_CONFIG.design.fonts.primary);
+    document.documentElement.style.setProperty('--font-secondary', window.PAGE_CONFIG.design.fonts.secondary);
+  </script>
+  <!-- ========================================================================================= -->
+  <!-- =============================== END OF CONFIGURATION SECTION ============================ -->
+  <!-- ========================================================================================= -->
+
   <style>
+    /* CSS Variables set by the Configuration Section */
+    :root {
+      --color-accent: #cc0000;
+      --color-accent-bright: #ff0000;
+      --font-primary: 'Playfair Display', serif;
+      --font-secondary: 'Times New Roman', Times, serif;
+    }
+
+    /* Dynamic Utility Classes used throughout the HTML */
+    .text-accent { color: var(--color-accent) !important; }
+    .bg-accent { background-color: var(--color-accent) !important; }
+    .border-accent { border-color: var(--color-accent) !important; }
+    .hover-bg-accent:hover { background-color: var(--color-accent) !important; }
+
+    /* Animations */
     @keyframes terminal-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
     .animate-terminal-blink { animation: terminal-blink 2.2s step-end infinite; }
     @keyframes record-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
@@ -25,16 +232,9 @@
       scroll-snap-stop: always;
     }
 
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    ::-webkit-scrollbar {
-      display: none;
-    }
-
-    /* Hide scrollbar for IE, Edge and Firefox */
-    html {
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
-    }
+    /* Hide scrollbars */
+    ::-webkit-scrollbar { display: none; }
+    html { -ms-overflow-style: none; scrollbar-width: none; }
     
     /* Reveal text base styles */
     .reveal-char { transition: opacity 0.1s ease-out; opacity: 0.15; }
@@ -52,25 +252,25 @@
 
     /* --- Adaptive Typography for Questions Section --- */
     .question-text {
-      font-family: 'Playfair Display', serif;
+      font-family: var(--font-primary);
       font-weight: 300; 
       line-height: 0.9;
       letter-spacing: -0.04em;
-      color: #ff0000; /* Red text */
+      color: var(--color-accent-bright);
     }
 
-    /* --- Custom Font Styles --- */
+    /* --- Custom Font Styles applying Configured Fonts --- */
     .times-light-red {
-      font-family: 'Times New Roman', Times, serif !important;
+      font-family: var(--font-secondary) !important;
       font-weight: 300 !important;
-      color: #ff0000 !important;
+      color: var(--color-accent-bright) !important;
     }
     .times-light {
-      font-family: 'Times New Roman', Times, serif !important;
+      font-family: var(--font-secondary) !important;
       font-weight: 300 !important;
     }
     .playfair-light {
-      font-family: 'Playfair Display', serif !important;
+      font-family: var(--font-primary) !important;
       font-weight: 300 !important;
     }
 
@@ -113,7 +313,7 @@
       <!-- Injected via JS -->
     </div>
     <div class="flex md:hidden w-full h-10 items-center justify-end px-6 bg-white/95 backdrop-blur-md border-b border-zinc-100">
-      <button id="mobile-menu-btn" class="w-7 h-7 flex items-center justify-center rounded-full overflow-hidden transition-transform active:scale-95 group relative">
+      <button id="mobile-menu-btn" class="w-7 h-7 flex items-center justify-center rounded-full overflow-hidden transition-transform active:scale-95 group relative shrink-0">
         <img id="mobile-menu-img" data-content="nav.mobileMenuImage" src="" alt="Menu" class="w-full h-full object-cover rounded-full group-hover:animate-record-spin transition-all" />
         <div id="mobile-menu-close" class="absolute inset-0 flex items-center justify-center text-zinc-950 hidden">
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
@@ -123,11 +323,11 @@
   </nav>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu-overlay" class="fixed inset-0 z-[120] bg-[#cc0000] flex flex-col items-center justify-center space-y-8 text-white transition-opacity duration-500 opacity-0 pointer-events-none hidden playfair-light">
+  <div id="mobile-menu-overlay" class="fixed inset-0 z-[120] bg-accent flex flex-col items-center justify-center space-y-8 text-white transition-opacity duration-500 opacity-0 pointer-events-none hidden playfair-light">
     <button id="mobile-menu-close-btn" class="absolute top-6 right-6 p-4">
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
     </button>
-    <div id="mobile-nav-links" class="flex flex-col items-center space-y-8">
+    <div id="mobile-nav-links" class="flex flex-col items-center space-y-8 w-full px-6 text-center overflow-y-auto">
       <!-- Injected via JS -->
     </div>
   </div>
@@ -151,11 +351,11 @@
     </div>
   </section>
 
-  <!-- Minimalistic Hero Section (Updated Font to Playfair Display) -->
+  <!-- Minimalistic Hero Section -->
   <section id="hero-section" class="h-screen bg-white relative flex flex-col items-center justify-center overflow-hidden border-b border-zinc-100">
     <div class="relative z-10 w-full flex flex-col items-center justify-center">
-      <h2 class="text-[25vw] flex items-center select-none uppercase text-[#cc0000] playfair-light" style="letter-spacing: -0.05em; line-height: 0.8;">
-        SONIC
+      <h2 class="text-[25vw] flex items-center select-none uppercase text-accent playfair-light" style="letter-spacing: -0.05em; line-height: 0.8;">
+        <span data-content="brand.full"></span>
       </h2>
       <div class="mt-8">
         <span class="text-zinc-900 font-sans font-bold text-lg md:text-xl uppercase tracking-[0.6em] whitespace-nowrap times-light" data-content="sonicReveal.season"></span>
@@ -204,15 +404,15 @@
           <div class="flex flex-col md:flex-row items-center w-full gap-8 md:gap-0">
             <div class="md:w-1/3 flex flex-col items-center md:items-start md:pr-12 w-full">
               <div class="mb-8 text-center md:text-left w-full overflow-hidden">
-                <span class="bg-[#cc0000] text-white font-bold italic px-4 py-3 text-xs sm:text-lg md:text-2xl inline-block leading-tight whitespace-pre-line max-w-full times-light" data-content="lyric.quote"></span>
+                <span class="bg-accent text-white font-bold italic px-4 py-3 text-xs sm:text-lg md:text-2xl inline-block leading-tight whitespace-pre-line max-w-full times-light" data-content="lyric.quote"></span>
               </div>
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 md:w-16 md:h-16 overflow-hidden bg-zinc-100 shadow-sm border border-zinc-200 shrink-0">
-                  <img data-content="lyric.image" src="https://m.media-amazon.com/images/I/51RD1Jyiz3L._SX522_.jpg" alt="Track Art" class="w-full h-full object-cover" />
+                  <img data-content="lyric.image" src="" alt="Track Art" class="w-full h-full object-cover" />
                 </div>
-                <div class="text-left times-light">
-                  <h4 class="text-sm md:text-base font-bold text-zinc-900 leading-tight" data-content="lyric.track"></h4>
-                  <p class="text-xs md:text-sm text-zinc-900 underline font-medium mt-0.5 tracking-tight" data-content="lyric.artist"></p>
+                <div class="text-left times-light overflow-hidden">
+                  <h4 class="text-sm md:text-base font-bold text-zinc-900 leading-tight truncate w-full" data-content="lyric.track"></h4>
+                  <p class="text-xs md:text-sm text-zinc-900 underline font-medium mt-0.5 tracking-tight truncate w-full" data-content="lyric.artist"></p>
                 </div>
               </div>
             </div>
@@ -267,20 +467,20 @@
             <div class="md:w-1/2 order-1 md:order-2 flex flex-col items-center w-full md:border-l md:border-zinc-100 md:pl-24">
               <div class="relative w-full flex flex-col items-center">
                 <div class="w-48 h-60 sm:w-56 sm:h-72 md:w-80 md:h-[28rem] bg-white overflow-hidden relative border border-zinc-200 shadow-sm shrink-0">
-                  <img data-content="beat.image" src="https://media.pitchfork.com/photos/65cc0e0600392f4625b1f9b3/1:1/w_600/Mk.gee-Two-Star-and-the-Dream-Police.jpg" alt="Beat Artist" class="w-full h-full object-cover transition-all duration-1000" />
+                  <img data-content="beat.image" src="" alt="Beat Artist" class="w-full h-full object-cover transition-all duration-1000" />
                 </div>
                 
                 <div class="grid grid-cols-3 gap-4 pt-8 mt-6 w-full max-w-md border-t border-zinc-100 times-light tracking-tight">
-                  <div class="flex flex-col text-center">
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-[#cc0000] mb-1">Artist</span>
+                  <div class="flex flex-col text-center overflow-hidden">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-accent mb-1">Artist</span>
                     <span class="text-[11px] font-light uppercase text-zinc-950 truncate" data-content="beat.artist"></span>
                   </div>
-                  <div class="flex flex-col text-center">
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-[#cc0000] mb-1">Track</span>
-                    <p class="text-[11px] font-light uppercase text-zinc-950 leading-tight" data-content="beat.track"></p>
+                  <div class="flex flex-col text-center overflow-hidden">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-accent mb-1">Track</span>
+                    <p class="text-[11px] font-light uppercase text-zinc-950 leading-tight truncate" data-content="beat.track"></p>
                   </div>
-                  <div class="flex flex-col text-center">
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-[#cc0000] mb-1">Year</span>
+                  <div class="flex flex-col text-center overflow-hidden">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-accent mb-1">Year</span>
                     <span class="text-[11px] font-light uppercase text-zinc-950 truncate" data-content="beat.year"></span>
                   </div>
                 </div>
@@ -308,7 +508,7 @@
     <!-- Catalogue Overview -->
     <section class="bg-white min-h-screen py-24 md:py-32 flex flex-col items-center overflow-hidden relative z-0">
       <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        <img id="soundboard-bg" data-content="soundboard.bgImage" src="https://i.pinimg.com/736x/46/d0/52/46d052c88c5fecf32c38b83297b96a92.jpg" alt="Soundboard Background" class="w-full h-full object-cover brightness-[1.1] contrast-[1.05] scale-100 blur-0 transition-all duration-700 ease-in-out" />
+        <img id="soundboard-bg" data-content="soundboard.bgImage" src="" alt="Soundboard Background" class="w-full h-full object-cover brightness-[1.1] contrast-[1.05] scale-100 blur-0 transition-all duration-700 ease-in-out" />
       </div>
       <div class="w-full max-w-[100rem] px-6 md:px-12 relative">
         <div class="absolute inset-0 pointer-events-none z-10 flex items-center justify-center">
@@ -334,11 +534,11 @@
     <footer class="py-24 md:py-32 bg-white px-6 md:px-12 border-t border-zinc-100 times-light">
       <div class="max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-16 mb-16 md:mb-20">
-          <div class="space-y-6 md:space-y-8 max-sm">
-            <h1 class="text-4xl font-normal tracking-tighter uppercase text-[#cc0000]"><a href="home.html" data-content="brand.full"></a></h1>
+          <div class="space-y-6 md:space-y-8 max-w-sm">
+            <h1 class="text-4xl font-normal tracking-tighter uppercase text-accent"><a href="#" data-content="brand.full"></a></h1>
             <p class="text-[10px] leading-relaxed font-bold tracking-[0.3em] uppercase text-zinc-400" data-content="footer.tagline"></p>
             <div class="flex gap-4">
-              <a data-content="footer.contactLink" href="contact.html" class="px-8 py-3 bg-[#cc0000] text-white text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-colors inline-block text-center uppercase">contact</a>
+              <a data-content="footer.contactLink" href="#" class="px-8 py-3 bg-accent text-white text-[10px] font-bold uppercase tracking-[0.2em] hover-bg-accent transition-colors inline-block text-center uppercase">contact</a>
             </div>
           </div>
           <div class="grid grid-cols-2 gap-20 md:gap-32">
@@ -364,102 +564,7 @@
   </main>
 
   <script>
-    const SITE_CONTENT = {
-      brand: { short: "S.", full: "sonic" },
-      nav: {
-        links: [
-          { text: "Home", url: "#" },
-          { text: "Reviews", url: "#" },
-          { text: "Interviews", url: "#" },
-          { text: "About", url: "#" }
-        ],
-        mobileMenuImage: "https://p7.hiclipart.com/preview/805/164/961/phonograph-record-lp-record-music-clip-art-others.jpg"
-      },
-      typewriters: [ "Why do you listen?", "Where do you listen?", "How do you listen?" ],
-      sonicReveal: {
-        bgImage: "https://i.pinimg.com/1200x/74/2f/d7/742fd7ff01286fc75d71f60fde596531.jpg",
-        title: "SONIC",
-        season: "Season I"
-      },
-      mission: {
-        label: "Mission",
-        p1: "SONIC wants to embrace music again as a work of art turning away from commercialisation. By focusing on the listening experience and interpretation, it pushes for a more conscious way of listening.",
-        p2: "We believe music should be regarded as an intense short form compression of the experiences of an artist. Delivered in detail, it conveys the artists message throughout different layers: lyrics, sound design or structure.",
-        p3: "The reviews on this page aim to unveil these layers and explore how they work together on evoking emotions and excitement in the listener."
-      },
-      archive: {
-        label: "2026",
-        images: [
-          "https://upload.wikimedia.org/wikipedia/en/5/51/Kendrick_Lamar_-_Damn.png",
-          "https://f4.bcbits.com/img/a1236533191_10.jpg",
-          "https://media1.jpc.de/image/w2400/front/0/5099747595912.jpg",
-          "https://upload.wikimedia.org/wikipedia/en/2/2c/The_Blueprint.png",
-          "https://f4.bcbits.com/img/a1236533191_10.jpg",
-          "https://media.pitchfork.com/photos/5929bcb55e6ef95969322eda/master/w_1280,c_limit/5f06f7f6.jpg",
-          "https://media1.jpc.de/image/w2400/rear/0/0196588867613.jpg",
-          "https://m.media-amazon.com/images/I/71tT2xuLmZL._SX522_.jpg",
-          "https://m.media-amazon.com/images/I/81allxc10aL._SX522_.jpg",
-          "https://m.media-amazon.com/images/I/51PwmDQtG0L._AC_.jpg",
-          "https://media1.jpc.de/image/w2400/front/0/0731451274329.jpg",
-          "https://m.media-amazon.com/images/I/51lsZBhvHRL._SX522_.jpg",
-          "https://m.media-amazon.com/images/I/91dHRGIV65L._SL1500_.jpg",
-          "https://www.deejay.de/images/xl/7/0/1056070.jpg",
-          "https://miccheque.com/wp-content/uploads/2022/04/vince-staples-ramona-park-broke-my-heart-cover-art.jpeg?w=1440&h=720&crop=1",
-          "https://m.media-amazon.com/images/I/71RSQNcvbHL._SX466_.jpg",
-          "https://media.pitchfork.com/photos/645ce904575213cbefca6fba/1:1/w_320,c_limit/Killer-Mike-Michael.jpg",
-          "https://media.pitchfork.com/photos/6786c7c339a9f717a82a7ef8/1:1/w_320,c_limit/Mac-Miller-Swimming.jpeg"
-        ]
-      },
-      reviews: {
-        label: "Reviews",
-        items: [
-          { id: "01", cat: "Archive // Selection", subCat: "Signal Analysis", link: "#", image: "https://upload.wikimedia.org/wikipedia/en/5/51/Kendrick_Lamar_-_Damn.png", text: "A visceral confrontation with legacy and internal noise.", accentColor: "#7f1d1d", textColor: "#ffffff" },
-          { id: "02", cat: "Archive // Selection", subCat: "Signal Analysis", link: "#", image: "https://f4.bcbits.com/img/a1236533191_10.jpg", text: "Hypnotic rhythmic pulses from DJ Gigola.", accentColor: "#60a5fa", textColor: "#0f172a" },
-          { id: "03", cat: "Archive // Selection", subCat: "Signal Analysis", link: "#", image: "https://media1.jpc.de/image/w2400/front/0/5099747595912.jpg", text: "The definitive landmark of lyrical precision.", accentColor: "#b45309", textColor: "#fef3c7" },
-          { id: "04", cat: "Archive // Selection", subCat: "Signal Analysis", link: "#", image: "https://upload.wikimedia.org/wikipedia/en/2/2c/The_Blueprint.png", text: "The Blueprint redefined the sonic landscape of NY hip-hop.", accentColor: "#1d4ed8", textColor: "#ffffff" },
-          { id: "05", cat: "Archive // Selection", subCat: "Signal Analysis", link: "#", image: "https://media.pitchfork.com/photos/5929bcb55e6ef95969322eda/master/w_1280,c_limit/5f06f7f6.jpg", text: "Blonde is a masterwork of modern minimalism.", accentColor: "#dcfce7", textColor: "#166534" },
-          { id: "06", cat: "Archive // Selection", subCat: "Signal Analysis", link: "#", image: "https://m.media-amazon.com/images/I/81allxc10aL._SX522_.jpg", text: "The Great Escape showcases Larry June's effortless flow.", accentColor: "#f97316", textColor: "#ffffff" }
-        ]
-      },
-      lyric: {
-        label: "Favourite lyric",
-        quote: "I'm from the murder capital,\nwhere we murder\nfor capital",
-        image: "https://m.media-amazon.com/images/I/51RD1Jyiz3L._SX522_.jpg",
-        track: "Lucifer",
-        artist: "JaŸ-Z",
-        p1: "The lyric was orignally written by Kanye West, who is from Chicago.",
-        p2: "JaŸ-Z actually capitalizes on the crack epidemic happening throught the 80's and 90's.",
-        p3: "The lyric itself is a wordplay since money or capital was often the motivation."
-      },
-      beat: {
-        label: "Favourite beat",
-        image: "https://media.pitchfork.com/photos/65cc0e0600392f4625b1f9b3/1:1/w_600/Mk.gee-Two-Star-and-the-Dream-Police.jpg",
-        artist: "Mk.gee",
-        track: "Are You Looking Up",
-        year: "2024",
-        p1: "Mk.gee's \"Are You Looking Up\" represents a paradigm shift.",
-        p2: "Built on a foundation of saturated, compressed drum breaks.",
-        p3: "A masterclass in using digital imperfections to create intimacy."
-      },
-      interviews: {
-        label: "Interviews",
-        items: [
-          { name: "Maya Ellis", desc: "Sound Architect", quote: "“The void is where the sound begins.”", image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800" },
-          { name: "Adrianne Lenker", desc: "Folk Lyricist", quote: "“My songs are like small houses I build.”", image: "https://media.pitchfork.com/photos/65a6a4a159e13d7e5d263920/1:1/w_600/Adrianne-Lenker-Bright-Future.jpg" },
-          { name: "Mk.gee", desc: "Guitar Innovator", quote: "“The guitar is just a controller for the soul.”", image: "https://media.pitchfork.com/photos/65cc0e0600392f4625b1f9b3/1:1/w_600/Mk.gee-Two-Star-and-the-Dream-Police.jpg" },
-          { name: "Helena Hauff", desc: "Techno Specialist", quote: "“I like machines that have a mind of their own.”", image: "https://media.pitchfork.com/photos/5b1ed37c7676644f51952281/1:1/w_320,c_limit/Helena-Hauff-Qualm.jpg" },
-          { name: "Adrianne Lenker", desc: "Folk Lyricist", quote: "“My songs are like small houses I build.”", image: "https://media.pitchfork.com/photos/65a6a4a159e13d7e5d263920/1:1/w_600/Adrianne-Lenker-Bright-Future.jpg" },
-          { name: "James Blake", desc: "Soul Pioneer", quote: "“Silence is just as much a part of the composition as the notes.”", image: "https://media.pitchfork.com/photos/613a0604084323e7f45778a4/1:1/w_320,c_limit/James-Blake-Friends-That-Break-Your-Heart.jpg" }
-        ]
-      },
-      soundboard: {
-        label: "Catalogue Overview",
-        bgImage: "https://i.pinimg.com/736x/46/d0/52/46d052c88c5fecf32c38b83297b96a92.jpg",
-        records: [ { name: "DAMN.", artist: "KENDRICK LAMAR", no: "S1-001", year: "2017", image: "https://media1.jpc.de/image/w3200/front/0/0602557618280.jpg" } ]
-      },
-      footer: { tagline: "Dedicated to intentional listening.", contactLink: "contact", locations: "Based in Berlin and Mannheim", year: "© 2025", rights: "All Rights Reserved" }
-    };
-
+    // System logic for interacting with PAGE_CONFIG
     function initializeAnimations() {
       const interviewsSection = document.getElementById('interviews-section');
       const interviewsTrack = document.getElementById('interviews-track');
@@ -507,7 +612,7 @@
       const twStates = [];
       document.querySelectorAll('.typewriter-section').forEach((sec, idx) => {
         const container = sec.querySelector('.typewriter-content');
-        const text = SITE_CONTENT.typewriters[idx] || "";
+        const text = window.PAGE_CONFIG.typewriters[idx] || "";
         const isFirst = sec.dataset.isfirst === 'true';
         let charElements = [];
         const words = text.split(" ");
@@ -606,8 +711,9 @@
       const text = el.dataset.textcolor;
       el.style.backgroundColor = isHovered ? accent : '#FFFFFF';
       el.querySelectorAll('.dynamic-text, .dynamic-p, .dynamic-btn').forEach(c => {
-        if (c.classList.contains('text-[#cc0000]')) {
-           c.style.color = isHovered ? text : '#cc0000';
+        // Change text color gracefully using the new dynamic accent setup
+        if (c.classList.contains('text-accent')) {
+           c.style.color = isHovered ? text : 'var(--color-accent)';
         } else {
            c.style.color = isHovered ? text : '';
         }
@@ -635,44 +741,45 @@
     };
 
     document.addEventListener("DOMContentLoaded", () => {
+      // Auto-populate all data-content tags from PAGE_CONFIG
       document.querySelectorAll('[data-content]').forEach(el => {
         const keys = el.dataset.content.split('.');
-        let val = SITE_CONTENT;
+        let val = window.PAGE_CONFIG;
         keys.forEach(k => val = val[k] || val);
         if (el.tagName === 'IMG') el.src = val;
-        else if (el.tagName === 'A') { el.textContent = val; el.href = val; }
+        else if (el.tagName === 'A') { el.textContent = val; el.href = (val === 'contact') ? '#' : val; } // fallback formatting
         else if (el.classList.contains('scroll-text-wrapper')) el.dataset.text = val;
         else el.textContent = val;
       });
 
-      // Desktop Nav
-      const navLinks = SITE_CONTENT.nav.links.map(l => {
+      // Desktop Nav building
+      const navLinks = window.PAGE_CONFIG.nav.links.map(l => {
         const isHome = l.text.toLowerCase() === 'home';
-        const defaultColor = isHome ? 'text-[#cc0000]' : 'text-zinc-900';
-        const bottomLine = isHome ? '<div class="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#cc0000]"></div>' : '';
-        return `<a href="${l.url}" class="relative flex-1 flex items-center justify-center border-r border-zinc-100 last:border-r-0 text-[7px] font-bold uppercase tracking-[0.5em] transition-all duration-300 hover:bg-[#cc0000] group ${defaultColor}">
+        const defaultColor = isHome ? 'text-accent' : 'text-zinc-900';
+        const bottomLine = isHome ? '<div class="absolute bottom-0 left-0 right-0 h-[1.5px] bg-accent"></div>' : '';
+        return `<a href="${l.url}" class="relative flex-1 flex items-center justify-center border-r border-zinc-100 last:border-r-0 text-[7px] font-bold uppercase tracking-[0.5em] transition-all duration-300 hover-bg-accent group ${defaultColor}">
           <span class="group-hover:text-white transition-colors duration-300">${l.text}</span>
           ${bottomLine}
         </a>`;
       }).join('');
       document.getElementById('desktop-nav').innerHTML = navLinks;
       
-      document.getElementById('mobile-nav-links').innerHTML = SITE_CONTENT.nav.links.map(l => `<a href="${l.url}" class="text-4xl playfair-light uppercase">${l.text}</a>`).join('');
-      document.getElementById('footer-nav').innerHTML = SITE_CONTENT.nav.links.map(l => `<li><a href="${l.url}">${l.text}</a></li>`).join('');
+      document.getElementById('mobile-nav-links').innerHTML = window.PAGE_CONFIG.nav.links.map(l => `<a href="${l.url}" class="text-4xl playfair-light uppercase">${l.text}</a>`).join('');
+      document.getElementById('footer-nav').innerHTML = window.PAGE_CONFIG.nav.links.map(l => `<li><a href="${l.url}">${l.text}</a></li>`).join('');
 
-      document.getElementById('visual-archive-grid').innerHTML = SITE_CONTENT.archive.images.map(s => `<div class="aspect-square bg-white"><img src="${s}" class="w-full h-full object-cover"/></div>`).join('');
+      document.getElementById('visual-archive-grid').innerHTML = window.PAGE_CONFIG.archive.images.map(s => `<div class="aspect-square bg-white overflow-hidden"><img src="${s}" class="w-full h-full object-cover"/></div>`).join('');
 
       const buildCard = (d, isDrastic = false) => `
         <div class="preview-card p-6 border border-zinc-200/50 transition-all duration-700 w-full flex flex-col ${isDrastic ? 'min-h-[85vh]' : 'min-h-[500px]'}" 
              style="background-color: #FFFFFF" data-accent="${d.accentColor}" data-textcolor="${d.textColor}" 
              onmouseenter="handleCardHover(this, true)" onmouseleave="handleCardHover(this, false)">
              
-          <div class="flex justify-between shrink-0 mb-6 h-10">
-            <div class="flex flex-col">
-              <span class="dynamic-text text-[10px] tracking-[0.3em] uppercase text-zinc-700 playfair-light transition-colors duration-500">${d.cat}</span>
-              <span class="dynamic-text text-[9px] text-zinc-400 uppercase playfair-light transition-colors duration-500">${d.subCat}</span>
+          <div class="flex justify-between shrink-0 mb-6 h-10 w-full overflow-hidden">
+            <div class="flex flex-col truncate pr-2">
+              <span class="dynamic-text text-[10px] tracking-[0.3em] uppercase text-zinc-700 playfair-light transition-colors duration-500 truncate">${d.cat}</span>
+              <span class="dynamic-text text-[9px] text-zinc-400 uppercase playfair-light transition-colors duration-500 truncate">${d.subCat}</span>
             </div>
-            <span class="dynamic-text text-3xl text-[#cc0000] playfair-light transition-colors duration-500">${d.id}</span>
+            <span class="dynamic-text text-3xl text-accent playfair-light transition-colors duration-500 shrink-0">${d.id}</span>
           </div>
           
           <div class="flex-1 flex items-center justify-center overflow-hidden min-h-[200px] mb-8">
@@ -680,11 +787,11 @@
           </div>
 
           <div class="shrink-0 mb-6 h-12 flex items-center">
-            <p class="dynamic-p text-sm border-l-2 pl-4 text-zinc-950 border-zinc-200 times-light tracking-tight w-full">${d.text}</p>
+            <p class="dynamic-p text-sm border-l-2 pl-4 text-zinc-950 border-zinc-200 times-light tracking-tight w-full line-clamp-2">${d.text}</p>
           </div>
 
           <div class="shrink-0 mb-8 h-16 flex items-start">
-            <p class="dynamic-text text-[13px] text-zinc-600 times-light italic leading-relaxed transition-colors duration-500 tracking-tight w-full">
+            <p class="dynamic-text text-[13px] text-zinc-600 times-light italic leading-relaxed transition-colors duration-500 tracking-tight w-full line-clamp-3">
               This record marks a definitive shift in contemporary production. We encourage you to engage with this project in its entirety to fully appreciate the artist's nuanced sonic language.
             </p>
           </div>
@@ -696,33 +803,33 @@
           </div>
         </div>`;
 
-      document.getElementById('reviews-container-top').innerHTML = `<div class="grid grid-cols-1 md:grid-cols-3 gap-8">${SITE_CONTENT.reviews.items.slice(0,3).map(item => buildCard(item, true)).join('')}</div>`;
-      document.getElementById('reviews-container-bottom').innerHTML = `<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">${SITE_CONTENT.reviews.items.slice(3,6).map(item => buildCard(item, true)).join('')}</div>`;
+      document.getElementById('reviews-container-top').innerHTML = `<div class="grid grid-cols-1 md:grid-cols-3 gap-8">${window.PAGE_CONFIG.reviews.items.slice(0,3).map(item => buildCard(item, true)).join('')}</div>`;
+      document.getElementById('reviews-container-bottom').innerHTML = `<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">${window.PAGE_CONFIG.reviews.items.slice(3,6).map(item => buildCard(item, true)).join('')}</div>`;
 
-      document.getElementById('interviews-container').innerHTML = SITE_CONTENT.interviews.items.map(i => `
+      document.getElementById('interviews-container').innerHTML = window.PAGE_CONFIG.interviews.items.map(i => `
         <div class="flex flex-col items-start shrink-0 interview-card">
           <div class="w-full aspect-[21/9] bg-zinc-50 border border-zinc-100 mb-8 overflow-hidden">
             <img src="${i.image}" class="w-full h-full object-cover"/>
           </div>
           <div class="w-full flex flex-col gap-4 times-light border-t border-zinc-100 pt-6">
-            <div class="flex flex-col gap-1">
+            <div class="flex flex-col gap-1 overflow-hidden">
                <span class="text-[8px] uppercase tracking-widest text-zinc-500 font-bold">Artist</span>
-               <h3 class="interview-name text-[#cc0000] text-[0.9rem] font-bold uppercase">${i.name}</h3>
+               <h3 class="interview-name text-accent text-[0.9rem] font-bold uppercase truncate">${i.name}</h3>
             </div>
-            <div class="flex flex-col gap-1">
+            <div class="flex flex-col gap-1 overflow-hidden">
                <span class="text-[8px] uppercase tracking-widest text-zinc-500 font-bold">Profile</span>
-               <p class="interview-desc text-zinc-600 text-[0.75rem] font-bold uppercase">${i.desc}</p>
+               <p class="interview-desc text-zinc-600 text-[0.75rem] font-bold uppercase truncate">${i.desc}</p>
             </div>
             <div class="flex flex-col gap-1">
                <span class="text-[8px] uppercase tracking-widest text-zinc-500 font-bold">Insight</span>
-               <p class="interview-quote text-zinc-500 text-[1.1rem] font-medium italic leading-relaxed">${i.quote}</p>
+               <p class="interview-quote text-zinc-500 text-[1.1rem] font-medium italic leading-relaxed line-clamp-3">${i.quote}</p>
             </div>
           </div>
         </div>`).join('');
 
-      document.getElementById('soundboard-covers').innerHTML = SITE_CONTENT.soundboard.records.map(r => `<img src="${r.image}" data-album="${r.name}" class="absolute inset-0 m-auto max-h-[70%] object-contain opacity-0 transition-all duration-700"/>`).join('');
+      document.getElementById('soundboard-covers').innerHTML = window.PAGE_CONFIG.soundboard.records.map(r => `<img src="${r.image}" data-album="${r.name}" class="absolute inset-0 m-auto max-h-[70%] object-contain opacity-0 transition-all duration-700"/>`).join('');
       
-      document.getElementById('soundboard-rows').innerHTML = SITE_CONTENT.soundboard.records.map(r => `
+      document.getElementById('soundboard-rows').innerHTML = window.PAGE_CONFIG.soundboard.records.map(r => `
         <a href="#" class="grid grid-cols-12 py-3 border-b border-zinc-100 items-baseline" onmouseenter="handleSoundboardHover('${r.name}')" onmouseleave="handleSoundboardHover(null)">
           <div class="col-span-5 md:col-span-2 text-zinc-900 text-[11px] font-bold uppercase times-light truncate">${r.name}</div>
           <div class="col-span-4 md:col-span-2 text-zinc-500 text-[10px] font-bold uppercase times-light truncate">${r.artist}</div>
