@@ -8,20 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-  
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Custom Tailwind Breakpoints strictly enforcing requested ranges -->
-  <script>
-    tailwind.config = {
-      theme: {
-        screens: {
-          'md': '810px',   // Tablet (810px - 1199px)
-          'lg': '1200px',  // Desktop (>= 1200px)
-        }
-      }
-    }
-  </script>
-
   <style>
     @keyframes terminal-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
     .animate-terminal-blink { animation: terminal-blink 2.2s step-end infinite; }
@@ -125,8 +112,8 @@
     <div id="desktop-nav" class="hidden md:flex w-full h-4 bg-white border-b border-zinc-100">
       <!-- Injected via JS -->
     </div>
-    <div class="flex md:hidden w-full h-10 items-center justify-end px-[clamp(1rem,4vw,1.5rem)] bg-white/95 backdrop-blur-md border-b border-zinc-100">
-      <button id="mobile-menu-btn" class="w-[clamp(1.5rem,5vw,2rem)] h-[clamp(1.5rem,5vw,2rem)] flex items-center justify-center rounded-full overflow-hidden transition-transform active:scale-95 group relative">
+    <div class="flex md:hidden w-full h-10 items-center justify-end px-6 bg-white/95 backdrop-blur-md border-b border-zinc-100">
+      <button id="mobile-menu-btn" class="w-7 h-7 flex items-center justify-center rounded-full overflow-hidden transition-transform active:scale-95 group relative">
         <img id="mobile-menu-img" data-content="nav.mobileMenuImage" src="" alt="Menu" class="w-full h-full object-cover rounded-full group-hover:animate-record-spin transition-all" />
         <div id="mobile-menu-close" class="absolute inset-0 flex items-center justify-center text-zinc-950 hidden">
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
@@ -136,8 +123,8 @@
   </nav>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu-overlay" class="fixed inset-0 z-[120] bg-zinc-950 flex flex-col items-center justify-center space-y-8 text-white transition-opacity duration-500 opacity-0 pointer-events-none hidden">
-    <button id="mobile-menu-close-btn" class="absolute top-[clamp(1rem,4vw,1.5rem)] right-[clamp(1rem,4vw,1.5rem)] p-4">
+  <div id="mobile-menu-overlay" class="fixed inset-0 z-[120] bg-[#cc0000] flex flex-col items-center justify-center space-y-8 text-white transition-opacity duration-500 opacity-0 pointer-events-none hidden playfair-light">
+    <button id="mobile-menu-close-btn" class="absolute top-6 right-6 p-4">
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
     </button>
     <div id="mobile-nav-links" class="flex flex-col items-center space-y-8">
@@ -148,61 +135,61 @@
   <!-- Typewriter Sections -->
   <section class="typewriter-section h-[900vh] relative" data-isfirst="true">
     <div class="sticky top-0 h-screen w-full flex items-center bg-white z-10 overflow-hidden">
-      <div class="typewriter-content w-full max-w-[1200px] mx-auto px-[clamp(1rem,4vw,3rem)] overflow-x-hidden flex flex-col items-start text-left uppercase select-none py-16"></div>
+      <div class="typewriter-content w-full max-w-[1200px] mx-auto px-6 md:px-12 overflow-x-hidden flex flex-col items-start text-left uppercase select-none py-16"></div>
     </div>
   </section>
 
   <section class="typewriter-section h-[900vh] relative" data-isfirst="false">
     <div class="sticky top-0 h-screen w-full flex items-center bg-white z-10 overflow-hidden">
-      <div class="typewriter-content w-full max-w-[1200px] mx-auto px-[clamp(1rem,4vw,3rem)] overflow-x-hidden flex flex-col items-start text-left uppercase select-none py-16"></div>
+      <div class="typewriter-content w-full max-w-[1200px] mx-auto px-6 md:px-12 overflow-x-hidden flex flex-col items-start text-left uppercase select-none py-16"></div>
     </div>
   </section>
 
   <section class="typewriter-section h-[900vh] relative" data-isfirst="false">
     <div class="sticky top-0 h-screen w-full flex items-center bg-white z-10 overflow-hidden">
-      <div class="typewriter-content w-full max-w-[1200px] mx-auto px-[clamp(1rem,4vw,3rem)] overflow-x-hidden flex flex-col items-start text-left uppercase select-none py-16"></div>
+      <div class="typewriter-content w-full max-w-[1200px] mx-auto px-6 md:px-12 overflow-x-hidden flex flex-col items-start text-left uppercase select-none py-16"></div>
     </div>
   </section>
 
-  <!-- Minimalistic Hero Section -->
+  <!-- Minimalistic Hero Section (Updated Font to Playfair Display) -->
   <section id="hero-section" class="h-screen bg-white relative flex flex-col items-center justify-center overflow-hidden border-b border-zinc-100">
     <div class="relative z-10 w-full flex flex-col items-center justify-center">
       <h2 class="text-[25vw] flex items-center select-none uppercase text-[#cc0000] playfair-light" style="letter-spacing: -0.05em; line-height: 0.8;">
         SONIC
       </h2>
-      <div class="mt-[clamp(1rem,3vw,2rem)]">
-        <span class="text-zinc-900 font-sans font-bold text-[clamp(1rem,2vw,1.25rem)] uppercase tracking-[0.6em] whitespace-nowrap times-light" data-content="sonicReveal.season"></span>
+      <div class="mt-8">
+        <span class="text-zinc-900 font-sans font-bold text-lg md:text-xl uppercase tracking-[0.6em] whitespace-nowrap times-light" data-content="sonicReveal.season"></span>
       </div>
     </div>
   </section>
 
   <!-- Mission Statement -->
-  <section id="mission-section" class="bg-white pt-[clamp(4rem,10vw,8rem)] pb-[clamp(3rem,6vw,6rem)] mb-[clamp(20vh,28vh,35vh)] px-[clamp(1rem,4vw,3rem)] flex items-center justify-center min-h-[60vh]">
+  <section id="mission-section" class="bg-white pt-24 md:pt-48 pb-12 mb-[35vh] px-6 md:px-12 flex items-center justify-center min-h-[60vh]">
     <div class="max-w-4xl w-full mx-auto">
-      <div class="text-center text-[clamp(9px,1.2vw,11px)] uppercase tracking-[0.5em] mb-[clamp(2rem,5vw,4rem)] times-light-red" data-content="mission.label"></div>
-      <div class="space-y-[clamp(1.5rem,3vw,2.5rem)] text-center">
-        <p class="text-[clamp(1.25rem,4vw,1.875rem)] leading-tight tracking-tight text-zinc-950 times-light" data-content="mission.p1"></p>
-        <p class="text-[clamp(1.125rem,3vw,1.25rem)] leading-relaxed tracking-tight text-zinc-600 times-light" data-content="mission.p2"></p>
-        <p class="text-[clamp(1rem,2vw,1.125rem)] leading-relaxed text-zinc-400 times-light" data-content="mission.p3"></p>
+      <div class="text-center text-[10px] uppercase tracking-[0.5em] mb-12 md:mb-20 times-light-red" data-content="mission.label"></div>
+      <div class="space-y-10 text-center">
+        <p class="text-xl md:text-3xl leading-tight tracking-tight text-zinc-950 times-light" data-content="mission.p1"></p>
+        <p class="text-lg md:text-xl leading-relaxed tracking-tight text-zinc-600 times-light" data-content="mission.p2"></p>
+        <p class="text-base md:text-lg leading-relaxed text-zinc-400 times-light" data-content="mission.p3"></p>
       </div>
     </div>
   </section>
 
   <main id="main-content" class="relative z-20 bg-white">
     <!-- Visual Archive -->
-    <section class="bg-white relative flex flex-col items-center overflow-hidden mb-[clamp(20vh,28vh,35vh)]">
-      <div class="w-full px-[clamp(1rem,4vw,6rem)]">
-        <h2 class="text-center text-[clamp(9px,1.2vw,11px)] tracking-[0.8em] uppercase mb-[clamp(2rem,4vw,3rem)] times-light-red" data-content="archive.label"></h2>
-        <div id="visual-archive-grid" class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-[clamp(1rem,2.5vw,3rem)]">
+    <section class="bg-white relative flex flex-col items-center overflow-hidden pt-16 md:pt-24 mb-[35vh]">
+      <div class="w-full px-6 md:px-12 lg:px-24">
+        <h2 class="text-center text-[10px] tracking-[0.8em] uppercase mb-12 times-light-red" data-content="archive.label"></h2>
+        <div id="visual-archive-grid" class="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-14 lg:gap-16">
           <!-- Injected via JS -->
         </div>
       </div>
     </section>
 
     <!-- Reviews Section Part 1 -->
-    <section class="bg-white relative overflow-visible mb-[clamp(20vh,28vh,35vh)]">
-      <div class="max-w-[110rem] mx-auto px-[clamp(1rem,4vw,3rem)]">
-        <h2 class="text-center text-[clamp(9px,1.2vw,11px)] tracking-[0.8em] uppercase mb-[clamp(2rem,4vw,3rem)] times-light-red" data-content="reviews.label"></h2>
+    <section class="bg-white relative overflow-visible mb-[35vh]">
+      <div class="max-w-[110rem] mx-auto px-6 md:px-12 pt-16 md:pt-24 pb-0 md:pb-0">
+        <h2 class="text-center text-[10px] tracking-[0.8em] uppercase mb-12 times-light-red" data-content="reviews.label"></h2>
         <div id="reviews-container-top">
           <!-- Grid Injected via JS -->
         </div>
@@ -210,34 +197,34 @@
     </section>
 
     <!-- Lyric Scroll Reveal -->
-    <section class="scroll-reveal-container h-[500vh] relative snap-section mb-[clamp(20vh,28vh,35vh)]">
+    <section class="scroll-reveal-container h-[500vh] relative snap-section mb-[35vh]">
       <div class="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
-        <h2 class="absolute top-[clamp(3rem,8vw,6rem)] text-center text-[clamp(9px,1.2vw,11px)] tracking-[0.8em] uppercase times-light-red w-full block" data-content="lyric.label"></h2>
-        <div class="w-full max-w-7xl px-[clamp(1rem,4vw,3rem)] relative">
-          <div class="flex flex-col md:flex-row items-center w-full gap-[clamp(2rem,5vw,0)]">
-            <div class="md:w-2/5 lg:w-1/3 flex flex-col items-center md:items-start md:pr-[clamp(1.5rem,4vw,3rem)] w-full">
-              <div class="mb-[clamp(1.5rem,3vw,2rem)] text-center md:text-left w-full overflow-hidden">
-                <span class="bg-[#cc0000] text-white font-bold italic px-[clamp(0.75rem,2vw,1rem)] py-[clamp(0.5rem,1.5vw,0.75rem)] text-[clamp(1rem,3vw,1.5rem)] inline-block leading-tight whitespace-pre-line max-w-full times-light" data-content="lyric.quote"></span>
+        <h2 class="absolute top-16 md:top-24 text-center text-[10px] tracking-[0.8em] uppercase times-light-red w-full block" data-content="lyric.label"></h2>
+        <div class="w-full max-w-7xl px-6 md:px-12 relative">
+          <div class="flex flex-col md:flex-row items-center w-full gap-8 md:gap-0">
+            <div class="md:w-1/3 flex flex-col items-center md:items-start md:pr-12 w-full">
+              <div class="mb-8 text-center md:text-left w-full overflow-hidden">
+                <span class="bg-[#cc0000] text-white font-bold italic px-4 py-3 text-xs sm:text-lg md:text-2xl inline-block leading-tight whitespace-pre-line max-w-full times-light" data-content="lyric.quote"></span>
               </div>
-              <div class="flex items-center gap-[clamp(0.75rem,2vw,1rem)]">
-                <div class="w-[clamp(3rem,8vw,4rem)] h-[clamp(3rem,8vw,4rem)] overflow-hidden bg-zinc-100 shadow-sm border border-zinc-200 shrink-0">
-                  <img data-content="lyric.image" src="" alt="Track Art" class="w-full h-full object-cover" />
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 md:w-16 md:h-16 overflow-hidden bg-zinc-100 shadow-sm border border-zinc-200 shrink-0">
+                  <img data-content="lyric.image" src="https://m.media-amazon.com/images/I/51RD1Jyiz3L._SX522_.jpg" alt="Track Art" class="w-full h-full object-cover" />
                 </div>
                 <div class="text-left times-light">
-                  <h4 class="text-[clamp(0.875rem,2vw,1rem)] font-bold text-zinc-900 leading-tight" data-content="lyric.track"></h4>
-                  <p class="text-[clamp(0.75rem,1.5vw,0.875rem)] text-zinc-900 underline font-medium mt-0.5 tracking-tight" data-content="lyric.artist"></p>
+                  <h4 class="text-sm md:text-base font-bold text-zinc-900 leading-tight" data-content="lyric.track"></h4>
+                  <p class="text-xs md:text-sm text-zinc-900 underline font-medium mt-0.5 tracking-tight" data-content="lyric.artist"></p>
                 </div>
               </div>
             </div>
-            <div class="md:w-3/5 lg:w-2/3 md:pl-[clamp(2rem,5vw,4rem)] py-[clamp(1rem,3vw,2rem)] flex flex-col items-start md:border-l border-zinc-200 relative w-full">
-              <div class="space-y-[clamp(1.5rem,3vw,2rem)] max-w-2xl times-light">
-                <p class="text-[clamp(1rem,3vw,1.25rem)] font-normal leading-tight tracking-tighter text-zinc-950 w-full block">
+            <div class="md:w-2/3 md:pl-16 py-8 flex flex-col items-start md:border-l border-zinc-200 relative w-full">
+              <div class="space-y-8 max-w-2xl times-light">
+                <p class="text-base md:text-xl font-normal leading-tight tracking-tighter text-zinc-950 w-full block">
                   <span class="scroll-text-wrapper" data-start="0" data-end="0.4" data-content="lyric.p1"></span>
                 </p>
-                <p class="text-[clamp(0.875rem,2vw,1rem)] font-normal leading-relaxed tracking-tighter text-zinc-600 w-full block">
+                <p class="text-sm md:text-base font-normal leading-relaxed tracking-tighter text-zinc-600 w-full block">
                   <span class="scroll-text-wrapper" data-start="0.4" data-end="0.8" data-content="lyric.p2"></span>
                 </p>
-                <p class="text-[clamp(0.75rem,1.5vw,0.875rem)] font-normal leading-relaxed tracking-tighter text-zinc-400 italic w-full block">
+                <p class="text-xs md:text-sm font-normal leading-relaxed tracking-tighter text-zinc-400 italic w-full block">
                   <span class="scroll-text-wrapper" data-start="0.8" data-end="1.0" data-content="lyric.p3"></span>
                 </p>
               </div>
@@ -248,9 +235,9 @@
     </section>
 
     <!-- Reviews Section Part 2 -->
-    <section class="bg-white relative overflow-visible mb-[clamp(20vh,28vh,35vh)]">
-      <div class="max-w-[110rem] mx-auto px-[clamp(1rem,4vw,3rem)]">
-        <h2 class="text-center text-[clamp(9px,1.2vw,11px)] tracking-[0.8em] uppercase mb-[clamp(2rem,4vw,3rem)] times-light-red" data-content="reviews.label"></h2>
+    <section class="bg-white relative overflow-visible mb-[35vh]">
+      <div class="max-w-[110rem] mx-auto px-6 md:px-12 pt-16 md:pt-24">
+        <h2 class="text-center text-[10px] tracking-[0.8em] uppercase mb-12 times-light-red" data-content="reviews.label"></h2>
         <div id="reviews-container-bottom">
           <!-- Grid Injected via JS -->
         </div>
@@ -258,45 +245,43 @@
     </section>
 
     <!-- Beat Scroll Reveal -->
-    <section class="scroll-reveal-container h-[500vh] bg-white text-zinc-950 relative mb-[clamp(20vh,28vh,35vh)]">
+    <section class="scroll-reveal-container h-[500vh] bg-white text-zinc-950 relative mb-[35vh]">
       <div class="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
-        <h2 class="absolute top-[clamp(3rem,8vw,6rem)] text-center text-[clamp(9px,1.2vw,11px)] tracking-[0.8em] uppercase times-light-red w-full block" data-content="beat.label"></h2>
-        <div class="max-w-7xl mx-auto px-[clamp(1rem,4vw,3rem)] relative z-10 w-full">
-          <div class="flex flex-col md:flex-row gap-[clamp(1.5rem,5vw,6rem)] items-center">
+        <h2 class="text-center text-[10px] tracking-[0.8em] uppercase mb-8 md:mb-12 times-light-red w-full block" data-content="beat.label"></h2>
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full">
+          <div class="flex flex-col md:flex-row gap-6 md:gap-24 items-center">
             <div class="md:w-1/2 order-2 md:order-1 w-full flex flex-col">
-              <div class="space-y-[clamp(1.5rem,3vw,2rem)] w-full times-light">
-                <div class="space-y-[clamp(1rem,2.5vw,1.5rem)] max-lg w-full">
-                  <p class="text-[clamp(1.125rem,3vw,1.25rem)] font-normal leading-tight tracking-tighter text-zinc-950 block w-full">
-                    <span class="scroll-text-wrapper" data-start="0" data-end="0.35" data-content="beat.p1"></span>
-                  </p>
-                  <p class="text-[clamp(0.875rem,2vw,1.125rem)] font-normal leading-relaxed tracking-tighter text-zinc-600 block w-full">
-                    <span class="scroll-text-wrapper" data-start="0.35" data-end="0.7" data-content="beat.p2"></span>
-                  </p>
-                  <p class="text-[clamp(0.75rem,1.5vw,1rem)] font-normal leading-relaxed tracking-tighter text-zinc-400 block w-full">
-                    <span class="scroll-text-wrapper" data-start="0.7" data-end="1.0" data-content="beat.p3"></span>
-                  </p>
-                </div>
+              <div class="space-y-8 max-w-2xl times-light w-full">
+                <p class="text-lg md:text-xl font-normal leading-tight tracking-tighter text-zinc-950 block w-full">
+                  <span class="scroll-text-wrapper" data-start="0" data-end="0.35" data-content="beat.p1"></span>
+                </p>
+                <p class="text-sm md:text-lg font-normal leading-relaxed tracking-tighter text-zinc-600 block w-full">
+                  <span class="scroll-text-wrapper" data-start="0.35" data-end="0.7" data-content="beat.p2"></span>
+                </p>
+                <p class="text-xs md:text-base font-normal leading-relaxed tracking-tighter text-zinc-400 block w-full">
+                  <span class="scroll-text-wrapper" data-start="0.7" data-end="1.0" data-content="beat.p3"></span>
+                </p>
               </div>
             </div>
             
-            <div class="md:w-1/2 order-1 md:order-2 flex flex-col items-center w-full md:border-l md:border-zinc-100 md:pl-[clamp(2rem,5vw,6rem)]">
+            <div class="md:w-1/2 order-1 md:order-2 flex flex-col items-center w-full md:border-l md:border-zinc-100 md:pl-24">
               <div class="relative w-full flex flex-col items-center">
-                <div class="w-[clamp(12rem,30vw,20rem)] h-[clamp(15rem,40vw,28rem)] bg-white overflow-hidden relative border border-zinc-200 shadow-sm shrink-0">
-                  <img data-content="beat.image" src="" alt="Beat Artist" class="w-full h-full object-cover transition-all duration-1000" />
+                <div class="w-48 h-60 sm:w-56 sm:h-72 md:w-80 md:h-[28rem] bg-white overflow-hidden relative border border-zinc-200 shadow-sm shrink-0">
+                  <img data-content="beat.image" src="https://media.pitchfork.com/photos/65cc0e0600392f4625b1f9b3/1:1/w_600/Mk.gee-Two-Star-and-the-Dream-Police.jpg" alt="Beat Artist" class="w-full h-full object-cover transition-all duration-1000" />
                 </div>
                 
-                <div class="grid grid-cols-3 gap-[clamp(0.5rem,2vw,1rem)] pt-[clamp(1rem,3vw,2rem)] mt-[clamp(1rem,3vw,1.5rem)] w-full max-w-md border-t border-zinc-100 times-light tracking-tight">
+                <div class="grid grid-cols-3 gap-4 pt-8 mt-6 w-full max-w-md border-t border-zinc-100 times-light tracking-tight">
                   <div class="flex flex-col text-center">
-                    <span class="text-[clamp(8px,1vw,10px)] font-bold uppercase tracking-widest text-[#cc0000] mb-1">Artist</span>
-                    <span class="text-[clamp(9px,1.2vw,11px)] font-light uppercase text-zinc-950 truncate" data-content="beat.artist"></span>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-[#cc0000] mb-1">Artist</span>
+                    <span class="text-[11px] font-light uppercase text-zinc-950 truncate" data-content="beat.artist"></span>
                   </div>
                   <div class="flex flex-col text-center">
-                    <span class="text-[clamp(8px,1vw,10px)] font-bold uppercase tracking-widest text-[#cc0000] mb-1">Track</span>
-                    <p class="text-[clamp(9px,1.2vw,11px)] font-light uppercase text-zinc-950 leading-tight" data-content="beat.track"></p>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-[#cc0000] mb-1">Track</span>
+                    <p class="text-[11px] font-light uppercase text-zinc-950 leading-tight" data-content="beat.track"></p>
                   </div>
                   <div class="flex flex-col text-center">
-                    <span class="text-[clamp(8px,1vw,10px)] font-bold uppercase tracking-widest text-[#cc0000] mb-1">Year</span>
-                    <span class="text-[clamp(9px,1.2vw,11px)] font-light uppercase text-zinc-950 truncate" data-content="beat.year"></span>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-[#cc0000] mb-1">Year</span>
+                    <span class="text-[11px] font-light uppercase text-zinc-950 truncate" data-content="beat.year"></span>
                   </div>
                 </div>
               </div>
@@ -307,11 +292,11 @@
     </section>
 
     <!-- Interviews Horizontal Scroll -->
-    <section id="interviews-section" class="bg-white h-[clamp(300vh,400vh,450vh)] relative overflow-visible mb-[clamp(20vh,28vh,35vh)]">
+    <section id="interviews-section" class="bg-white h-[600vh] relative overflow-visible mb-[35vh]">
       <div class="sticky top-0 h-screen w-full flex flex-col items-center overflow-hidden">
-        <h2 class="text-center text-[clamp(9px,1.2vw,11px)] tracking-[0.8em] uppercase pt-[clamp(3rem,8vw,6rem)] mb-[clamp(1rem,3vw,1.5rem)] shrink-0 times-light-red" data-content="interviews.label"></h2>
+        <h2 class="text-center text-[10px] tracking-[0.8em] uppercase pt-12 md:pt-24 mb-4 md:mb-6 shrink-0 times-light-red" data-content="interviews.label"></h2>
         <div id="interviews-track-wrapper" class="flex-1 w-full relative flex items-center overflow-hidden">
-          <div id="interviews-track" class="relative left-0 transition-transform duration-150 ease-out flex items-center will-change-transform -mt-[clamp(1rem,4vw,4rem)]">
+          <div id="interviews-track" class="relative left-0 transition-transform duration-150 ease-out flex items-center will-change-transform -mt-16">
             <div id="interviews-container" class="flex items-center interview-gap w-max px-[10vw]">
               <!-- Injected via JS -->
             </div>
@@ -321,23 +306,23 @@
     </section>
 
     <!-- Catalogue Overview -->
-    <section class="bg-white min-h-screen py-[clamp(4rem,10vw,8rem)] flex flex-col items-center overflow-hidden relative z-0">
+    <section class="bg-white min-h-screen py-24 md:py-32 flex flex-col items-center overflow-hidden relative z-0">
       <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        <img id="soundboard-bg" data-content="soundboard.bgImage" src="" alt="Soundboard Background" class="w-full h-full object-cover brightness-[1.1] contrast-[1.05] scale-100 blur-0 transition-all duration-700 ease-in-out" />
+        <img id="soundboard-bg" data-content="soundboard.bgImage" src="https://i.pinimg.com/736x/46/d0/52/46d052c88c5fecf32c38b83297b96a92.jpg" alt="Soundboard Background" class="w-full h-full object-cover brightness-[1.1] contrast-[1.05] scale-100 blur-0 transition-all duration-700 ease-in-out" />
       </div>
-      <div class="absolute inset-0 pointer-events-none z-10 flex items-center justify-center">
-        <div id="soundboard-covers" class="w-full md:w-[28%] h-full relative flex items-center justify-center">
-          <!-- Injected via JS -->
+      <div class="w-full max-w-[100rem] px-6 md:px-12 relative">
+        <div class="absolute inset-0 pointer-events-none z-10 flex items-center justify-center">
+          <div id="soundboard-covers" class="w-full md:w-[28%] h-full relative flex items-center justify-center">
+            <!-- Injected via JS -->
+          </div>
         </div>
-      </div>
-      <div class="w-full max-w-[100rem] px-[clamp(1rem,4vw,3rem)]">
-        <h2 class="relative z-20 text-center text-[clamp(9px,1.2vw,11px)] tracking-[0.8em] uppercase mb-[clamp(2rem,4vw,3rem)] times-light-red opacity-60" data-content="soundboard.label"></h2>
+        <h2 class="relative z-20 text-center text-[10px] tracking-[0.8em] uppercase mb-12 times-light-red" data-content="soundboard.label"></h2>
         <div class="relative z-20 grid grid-cols-12 md:grid-cols-12 gap-2 md:gap-4 pb-4 mb-6 text-zinc-400 border-b border-zinc-100 times-light">
-          <div class="col-span-5 md:col-span-2 text-[clamp(8px,1vw,9px)] md:text-[clamp(9px,1.2vw,10px)] font-bold tracking-[0.2em] uppercase">Record</div>
-          <div class="col-span-4 md:col-span-2 text-[clamp(8px,1vw,9px)] md:text-[clamp(9px,1.2vw,10px)] font-bold tracking-[0.2em] uppercase">Artist</div>
+          <div class="col-span-5 md:col-span-2 text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase">Record</div>
+          <div class="col-span-4 md:col-span-2 text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase">Artist</div>
           <div class="hidden md:block md:col-span-4"></div>
-          <div class="hidden md:block md:col-span-2 text-center text-[clamp(8px,1vw,10px)] font-bold tracking-[0.2em] uppercase">Rel. Year</div>
-          <div class="col-span-3 md:col-span-2 text-right md:text-center text-[clamp(8px,1vw,9px)] md:text-[clamp(9px,1.2vw,10px)] font-bold tracking-[0.2em] uppercase">Review Nr.</div>
+          <div class="hidden md:block md:col-span-2 text-center text-[10px] font-bold tracking-[0.2em] uppercase">Rel. Year</div>
+          <div class="col-span-3 md:col-span-2 text-right md:text-center text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase">Review Nr.</div>
         </div>
         <div class="relative min-h-[65vh] flex flex-col" id="soundboard-rows">
           <!-- Injected via JS -->
@@ -346,32 +331,32 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-[clamp(4rem,10vw,8rem)] bg-white px-[clamp(1rem,4vw,3rem)] border-t border-zinc-100 times-light">
+    <footer class="py-24 md:py-32 bg-white px-6 md:px-12 border-t border-zinc-100 times-light">
       <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-start gap-[clamp(3rem,8vw,4rem)] mb-[clamp(3rem,8vw,5rem)]">
-          <div class="space-y-[clamp(1.5rem,4vw,2rem)] max-sm">
-            <h1 class="text-[clamp(2rem,6vw,2.25rem)] font-normal tracking-tighter uppercase text-[#cc0000]"><a href="home.html" data-content="brand.full"></a></h1>
-            <p class="text-[clamp(9px,1.2vw,10px)] leading-relaxed font-bold tracking-[0.3em] uppercase text-zinc-400" data-content="footer.tagline"></p>
+        <div class="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-16 mb-16 md:mb-20">
+          <div class="space-y-6 md:space-y-8 max-sm">
+            <h1 class="text-4xl font-normal tracking-tighter uppercase text-[#cc0000]"><a href="home.html" data-content="brand.full"></a></h1>
+            <p class="text-[10px] leading-relaxed font-bold tracking-[0.3em] uppercase text-zinc-400" data-content="footer.tagline"></p>
             <div class="flex gap-4">
-              <a data-content="footer.contactLink" href="contact.html" class="px-[clamp(1.5rem,4vw,2rem)] py-[clamp(0.5rem,1.5vw,0.75rem)] bg-[#cc0000] text-white text-[clamp(9px,1.2vw,10px)] font-bold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-colors inline-block text-center uppercase">contact</a>
+              <a data-content="footer.contactLink" href="contact.html" class="px-8 py-3 bg-[#cc0000] text-white text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-zinc-800 transition-colors inline-block text-center uppercase">contact</a>
             </div>
           </div>
-          <div class="grid grid-cols-2 gap-[clamp(4rem,10vw,8rem)]">
-            <div class="space-y-[clamp(1rem,3vw,1.5rem)]">
-              <h4 class="text-[clamp(9px,1.2vw,10px)] font-bold uppercase tracking-[0.3em] text-zinc-950">Library</h4>
-              <ul id="footer-nav" class="space-y-[clamp(0.75rem,2vw,1rem)] text-[clamp(9px,1.2vw,10px)] uppercase tracking-widest font-bold text-zinc-400">
+          <div class="grid grid-cols-2 gap-20 md:gap-32">
+            <div class="space-y-6">
+              <h4 class="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-950">Library</h4>
+              <ul id="footer-nav" class="space-y-4 text-[10px] uppercase tracking-widest font-bold text-zinc-400">
                 <!-- Injected via JS -->
               </ul>
             </div>
           </div>
         </div>
-        <div class="pt-[clamp(2rem,5vw,3rem)] border-t border-zinc-100 flex justify-center items-center w-full">
-          <div class="flex flex-wrap md:flex-nowrap items-center justify-center gap-x-[clamp(0.5rem,2vw,2rem)] gap-y-1 w-full max-w-full text-center text-zinc-300">
-            <span class="text-[clamp(7px,0.9vw,10px)] font-bold uppercase tracking-widest italic shrink-0" data-content="footer.locations"></span>
-            <span class="hidden sm:inline-block text-[clamp(7px,0.9vw,10px)]">•</span>
-            <span class="text-[clamp(7px,0.9vw,10px)] font-bold uppercase tracking-widest shrink-0" data-content="footer.year"></span>
-            <span class="hidden sm:inline-block text-[clamp(7px,0.9vw,10px)]">•</span>
-            <span class="text-[clamp(7px,0.9vw,10px)] font-bold uppercase tracking-widest shrink-0" data-content="footer.rights"></span>
+        <div class="pt-12 border-t border-zinc-100 flex justify-center items-center w-full">
+          <div class="flex flex-wrap md:flex-nowrap items-center justify-center gap-x-2 gap-y-1 sm:gap-4 md:gap-8 max-w-full text-center text-zinc-300">
+            <span class="text-[7px] sm:text-[9px] md:text-[10px] font-bold uppercase tracking-widest italic shrink-0" data-content="footer.locations"></span>
+            <span class="hidden sm:inline-block">•</span>
+            <span class="text-[7px] sm:text-[9px] md:text-[10px] font-bold uppercase tracking-widest shrink-0" data-content="footer.year"></span>
+            <span class="hidden sm:inline-block">•</span>
+            <span class="text-[7px] sm:text-[9px] md:text-[10px] font-bold uppercase tracking-widest shrink-0" data-content="footer.rights"></span>
           </div>
         </div>
       </div>
@@ -383,10 +368,10 @@
       brand: { short: "S.", full: "sonic" },
       nav: {
         links: [
-          { text: "Home", url: "home.html" },
-          { text: "Reviews", url: "reviews.html" },
-          { text: "Interviews", url: "interviews.html" },
-          { text: "About", url: "about.html" }
+          { text: "Home", url: "#" },
+          { text: "Reviews", url: "#" },
+          { text: "Interviews", url: "#" },
+          { text: "About", url: "#" }
         ],
         mobileMenuImage: "https://p7.hiclipart.com/preview/805/164/961/phonograph-record-lp-record-music-clip-art-others.jpg"
       },
@@ -428,12 +413,12 @@
       reviews: {
         label: "Reviews",
         items: [
-          { id: "01", cat: "Archive // Selection", subCat: "Signal Analysis", link: "damn.html", image: "https://upload.wikimedia.org/wikipedia/en/5/51/Kendrick_Lamar_-_Damn.png", text: "A visceral confrontation with legacy and internal noise.", accentColor: "#7f1d1d", textColor: "#ffffff" },
-          { id: "02", cat: "Archive // Selection", subCat: "Signal Analysis", link: "fluid meditations.html", image: "https://f4.bcbits.com/img/a1236533191_10.jpg", text: "Hypnotic rhythmic pulses from DJ Gigola.", accentColor: "#60a5fa", textColor: "#0f172a" },
-          { id: "03", cat: "Archive // Selection", subCat: "Signal Analysis", link: "illmatic.html", image: "https://media1.jpc.de/image/w2400/front/0/5099747595912.jpg", text: "The definitive landmark of lyrical precision.", accentColor: "#b45309", textColor: "#fef3c7" },
-          { id: "04", cat: "Archive // Selection", subCat: "Signal Analysis", link: "blueprint.html", image: "https://upload.wikimedia.org/wikipedia/en/2/2c/The_Blueprint.png", text: "The Blueprint redefined the sonic landscape of NY hip-hop.", accentColor: "#1d4ed8", textColor: "#ffffff" },
-          { id: "05", cat: "Archive // Selection", subCat: "Signal Analysis", link: "blonde.html", image: "https://media.pitchfork.com/photos/5929bcb55e6ef95969322eda/master/w_1280,c_limit/5f06f7f6.jpg", text: "Blonde is a masterwork of modern minimalism.", accentColor: "#dcfce7", textColor: "#166534" },
-          { id: "06", cat: "Archive // Selection", subCat: "Signal Analysis", link: "greatescape.html", image: "https://m.media-amazon.com/images/I/81allxc10aL._SX522_.jpg", text: "The Great Escape showcases Larry June's effortless flow.", accentColor: "#f97316", textColor: "#ffffff" }
+          { id: "01", cat: "Archive // Selection", subCat: "Signal Analysis", link: "#", image: "https://upload.wikimedia.org/wikipedia/en/5/51/Kendrick_Lamar_-_Damn.png", text: "A visceral confrontation with legacy and internal noise.", accentColor: "#7f1d1d", textColor: "#ffffff" },
+          { id: "02", cat: "Archive // Selection", subCat: "Signal Analysis", link: "#", image: "https://f4.bcbits.com/img/a1236533191_10.jpg", text: "Hypnotic rhythmic pulses from DJ Gigola.", accentColor: "#60a5fa", textColor: "#0f172a" },
+          { id: "03", cat: "Archive // Selection", subCat: "Signal Analysis", link: "#", image: "https://media1.jpc.de/image/w2400/front/0/5099747595912.jpg", text: "The definitive landmark of lyrical precision.", accentColor: "#b45309", textColor: "#fef3c7" },
+          { id: "04", cat: "Archive // Selection", subCat: "Signal Analysis", link: "#", image: "https://upload.wikimedia.org/wikipedia/en/2/2c/The_Blueprint.png", text: "The Blueprint redefined the sonic landscape of NY hip-hop.", accentColor: "#1d4ed8", textColor: "#ffffff" },
+          { id: "05", cat: "Archive // Selection", subCat: "Signal Analysis", link: "#", image: "https://media.pitchfork.com/photos/5929bcb55e6ef95969322eda/master/w_1280,c_limit/5f06f7f6.jpg", text: "Blonde is a masterwork of modern minimalism.", accentColor: "#dcfce7", textColor: "#166534" },
+          { id: "06", cat: "Archive // Selection", subCat: "Signal Analysis", link: "#", image: "https://m.media-amazon.com/images/I/81allxc10aL._SX522_.jpg", text: "The Great Escape showcases Larry June's effortless flow.", accentColor: "#f97316", textColor: "#ffffff" }
         ]
       },
       lyric: {
@@ -479,7 +464,6 @@
       const interviewsSection = document.getElementById('interviews-section');
       const interviewsTrack = document.getElementById('interviews-track');
       const nav = document.getElementById('main-nav');
-      
       const missionSection = document.getElementById('mission-section');
       
       let isMenuOpen = false;
@@ -537,14 +521,6 @@
             lines.push(current);
           }
         }
-        if (lines.length > 1) {
-          const lastLineIdx = lines.length - 1;
-          const letterCount = lines[lastLineIdx].replace(/[^a-zA-Z]/g, '').length;
-          if (letterCount < 2) {
-             const orphan = lines.pop();
-             lines[lines.length - 1] += " " + orphan;
-          }
-        }
         lines.forEach((lineText, lineIdx) => {
           const isAnchoredFirst = isFirst && lineIdx === 0;
           const h2 = document.createElement('h2');
@@ -573,7 +549,7 @@
 
       const revealWrappers = [];
       document.querySelectorAll('.scroll-text-wrapper').forEach(w => {
-        const txt = w.dataset.text;
+        const txt = w.dataset.text || "";
         const chars = [];
         txt.split('').forEach((c, i) => {
           const s = document.createElement('span');
@@ -669,76 +645,77 @@
         else el.textContent = val;
       });
 
+      // Desktop Nav
       const navLinks = SITE_CONTENT.nav.links.map(l => {
         const isHome = l.text.toLowerCase() === 'home';
         const defaultColor = isHome ? 'text-[#cc0000]' : 'text-zinc-900';
         const bottomLine = isHome ? '<div class="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#cc0000]"></div>' : '';
-        return `<a href="${l.url}" class="relative flex-1 flex items-center justify-center border-r border-zinc-100 last:border-r-0 text-[clamp(6px,1vw,7px)] font-bold uppercase tracking-[0.5em] transition-all duration-300 hover:bg-[#cc0000] group ${defaultColor}">
+        return `<a href="${l.url}" class="relative flex-1 flex items-center justify-center border-r border-zinc-100 last:border-r-0 text-[7px] font-bold uppercase tracking-[0.5em] transition-all duration-300 hover:bg-[#cc0000] group ${defaultColor}">
           <span class="group-hover:text-white transition-colors duration-300">${l.text}</span>
           ${bottomLine}
         </a>`;
       }).join('');
       document.getElementById('desktop-nav').innerHTML = navLinks;
       
-      document.getElementById('mobile-nav-links').innerHTML = SITE_CONTENT.nav.links.map(l => `<a href="${l.url}" class="text-4xl font-bold uppercase">${l.text}</a>`).join('');
+      document.getElementById('mobile-nav-links').innerHTML = SITE_CONTENT.nav.links.map(l => `<a href="${l.url}" class="text-4xl playfair-light uppercase">${l.text}</a>`).join('');
       document.getElementById('footer-nav').innerHTML = SITE_CONTENT.nav.links.map(l => `<li><a href="${l.url}">${l.text}</a></li>`).join('');
 
       document.getElementById('visual-archive-grid').innerHTML = SITE_CONTENT.archive.images.map(s => `<div class="aspect-square bg-white"><img src="${s}" class="w-full h-full object-cover"/></div>`).join('');
 
       const buildCard = (d, isDrastic = false) => `
-        <div class="preview-card p-[clamp(1rem,3vw,1.5rem)] border border-zinc-200/50 transition-all duration-700 w-full flex flex-col ${isDrastic ? 'h-auto lg:min-h-[clamp(50vh,70vh,85vh)]' : 'min-h-[500px]'}" 
+        <div class="preview-card p-6 border border-zinc-200/50 transition-all duration-700 w-full flex flex-col ${isDrastic ? 'min-h-[85vh]' : 'min-h-[500px]'}" 
              style="background-color: #FFFFFF" data-accent="${d.accentColor}" data-textcolor="${d.textColor}" 
              onmouseenter="handleCardHover(this, true)" onmouseleave="handleCardHover(this, false)">
              
-          <div class="flex justify-between shrink-0 mb-[clamp(1rem,3vw,1.5rem)] h-[clamp(1.5rem,4vw,2.5rem)]">
+          <div class="flex justify-between shrink-0 mb-6 h-10">
             <div class="flex flex-col">
-              <span class="dynamic-text text-[clamp(9px,1vw,10px)] tracking-[0.3em] uppercase text-zinc-700 playfair-light transition-colors duration-500">${d.cat}</span>
-              <span class="dynamic-text text-[clamp(8px,0.8vw,9px)] text-zinc-400 uppercase playfair-light transition-colors duration-500">${d.subCat}</span>
+              <span class="dynamic-text text-[10px] tracking-[0.3em] uppercase text-zinc-700 playfair-light transition-colors duration-500">${d.cat}</span>
+              <span class="dynamic-text text-[9px] text-zinc-400 uppercase playfair-light transition-colors duration-500">${d.subCat}</span>
             </div>
-            <span class="dynamic-text text-[clamp(1.5rem,4vw,1.875rem)] text-[#cc0000] playfair-light transition-colors duration-500">${d.id}</span>
+            <span class="dynamic-text text-3xl text-[#cc0000] playfair-light transition-colors duration-500">${d.id}</span>
           </div>
           
-          <div class="flex-1 flex items-center justify-center overflow-hidden min-h-[150px] lg:min-h-[200px] mb-[clamp(1.5rem,4vw,2rem)] -mt-[clamp(1rem,4vw,3rem)]">
+          <div class="flex-1 flex items-center justify-center overflow-hidden min-h-[200px] mb-8">
             <img src="${d.image}" class="max-h-full max-w-full object-contain transition-transform duration-700 scale-100 group-hover:scale-105"/>
           </div>
 
-          <div class="shrink-0 mb-[clamp(1rem,3vw,1.5rem)] h-auto lg:h-[clamp(2.5rem,5vw,3rem)] flex items-center -mt-[clamp(1.5rem,5vw,5rem)]">
-            <p class="dynamic-p text-[clamp(0.75rem,2vw,0.875rem)] border-l-2 pl-[clamp(0.5rem,2vw,1rem)] text-zinc-950 border-zinc-200 times-light tracking-tight w-full">${d.text}</p>
+          <div class="shrink-0 mb-6 h-12 flex items-center">
+            <p class="dynamic-p text-sm border-l-2 pl-4 text-zinc-950 border-zinc-200 times-light tracking-tight w-full">${d.text}</p>
           </div>
 
-          <div class="shrink-0 mb-[clamp(1.5rem,4vw,2rem)] h-auto lg:h-[clamp(3rem,6vw,4rem)] flex items-start">
-            <p class="dynamic-text text-[clamp(11px,1.5vw,13px)] text-zinc-600 times-light italic leading-relaxed transition-colors duration-500 tracking-tight w-full">
+          <div class="shrink-0 mb-8 h-16 flex items-start">
+            <p class="dynamic-text text-[13px] text-zinc-600 times-light italic leading-relaxed transition-colors duration-500 tracking-tight w-full">
               This record marks a definitive shift in contemporary production. We encourage you to engage with this project in its entirety to fully appreciate the artist's nuanced sonic language.
             </p>
           </div>
 
-          <div class="shrink-0 mt-auto">
-            <a href="${d.link}" class="dynamic-btn block w-full py-[clamp(0.75rem,2vw,1rem)] bg-zinc-950 text-white text-[clamp(8px,1vw,9px)] font-bold uppercase tracking-[0.3em] text-center transition-all duration-500 hover:tracking-[0.5em]">
+          <div class="shrink-0">
+            <a href="${d.link}" class="dynamic-btn block w-full py-4 bg-zinc-950 text-white text-[9px] font-bold uppercase tracking-[0.3em] text-center transition-all duration-500 hover:tracking-[0.5em]">
               Read Review
             </a>
           </div>
         </div>`;
 
-      document.getElementById('reviews-container-top').innerHTML = `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[clamp(1rem,3vw,2rem)]">${SITE_CONTENT.reviews.items.slice(0,3).map(item => buildCard(item, true)).join('')}</div>`;
-      document.getElementById('reviews-container-bottom').innerHTML = `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[clamp(1rem,3vw,2rem)]">${SITE_CONTENT.reviews.items.slice(3,6).map(item => buildCard(item, true)).join('')}</div>`;
+      document.getElementById('reviews-container-top').innerHTML = `<div class="grid grid-cols-1 md:grid-cols-3 gap-8">${SITE_CONTENT.reviews.items.slice(0,3).map(item => buildCard(item, true)).join('')}</div>`;
+      document.getElementById('reviews-container-bottom').innerHTML = `<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">${SITE_CONTENT.reviews.items.slice(3,6).map(item => buildCard(item, true)).join('')}</div>`;
 
       document.getElementById('interviews-container').innerHTML = SITE_CONTENT.interviews.items.map(i => `
         <div class="flex flex-col items-start shrink-0 interview-card">
-          <div class="w-full aspect-[21/9] bg-zinc-50 border border-zinc-100 mb-[clamp(1.5rem,4vw,2rem)] overflow-hidden">
+          <div class="w-full aspect-[21/9] bg-zinc-50 border border-zinc-100 mb-8 overflow-hidden">
             <img src="${i.image}" class="w-full h-full object-cover"/>
           </div>
-          <div class="w-full flex flex-col gap-[clamp(0.75rem,2vw,1rem)] times-light border-t border-zinc-100 pt-[clamp(1rem,3vw,1.5rem)]">
+          <div class="w-full flex flex-col gap-4 times-light border-t border-zinc-100 pt-6">
             <div class="flex flex-col gap-1">
-               <span class="text-[clamp(7px,0.9vw,8px)] uppercase tracking-widest text-zinc-500 font-bold">Artist</span>
-               <h3 class="interview-name text-[#cc0000] text-[clamp(0.8rem,1.5vw,0.9rem)] font-bold uppercase">${i.name}</h3>
+               <span class="text-[8px] uppercase tracking-widest text-zinc-500 font-bold">Artist</span>
+               <h3 class="interview-name text-[#cc0000] text-[0.9rem] font-bold uppercase">${i.name}</h3>
             </div>
             <div class="flex flex-col gap-1">
-               <span class="text-[clamp(7px,0.9vw,8px)] uppercase tracking-widest text-zinc-500 font-bold">Profile</span>
-               <p class="interview-desc text-zinc-600 text-[clamp(0.65rem,1.2vw,0.75rem)] font-bold uppercase">${i.desc}</p>
+               <span class="text-[8px] uppercase tracking-widest text-zinc-500 font-bold">Profile</span>
+               <p class="interview-desc text-zinc-600 text-[0.75rem] font-bold uppercase">${i.desc}</p>
             </div>
             <div class="flex flex-col gap-1">
-               <span class="text-[clamp(7px,0.9vw,8px)] uppercase tracking-widest text-zinc-500 font-bold">Insight</span>
-               <p class="interview-quote text-zinc-500 text-[clamp(0.9rem,2vw,1.1rem)] font-medium italic leading-relaxed">${i.quote}</p>
+               <span class="text-[8px] uppercase tracking-widest text-zinc-500 font-bold">Insight</span>
+               <p class="interview-quote text-zinc-500 text-[1.1rem] font-medium italic leading-relaxed">${i.quote}</p>
             </div>
           </div>
         </div>`).join('');
@@ -746,12 +723,12 @@
       document.getElementById('soundboard-covers').innerHTML = SITE_CONTENT.soundboard.records.map(r => `<img src="${r.image}" data-album="${r.name}" class="absolute inset-0 m-auto max-h-[70%] object-contain opacity-0 transition-all duration-700"/>`).join('');
       
       document.getElementById('soundboard-rows').innerHTML = SITE_CONTENT.soundboard.records.map(r => `
-        <a href="#" class="grid grid-cols-12 py-[clamp(0.5rem,1.5vw,0.75rem)] border-b border-zinc-100 items-baseline" onmouseenter="handleSoundboardHover('${r.name}')" onmouseleave="handleSoundboardHover(null)">
-          <div class="col-span-5 md:col-span-2 text-zinc-900 text-[clamp(9px,1.2vw,11px)] font-bold uppercase times-light truncate">${r.name}</div>
-          <div class="col-span-4 md:col-span-2 text-zinc-500 text-[clamp(8px,1vw,10px)] font-bold uppercase times-light truncate">${r.artist}</div>
+        <a href="#" class="grid grid-cols-12 py-3 border-b border-zinc-100 items-baseline" onmouseenter="handleSoundboardHover('${r.name}')" onmouseleave="handleSoundboardHover(null)">
+          <div class="col-span-5 md:col-span-2 text-zinc-900 text-[11px] font-bold uppercase times-light truncate">${r.name}</div>
+          <div class="col-span-4 md:col-span-2 text-zinc-500 text-[10px] font-bold uppercase times-light truncate">${r.artist}</div>
           <div class="hidden md:block md:col-span-4"></div>
-          <div class="hidden md:block md:col-span-2 text-center text-zinc-900 text-[clamp(9px,1.2vw,11px)] font-bold uppercase times-light">${r.year}</div>
-          <div class="col-span-3 md:col-span-2 text-right md:text-center text-zinc-900 text-[clamp(9px,1.2vw,11px)] font-bold uppercase times-light">${r.no}</div>
+          <div class="hidden md:block md:col-span-2 text-center text-zinc-900 text-[11px] font-bold uppercase times-light">${r.year}</div>
+          <div class="col-span-3 md:col-span-2 text-right md:text-center text-zinc-900 text-[11px] font-bold uppercase times-light">${r.no}</div>
         </a>`).join('');
 
       initializeAnimations();
